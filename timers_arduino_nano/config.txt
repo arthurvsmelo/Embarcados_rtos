@@ -1,0 +1,145 @@
+Cada porta consiste em 3 registradores:
+-DDRx (leitura/escrita)
+-PORTx (leitura/escrita)
+-PINx (somente leitura, mas se escrever 1 no pino, faz toggle)
+
+==============================================
+DDRx: direção do pino
+Se DDRx = 1, pino é configurado como saída
+Se DDRx = 0, pino é configurado como entrada
+
+==============================================
+PORTx: dados do pino
+Se DDRx = 0 (entrada) e PORTx = 0 -> sem pull-up e estado tri-state
+Se DDRx = 0 (entada) e PORTx = 1  -> com pull-up
+Se DDRx = 1 (saída) e PORTx = 0   -> output LOW
+Se DDRx = 1 (saída) e PORTx = 1   -> output HIGH
+
+==============================================
+PINx: lê o estado do pino
+
+
+==============================================
+MANIPULAÇÃO BIT A BIT
+
+Reseta bit =>    &= ~(1 << BIT)
+Liga o bit =>    |= (1 << BIT)
+Toggle bit =>    ^= (1 << BIT)
+Testa o bit=>    IF (valor & (1 << BIT))
+
+==============================================
+INTERRUPÇÕES
+
+vetores:
+INT0_vect
+INT1_vect
+
+-configurações:
+
+EICRA - especifica o tipo de interrupção
+para o INT0 => ISC01  ISC00   tipo
+                 0      0     detecta nivel baixo
+                 0      1     qualquer borda
+                 1      0     borda de descida
+                 1      1     borda de subida
+para o INT1 => ISC11  ISC10   tipo
+                 0      0     detecta nivel baixo
+                 0      1     qualquer borda
+                 1      0     borda de descida
+                 1      1     borda de subida
+
+EIMSK - habilita ou desabilita a interrupção
+INT0 em 1 habilita, em 0 desabilita
+INT1 em 1 habilita, em 0 desabilita
+
+EIFR - controla a flag da interrupção
+INTF0 limpa a flag escrevendo 0 no registrador
+INTF1 limpa a flag escrevendo 0 no registrador
+
+
+==============================================
+TIMERS
+
+-timer0:
+vetores:
+TIMER0_COMPA_vect   comparador a
+TIMER0_COMPB_vect   comparador b
+TIMER0_OVF_vect     overflow
+
+-timer1:
+vetores:
+TIMER1_COMPA_vect   comparador a
+TIMER1_COMPB_vect   comparador b
+TIMER1_OVF_vect     overflow
+TIMER1_CAPT_vect    captura de evento 
+
+-timer2:
+vetores:
+TIMER2_COMPA_vect   comparador a
+TIMER2_COMPB_vect   comparador b
+TIMER2_OVF_vect     overflow
+
+registradores: (x = 0, 1 ou 2)
+
+TCNTx - registrador contendo o valor atual de contagem do timer
+
+OCRxA - registrador contendo o valor de comparação A
+OCRxB - registrador contendo o valor de comparação B
+
+OCFxA - flag da comparação A (avisa quando chega no valor de comparação)
+OCFxB - flag da comparação B
+
+TIMSKx - habilita/desabilita timer
+
+TIFRx - flag de interrupção do timer
+
+TOVx - flag de overflow
+
+OCxA - quando conectado a um pino, força o estado do pino de acordo com o valor de comparação A
+esse registrador (output compare A ou B) força um nível lógico no pino associado a ele
+esse pino associado precisa ser localizado e configurado como saída no DDRx desse pino (ver datasheet pág 64)
+
+OCxB - quando conectado a um pino, força o estado do pino de acordo com o valor de comparação B
+
+configurações:
+
+TCCRxA: |COMxA1|COMxA0|COMxB1|COMxB0|  R  |  R  |WGMx1|WGMx0| 
+
+   COMxAn - modo comparação, define comportamento do registrador OCxA ( o mesmo vale para o comparador B)
+
+   COMxA1 COMxA0    
+      0      0      modo normal, OCxA desconectado
+      0      1      toggle OCxA
+      1      0      clear OCxA
+      1      1      set OCxA
+
+   WGMx - configurações de waveform:
+
+   WGMx2   WGMx1   WGMx0    modo de operação
+   0       0       0        normal (conta até o overflow e depois reseta contador)
+   0       0       1        PWM phase correct
+   0       1       0        CTC (clear timer on compare)
+   0       1       1        fast PWM
+   1       0       0        reservado
+   1       0       1        PWM phase correct
+   1       1       0        reservado
+   1       1       1        fast PWM
+
+TCCRxB: |FOCxA|FOCxB|  R  |  R  |WGMx2|CSx2|CSx1|CSx0|  (MUDA PARA O TIMER1)
+
+   CSx - configurações de clock do timer:
+
+   CSx2  CSx1  CSx0      config
+   0     0     0        sem clock
+   0     0     1        sem prescale
+   0     1     0        clk/8
+   0     1     1        clk/64
+   1     0     0        clk/256
+   1     0     1        clk/1024
+   1     1     0        clock externo T0 borda de descida
+   1     1     1        clock externo T0 borda de subida
+
+   WGMx2 - config waveform (em conjunto com WGMx0 e WGMx1) 
+
+============================================================
+https://embarcados.com.br/timers-do-atmega328-no-arduino/
