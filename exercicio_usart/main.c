@@ -5,8 +5,8 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 
-#define FOSC 16000000 // clock principal
-#define BAUD 28800 // baud rate
+#define FOSC 16000000UL // clock principal
+#define BAUD 28800U // baud rate
 #define _UBRR (FOSC / (16 * BAUD) - 1)   // freq transmissao/recepção ~ 480khz => UBRR0 = 34
 volatile uint16_t counter;
 
@@ -29,8 +29,8 @@ ISR(USART_RX_vect) {
 
 ISR(TIMER0_COMPA_vect) {
     /* Pisque o LED a cada 640 ms */
-    if(counter <= 4000){ /* 160us * 4000 = 640ms */
-        if(counter >= 3900)
+    if(counter <= 4000U){ /* 160us * 4000 = 640ms */
+        if(counter >= 3900U)
             PORTB |= (1 << PB5); /* liga o led por aprox 16ms */
         counter++;
     }
@@ -86,7 +86,7 @@ void delay(uint8_t n) {
     uint8_t i;
     /* instrução "nop" leva 62,5 ns, 16 nop equivalem a 1 us*/
     while (n--)
-        for (i=0; i<16; i++) 
+        for (i = 0; i < 16; i++) 
             asm("nop");
 }
 
@@ -95,7 +95,7 @@ void usart_init(){
     DDRD &= ~(1 << PD1); // pino PD1 = RX (configurado como entrada)
     DDRD |= (1 << PD0);  // pino PD0 = TX (configurado como saída)
     /* configurações da USART */
-    UCSR0A = 0x00; /* reset, baud rate normal */
+    UCSR0A = 0U; /* reset, baud rate normal */
 	UBRR0H = ((uint8_t)(_UBRR >> 8) & 0xF); // conforme datasheet
 	UBRR0L = ((uint8_t)(_UBRR) & 0xFF);
     /* habilita tx, rx e habilita flag de interrupção para RX */
@@ -121,11 +121,13 @@ void send_signal(uint16_t signal){
     PORTB &= ~(1 << PB1);
     delay(3);
     /* signal */
-    for(uint8_t i = 15; i >= 0; i--){
-        if((signal >> i) | 0x1)
+    for(uint8_t i = 0; i <= 15; i++){
+        if(signal & 0x1)
             PORTB |= (1 << PB1);  /* se bit 1, nivel alto em PB1 */
         else
             PORTB &= ~(1 << PB1); /* se bit 0, nivel baixo em PB1 */
+        
+        signal >>= 1;
         delay(3);
     }
     /* stop bit */
@@ -137,7 +139,7 @@ void set_timer0(void){
     TIFR0 |= (1 << OCF0A);               /* limpa a flag de interrupção */
     TCCR0A |= (1 << WGM01);              /* configura modo CTC (clear timer on compare)*/
     TCCR0B |= (1 << CS01) | (1 << CS00); /* configura prescale de 64 */
-    OCR0A = 0x28;                        /* contagem até 40 */
+    OCR0A = 40U;                        /* contagem até 40 */
 
     /* limite de contagem: fosc/prescaler/(1/period) */
     /* para 160us -> f = 1/160u = 6250hz             */
