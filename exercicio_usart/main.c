@@ -38,7 +38,7 @@ ISR(TIMER0_COMPA_vect) {
         counter = 0;
         PORTB &= ~(1 << PB5); /* desliga o led */
         for(uint8_t i = 0; i < 20; i++)
-            asm("nop");
+            __asm__("nop");
     }
     /* Introduza um delay de 20 instruções NOP */
 }
@@ -87,7 +87,7 @@ void delay(uint8_t n) {
     /* instrução "nop" leva 62,5 ns, 16 nop equivalem a 1 us*/
     while (n--)
         for (i = 0; i < 16; i++) 
-            asm("nop");
+            __asm__("nop");
 }
 
 void usart_init(){
@@ -139,7 +139,7 @@ void set_timer0(void){
     TIFR0 |= (1 << OCF0A);               /* limpa a flag de interrupção */
     TCCR0A |= (1 << WGM01);              /* configura modo CTC (clear timer on compare)*/
     TCCR0B |= (1 << CS01) | (1 << CS00); /* configura prescale de 64 */
-    OCR0A = 40U;                        /* contagem até 40 */
+    OCR0A = 40U;                         /* contagem até 40 */
 
     /* limite de contagem: fosc/prescaler/(1/period) */
     /* para 160us -> f = 1/160u = 6250hz             */
