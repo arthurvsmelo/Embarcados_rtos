@@ -1,0 +1,343 @@
+	.file	"main.c"
+__SREG__ = 0x3f
+__SP_H__ = 0x3e
+__SP_L__ = 0x3d
+__CCP__  = 0x34
+__tmp_reg__ = 0
+__zero_reg__ = 1
+	.text
+.global	__vector_14
+	.type	__vector_14, @function
+__vector_14:
+	push __zero_reg__
+	push r0
+	in r0,__SREG__
+	push r0
+	clr __zero_reg__
+	push r18
+	push r24
+	push r25
+	push r30
+	push r31
+/* prologue: Signal */
+/* frame size = 0 */
+	lds r24,counter
+	lds r25,(counter)+1
+	subi r24,lo8(4001)
+	sbci r25,hi8(4001)
+	brsh .L2
+	lds r24,counter
+	lds r25,(counter)+1
+	subi r24,lo8(3900)
+	sbci r25,hi8(3900)
+	brlo .L3
+	ldi r30,lo8(37)
+	ldi r31,hi8(37)
+	ld r24,Z
+	ori r24,lo8(32)
+	st Z,r24
+.L3:
+	lds r24,counter
+	lds r25,(counter)+1
+	adiw r24,1
+	sts (counter)+1,r25
+	sts counter,r24
+	rjmp .L6
+.L2:
+	sts (counter)+1,__zero_reg__
+	sts counter,__zero_reg__
+	ldi r30,lo8(37)
+	ldi r31,hi8(37)
+	ld r24,Z
+	andi r24,lo8(-33)
+	st Z,r24
+	ldi r24,lo8(0)
+.L5:
+/* #APP */
+ ;  41 "c:\Users\arthu\Documents\Embarcados_rtos\exercicio_usart\main.c" 1
+	nop
+ ;  0 "" 2
+/* #NOAPP */
+	subi r24,lo8(-(1))
+	cpi r24,lo8(20)
+	brne .L5
+.L6:
+/* epilogue start */
+	pop r31
+	pop r30
+	pop r25
+	pop r24
+	pop r18
+	pop r0
+	out __SREG__,r0
+	pop r0
+	pop __zero_reg__
+	reti
+	.size	__vector_14, .-__vector_14
+.global	delay
+	.type	delay, @function
+delay:
+/* prologue: function */
+/* frame size = 0 */
+	ldi r18,lo8(0)
+	rjmp .L9
+.L11:
+	mov r25,r18
+.L10:
+/* #APP */
+ ;  90 "c:\Users\arthu\Documents\Embarcados_rtos\exercicio_usart\main.c" 1
+	nop
+ ;  0 "" 2
+/* #NOAPP */
+	subi r25,lo8(-(1))
+	cpi r25,lo8(16)
+	brne .L10
+	subi r24,lo8(-(-1))
+.L9:
+	tst r24
+	brne .L11
+/* epilogue start */
+	ret
+	.size	delay, .-delay
+.global	usart_init
+	.type	usart_init, @function
+usart_init:
+/* prologue: function */
+/* frame size = 0 */
+	ldi r30,lo8(42)
+	ldi r31,hi8(42)
+	ld r24,Z
+	andi r24,lo8(-3)
+	st Z,r24
+	ld r24,Z
+	ori r24,lo8(1)
+	st Z,r24
+	sts 192,__zero_reg__
+	ldi r24,lo8(14)
+	sts 197,r24
+	ldi r24,lo8(-125)
+	sts 196,r24
+	ldi r30,lo8(193)
+	ldi r31,hi8(193)
+	ldi r24,lo8(-104)
+	st Z,r24
+	ld r24,Z
+	andi r24,lo8(-5)
+	st Z,r24
+	ldi r24,lo8(6)
+	sts 194,r24
+/* epilogue start */
+	ret
+	.size	usart_init, .-usart_init
+.global	usart_write
+	.type	usart_write, @function
+usart_write:
+/* prologue: function */
+/* frame size = 0 */
+	mov r25,r24
+	ldi r30,lo8(192)
+	ldi r31,hi8(192)
+.L17:
+	ld r24,Z
+	sbrs r24,5
+	rjmp .L17
+	sts 198,r25
+/* epilogue start */
+	ret
+	.size	usart_write, .-usart_write
+.global	usart_read
+	.type	usart_read, @function
+usart_read:
+/* prologue: function */
+/* frame size = 0 */
+	ldi r30,lo8(192)
+	ldi r31,hi8(192)
+.L21:
+	ld r24,Z
+	tst r24
+	brge .L21
+	lds r24,198
+/* epilogue start */
+	ret
+	.size	usart_read, .-usart_read
+.global	__vector_18
+	.type	__vector_18, @function
+__vector_18:
+	push __zero_reg__
+	push r0
+	in r0,__SREG__
+	push r0
+	clr __zero_reg__
+	push r18
+	push r19
+	push r20
+	push r21
+	push r22
+	push r23
+	push r24
+	push r25
+	push r26
+	push r27
+	push r30
+	push r31
+/* prologue: Signal */
+/* frame size = 0 */
+	lds r24,192
+	andi r24,lo8(24)
+	breq .L25
+	ldi r24,lo8(-34)
+	call usart_write
+	rjmp .L27
+.L25:
+	call usart_read
+	call usart_write
+.L27:
+/* epilogue start */
+	pop r31
+	pop r30
+	pop r27
+	pop r26
+	pop r25
+	pop r24
+	pop r23
+	pop r22
+	pop r21
+	pop r20
+	pop r19
+	pop r18
+	pop r0
+	out __SREG__,r0
+	pop r0
+	pop __zero_reg__
+	reti
+	.size	__vector_18, .-__vector_18
+.global	send_signal
+	.type	send_signal, @function
+send_signal:
+	push r14
+	push r15
+	push r17
+	push r28
+	push r29
+/* prologue: function */
+/* frame size = 0 */
+	movw r28,r24
+	ldi r30,lo8(37)
+	ldi r31,hi8(37)
+	ld r24,Z
+	andi r24,lo8(-3)
+	st Z,r24
+	ldi r24,lo8(3)
+	call delay
+	ldi r17,lo8(0)
+	mov __tmp_reg__,r31
+	ldi r31,lo8(37)
+	mov r14,r31
+	clr r15
+	mov r31,__tmp_reg__
+.L32:
+	sbrs r28,0
+	rjmp .L29
+	movw r30,r14
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+	rjmp .L30
+.L29:
+	movw r30,r14
+	ld r24,Z
+	andi r24,lo8(-3)
+	st Z,r24
+.L30:
+	ldi r24,lo8(3)
+	call delay
+	subi r17,lo8(-(1))
+	cpi r17,lo8(16)
+	breq .L31
+	lsr r29
+	ror r28
+	rjmp .L32
+.L31:
+	ldi r30,lo8(37)
+	ldi r31,hi8(37)
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+/* epilogue start */
+	pop r29
+	pop r28
+	pop r17
+	pop r15
+	pop r14
+	ret
+	.size	send_signal, .-send_signal
+.global	set_timer0
+	.type	set_timer0, @function
+set_timer0:
+/* prologue: function */
+/* frame size = 0 */
+	ldi r30,lo8(110)
+	ldi r31,hi8(110)
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+	ldi r30,lo8(53)
+	ldi r31,hi8(53)
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+	ldi r30,lo8(68)
+	ldi r31,hi8(68)
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+	ldi r30,lo8(69)
+	ldi r31,hi8(69)
+	ld r24,Z
+	ori r24,lo8(3)
+	st Z,r24
+	ldi r24,lo8(40)
+	out 71-32,r24
+/* epilogue start */
+	ret
+	.size	set_timer0, .-set_timer0
+.global	main
+	.type	main, @function
+main:
+/* prologue: function */
+/* frame size = 0 */
+/* #APP */
+ ;  50 "c:\Users\arthu\Documents\Embarcados_rtos\exercicio_usart\main.c" 1
+	cli
+ ;  0 "" 2
+/* #NOAPP */
+	ldi r30,lo8(36)
+	ldi r31,hi8(36)
+	ld r24,Z
+	ori r24,lo8(34)
+	st Z,r24
+	ldi r30,lo8(37)
+	ldi r31,hi8(37)
+	ld r24,Z
+	andi r24,lo8(-33)
+	st Z,r24
+	ld r24,Z
+	ori r24,lo8(2)
+	st Z,r24
+	call set_timer0
+	call usart_init
+/* #APP */
+ ;  65 "c:\Users\arthu\Documents\Embarcados_rtos\exercicio_usart\main.c" 1
+	sei
+ ;  0 "" 2
+/* #NOAPP */
+.L37:
+	ldi r24,lo8(-21931)
+	ldi r25,hi8(-21931)
+	call send_signal
+	ldi r24,lo8(20)
+	call delay
+	rjmp .L37
+	.size	main, .-main
+	.comm counter,2,1
+.global __do_clear_bss
