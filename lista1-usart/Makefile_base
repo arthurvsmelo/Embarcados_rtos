@@ -1,0 +1,112 @@
+# Hey Emacs, this is a -*- makefile -*-
+# Makefile
+#
+# Taken from "Veronica – Macro Assembly for AVR" - http://quinndunki.com/blondihacks/?p=1106
+#
+# Original - Parts of this are borrowed from http://electrons.psychogenic.com
+#
+
+CLOCK=16000000UL
+
+ifneq (,$(wildcard board.mk))
+include board.mk
+else
+$(error Você deve usar um arquivo board.mk apropriado)
+endif
+
+#############################
+
+BUILD_DIR = ./build
+
+.SECONDEXPANSION:
+.PRECIOUS: $(BUILD_DIR)/ $(BUILD_DIR)%/
+
+CFLAGS=-I. -g -mmcu=$(DEVICE) -Os -DF_CPU=$(CLOCK) \
+	-fpack-struct -fshort-enums             \
+	-funsigned-bitfields -funsigned-char    \
+	-Wall -Wstrict-prototypes               \
+	$(LED_DEFS)                             \
+	-Wa,-ahlms=$(BUILD_DIR)/$(firstword     \
+	$(filter %.lst, $(<:.c=.lst)))
+
+ASMFLAGS =-I. -mmcu=$(DEVICE) -DF_CPU=$(CLOCK) \
+	-x assembler-with-cpp            \
+	-Wa,-gstabs,-ahlms=$(firstword   \
+		$(<:.S=.lst))
+
+LDFLAGS=-Wl,-Map,$(BUILD_DIR)/$(MAIN_FILE).out.map -mmcu=$(DEVICE)
+
+CFILES=$(filter %.c, $(SOURCES))
+ASMFILES=$(filter %.S, $(SOURCES))
+
+OBJDEPS=$(addprefix $(BUILD_DIR)/, $(CFILES:.c=.o))    \
+	$(addprefix $(BUILD_DIR)/, $(ASMFILES:.S=.o))
+
+M4DEPS=
+
+LST=$(filter %.lst, $(OBJDEPS:.o=.lst))
+
+.SUFFIXES : .c .o .out .S .hex .ee.hex .h
+
+.PHONY: writeflash clean stats gdbinit stats fuse
+
+#############################
+# Make targets:
+# all, disasm, stats, hex, writeflash/install, clean, fuse
+
+all: flash
+
+$(BUILD_DIR)/%.o: %.S | $$(@D)/
+	avr-gcc -c $(ASMFLAGS) $< -o $@
+
+$(BUILD_DIR)/%.o: %.c | $$(@D)/
+	avr-gcc -c $(CFLAGS) $< -o $@
+
+disasm: $(BUILD_DIR)/$(MAIN_FILE).out
+	avr-objdump -d $(BUILD_DIR)/$(MAIN_FILE).out
+
+stats: $(BUILD_DIR)/$(MAIN_FILE).out
+	avr-objdump -h $(BUILD_DIR)/$(MAIN_FILE).out
+	avr-size $(BUILD_DIR)/$(MAIN_FILE).out
+
+hex: $(BUILD_DIR)/$(MAIN_FILE).hex $(BUILD_DIR)/$(MAIN_FILE).ee.hex
+
+writeflash: hex
+	avrdude -P $(USB_PORT) -c $(PROGRAMMER) -p $(DEVICE) -b$(BAUD_RATE) -v -v -v -v -D -U flash:w:$(BUILD_DIR)/$(MAIN_FILE).hex:i
+
+install: writeflash
+
+flash: writeflash
+
+clean:
+	rm -rf $(BUILD_DIR)/
+
+fuse:
+	avrdude -c $(PROGRAMMER) -p $(DEVICE) $(FUSES)
+
+$(BUILD_DIR)/$(MAIN_FILE).out: $(OBJDEPS) | $$(@D)/
+	avr-gcc $(LDFLAGS) -o $(BUILD_DIR)/$(MAIN_FILE).out $(OBJDEPS)
+
+$(BUILD_DIR)/:
+	mkdir -p $@
+
+$(BUILD_DIR)%/:
+	mkdir -p $@
+
+
+#############################
+# Generating object files
+
+.S.o :
+	avr-gcc $(ASMFLAGS) -c $< -o $@
+
+
+#############################
+# Generating hex files
+
+# hex files from elf
+.out.hex:
+	avr-objcopy -j .text -j .data -O ihex $< $@
+
+.out.ee.hex:
+	avr-objcopy -j .eeprom --change-section-lma .eeprom=0 -O ihex $< $@
