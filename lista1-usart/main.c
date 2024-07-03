@@ -245,7 +245,12 @@ uint8_t write(uint8_t *buf, uint8_t n, int8_t close_packet){
         }
         else{
             data = buf[position];
-            USART_Transmit(data);
+            /* se transmitir valor de caractere de controle, envia um caractere de escape antes */
+            if(data == XON || data == XOFF || data == SYNC || data == ESCAPE){
+                USART_Transmit(ESCAPE);
+                USART_Transmit(data);
+            }
+            else USART_Transmit(data);
             counter++;
             position++;
         }
