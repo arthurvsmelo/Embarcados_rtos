@@ -35,17 +35,17 @@ uint8_t enqueue(CircularBuffer *cb, uint8_t item);
 uint8_t dequeue(CircularBuffer *cb, uint8_t *item);
 uint8_t write(uint8_t *buf, uint8_t n, int8_t close_packet);
 uint8_t read(uint8_t *buf, uint8_t n);
-void flow_off();
-void flow_on();
+void flow_off(void);
+void flow_on(void);
 uint8_t is_flow_on();
 void USART_Transmit(uint8_t data);
 uint8_t USART_Receive(void);
-void usart_init();
-void initTimer1();
+void usart_init(void);
+void initTimer1(void);
 void delay(unsigned long ms);
 
 int main(void) {
-    uint8_t i, j = 0, k = 5;
+    uint8_t i, k = 5;
     uint16_t received_bytes = 0;
     DDRB |= (1 << PB5);   /* Configura pino 5 da porta B (led onboard) como saída */
     PORTB &= ~(1 << PB5);  /* Configura o pino do led em estado LOW como default */
@@ -289,19 +289,19 @@ uint8_t read(uint8_t *buf, uint8_t n){
     return n + 1;        
 }
 
-void flow_off(){
+void flow_off(void){
     /* envia o caractere de controle XOFF para desabilitar o fluxo de dados no outro dispositivo */
     USART_Transmit(XOFF);
     receiver_flow = 0;
 }
 
-void flow_on(){
+void flow_on(void){
     /* envia o caractere de controle XON para habilitar o fluxo no outro dispositivo */
     USART_Transmit(XON);
     receiver_flow = 1;
 }
 
-uint8_t is_flow_on(){
+uint8_t is_flow_on(void){
     /* verifica se houve o recebimento de um caractere de controle de fluxo */
     if(flow) 
         return (uint8_t)1;
@@ -327,7 +327,7 @@ uint8_t USART_Receive(void){
     return data;
 }
 
-void usart_init(){
+void usart_init(void){
     /* configurações das portas RX e TX*/
     DDRD &= ~(1 << PD1); // pino PD1 = RX (configurado como entrada)
     DDRD |= (1 << PD0);  // pino PD0 = TX (configurado como saída)
@@ -345,7 +345,7 @@ void usart_init(){
     initBuffer(&txBuffer);
 }
 
-void initTimer1(){ 
+void initTimer1(void){ 
     TCCR1B |= (1 << WGM12);               /* Configura o Timer1 no modo CTC (Clear Timer on Compare Match) */
     TIMSK1 |= (1 << OCIE1A);              /* Habilita a interrupção do Timer1 no compare match A */
     TCCR1B |= (1 << CS11) | (1 << CS10);  /* Define o prescaler para 64 e inicia o Timer1 */

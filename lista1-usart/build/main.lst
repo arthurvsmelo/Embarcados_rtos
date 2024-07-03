@@ -1,0 +1,5167 @@
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.section	.debug_abbrev,"",@progbits
+   9               	.Ldebug_abbrev0:
+  10               		.section	.debug_info,"",@progbits
+  11               	.Ldebug_info0:
+  12               		.section	.debug_line,"",@progbits
+  13               	.Ldebug_line0:
+  14               		.text
+  15               	.Ltext0:
+  16               	.global	initBuffer
+  17               		.type	initBuffer, @function
+  18               	initBuffer:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 FC01      		movw r30,r24
+  25               	.LM2:
+  26 0002 E05C      		subi r30,lo8(-(64))
+  27 0004 FF4F      		sbci r31,hi8(-(64))
+  28               	.LVL1:
+  29 0006 1192      		st Z+,__zero_reg__
+  30               	.LM3:
+  31 0008 1192      		st Z+,__zero_reg__
+  32               	.LM4:
+  33 000a 1082      		st Z,__zero_reg__
+  34               	.LVL2:
+  35               	/* epilogue start */
+  36               	.LM5:
+  37 000c 0895      		ret
+  38               	.LFE3:
+  39               		.size	initBuffer, .-initBuffer
+  40               	.global	isFull
+  41               		.type	isFull, @function
+  42               	isFull:
+  43               	.LFB4:
+  44               	.LM6:
+  45               	.LVL3:
+  46               	/* prologue: function */
+  47               	/* frame size = 0 */
+  48               	.LM7:
+  49 000e 20E0      		ldi r18,lo8(0)
+  50 0010 FC01      		movw r30,r24
+  51 0012 EE5B      		subi r30,lo8(-(66))
+  52 0014 FF4F      		sbci r31,hi8(-(66))
+  53 0016 8081      		ld r24,Z
+  54               	.LVL4:
+  55 0018 8034      		cpi r24,lo8(64)
+  56 001a 01F4      		brne .L4
+  57 001c 21E0      		ldi r18,lo8(1)
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 2
+
+
+  58               	.L4:
+  59               	.LM8:
+  60 001e 822F      		mov r24,r18
+  61               	/* epilogue start */
+  62 0020 0895      		ret
+  63               	.LFE4:
+  64               		.size	isFull, .-isFull
+  65               	.global	isEmpty
+  66               		.type	isEmpty, @function
+  67               	isEmpty:
+  68               	.LFB5:
+  69               	.LM9:
+  70               	.LVL5:
+  71               	/* prologue: function */
+  72               	/* frame size = 0 */
+  73               	.LM10:
+  74 0022 20E0      		ldi r18,lo8(0)
+  75 0024 FC01      		movw r30,r24
+  76 0026 EE5B      		subi r30,lo8(-(66))
+  77 0028 FF4F      		sbci r31,hi8(-(66))
+  78 002a 8081      		ld r24,Z
+  79               	.LVL6:
+  80 002c 8823      		tst r24
+  81 002e 01F4      		brne .L7
+  82 0030 21E0      		ldi r18,lo8(1)
+  83               	.L7:
+  84               	.LM11:
+  85 0032 822F      		mov r24,r18
+  86               	/* epilogue start */
+  87 0034 0895      		ret
+  88               	.LFE5:
+  89               		.size	isEmpty, .-isEmpty
+  90               	.global	enqueue
+  91               		.type	enqueue, @function
+  92               	enqueue:
+  93               	.LFB6:
+  94               	.LM12:
+  95               	.LVL7:
+  96 0036 CF93      		push r28
+  97 0038 DF93      		push r29
+  98               	/* prologue: function */
+  99               	/* frame size = 0 */
+ 100 003a DC01      		movw r26,r24
+ 101               	.LBB31:
+ 102               	.LBB32:
+ 103               	.LM13:
+ 104 003c EC01      		movw r28,r24
+ 105 003e CE5B      		subi r28,lo8(-(66))
+ 106 0040 DF4F      		sbci r29,hi8(-(66))
+ 107 0042 2881      		ld r18,Y
+ 108 0044 2034      		cpi r18,lo8(64)
+ 109 0046 01F4      		brne .L10
+ 110 0048 80E0      		ldi r24,lo8(0)
+ 111               	.LVL8:
+ 112               	.L11:
+ 113               	/* epilogue start */
+ 114               	.LBE32:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 3
+
+
+ 115               	.LBE31:
+ 116               	.LM14:
+ 117 004a DF91      		pop r29
+ 118 004c CF91      		pop r28
+ 119 004e 0895      		ret
+ 120               	.LVL9:
+ 121               	.L10:
+ 122               	.LM15:
+ 123 0050 FC01      		movw r30,r24
+ 124 0052 E05C      		subi r30,lo8(-(64))
+ 125 0054 FF4F      		sbci r31,hi8(-(64))
+ 126 0056 8081      		ld r24,Z
+ 127               	.LVL10:
+ 128 0058 90E0      		ldi r25,lo8(0)
+ 129 005a A80F      		add r26,r24
+ 130 005c B91F      		adc r27,r25
+ 131 005e 6C93      		st X,r22
+ 132               	.LM16:
+ 133 0060 0196      		adiw r24,1
+ 134 0062 8F73      		andi r24,lo8(63)
+ 135 0064 9070      		andi r25,hi8(63)
+ 136 0066 8083      		st Z,r24
+ 137               	.LM17:
+ 138 0068 2F5F      		subi r18,lo8(-(1))
+ 139 006a 2883      		st Y,r18
+ 140 006c 81E0      		ldi r24,lo8(1)
+ 141 006e 00C0      		rjmp .L11
+ 142               	.LFE6:
+ 143               		.size	enqueue, .-enqueue
+ 144               	.global	dequeue
+ 145               		.type	dequeue, @function
+ 146               	dequeue:
+ 147               	.LFB7:
+ 148               	.LM18:
+ 149               	.LVL11:
+ 150 0070 CF93      		push r28
+ 151 0072 DF93      		push r29
+ 152               	/* prologue: function */
+ 153               	/* frame size = 0 */
+ 154 0074 DC01      		movw r26,r24
+ 155               	.LBB33:
+ 156               	.LBB34:
+ 157               	.LM19:
+ 158 0076 EC01      		movw r28,r24
+ 159 0078 CE5B      		subi r28,lo8(-(66))
+ 160 007a DF4F      		sbci r29,hi8(-(66))
+ 161 007c 8881      		ld r24,Y
+ 162               	.LVL12:
+ 163 007e 8823      		tst r24
+ 164 0080 01F4      		brne .L14
+ 165               	.L15:
+ 166               	/* epilogue start */
+ 167               	.LBE34:
+ 168               	.LBE33:
+ 169               	.LM20:
+ 170 0082 DF91      		pop r29
+ 171 0084 CF91      		pop r28
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 4
+
+
+ 172 0086 0895      		ret
+ 173               	.L14:
+ 174               	.LM21:
+ 175 0088 FD01      		movw r30,r26
+ 176 008a EF5B      		subi r30,lo8(-(65))
+ 177 008c FF4F      		sbci r31,hi8(-(65))
+ 178 008e 8081      		ld r24,Z
+ 179 0090 A80F      		add r26,r24
+ 180 0092 B11D      		adc r27,__zero_reg__
+ 181 0094 8C91      		ld r24,X
+ 182 0096 DB01      		movw r26,r22
+ 183               	.LVL13:
+ 184 0098 8C93      		st X,r24
+ 185               	.LM22:
+ 186 009a 8081      		ld r24,Z
+ 187 009c 90E0      		ldi r25,lo8(0)
+ 188 009e 0196      		adiw r24,1
+ 189 00a0 8F73      		andi r24,lo8(63)
+ 190 00a2 9070      		andi r25,hi8(63)
+ 191 00a4 8083      		st Z,r24
+ 192               	.LM23:
+ 193 00a6 8881      		ld r24,Y
+ 194 00a8 8150      		subi r24,lo8(-(-1))
+ 195 00aa 8883      		st Y,r24
+ 196 00ac 81E0      		ldi r24,lo8(1)
+ 197 00ae 00C0      		rjmp .L15
+ 198               	.LFE7:
+ 199               		.size	dequeue, .-dequeue
+ 200               	.global	__vector_18
+ 201               		.type	__vector_18, @function
+ 202               	__vector_18:
+ 203               	.LFB8:
+ 204               	.LM24:
+ 205 00b0 1F92      		push __zero_reg__
+ 206 00b2 0F92      		push r0
+ 207 00b4 0FB6      		in r0,__SREG__
+ 208 00b6 0F92      		push r0
+ 209 00b8 1124      		clr __zero_reg__
+ 210 00ba 2F93      		push r18
+ 211 00bc 3F93      		push r19
+ 212 00be 4F93      		push r20
+ 213 00c0 5F93      		push r21
+ 214 00c2 6F93      		push r22
+ 215 00c4 7F93      		push r23
+ 216 00c6 8F93      		push r24
+ 217 00c8 9F93      		push r25
+ 218 00ca AF93      		push r26
+ 219 00cc BF93      		push r27
+ 220 00ce EF93      		push r30
+ 221 00d0 FF93      		push r31
+ 222               	/* prologue: Signal */
+ 223               	/* frame size = 0 */
+ 224               	.LM25:
+ 225 00d2 6091 C600 		lds r22,198
+ 226               	.LVL14:
+ 227               	.LM26:
+ 228 00d6 6D37      		cpi r22,lo8(125)
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 5
+
+
+ 229 00d8 01F4      		brne .L18
+ 230               	.LM27:
+ 231 00da 81E0      		ldi r24,lo8(1)
+ 232 00dc 8093 0000 		sts esc,r24
+ 233 00e0 00C0      		rjmp .L29
+ 234               	.L18:
+ 235               	.LM28:
+ 236 00e2 6131      		cpi r22,lo8(17)
+ 237 00e4 01F4      		brne .L20
+ 238 00e6 8091 0000 		lds r24,esc
+ 239 00ea 8823      		tst r24
+ 240 00ec 01F4      		brne .L25
+ 241               	.LM29:
+ 242 00ee 81E0      		ldi r24,lo8(1)
+ 243 00f0 8093 0000 		sts flow,r24
+ 244 00f4 00C0      		rjmp .L29
+ 245               	.L20:
+ 246               	.LM30:
+ 247 00f6 6331      		cpi r22,lo8(19)
+ 248 00f8 01F4      		brne .L22
+ 249 00fa 8091 0000 		lds r24,esc
+ 250 00fe 8823      		tst r24
+ 251 0100 01F4      		brne .L25
+ 252               	.LM31:
+ 253 0102 1092 0000 		sts flow,__zero_reg__
+ 254 0106 00C0      		rjmp .L29
+ 255               	.L22:
+ 256               	.LM32:
+ 257 0108 6E37      		cpi r22,lo8(126)
+ 258 010a 01F4      		brne .L24
+ 259 010c 8091 0000 		lds r24,esc
+ 260 0110 8823      		tst r24
+ 261 0112 01F4      		brne .L25
+ 262 0114 00C0      		rjmp .L27
+ 263               	.L24:
+ 264               	.LM33:
+ 265 0116 6331      		cpi r22,lo8(19)
+ 266 0118 01F0      		breq .L25
+ 267               	.L28:
+ 268 011a 6E37      		cpi r22,lo8(126)
+ 269 011c 01F4      		brne .L27
+ 270               	.L25:
+ 271 011e 8091 0000 		lds r24,esc
+ 272 0122 8130      		cpi r24,lo8(1)
+ 273 0124 01F4      		brne .L27
+ 274               	.LM34:
+ 275 0126 1092 0000 		sts esc,__zero_reg__
+ 276               	.L27:
+ 277               	.LM35:
+ 278 012a 80E0      		ldi r24,lo8(rxBuffer)
+ 279 012c 90E0      		ldi r25,hi8(rxBuffer)
+ 280 012e 0E94 0000 		call enqueue
+ 281               	.LVL15:
+ 282               	.L29:
+ 283               	/* epilogue start */
+ 284               	.LM36:
+ 285 0132 FF91      		pop r31
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 6
+
+
+ 286 0134 EF91      		pop r30
+ 287 0136 BF91      		pop r27
+ 288 0138 AF91      		pop r26
+ 289 013a 9F91      		pop r25
+ 290 013c 8F91      		pop r24
+ 291 013e 7F91      		pop r23
+ 292 0140 6F91      		pop r22
+ 293               	.LVL16:
+ 294 0142 5F91      		pop r21
+ 295 0144 4F91      		pop r20
+ 296 0146 3F91      		pop r19
+ 297 0148 2F91      		pop r18
+ 298 014a 0F90      		pop r0
+ 299 014c 0FBE      		out __SREG__,r0
+ 300 014e 0F90      		pop r0
+ 301 0150 1F90      		pop __zero_reg__
+ 302 0152 1895      		reti
+ 303               	.LFE8:
+ 304               		.size	__vector_18, .-__vector_18
+ 305               	.global	__vector_19
+ 306               		.type	__vector_19, @function
+ 307               	__vector_19:
+ 308               	.LFB9:
+ 309               	.LM37:
+ 310 0154 1F92      		push __zero_reg__
+ 311 0156 0F92      		push r0
+ 312 0158 0FB6      		in r0,__SREG__
+ 313 015a 0F92      		push r0
+ 314 015c 1124      		clr __zero_reg__
+ 315 015e 2F93      		push r18
+ 316 0160 3F93      		push r19
+ 317 0162 4F93      		push r20
+ 318 0164 5F93      		push r21
+ 319 0166 6F93      		push r22
+ 320 0168 7F93      		push r23
+ 321 016a 8F93      		push r24
+ 322 016c 9F93      		push r25
+ 323 016e AF93      		push r26
+ 324 0170 BF93      		push r27
+ 325 0172 EF93      		push r30
+ 326 0174 FF93      		push r31
+ 327 0176 DF93      		push r29
+ 328 0178 CF93      		push r28
+ 329 017a 0F92      		push __tmp_reg__
+ 330 017c CDB7      		in r28,__SP_L__
+ 331 017e DEB7      		in r29,__SP_H__
+ 332               	/* prologue: Signal */
+ 333               	/* frame size = 1 */
+ 334               	.LBB35:
+ 335               	.LBB36:
+ 336               	.LM38:
+ 337 0180 8091 0000 		lds r24,txBuffer+66
+ 338 0184 8823      		tst r24
+ 339 0186 01F4      		brne .L33
+ 340               	.LBE36:
+ 341               	.LBE35:
+ 342               	.LM39:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 7
+
+
+ 343 0188 8091 C100 		lds r24,193
+ 344 018c 8F7D      		andi r24,lo8(-33)
+ 345 018e 8093 C100 		sts 193,r24
+ 346 0192 00C0      		rjmp .L35
+ 347               	.L33:
+ 348               	.LBB37:
+ 349               	.LM40:
+ 350 0194 80E0      		ldi r24,lo8(txBuffer)
+ 351 0196 90E0      		ldi r25,hi8(txBuffer)
+ 352 0198 BE01      		movw r22,r28
+ 353 019a 6F5F      		subi r22,lo8(-(1))
+ 354 019c 7F4F      		sbci r23,hi8(-(1))
+ 355 019e 0E94 0000 		call dequeue
+ 356               	.LM41:
+ 357 01a2 8981      		ldd r24,Y+1
+ 358               	.LVL17:
+ 359 01a4 8093 C600 		sts 198,r24
+ 360               	.L35:
+ 361               	/* epilogue start */
+ 362               	.LBE37:
+ 363               	.LM42:
+ 364 01a8 0F90      		pop __tmp_reg__
+ 365 01aa CF91      		pop r28
+ 366 01ac DF91      		pop r29
+ 367 01ae FF91      		pop r31
+ 368 01b0 EF91      		pop r30
+ 369 01b2 BF91      		pop r27
+ 370 01b4 AF91      		pop r26
+ 371 01b6 9F91      		pop r25
+ 372 01b8 8F91      		pop r24
+ 373 01ba 7F91      		pop r23
+ 374 01bc 6F91      		pop r22
+ 375 01be 5F91      		pop r21
+ 376 01c0 4F91      		pop r20
+ 377 01c2 3F91      		pop r19
+ 378 01c4 2F91      		pop r18
+ 379 01c6 0F90      		pop r0
+ 380 01c8 0FBE      		out __SREG__,r0
+ 381 01ca 0F90      		pop r0
+ 382 01cc 1F90      		pop __zero_reg__
+ 383 01ce 1895      		reti
+ 384               	.LFE9:
+ 385               		.size	__vector_19, .-__vector_19
+ 386               	.global	__vector_11
+ 387               		.type	__vector_11, @function
+ 388               	__vector_11:
+ 389               	.LFB10:
+ 390               	.LM43:
+ 391 01d0 1F92      		push __zero_reg__
+ 392 01d2 0F92      		push r0
+ 393 01d4 0FB6      		in r0,__SREG__
+ 394 01d6 0F92      		push r0
+ 395 01d8 1124      		clr __zero_reg__
+ 396 01da 8F93      		push r24
+ 397 01dc 9F93      		push r25
+ 398 01de AF93      		push r26
+ 399 01e0 BF93      		push r27
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 8
+
+
+ 400               	/* prologue: Signal */
+ 401               	/* frame size = 0 */
+ 402               	.LM44:
+ 403 01e2 8091 0000 		lds r24,milisecond_count
+ 404 01e6 9091 0000 		lds r25,(milisecond_count)+1
+ 405 01ea A091 0000 		lds r26,(milisecond_count)+2
+ 406 01ee B091 0000 		lds r27,(milisecond_count)+3
+ 407 01f2 0196      		adiw r24,1
+ 408 01f4 A11D      		adc r26,__zero_reg__
+ 409 01f6 B11D      		adc r27,__zero_reg__
+ 410 01f8 8093 0000 		sts milisecond_count,r24
+ 411 01fc 9093 0000 		sts (milisecond_count)+1,r25
+ 412 0200 A093 0000 		sts (milisecond_count)+2,r26
+ 413 0204 B093 0000 		sts (milisecond_count)+3,r27
+ 414               	/* epilogue start */
+ 415               	.LM45:
+ 416 0208 BF91      		pop r27
+ 417 020a AF91      		pop r26
+ 418 020c 9F91      		pop r25
+ 419 020e 8F91      		pop r24
+ 420 0210 0F90      		pop r0
+ 421 0212 0FBE      		out __SREG__,r0
+ 422 0214 0F90      		pop r0
+ 423 0216 1F90      		pop __zero_reg__
+ 424 0218 1895      		reti
+ 425               	.LFE10:
+ 426               		.size	__vector_11, .-__vector_11
+ 427               	.global	is_flow_on
+ 428               		.type	is_flow_on, @function
+ 429               	is_flow_on:
+ 430               	.LFB15:
+ 431               	.LM46:
+ 432               	/* prologue: function */
+ 433               	/* frame size = 0 */
+ 434               	.LM47:
+ 435 021a 8091 0000 		lds r24,flow
+ 436 021e 8111      		cpse r24,__zero_reg__
+ 437 0220 81E0      		ldi r24,lo8(1)
+ 438               	.L39:
+ 439               	.LM48:
+ 440 0222 0895      		ret
+ 441               	.LFE15:
+ 442               		.size	is_flow_on, .-is_flow_on
+ 443               	.global	USART_Transmit
+ 444               		.type	USART_Transmit, @function
+ 445               	USART_Transmit:
+ 446               	.LFB16:
+ 447               	.LM49:
+ 448               	.LVL18:
+ 449               	/* prologue: function */
+ 450               	/* frame size = 0 */
+ 451 0224 682F      		mov r22,r24
+ 452               	.LBB38:
+ 453               	.LBB39:
+ 454               	.LM50:
+ 455 0226 8091 0000 		lds r24,txBuffer+66
+ 456               	.LVL19:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 9
+
+
+ 457 022a 8034      		cpi r24,lo8(64)
+ 458 022c 01F0      		breq .L42
+ 459               	.LBE39:
+ 460               	.LBE38:
+ 461               	.LM51:
+ 462 022e 80E0      		ldi r24,lo8(txBuffer)
+ 463 0230 90E0      		ldi r25,hi8(txBuffer)
+ 464 0232 0E94 0000 		call enqueue
+ 465               	.LVL20:
+ 466               	.LM52:
+ 467 0236 8091 C100 		lds r24,193
+ 468 023a 8062      		ori r24,lo8(32)
+ 469 023c 8093 C100 		sts 193,r24
+ 470               	/* epilogue start */
+ 471               	.LM53:
+ 472 0240 0895      		ret
+ 473               	.LVL21:
+ 474               	.L42:
+ 475               	.L44:
+ 476 0242 00C0      		rjmp .L44
+ 477               	.LFE16:
+ 478               		.size	USART_Transmit, .-USART_Transmit
+ 479               	.global	flow_on
+ 480               		.type	flow_on, @function
+ 481               	flow_on:
+ 482               	.LFB14:
+ 483               	.LM54:
+ 484               	/* prologue: function */
+ 485               	/* frame size = 0 */
+ 486               	.LM55:
+ 487 0244 81E1      		ldi r24,lo8(17)
+ 488 0246 0E94 0000 		call USART_Transmit
+ 489               	.LM56:
+ 490 024a 81E0      		ldi r24,lo8(1)
+ 491 024c 8093 0000 		sts receiver_flow,r24
+ 492               	/* epilogue start */
+ 493               	.LM57:
+ 494 0250 0895      		ret
+ 495               	.LFE14:
+ 496               		.size	flow_on, .-flow_on
+ 497               	.global	flow_off
+ 498               		.type	flow_off, @function
+ 499               	flow_off:
+ 500               	.LFB13:
+ 501               	.LM58:
+ 502               	/* prologue: function */
+ 503               	/* frame size = 0 */
+ 504               	.LM59:
+ 505 0252 83E1      		ldi r24,lo8(19)
+ 506 0254 0E94 0000 		call USART_Transmit
+ 507               	.LM60:
+ 508 0258 1092 0000 		sts receiver_flow,__zero_reg__
+ 509               	/* epilogue start */
+ 510               	.LM61:
+ 511 025c 0895      		ret
+ 512               	.LFE13:
+ 513               		.size	flow_off, .-flow_off
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 10
+
+
+ 514               	.global	USART_Receive
+ 515               		.type	USART_Receive, @function
+ 516               	USART_Receive:
+ 517               	.LFB17:
+ 518               	.LM62:
+ 519 025e DF93      		push r29
+ 520 0260 CF93      		push r28
+ 521 0262 0F92      		push __tmp_reg__
+ 522 0264 CDB7      		in r28,__SP_L__
+ 523 0266 DEB7      		in r29,__SP_H__
+ 524               	/* prologue: function */
+ 525               	/* frame size = 1 */
+ 526               	.LBB40:
+ 527               	.LBB41:
+ 528               	.LM63:
+ 529 0268 8091 0000 		lds r24,rxBuffer+66
+ 530 026c 8823      		tst r24
+ 531 026e 01F0      		breq .L50
+ 532               	.LBE41:
+ 533               	.LBE40:
+ 534               	.LM64:
+ 535 0270 80E0      		ldi r24,lo8(rxBuffer)
+ 536 0272 90E0      		ldi r25,hi8(rxBuffer)
+ 537 0274 BE01      		movw r22,r28
+ 538 0276 6F5F      		subi r22,lo8(-(1))
+ 539 0278 7F4F      		sbci r23,hi8(-(1))
+ 540 027a 0E94 0000 		call dequeue
+ 541               	.LM65:
+ 542 027e 8981      		ldd r24,Y+1
+ 543               	.LVL22:
+ 544               	/* epilogue start */
+ 545 0280 0F90      		pop __tmp_reg__
+ 546 0282 CF91      		pop r28
+ 547 0284 DF91      		pop r29
+ 548 0286 0895      		ret
+ 549               	.LVL23:
+ 550               	.L50:
+ 551               	.L52:
+ 552 0288 00C0      		rjmp .L52
+ 553               	.LFE17:
+ 554               		.size	USART_Receive, .-USART_Receive
+ 555               	.global	usart_init
+ 556               		.type	usart_init, @function
+ 557               	usart_init:
+ 558               	.LFB18:
+ 559               	.LM66:
+ 560               	/* prologue: function */
+ 561               	/* frame size = 0 */
+ 562               	.LM67:
+ 563 028a 5198      		cbi 42-32,1
+ 564               	.LM68:
+ 565 028c 509A      		sbi 42-32,0
+ 566               	.LM69:
+ 567 028e 1092 C000 		sts 192,__zero_reg__
+ 568               	.LM70:
+ 569 0292 82E0      		ldi r24,lo8(2)
+ 570 0294 8093 C500 		sts 197,r24
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 11
+
+
+ 571               	.LM71:
+ 572 0298 85EC      		ldi r24,lo8(-59)
+ 573 029a 8093 C400 		sts 196,r24
+ 574               	.LM72:
+ 575 029e E1EC      		ldi r30,lo8(193)
+ 576 02a0 F0E0      		ldi r31,hi8(193)
+ 577 02a2 88EF      		ldi r24,lo8(-8)
+ 578 02a4 8083      		st Z,r24
+ 579               	.LM73:
+ 580 02a6 8081      		ld r24,Z
+ 581 02a8 8B7F      		andi r24,lo8(-5)
+ 582 02aa 8083      		st Z,r24
+ 583               	.LM74:
+ 584 02ac 86E0      		ldi r24,lo8(6)
+ 585 02ae 8093 C200 		sts 194,r24
+ 586               	.LBB42:
+ 587               	.LBB43:
+ 588               	.LM75:
+ 589 02b2 1092 0000 		sts rxBuffer+64,__zero_reg__
+ 590               	.LM76:
+ 591 02b6 1092 0000 		sts rxBuffer+65,__zero_reg__
+ 592               	.LM77:
+ 593 02ba 1092 0000 		sts rxBuffer+66,__zero_reg__
+ 594               	.LBE43:
+ 595               	.LBE42:
+ 596               	.LBB44:
+ 597               	.LBB45:
+ 598               	.LM78:
+ 599 02be 1092 0000 		sts txBuffer+64,__zero_reg__
+ 600               	.LM79:
+ 601 02c2 1092 0000 		sts txBuffer+65,__zero_reg__
+ 602               	.LM80:
+ 603 02c6 1092 0000 		sts txBuffer+66,__zero_reg__
+ 604               	/* epilogue start */
+ 605               	.LBE45:
+ 606               	.LBE44:
+ 607               	.LM81:
+ 608 02ca 0895      		ret
+ 609               	.LFE18:
+ 610               		.size	usart_init, .-usart_init
+ 611               	.global	initTimer1
+ 612               		.type	initTimer1, @function
+ 613               	initTimer1:
+ 614               	.LFB19:
+ 615               	.LM82:
+ 616               	/* prologue: function */
+ 617               	/* frame size = 0 */
+ 618               	.LM83:
+ 619 02cc E1E8      		ldi r30,lo8(129)
+ 620 02ce F0E0      		ldi r31,hi8(129)
+ 621 02d0 8081      		ld r24,Z
+ 622 02d2 8860      		ori r24,lo8(8)
+ 623 02d4 8083      		st Z,r24
+ 624               	.LM84:
+ 625 02d6 AFE6      		ldi r26,lo8(111)
+ 626 02d8 B0E0      		ldi r27,hi8(111)
+ 627 02da 8C91      		ld r24,X
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 12
+
+
+ 628 02dc 8260      		ori r24,lo8(2)
+ 629 02de 8C93      		st X,r24
+ 630               	.LM85:
+ 631 02e0 8081      		ld r24,Z
+ 632 02e2 8360      		ori r24,lo8(3)
+ 633 02e4 8083      		st Z,r24
+ 634               	.LM86:
+ 635 02e6 89EF      		ldi r24,lo8(249)
+ 636 02e8 90E0      		ldi r25,hi8(249)
+ 637 02ea 9093 8900 		sts (136)+1,r25
+ 638 02ee 8093 8800 		sts 136,r24
+ 639               	/* epilogue start */
+ 640               	.LM87:
+ 641 02f2 0895      		ret
+ 642               	.LFE19:
+ 643               		.size	initTimer1, .-initTimer1
+ 644               	.global	delay
+ 645               		.type	delay, @function
+ 646               	delay:
+ 647               	.LFB20:
+ 648               	.LM88:
+ 649               	.LVL24:
+ 650 02f4 EF92      		push r14
+ 651 02f6 FF92      		push r15
+ 652 02f8 0F93      		push r16
+ 653 02fa 1F93      		push r17
+ 654               	/* prologue: function */
+ 655               	/* frame size = 0 */
+ 656 02fc 7B01      		movw r14,r22
+ 657 02fe 8C01      		movw r16,r24
+ 658               	.LM89:
+ 659 0300 2091 0000 		lds r18,milisecond_count
+ 660 0304 3091 0000 		lds r19,(milisecond_count)+1
+ 661 0308 4091 0000 		lds r20,(milisecond_count)+2
+ 662 030c 5091 0000 		lds r21,(milisecond_count)+3
+ 663               	.LVL25:
+ 664               	.L58:
+ 665               	.LM90:
+ 666 0310 8091 0000 		lds r24,milisecond_count
+ 667 0314 9091 0000 		lds r25,(milisecond_count)+1
+ 668 0318 A091 0000 		lds r26,(milisecond_count)+2
+ 669 031c B091 0000 		lds r27,(milisecond_count)+3
+ 670 0320 821B      		sub r24,r18
+ 671 0322 930B      		sbc r25,r19
+ 672 0324 A40B      		sbc r26,r20
+ 673 0326 B50B      		sbc r27,r21
+ 674 0328 8E15      		cp r24,r14
+ 675 032a 9F05      		cpc r25,r15
+ 676 032c A007      		cpc r26,r16
+ 677 032e B107      		cpc r27,r17
+ 678 0330 00F0      		brlo .L58
+ 679               	/* epilogue start */
+ 680               	.LM91:
+ 681 0332 1F91      		pop r17
+ 682 0334 0F91      		pop r16
+ 683 0336 FF90      		pop r15
+ 684 0338 EF90      		pop r14
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 13
+
+
+ 685               	.LVL26:
+ 686 033a 0895      		ret
+ 687               	.LFE20:
+ 688               		.size	delay, .-delay
+ 689               	.global	read
+ 690               		.type	read, @function
+ 691               	read:
+ 692               	.LFB12:
+ 693               	.LM92:
+ 694               	.LVL27:
+ 695 033c 0F93      		push r16
+ 696 033e 1F93      		push r17
+ 697 0340 CF93      		push r28
+ 698 0342 DF93      		push r29
+ 699               	/* prologue: function */
+ 700               	/* frame size = 0 */
+ 701 0344 EC01      		movw r28,r24
+ 702 0346 162F      		mov r17,r22
+ 703               	.LM93:
+ 704 0348 00E0      		ldi r16,lo8(0)
+ 705               	.LVL28:
+ 706 034a 00C0      		rjmp .L62
+ 707               	.LVL29:
+ 708               	.L68:
+ 709               	.LM94:
+ 710 034c 0E94 0000 		call USART_Receive
+ 711               	.LVL30:
+ 712 0350 482F      		mov r20,r24
+ 713               	.LVL31:
+ 714               	.LM95:
+ 715 0352 8091 0000 		lds r24,receiver_flow
+ 716 0356 8823      		tst r24
+ 717 0358 01F4      		brne .L63
+ 718 035a 00E0      		ldi r16,lo8(0)
+ 719 035c 00C0      		rjmp .L64
+ 720               	.L63:
+ 721 035e 2091 0000 		lds r18,position.1591
+ 722               	.LM96:
+ 723 0362 4E37      		cpi r20,lo8(126)
+ 724 0364 01F4      		brne .L65
+ 725               	.LM97:
+ 726 0366 C20F      		add r28,r18
+ 727 0368 D11D      		adc r29,__zero_reg__
+ 728 036a 1882      		st Y,__zero_reg__
+ 729               	.LM98:
+ 730 036c 1092 0000 		sts position.1591,__zero_reg__
+ 731 0370 00C0      		rjmp .L64
+ 732               	.L65:
+ 733               	.LM99:
+ 734 0372 822F      		mov r24,r18
+ 735 0374 90E0      		ldi r25,lo8(0)
+ 736 0376 DE01      		movw r26,r28
+ 737 0378 0D90      		ld __tmp_reg__,X+
+ 738 037a 0020      		tst __tmp_reg__
+ 739 037c 01F4      		brne .-6
+ 740 037e 1197      		sbiw r26,1
+ 741 0380 AC1B      		sub r26,r28
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 14
+
+
+ 742 0382 BD0B      		sbc r27,r29
+ 743 0384 312F      		mov r19,r17
+ 744 0386 3150      		subi r19,lo8(-(-1))
+ 745               	.LVL32:
+ 746 0388 FE01      		movw r30,r28
+ 747 038a E80F      		add r30,r24
+ 748 038c F91F      		adc r31,r25
+ 749 038e A817      		cp r26,r24
+ 750 0390 B907      		cpc r27,r25
+ 751 0392 00F4      		brsh .L66
+ 752               	.LM100:
+ 753 0394 1082      		st Z,__zero_reg__
+ 754               	.LM101:
+ 755 0396 1092 0000 		sts position.1591,__zero_reg__
+ 756 039a 00C0      		rjmp .L67
+ 757               	.L66:
+ 758               	.LM102:
+ 759 039c 4083      		st Z,r20
+ 760               	.LM103:
+ 761 039e 0F5F      		subi r16,lo8(-(1))
+ 762               	.LM104:
+ 763 03a0 2F5F      		subi r18,lo8(-(1))
+ 764 03a2 2093 0000 		sts position.1591,r18
+ 765 03a6 132F      		mov r17,r19
+ 766               	.LVL33:
+ 767               	.L62:
+ 768               	.LM105:
+ 769 03a8 1123      		tst r17
+ 770 03aa 01F4      		brne .L68
+ 771               	.LVL34:
+ 772               	.L67:
+ 773 03ac 012F      		mov r16,r17
+ 774               	.LVL35:
+ 775               	.L64:
+ 776               	.LM106:
+ 777 03ae 802F      		mov r24,r16
+ 778               	/* epilogue start */
+ 779 03b0 DF91      		pop r29
+ 780 03b2 CF91      		pop r28
+ 781               	.LVL36:
+ 782 03b4 1F91      		pop r17
+ 783               	.LVL37:
+ 784 03b6 0F91      		pop r16
+ 785               	.LVL38:
+ 786 03b8 0895      		ret
+ 787               	.LFE12:
+ 788               		.size	read, .-read
+ 789               	.global	write
+ 790               		.type	write, @function
+ 791               	write:
+ 792               	.LFB11:
+ 793               	.LM107:
+ 794               	.LVL39:
+ 795 03ba BF92      		push r11
+ 796 03bc CF92      		push r12
+ 797 03be DF92      		push r13
+ 798 03c0 EF92      		push r14
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 15
+
+
+ 799 03c2 FF92      		push r15
+ 800 03c4 0F93      		push r16
+ 801 03c6 1F93      		push r17
+ 802 03c8 CF93      		push r28
+ 803 03ca DF93      		push r29
+ 804               	/* prologue: function */
+ 805               	/* frame size = 0 */
+ 806 03cc 7C01      		movw r14,r24
+ 807 03ce C62E      		mov r12,r22
+ 808 03d0 B42E      		mov r11,r20
+ 809               	.LM108:
+ 810 03d2 DD24      		clr r13
+ 811               	.LVL40:
+ 812 03d4 00C0      		rjmp .L71
+ 813               	.LVL41:
+ 814               	.L80:
+ 815               	.LBB46:
+ 816               	.LBB47:
+ 817               	.LM109:
+ 818 03d6 8091 0000 		lds r24,flow
+ 819 03da 8823      		tst r24
+ 820 03dc 01F4      		brne .L72
+ 821 03de DD24      		clr r13
+ 822 03e0 00C0      		rjmp .L73
+ 823               	.L72:
+ 824               	.LBE47:
+ 825               	.LBE46:
+ 826               	.LM110:
+ 827 03e2 0091 0000 		lds r16,position.1566
+ 828 03e6 C02F      		mov r28,r16
+ 829 03e8 D0E0      		ldi r29,lo8(0)
+ 830 03ea F701      		movw r30,r14
+ 831 03ec 0190      		ld __tmp_reg__,Z+
+ 832 03ee 0020      		tst __tmp_reg__
+ 833 03f0 01F4      		brne .-6
+ 834 03f2 3197      		sbiw r30,1
+ 835 03f4 EE19      		sub r30,r14
+ 836 03f6 FF09      		sbc r31,r15
+ 837 03f8 EC17      		cp r30,r28
+ 838 03fa FD07      		cpc r31,r29
+ 839 03fc 00F0      		brlo .L74
+ 840 03fe CE0D      		add r28,r14
+ 841 0400 DF1D      		adc r29,r15
+ 842 0402 1881      		ld r17,Y
+ 843 0404 1123      		tst r17
+ 844 0406 01F4      		brne .L75
+ 845               	.L74:
+ 846               	.LM111:
+ 847 0408 1092 0000 		sts position.1566,__zero_reg__
+ 848 040c 00C0      		rjmp .L76
+ 849               	.L75:
+ 850               	.LM112:
+ 851 040e 1131      		cpi r17,lo8(17)
+ 852 0410 01F0      		breq .L77
+ 853 0412 1331      		cpi r17,lo8(19)
+ 854 0414 01F0      		breq .L77
+ 855 0416 1E37      		cpi r17,lo8(126)
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 16
+
+
+ 856 0418 01F0      		breq .L77
+ 857 041a 1D37      		cpi r17,lo8(125)
+ 858 041c 01F4      		brne .L78
+ 859               	.L77:
+ 860               	.LM113:
+ 861 041e 8DE7      		ldi r24,lo8(125)
+ 862 0420 0E94 0000 		call USART_Transmit
+ 863               	.LVL42:
+ 864               	.L78:
+ 865               	.LM114:
+ 866 0424 812F      		mov r24,r17
+ 867 0426 0E94 0000 		call USART_Transmit
+ 868               	.LM115:
+ 869 042a D394      		inc r13
+ 870               	.LM116:
+ 871 042c 0F5F      		subi r16,lo8(-(1))
+ 872 042e 0093 0000 		sts position.1566,r16
+ 873               	.LVL43:
+ 874               	.L71:
+ 875               	.LM117:
+ 876 0432 CD14      		cp r12,r13
+ 877 0434 01F4      		brne .L80
+ 878               	.L76:
+ 879               	.LM118:
+ 880 0436 BB20      		tst r11
+ 881 0438 01F0      		breq .L73
+ 882               	.LM119:
+ 883 043a 8EE7      		ldi r24,lo8(126)
+ 884 043c 0E94 0000 		call USART_Transmit
+ 885               	.LM120:
+ 886 0440 1092 0000 		sts position.1566,__zero_reg__
+ 887               	.LVL44:
+ 888               	.L73:
+ 889               	.LM121:
+ 890 0444 8D2D      		mov r24,r13
+ 891               	/* epilogue start */
+ 892 0446 DF91      		pop r29
+ 893 0448 CF91      		pop r28
+ 894 044a 1F91      		pop r17
+ 895 044c 0F91      		pop r16
+ 896 044e FF90      		pop r15
+ 897 0450 EF90      		pop r14
+ 898               	.LVL45:
+ 899 0452 DF90      		pop r13
+ 900               	.LVL46:
+ 901 0454 CF90      		pop r12
+ 902               	.LVL47:
+ 903 0456 BF90      		pop r11
+ 904               	.LVL48:
+ 905 0458 0895      		ret
+ 906               	.LFE11:
+ 907               		.size	write, .-write
+ 908               	.global	main
+ 909               		.type	main, @function
+ 910               	main:
+ 911               	.LFB2:
+ 912               	.LM122:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 17
+
+
+ 913 045a 0F93      		push r16
+ 914 045c 1F93      		push r17
+ 915 045e CF93      		push r28
+ 916 0460 DF93      		push r29
+ 917               	/* prologue: function */
+ 918               	/* frame size = 0 */
+ 919               	.LM123:
+ 920 0462 259A      		sbi 36-32,5
+ 921               	.LM124:
+ 922 0464 2D98      		cbi 37-32,5
+ 923               	.LM125:
+ 924 0466 0E94 0000 		call usart_init
+ 925               	.LM126:
+ 926 046a 0E94 0000 		call initTimer1
+ 927               	.LM127:
+ 928               	/* #APP */
+ 929               	 ;  55 "main.c" 1
+ 930 046e 7894      		sei
+ 931               	 ;  0 "" 2
+ 932               	.LM128:
+ 933               	/* #NOAPP */
+ 934 0470 00E0      		ldi r16,lo8(str1)
+ 935 0472 10E0      		ldi r17,hi8(str1)
+ 936 0474 F801      		movw r30,r16
+ 937 0476 0190      		ld __tmp_reg__,Z+
+ 938 0478 0020      		tst __tmp_reg__
+ 939 047a 01F4      		brne .-6
+ 940 047c 3197      		sbiw r30,1
+ 941 047e E01B      		sub r30,r16
+ 942 0480 F10B      		sbc r31,r17
+ 943 0482 C801      		movw r24,r16
+ 944 0484 6E2F      		mov r22,r30
+ 945 0486 41E0      		ldi r20,lo8(1)
+ 946 0488 0E94 0000 		call write
+ 947               	.LM129:
+ 948 048c F801      		movw r30,r16
+ 949 048e 0190      		ld __tmp_reg__,Z+
+ 950 0490 0020      		tst __tmp_reg__
+ 951 0492 01F4      		brne .-6
+ 952 0494 8F01      		movw r16,r30
+ 953 0496 0150      		subi r16,lo8(-(-1))
+ 954 0498 1040      		sbci r17,hi8(-(-1))
+ 955 049a 0050      		subi r16,lo8(str1)
+ 956 049c 1040      		sbci r17,hi8(str1)
+ 957 049e 00C0      		rjmp .L117
+ 958               	.LVL49:
+ 959               	.L85:
+ 960               	.LM130:
+ 961 04a0 0A30      		cpi r16,lo8(10)
+ 962 04a2 00F4      		brsh .L84
+ 963               	.LM131:
+ 964 04a4 80E0      		ldi r24,lo8(str1)
+ 965 04a6 90E0      		ldi r25,hi8(str1)
+ 966 04a8 6AE0      		ldi r22,lo8(10)
+ 967 04aa 41E0      		ldi r20,lo8(1)
+ 968 04ac 0E94 0000 		call write
+ 969 04b0 00C0      		rjmp .L117
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 18
+
+
+ 970               	.L84:
+ 971               	.LM132:
+ 972 04b2 80E0      		ldi r24,lo8(str1)
+ 973 04b4 90E0      		ldi r25,hi8(str1)
+ 974 04b6 6AE0      		ldi r22,lo8(10)
+ 975 04b8 40E0      		ldi r20,lo8(0)
+ 976 04ba 0E94 0000 		call write
+ 977 04be 081B      		sub r16,r24
+ 978               	.L117:
+ 979               	.LM133:
+ 980 04c0 0023      		tst r16
+ 981 04c2 01F4      		brne .L85
+ 982 04c4 C0E0      		ldi r28,lo8(0)
+ 983 04c6 D0E0      		ldi r29,hi8(0)
+ 984               	.LVL50:
+ 985               	.L86:
+ 986               	.LM134:
+ 987 04c8 80E0      		ldi r24,lo8(readBuffer)
+ 988 04ca 90E0      		ldi r25,hi8(readBuffer)
+ 989 04cc 61E0      		ldi r22,lo8(1)
+ 990 04ce 0E94 0000 		call read
+ 991 04d2 90E0      		ldi r25,lo8(0)
+ 992 04d4 0197      		sbiw r24,1
+ 993 04d6 C80F      		add r28,r24
+ 994 04d8 D91F      		adc r29,r25
+ 995               	.LM135:
+ 996 04da F1E0      		ldi r31,hi8(301)
+ 997 04dc CD32      		cpi r28,lo8(301)
+ 998 04de DF07      		cpc r29,r31
+ 999 04e0 00F0      		brlo .L86
+ 1000               	.LM136:
+ 1001 04e2 0E94 0000 		call flow_off
+ 1002               	.LBB48:
+ 1003               	.LBB49:
+ 1004               	.LM137:
+ 1005 04e6 8091 0000 		lds r24,flow
+ 1006 04ea 8823      		tst r24
+ 1007 04ec 01F4      		brne .L87
+ 1008 04ee 05E0      		ldi r16,lo8(5)
+ 1009               	.LVL51:
+ 1010               	.LBE49:
+ 1011               	.LBE48:
+ 1012               	.LM138:
+ 1013 04f0 60E2      		ldi r22,lo8(32)
+ 1014 04f2 00C0      		rjmp .L88
+ 1015               	.LVL52:
+ 1016               	.L87:
+ 1017               	.LM139:
+ 1018 04f4 2D9A      		sbi 37-32,5
+ 1019               	.LBB50:
+ 1020               	.LBB51:
+ 1021               	.LM140:
+ 1022 04f6 2091 0000 		lds r18,milisecond_count
+ 1023 04fa 3091 0000 		lds r19,(milisecond_count)+1
+ 1024 04fe 4091 0000 		lds r20,(milisecond_count)+2
+ 1025 0502 5091 0000 		lds r21,(milisecond_count)+3
+ 1026               	.LVL53:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 19
+
+
+ 1027 0506 00C0      		rjmp .L89
+ 1028               	.LVL54:
+ 1029               	.L91:
+ 1030               	.LBE51:
+ 1031               	.LBE50:
+ 1032               	.LM141:
+ 1033 0508 85B1      		in r24,37-32
+ 1034 050a 8627      		eor r24,r22
+ 1035 050c 85B9      		out 37-32,r24
+ 1036               	.LBB53:
+ 1037               	.LBB54:
+ 1038               	.LM142:
+ 1039 050e 2091 0000 		lds r18,milisecond_count
+ 1040 0512 3091 0000 		lds r19,(milisecond_count)+1
+ 1041 0516 4091 0000 		lds r20,(milisecond_count)+2
+ 1042 051a 5091 0000 		lds r21,(milisecond_count)+3
+ 1043               	.L90:
+ 1044               	.LM143:
+ 1045 051e 8091 0000 		lds r24,milisecond_count
+ 1046 0522 9091 0000 		lds r25,(milisecond_count)+1
+ 1047 0526 A091 0000 		lds r26,(milisecond_count)+2
+ 1048 052a B091 0000 		lds r27,(milisecond_count)+3
+ 1049 052e 821B      		sub r24,r18
+ 1050 0530 930B      		sbc r25,r19
+ 1051 0532 A40B      		sbc r26,r20
+ 1052 0534 B50B      		sbc r27,r21
+ 1053 0536 885E      		subi r24,lo8(1000)
+ 1054 0538 9340      		sbci r25,hi8(1000)
+ 1055 053a A040      		sbci r26,hlo8(1000)
+ 1056 053c B040      		sbci r27,hhi8(1000)
+ 1057 053e 00F0      		brlo .L90
+ 1058               	.L88:
+ 1059               	.LBE54:
+ 1060               	.LBE53:
+ 1061               	.LM144:
+ 1062 0540 0150      		subi r16,1
+ 1063 0542 00F4      		brcc .L91
+ 1064 0544 00C0      		rjmp .L92
+ 1065               	.LVL55:
+ 1066               	.L89:
+ 1067               	.LBB55:
+ 1068               	.LBB52:
+ 1069               	.LM145:
+ 1070 0546 8091 0000 		lds r24,milisecond_count
+ 1071 054a 9091 0000 		lds r25,(milisecond_count)+1
+ 1072 054e A091 0000 		lds r26,(milisecond_count)+2
+ 1073 0552 B091 0000 		lds r27,(milisecond_count)+3
+ 1074 0556 821B      		sub r24,r18
+ 1075 0558 930B      		sbc r25,r19
+ 1076 055a A40B      		sbc r26,r20
+ 1077 055c B50B      		sbc r27,r21
+ 1078 055e 8858      		subi r24,lo8(5000)
+ 1079 0560 9341      		sbci r25,hi8(5000)
+ 1080 0562 A040      		sbci r26,hlo8(5000)
+ 1081 0564 B040      		sbci r27,hhi8(5000)
+ 1082 0566 00F0      		brlo .L89
+ 1083               	.LBE52:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 20
+
+
+ 1084               	.LBE55:
+ 1085               	.LM146:
+ 1086 0568 2D98      		cbi 37-32,5
+ 1087 056a 05E0      		ldi r16,lo8(5)
+ 1088               	.LVL56:
+ 1089               	.L92:
+ 1090               	.LM147:
+ 1091 056c 2D98      		cbi 37-32,5
+ 1092               	.LM148:
+ 1093 056e 0E94 0000 		call flow_off
+ 1094               	.LVL57:
+ 1095               	.LBB56:
+ 1096               	.LBB57:
+ 1097               	.LM149:
+ 1098 0572 8091 0000 		lds r24,flow
+ 1099 0576 8823      		tst r24
+ 1100 0578 01F0      		breq .L93
+ 1101               	.LBE57:
+ 1102               	.LBE56:
+ 1103               	.LM150:
+ 1104 057a 2D9A      		sbi 37-32,5
+ 1105               	.LBB58:
+ 1106               	.LBB59:
+ 1107               	.LM151:
+ 1108 057c 2091 0000 		lds r18,milisecond_count
+ 1109 0580 3091 0000 		lds r19,(milisecond_count)+1
+ 1110 0584 4091 0000 		lds r20,(milisecond_count)+2
+ 1111 0588 5091 0000 		lds r21,(milisecond_count)+3
+ 1112               	.LVL58:
+ 1113 058c 00C0      		rjmp .L94
+ 1114               	.LVL59:
+ 1115               	.L93:
+ 1116               	.LBE59:
+ 1117               	.LBE58:
+ 1118               	.LM152:
+ 1119 058e 60E2      		ldi r22,lo8(32)
+ 1120               	.LVL60:
+ 1121               	.L107:
+ 1122 0590 85B1      		in r24,37-32
+ 1123 0592 8627      		eor r24,r22
+ 1124 0594 85B9      		out 37-32,r24
+ 1125               	.LBB61:
+ 1126               	.LBB62:
+ 1127               	.LM153:
+ 1128 0596 2091 0000 		lds r18,milisecond_count
+ 1129 059a 3091 0000 		lds r19,(milisecond_count)+1
+ 1130 059e 4091 0000 		lds r20,(milisecond_count)+2
+ 1131 05a2 5091 0000 		lds r21,(milisecond_count)+3
+ 1132               	.L95:
+ 1133               	.LM154:
+ 1134 05a6 8091 0000 		lds r24,milisecond_count
+ 1135 05aa 9091 0000 		lds r25,(milisecond_count)+1
+ 1136 05ae A091 0000 		lds r26,(milisecond_count)+2
+ 1137 05b2 B091 0000 		lds r27,(milisecond_count)+3
+ 1138 05b6 821B      		sub r24,r18
+ 1139 05b8 930B      		sbc r25,r19
+ 1140 05ba A40B      		sbc r26,r20
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 21
+
+
+ 1141 05bc B50B      		sbc r27,r21
+ 1142 05be 885E      		subi r24,lo8(1000)
+ 1143 05c0 9340      		sbci r25,hi8(1000)
+ 1144 05c2 A040      		sbci r26,hlo8(1000)
+ 1145 05c4 B040      		sbci r27,hhi8(1000)
+ 1146 05c6 00F0      		brlo .L95
+ 1147 05c8 0150      		subi r16,lo8(-(-1))
+ 1148               	.LBE62:
+ 1149               	.LBE61:
+ 1150               	.LM155:
+ 1151 05ca 01F4      		brne .L107
+ 1152 05cc 00C0      		rjmp .L96
+ 1153               	.LVL61:
+ 1154               	.L94:
+ 1155               	.LBB63:
+ 1156               	.LBB60:
+ 1157               	.LM156:
+ 1158 05ce 8091 0000 		lds r24,milisecond_count
+ 1159 05d2 9091 0000 		lds r25,(milisecond_count)+1
+ 1160 05d6 A091 0000 		lds r26,(milisecond_count)+2
+ 1161 05da B091 0000 		lds r27,(milisecond_count)+3
+ 1162 05de 821B      		sub r24,r18
+ 1163 05e0 930B      		sbc r25,r19
+ 1164 05e2 A40B      		sbc r26,r20
+ 1165 05e4 B50B      		sbc r27,r21
+ 1166 05e6 8858      		subi r24,lo8(5000)
+ 1167 05e8 9341      		sbci r25,hi8(5000)
+ 1168 05ea A040      		sbci r26,hlo8(5000)
+ 1169 05ec B040      		sbci r27,hhi8(5000)
+ 1170 05ee 00F0      		brlo .L94
+ 1171               	.LBE60:
+ 1172               	.LBE63:
+ 1173               	.LM157:
+ 1174 05f0 2D98      		cbi 37-32,5
+ 1175               	.LVL62:
+ 1176               	.L96:
+ 1177               	.LM158:
+ 1178 05f2 2D98      		cbi 37-32,5
+ 1179               	.LM159:
+ 1180 05f4 C0E0      		ldi r28,lo8(binary_string)
+ 1181 05f6 D0E0      		ldi r29,hi8(binary_string)
+ 1182               	.LVL63:
+ 1183               	.L118:
+ 1184 05f8 FE01      		movw r30,r28
+ 1185 05fa 0190      		ld __tmp_reg__,Z+
+ 1186 05fc 0020      		tst __tmp_reg__
+ 1187 05fe 01F4      		brne .-6
+ 1188 0600 3197      		sbiw r30,1
+ 1189 0602 E050      		subi r30,lo8(binary_string)
+ 1190 0604 F040      		sbci r31,hi8(binary_string)
+ 1191 0606 80E0      		ldi r24,lo8(binary_string)
+ 1192 0608 90E0      		ldi r25,hi8(binary_string)
+ 1193 060a 6E2F      		mov r22,r30
+ 1194 060c 40E0      		ldi r20,lo8(0)
+ 1195 060e 0E94 0000 		call write
+ 1196               	.LVL64:
+ 1197 0612 8823      		tst r24
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 22
+
+
+ 1198 0614 01F4      		brne .L97
+ 1199               	.LM160:
+ 1200 0616 2D9A      		sbi 37-32,5
+ 1201 0618 00C0      		rjmp .L118
+ 1202               	.L97:
+ 1203               	.LM161:
+ 1204 061a FE01      		movw r30,r28
+ 1205 061c 0190      		ld __tmp_reg__,Z+
+ 1206 061e 0020      		tst __tmp_reg__
+ 1207 0620 01F4      		brne .-6
+ 1208 0622 3197      		sbiw r30,1
+ 1209 0624 E050      		subi r30,lo8(binary_string)
+ 1210 0626 F040      		sbci r31,hi8(binary_string)
+ 1211 0628 80E0      		ldi r24,lo8(binary_string)
+ 1212 062a 90E0      		ldi r25,hi8(binary_string)
+ 1213 062c 6E2F      		mov r22,r30
+ 1214 062e 40E0      		ldi r20,lo8(0)
+ 1215 0630 0E94 0000 		call write
+ 1216 0634 FE01      		movw r30,r28
+ 1217 0636 0190      		ld __tmp_reg__,Z+
+ 1218 0638 0020      		tst __tmp_reg__
+ 1219 063a 01F4      		brne .-6
+ 1220 063c 3197      		sbiw r30,1
+ 1221 063e E050      		subi r30,lo8(binary_string)
+ 1222 0640 F040      		sbci r31,hi8(binary_string)
+ 1223 0642 90E0      		ldi r25,lo8(0)
+ 1224 0644 8E17      		cp r24,r30
+ 1225 0646 9F07      		cpc r25,r31
+ 1226 0648 01F0      		breq .L116
+ 1227               	.LM162:
+ 1228 064a 2D98      		cbi 37-32,5
+ 1229 064c 00C0      		rjmp .L118
+ 1230               	.L116:
+ 1231               	.LM163:
+ 1232 064e 80E0      		ldi r24,lo8(readBuffer)
+ 1233 0650 90E0      		ldi r25,hi8(readBuffer)
+ 1234 0652 6EEF      		ldi r22,lo8(-2)
+ 1235 0654 0E94 0000 		call read
+ 1236               	.LM164:
+ 1237 0658 80E0      		ldi r24,lo8(str2)
+ 1238 065a 90E0      		ldi r25,hi8(str2)
+ 1239 065c 60E0      		ldi r22,lo8(readBuffer)
+ 1240 065e 70E0      		ldi r23,hi8(readBuffer)
+ 1241 0660 0E94 0000 		call strcmp
+ 1242 0664 0097      		sbiw r24,0
+ 1243 0666 01F4      		brne .L100
+ 1244               	.LM165:
+ 1245 0668 2D9A      		sbi 37-32,5
+ 1246 066a 00C0      		rjmp .L106
+ 1247               	.L100:
+ 1248               	.LM166:
+ 1249 066c 2D98      		cbi 37-32,5
+ 1250               	.L106:
+ 1251               	.LM167:
+ 1252 066e 80E0      		ldi r24,lo8(readBuffer)
+ 1253 0670 90E0      		ldi r25,hi8(readBuffer)
+ 1254 0672 6AE0      		ldi r22,lo8(10)
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 23
+
+
+ 1255 0674 0E94 0000 		call read
+ 1256 0678 8B30      		cpi r24,lo8(11)
+ 1257 067a 01F0      		breq .L106
+ 1258               	.LM168:
+ 1259 067c 80E0      		ldi r24,lo8(str2)
+ 1260 067e 90E0      		ldi r25,hi8(str2)
+ 1261 0680 60E0      		ldi r22,lo8(readBuffer)
+ 1262 0682 70E0      		ldi r23,hi8(readBuffer)
+ 1263 0684 0E94 0000 		call strcmp
+ 1264 0688 0097      		sbiw r24,0
+ 1265 068a 01F4      		brne .L102
+ 1266               	.LM169:
+ 1267 068c 2D9A      		sbi 37-32,5
+ 1268 068e 00C0      		rjmp .L116
+ 1269               	.L102:
+ 1270               	.LM170:
+ 1271 0690 2D98      		cbi 37-32,5
+ 1272 0692 00C0      		rjmp .L116
+ 1273               	.LFE2:
+ 1274               		.size	main, .-main
+ 1275               		.lcomm flow,1
+ 1276               		.data
+ 1277               		.type	receiver_flow, @object
+ 1278               		.size	receiver_flow, 1
+ 1279               	receiver_flow:
+ 1280 0000 01        		.byte	1
+ 1281               		.lcomm position.1591,1
+ 1282               		.lcomm position.1566,1
+ 1283               		.lcomm esc,1
+ 1284               		.type	str1, @object
+ 1285               		.size	str1, 73
+ 1286               	str1:
+ 1287 0001 556E 6976 		.ascii	"Universi"
+ 1287      6572 7369 
+ 1288 0009 6461 6465 		.string	"dade Federal de Pernambuco\nDepartamento de Eletronica e Sistemas"
+ 1288      2046 6564 
+ 1288      6572 616C 
+ 1288      2064 6520 
+ 1288      5065 726E 
+ 1289               		.lcomm readBuffer,256
+ 1290               		.type	binary_string, @object
+ 1291               		.size	binary_string, 10
+ 1292               	binary_string:
+ 1293 004a 00        		.byte	0
+ 1294 004b 01        		.byte	1
+ 1295 004c 11        		.byte	17
+ 1296 004d 02        		.byte	2
+ 1297 004e 13        		.byte	19
+ 1298 004f 04        		.byte	4
+ 1299 0050 7E        		.byte	126
+ 1300 0051 05        		.byte	5
+ 1301 0052 7D        		.byte	125
+ 1302 0053 06        		.byte	6
+ 1303               		.type	str2, @object
+ 1304               		.size	str2, 39
+ 1305               	str2:
+ 1306 0054 4465 7365 		.string	"Desenvolvimento de sistemas embarcados"
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 24
+
+
+ 1306      6E76 6F6C 
+ 1306      7669 6D65 
+ 1306      6E74 6F20 
+ 1306      6465 2073 
+ 1307               		.lcomm milisecond_count,4
+ 1308               		.comm rxBuffer,67,1
+ 1309               		.comm txBuffer,67,1
+ 1310               		.section	.debug_frame,"",@progbits
+ 1311               	.Lframe0:
+ 1312 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 1313               	.LSCIE0:
+ 1314 0004 FFFF FFFF 		.long	0xffffffff
+ 1315 0008 01        		.byte	0x1
+ 1316 0009 00        		.string	""
+ 1317 000a 01        		.uleb128 0x1
+ 1318 000b 7F        		.sleb128 -1
+ 1319 000c 24        		.byte	0x24
+ 1320 000d 0C        		.byte	0xc
+ 1321 000e 20        		.uleb128 0x20
+ 1322 000f 00        		.uleb128 0x0
+ 1323               		.p2align	2
+ 1324               	.LECIE0:
+ 1325               	.LSFDE0:
+ 1326 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 1327               	.LASFDE0:
+ 1328 0014 0000 0000 		.long	.Lframe0
+ 1329 0018 0000 0000 		.long	.LFB3
+ 1330 001c 0E00 0000 		.long	.LFE3-.LFB3
+ 1331               		.p2align	2
+ 1332               	.LEFDE0:
+ 1333               	.LSFDE2:
+ 1334 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 1335               	.LASFDE2:
+ 1336 0024 0000 0000 		.long	.Lframe0
+ 1337 0028 0000 0000 		.long	.LFB4
+ 1338 002c 1400 0000 		.long	.LFE4-.LFB4
+ 1339               		.p2align	2
+ 1340               	.LEFDE2:
+ 1341               	.LSFDE4:
+ 1342 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+ 1343               	.LASFDE4:
+ 1344 0034 0000 0000 		.long	.Lframe0
+ 1345 0038 0000 0000 		.long	.LFB5
+ 1346 003c 1400 0000 		.long	.LFE5-.LFB5
+ 1347               		.p2align	2
+ 1348               	.LEFDE4:
+ 1349               	.LSFDE6:
+ 1350 0040 0C00 0000 		.long	.LEFDE6-.LASFDE6
+ 1351               	.LASFDE6:
+ 1352 0044 0000 0000 		.long	.Lframe0
+ 1353 0048 0000 0000 		.long	.LFB6
+ 1354 004c 3A00 0000 		.long	.LFE6-.LFB6
+ 1355               		.p2align	2
+ 1356               	.LEFDE6:
+ 1357               	.LSFDE8:
+ 1358 0050 0C00 0000 		.long	.LEFDE8-.LASFDE8
+ 1359               	.LASFDE8:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 25
+
+
+ 1360 0054 0000 0000 		.long	.Lframe0
+ 1361 0058 0000 0000 		.long	.LFB7
+ 1362 005c 4000 0000 		.long	.LFE7-.LFB7
+ 1363               		.p2align	2
+ 1364               	.LEFDE8:
+ 1365               	.LSFDE10:
+ 1366 0060 0C00 0000 		.long	.LEFDE10-.LASFDE10
+ 1367               	.LASFDE10:
+ 1368 0064 0000 0000 		.long	.Lframe0
+ 1369 0068 0000 0000 		.long	.LFB8
+ 1370 006c A400 0000 		.long	.LFE8-.LFB8
+ 1371               		.p2align	2
+ 1372               	.LEFDE10:
+ 1373               	.LSFDE12:
+ 1374 0070 0C00 0000 		.long	.LEFDE12-.LASFDE12
+ 1375               	.LASFDE12:
+ 1376 0074 0000 0000 		.long	.Lframe0
+ 1377 0078 0000 0000 		.long	.LFB9
+ 1378 007c 7C00 0000 		.long	.LFE9-.LFB9
+ 1379               		.p2align	2
+ 1380               	.LEFDE12:
+ 1381               	.LSFDE14:
+ 1382 0080 0C00 0000 		.long	.LEFDE14-.LASFDE14
+ 1383               	.LASFDE14:
+ 1384 0084 0000 0000 		.long	.Lframe0
+ 1385 0088 0000 0000 		.long	.LFB10
+ 1386 008c 4A00 0000 		.long	.LFE10-.LFB10
+ 1387               		.p2align	2
+ 1388               	.LEFDE14:
+ 1389               	.LSFDE16:
+ 1390 0090 0C00 0000 		.long	.LEFDE16-.LASFDE16
+ 1391               	.LASFDE16:
+ 1392 0094 0000 0000 		.long	.Lframe0
+ 1393 0098 0000 0000 		.long	.LFB15
+ 1394 009c 0A00 0000 		.long	.LFE15-.LFB15
+ 1395               		.p2align	2
+ 1396               	.LEFDE16:
+ 1397               	.LSFDE18:
+ 1398 00a0 0C00 0000 		.long	.LEFDE18-.LASFDE18
+ 1399               	.LASFDE18:
+ 1400 00a4 0000 0000 		.long	.Lframe0
+ 1401 00a8 0000 0000 		.long	.LFB16
+ 1402 00ac 2000 0000 		.long	.LFE16-.LFB16
+ 1403               		.p2align	2
+ 1404               	.LEFDE18:
+ 1405               	.LSFDE20:
+ 1406 00b0 0C00 0000 		.long	.LEFDE20-.LASFDE20
+ 1407               	.LASFDE20:
+ 1408 00b4 0000 0000 		.long	.Lframe0
+ 1409 00b8 0000 0000 		.long	.LFB14
+ 1410 00bc 0E00 0000 		.long	.LFE14-.LFB14
+ 1411               		.p2align	2
+ 1412               	.LEFDE20:
+ 1413               	.LSFDE22:
+ 1414 00c0 0C00 0000 		.long	.LEFDE22-.LASFDE22
+ 1415               	.LASFDE22:
+ 1416 00c4 0000 0000 		.long	.Lframe0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 26
+
+
+ 1417 00c8 0000 0000 		.long	.LFB13
+ 1418 00cc 0C00 0000 		.long	.LFE13-.LFB13
+ 1419               		.p2align	2
+ 1420               	.LEFDE22:
+ 1421               	.LSFDE24:
+ 1422 00d0 0C00 0000 		.long	.LEFDE24-.LASFDE24
+ 1423               	.LASFDE24:
+ 1424 00d4 0000 0000 		.long	.Lframe0
+ 1425 00d8 0000 0000 		.long	.LFB17
+ 1426 00dc 2C00 0000 		.long	.LFE17-.LFB17
+ 1427               		.p2align	2
+ 1428               	.LEFDE24:
+ 1429               	.LSFDE26:
+ 1430 00e0 0C00 0000 		.long	.LEFDE26-.LASFDE26
+ 1431               	.LASFDE26:
+ 1432 00e4 0000 0000 		.long	.Lframe0
+ 1433 00e8 0000 0000 		.long	.LFB18
+ 1434 00ec 4200 0000 		.long	.LFE18-.LFB18
+ 1435               		.p2align	2
+ 1436               	.LEFDE26:
+ 1437               	.LSFDE28:
+ 1438 00f0 0C00 0000 		.long	.LEFDE28-.LASFDE28
+ 1439               	.LASFDE28:
+ 1440 00f4 0000 0000 		.long	.Lframe0
+ 1441 00f8 0000 0000 		.long	.LFB19
+ 1442 00fc 2800 0000 		.long	.LFE19-.LFB19
+ 1443               		.p2align	2
+ 1444               	.LEFDE28:
+ 1445               	.LSFDE30:
+ 1446 0100 0C00 0000 		.long	.LEFDE30-.LASFDE30
+ 1447               	.LASFDE30:
+ 1448 0104 0000 0000 		.long	.Lframe0
+ 1449 0108 0000 0000 		.long	.LFB20
+ 1450 010c 4800 0000 		.long	.LFE20-.LFB20
+ 1451               		.p2align	2
+ 1452               	.LEFDE30:
+ 1453               	.LSFDE32:
+ 1454 0110 0C00 0000 		.long	.LEFDE32-.LASFDE32
+ 1455               	.LASFDE32:
+ 1456 0114 0000 0000 		.long	.Lframe0
+ 1457 0118 0000 0000 		.long	.LFB12
+ 1458 011c 7E00 0000 		.long	.LFE12-.LFB12
+ 1459               		.p2align	2
+ 1460               	.LEFDE32:
+ 1461               	.LSFDE34:
+ 1462 0120 0C00 0000 		.long	.LEFDE34-.LASFDE34
+ 1463               	.LASFDE34:
+ 1464 0124 0000 0000 		.long	.Lframe0
+ 1465 0128 0000 0000 		.long	.LFB11
+ 1466 012c A000 0000 		.long	.LFE11-.LFB11
+ 1467               		.p2align	2
+ 1468               	.LEFDE34:
+ 1469               	.LSFDE36:
+ 1470 0130 0C00 0000 		.long	.LEFDE36-.LASFDE36
+ 1471               	.LASFDE36:
+ 1472 0134 0000 0000 		.long	.Lframe0
+ 1473 0138 0000 0000 		.long	.LFB2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 27
+
+
+ 1474 013c 3A02 0000 		.long	.LFE2-.LFB2
+ 1475               		.p2align	2
+ 1476               	.LEFDE36:
+ 1477               		.text
+ 1478               	.Letext0:
+ 1479               		.section	.debug_loc,"",@progbits
+ 1480               	.Ldebug_loc0:
+ 1481               	.LLST1:
+ 1482 0000 0000 0000 		.long	.LVL0-.Ltext0
+ 1483 0004 0600 0000 		.long	.LVL1-.Ltext0
+ 1484 0008 0600      		.word	0x6
+ 1485 000a 68        		.byte	0x68
+ 1486 000b 93        		.byte	0x93
+ 1487 000c 01        		.uleb128 0x1
+ 1488 000d 69        		.byte	0x69
+ 1489 000e 93        		.byte	0x93
+ 1490 000f 01        		.uleb128 0x1
+ 1491 0010 0600 0000 		.long	.LVL1-.Ltext0
+ 1492 0014 0C00 0000 		.long	.LVL2-.Ltext0
+ 1493 0018 0600      		.word	0x6
+ 1494 001a 6E        		.byte	0x6e
+ 1495 001b 93        		.byte	0x93
+ 1496 001c 01        		.uleb128 0x1
+ 1497 001d 6F        		.byte	0x6f
+ 1498 001e 93        		.byte	0x93
+ 1499 001f 01        		.uleb128 0x1
+ 1500 0020 0000 0000 		.long	0x0
+ 1501 0024 0000 0000 		.long	0x0
+ 1502               	.LLST3:
+ 1503 0028 0E00 0000 		.long	.LVL3-.Ltext0
+ 1504 002c 1800 0000 		.long	.LVL4-.Ltext0
+ 1505 0030 0600      		.word	0x6
+ 1506 0032 68        		.byte	0x68
+ 1507 0033 93        		.byte	0x93
+ 1508 0034 01        		.uleb128 0x1
+ 1509 0035 69        		.byte	0x69
+ 1510 0036 93        		.byte	0x93
+ 1511 0037 01        		.uleb128 0x1
+ 1512 0038 0000 0000 		.long	0x0
+ 1513 003c 0000 0000 		.long	0x0
+ 1514               	.LLST5:
+ 1515 0040 2200 0000 		.long	.LVL5-.Ltext0
+ 1516 0044 2C00 0000 		.long	.LVL6-.Ltext0
+ 1517 0048 0600      		.word	0x6
+ 1518 004a 68        		.byte	0x68
+ 1519 004b 93        		.byte	0x93
+ 1520 004c 01        		.uleb128 0x1
+ 1521 004d 69        		.byte	0x69
+ 1522 004e 93        		.byte	0x93
+ 1523 004f 01        		.uleb128 0x1
+ 1524 0050 0000 0000 		.long	0x0
+ 1525 0054 0000 0000 		.long	0x0
+ 1526               	.LLST7:
+ 1527 0058 3600 0000 		.long	.LVL7-.Ltext0
+ 1528 005c 4A00 0000 		.long	.LVL8-.Ltext0
+ 1529 0060 0600      		.word	0x6
+ 1530 0062 68        		.byte	0x68
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 28
+
+
+ 1531 0063 93        		.byte	0x93
+ 1532 0064 01        		.uleb128 0x1
+ 1533 0065 69        		.byte	0x69
+ 1534 0066 93        		.byte	0x93
+ 1535 0067 01        		.uleb128 0x1
+ 1536 0068 4A00 0000 		.long	.LVL8-.Ltext0
+ 1537 006c 5000 0000 		.long	.LVL9-.Ltext0
+ 1538 0070 0600      		.word	0x6
+ 1539 0072 6A        		.byte	0x6a
+ 1540 0073 93        		.byte	0x93
+ 1541 0074 01        		.uleb128 0x1
+ 1542 0075 6B        		.byte	0x6b
+ 1543 0076 93        		.byte	0x93
+ 1544 0077 01        		.uleb128 0x1
+ 1545 0078 5000 0000 		.long	.LVL9-.Ltext0
+ 1546 007c 5800 0000 		.long	.LVL10-.Ltext0
+ 1547 0080 0600      		.word	0x6
+ 1548 0082 68        		.byte	0x68
+ 1549 0083 93        		.byte	0x93
+ 1550 0084 01        		.uleb128 0x1
+ 1551 0085 69        		.byte	0x69
+ 1552 0086 93        		.byte	0x93
+ 1553 0087 01        		.uleb128 0x1
+ 1554 0088 5800 0000 		.long	.LVL10-.Ltext0
+ 1555 008c 7000 0000 		.long	.LFE6-.Ltext0
+ 1556 0090 0600      		.word	0x6
+ 1557 0092 6A        		.byte	0x6a
+ 1558 0093 93        		.byte	0x93
+ 1559 0094 01        		.uleb128 0x1
+ 1560 0095 6B        		.byte	0x6b
+ 1561 0096 93        		.byte	0x93
+ 1562 0097 01        		.uleb128 0x1
+ 1563 0098 0000 0000 		.long	0x0
+ 1564 009c 0000 0000 		.long	0x0
+ 1565               	.LLST9:
+ 1566 00a0 7000 0000 		.long	.LVL11-.Ltext0
+ 1567 00a4 7E00 0000 		.long	.LVL12-.Ltext0
+ 1568 00a8 0600      		.word	0x6
+ 1569 00aa 68        		.byte	0x68
+ 1570 00ab 93        		.byte	0x93
+ 1571 00ac 01        		.uleb128 0x1
+ 1572 00ad 69        		.byte	0x69
+ 1573 00ae 93        		.byte	0x93
+ 1574 00af 01        		.uleb128 0x1
+ 1575 00b0 7E00 0000 		.long	.LVL12-.Ltext0
+ 1576 00b4 9800 0000 		.long	.LVL13-.Ltext0
+ 1577 00b8 0600      		.word	0x6
+ 1578 00ba 6A        		.byte	0x6a
+ 1579 00bb 93        		.byte	0x93
+ 1580 00bc 01        		.uleb128 0x1
+ 1581 00bd 6B        		.byte	0x6b
+ 1582 00be 93        		.byte	0x93
+ 1583 00bf 01        		.uleb128 0x1
+ 1584 00c0 0000 0000 		.long	0x0
+ 1585 00c4 0000 0000 		.long	0x0
+ 1586               	.LLST11:
+ 1587 00c8 D600 0000 		.long	.LVL14-.Ltext0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 29
+
+
+ 1588 00cc 3201 0000 		.long	.LVL15-.Ltext0
+ 1589 00d0 0100      		.word	0x1
+ 1590 00d2 66        		.byte	0x66
+ 1591 00d3 3201 0000 		.long	.LVL15-.Ltext0
+ 1592 00d7 4201 0000 		.long	.LVL16-.Ltext0
+ 1593 00db 0100      		.word	0x1
+ 1594 00dd 66        		.byte	0x66
+ 1595 00de 0000 0000 		.long	0x0
+ 1596 00e2 0000 0000 		.long	0x0
+ 1597               	.LLST16:
+ 1598 00e6 2402 0000 		.long	.LVL18-.Ltext0
+ 1599 00ea 2A02 0000 		.long	.LVL19-.Ltext0
+ 1600 00ee 0100      		.word	0x1
+ 1601 00f0 68        		.byte	0x68
+ 1602 00f1 2A02 0000 		.long	.LVL19-.Ltext0
+ 1603 00f5 3602 0000 		.long	.LVL20-.Ltext0
+ 1604 00f9 0100      		.word	0x1
+ 1605 00fb 66        		.byte	0x66
+ 1606 00fc 4202 0000 		.long	.LVL21-.Ltext0
+ 1607 0100 4402 0000 		.long	.LFE16-.Ltext0
+ 1608 0104 0100      		.word	0x1
+ 1609 0106 66        		.byte	0x66
+ 1610 0107 0000 0000 		.long	0x0
+ 1611 010b 0000 0000 		.long	0x0
+ 1612               	.LLST20:
+ 1613 010f 8002 0000 		.long	.LVL22-.Ltext0
+ 1614 0113 8802 0000 		.long	.LVL23-.Ltext0
+ 1615 0117 0200      		.word	0x2
+ 1616 0119 8C        		.byte	0x8c
+ 1617 011a 01        		.sleb128 1
+ 1618 011b 0000 0000 		.long	0x0
+ 1619 011f 0000 0000 		.long	0x0
+ 1620               	.LLST24:
+ 1621 0123 F402 0000 		.long	.LVL24-.Ltext0
+ 1622 0127 1003 0000 		.long	.LVL25-.Ltext0
+ 1623 012b 0C00      		.word	0xc
+ 1624 012d 66        		.byte	0x66
+ 1625 012e 93        		.byte	0x93
+ 1626 012f 01        		.uleb128 0x1
+ 1627 0130 67        		.byte	0x67
+ 1628 0131 93        		.byte	0x93
+ 1629 0132 01        		.uleb128 0x1
+ 1630 0133 68        		.byte	0x68
+ 1631 0134 93        		.byte	0x93
+ 1632 0135 01        		.uleb128 0x1
+ 1633 0136 69        		.byte	0x69
+ 1634 0137 93        		.byte	0x93
+ 1635 0138 01        		.uleb128 0x1
+ 1636 0139 1003 0000 		.long	.LVL25-.Ltext0
+ 1637 013d 3A03 0000 		.long	.LVL26-.Ltext0
+ 1638 0141 0C00      		.word	0xc
+ 1639 0143 5E        		.byte	0x5e
+ 1640 0144 93        		.byte	0x93
+ 1641 0145 01        		.uleb128 0x1
+ 1642 0146 5F        		.byte	0x5f
+ 1643 0147 93        		.byte	0x93
+ 1644 0148 01        		.uleb128 0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 30
+
+
+ 1645 0149 60        		.byte	0x60
+ 1646 014a 93        		.byte	0x93
+ 1647 014b 01        		.uleb128 0x1
+ 1648 014c 61        		.byte	0x61
+ 1649 014d 93        		.byte	0x93
+ 1650 014e 01        		.uleb128 0x1
+ 1651 014f 3A03 0000 		.long	.LVL26-.Ltext0
+ 1652 0153 3C03 0000 		.long	.LFE20-.Ltext0
+ 1653 0157 0C00      		.word	0xc
+ 1654 0159 66        		.byte	0x66
+ 1655 015a 93        		.byte	0x93
+ 1656 015b 01        		.uleb128 0x1
+ 1657 015c 67        		.byte	0x67
+ 1658 015d 93        		.byte	0x93
+ 1659 015e 01        		.uleb128 0x1
+ 1660 015f 68        		.byte	0x68
+ 1661 0160 93        		.byte	0x93
+ 1662 0161 01        		.uleb128 0x1
+ 1663 0162 69        		.byte	0x69
+ 1664 0163 93        		.byte	0x93
+ 1665 0164 01        		.uleb128 0x1
+ 1666 0165 0000 0000 		.long	0x0
+ 1667 0169 0000 0000 		.long	0x0
+ 1668               	.LLST26:
+ 1669 016d 3C03 0000 		.long	.LVL27-.Ltext0
+ 1670 0171 4C03 0000 		.long	.LVL29-.Ltext0
+ 1671 0175 0600      		.word	0x6
+ 1672 0177 68        		.byte	0x68
+ 1673 0178 93        		.byte	0x93
+ 1674 0179 01        		.uleb128 0x1
+ 1675 017a 69        		.byte	0x69
+ 1676 017b 93        		.byte	0x93
+ 1677 017c 01        		.uleb128 0x1
+ 1678 017d 4C03 0000 		.long	.LVL29-.Ltext0
+ 1679 0181 B403 0000 		.long	.LVL36-.Ltext0
+ 1680 0185 0600      		.word	0x6
+ 1681 0187 6C        		.byte	0x6c
+ 1682 0188 93        		.byte	0x93
+ 1683 0189 01        		.uleb128 0x1
+ 1684 018a 6D        		.byte	0x6d
+ 1685 018b 93        		.byte	0x93
+ 1686 018c 01        		.uleb128 0x1
+ 1687 018d 0000 0000 		.long	0x0
+ 1688 0191 0000 0000 		.long	0x0
+ 1689               	.LLST27:
+ 1690 0195 3C03 0000 		.long	.LVL27-.Ltext0
+ 1691 0199 4C03 0000 		.long	.LVL29-.Ltext0
+ 1692 019d 0100      		.word	0x1
+ 1693 019f 66        		.byte	0x66
+ 1694 01a0 4C03 0000 		.long	.LVL29-.Ltext0
+ 1695 01a4 8803 0000 		.long	.LVL32-.Ltext0
+ 1696 01a8 0100      		.word	0x1
+ 1697 01aa 61        		.byte	0x61
+ 1698 01ab 8803 0000 		.long	.LVL32-.Ltext0
+ 1699 01af A803 0000 		.long	.LVL33-.Ltext0
+ 1700 01b3 0100      		.word	0x1
+ 1701 01b5 63        		.byte	0x63
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 31
+
+
+ 1702 01b6 A803 0000 		.long	.LVL33-.Ltext0
+ 1703 01ba AC03 0000 		.long	.LVL34-.Ltext0
+ 1704 01be 0100      		.word	0x1
+ 1705 01c0 61        		.byte	0x61
+ 1706 01c1 AC03 0000 		.long	.LVL34-.Ltext0
+ 1707 01c5 AE03 0000 		.long	.LVL35-.Ltext0
+ 1708 01c9 0100      		.word	0x1
+ 1709 01cb 63        		.byte	0x63
+ 1710 01cc AE03 0000 		.long	.LVL35-.Ltext0
+ 1711 01d0 B603 0000 		.long	.LVL37-.Ltext0
+ 1712 01d4 0100      		.word	0x1
+ 1713 01d6 61        		.byte	0x61
+ 1714 01d7 B603 0000 		.long	.LVL37-.Ltext0
+ 1715 01db BA03 0000 		.long	.LFE12-.Ltext0
+ 1716 01df 0100      		.word	0x1
+ 1717 01e1 63        		.byte	0x63
+ 1718 01e2 0000 0000 		.long	0x0
+ 1719 01e6 0000 0000 		.long	0x0
+ 1720               	.LLST28:
+ 1721 01ea 4C03 0000 		.long	.LVL29-.Ltext0
+ 1722 01ee 5003 0000 		.long	.LVL30-.Ltext0
+ 1723 01f2 0100      		.word	0x1
+ 1724 01f4 64        		.byte	0x64
+ 1725 01f5 5203 0000 		.long	.LVL31-.Ltext0
+ 1726 01f9 BA03 0000 		.long	.LFE12-.Ltext0
+ 1727 01fd 0100      		.word	0x1
+ 1728 01ff 64        		.byte	0x64
+ 1729 0200 0000 0000 		.long	0x0
+ 1730 0204 0000 0000 		.long	0x0
+ 1731               	.LLST29:
+ 1732 0208 4A03 0000 		.long	.LVL28-.Ltext0
+ 1733 020c B803 0000 		.long	.LVL38-.Ltext0
+ 1734 0210 0100      		.word	0x1
+ 1735 0212 60        		.byte	0x60
+ 1736 0213 0000 0000 		.long	0x0
+ 1737 0217 0000 0000 		.long	0x0
+ 1738               	.LLST31:
+ 1739 021b BA03 0000 		.long	.LVL39-.Ltext0
+ 1740 021f D603 0000 		.long	.LVL41-.Ltext0
+ 1741 0223 0600      		.word	0x6
+ 1742 0225 68        		.byte	0x68
+ 1743 0226 93        		.byte	0x93
+ 1744 0227 01        		.uleb128 0x1
+ 1745 0228 69        		.byte	0x69
+ 1746 0229 93        		.byte	0x93
+ 1747 022a 01        		.uleb128 0x1
+ 1748 022b D603 0000 		.long	.LVL41-.Ltext0
+ 1749 022f 5204 0000 		.long	.LVL45-.Ltext0
+ 1750 0233 0600      		.word	0x6
+ 1751 0235 5E        		.byte	0x5e
+ 1752 0236 93        		.byte	0x93
+ 1753 0237 01        		.uleb128 0x1
+ 1754 0238 5F        		.byte	0x5f
+ 1755 0239 93        		.byte	0x93
+ 1756 023a 01        		.uleb128 0x1
+ 1757 023b 0000 0000 		.long	0x0
+ 1758 023f 0000 0000 		.long	0x0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 32
+
+
+ 1759               	.LLST32:
+ 1760 0243 BA03 0000 		.long	.LVL39-.Ltext0
+ 1761 0247 D603 0000 		.long	.LVL41-.Ltext0
+ 1762 024b 0100      		.word	0x1
+ 1763 024d 66        		.byte	0x66
+ 1764 024e D603 0000 		.long	.LVL41-.Ltext0
+ 1765 0252 5604 0000 		.long	.LVL47-.Ltext0
+ 1766 0256 0100      		.word	0x1
+ 1767 0258 5C        		.byte	0x5c
+ 1768 0259 5604 0000 		.long	.LVL47-.Ltext0
+ 1769 025d 5A04 0000 		.long	.LFE11-.Ltext0
+ 1770 0261 0100      		.word	0x1
+ 1771 0263 66        		.byte	0x66
+ 1772 0264 0000 0000 		.long	0x0
+ 1773 0268 0000 0000 		.long	0x0
+ 1774               	.LLST33:
+ 1775 026c BA03 0000 		.long	.LVL39-.Ltext0
+ 1776 0270 D603 0000 		.long	.LVL41-.Ltext0
+ 1777 0274 0100      		.word	0x1
+ 1778 0276 64        		.byte	0x64
+ 1779 0277 D603 0000 		.long	.LVL41-.Ltext0
+ 1780 027b 5804 0000 		.long	.LVL48-.Ltext0
+ 1781 027f 0100      		.word	0x1
+ 1782 0281 5B        		.byte	0x5b
+ 1783 0282 5804 0000 		.long	.LVL48-.Ltext0
+ 1784 0286 5A04 0000 		.long	.LFE11-.Ltext0
+ 1785 028a 0100      		.word	0x1
+ 1786 028c 64        		.byte	0x64
+ 1787 028d 0000 0000 		.long	0x0
+ 1788 0291 0000 0000 		.long	0x0
+ 1789               	.LLST34:
+ 1790 0295 D403 0000 		.long	.LVL40-.Ltext0
+ 1791 0299 5404 0000 		.long	.LVL46-.Ltext0
+ 1792 029d 0100      		.word	0x1
+ 1793 029f 5D        		.byte	0x5d
+ 1794 02a0 0000 0000 		.long	0x0
+ 1795 02a4 0000 0000 		.long	0x0
+ 1796               	.LLST36:
+ 1797 02a8 A004 0000 		.long	.LVL49-.Ltext0
+ 1798 02ac F004 0000 		.long	.LVL51-.Ltext0
+ 1799 02b0 0100      		.word	0x1
+ 1800 02b2 60        		.byte	0x60
+ 1801 02b3 F404 0000 		.long	.LVL52-.Ltext0
+ 1802 02b7 0805 0000 		.long	.LVL54-.Ltext0
+ 1803 02bb 0100      		.word	0x1
+ 1804 02bd 60        		.byte	0x60
+ 1805 02be 4605 0000 		.long	.LVL55-.Ltext0
+ 1806 02c2 6C05 0000 		.long	.LVL56-.Ltext0
+ 1807 02c6 0100      		.word	0x1
+ 1808 02c8 60        		.byte	0x60
+ 1809 02c9 0000 0000 		.long	0x0
+ 1810 02cd 0000 0000 		.long	0x0
+ 1811               	.LLST37:
+ 1812 02d1 F004 0000 		.long	.LVL51-.Ltext0
+ 1813 02d5 F404 0000 		.long	.LVL52-.Ltext0
+ 1814 02d9 0100      		.word	0x1
+ 1815 02db 60        		.byte	0x60
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 33
+
+
+ 1816 02dc 0805 0000 		.long	.LVL54-.Ltext0
+ 1817 02e0 4605 0000 		.long	.LVL55-.Ltext0
+ 1818 02e4 0100      		.word	0x1
+ 1819 02e6 60        		.byte	0x60
+ 1820 02e7 6C05 0000 		.long	.LVL56-.Ltext0
+ 1821 02eb 9406 0000 		.long	.LFE2-.Ltext0
+ 1822 02ef 0100      		.word	0x1
+ 1823 02f1 60        		.byte	0x60
+ 1824 02f2 0000 0000 		.long	0x0
+ 1825 02f6 0000 0000 		.long	0x0
+ 1826               	.LLST38:
+ 1827 02fa C804 0000 		.long	.LVL50-.Ltext0
+ 1828 02fe F805 0000 		.long	.LVL63-.Ltext0
+ 1829 0302 0600      		.word	0x6
+ 1830 0304 6C        		.byte	0x6c
+ 1831 0305 93        		.byte	0x93
+ 1832 0306 01        		.uleb128 0x1
+ 1833 0307 6D        		.byte	0x6d
+ 1834 0308 93        		.byte	0x93
+ 1835 0309 01        		.uleb128 0x1
+ 1836 030a 0000 0000 		.long	0x0
+ 1837 030e 0000 0000 		.long	0x0
+ 1838               	.LLST39:
+ 1839 0312 0605 0000 		.long	.LVL53-.Ltext0
+ 1840 0316 0805 0000 		.long	.LVL54-.Ltext0
+ 1841 031a 0C00      		.word	0xc
+ 1842 031c 62        		.byte	0x62
+ 1843 031d 93        		.byte	0x93
+ 1844 031e 01        		.uleb128 0x1
+ 1845 031f 63        		.byte	0x63
+ 1846 0320 93        		.byte	0x93
+ 1847 0321 01        		.uleb128 0x1
+ 1848 0322 64        		.byte	0x64
+ 1849 0323 93        		.byte	0x93
+ 1850 0324 01        		.uleb128 0x1
+ 1851 0325 65        		.byte	0x65
+ 1852 0326 93        		.byte	0x93
+ 1853 0327 01        		.uleb128 0x1
+ 1854 0328 4605 0000 		.long	.LVL55-.Ltext0
+ 1855 032c 7205 0000 		.long	.LVL57-.Ltext0
+ 1856 0330 0C00      		.word	0xc
+ 1857 0332 62        		.byte	0x62
+ 1858 0333 93        		.byte	0x93
+ 1859 0334 01        		.uleb128 0x1
+ 1860 0335 63        		.byte	0x63
+ 1861 0336 93        		.byte	0x93
+ 1862 0337 01        		.uleb128 0x1
+ 1863 0338 64        		.byte	0x64
+ 1864 0339 93        		.byte	0x93
+ 1865 033a 01        		.uleb128 0x1
+ 1866 033b 65        		.byte	0x65
+ 1867 033c 93        		.byte	0x93
+ 1868 033d 01        		.uleb128 0x1
+ 1869 033e 0000 0000 		.long	0x0
+ 1870 0342 0000 0000 		.long	0x0
+ 1871               	.LLST40:
+ 1872 0346 0805 0000 		.long	.LVL54-.Ltext0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 34
+
+
+ 1873 034a 4605 0000 		.long	.LVL55-.Ltext0
+ 1874 034e 0C00      		.word	0xc
+ 1875 0350 62        		.byte	0x62
+ 1876 0351 93        		.byte	0x93
+ 1877 0352 01        		.uleb128 0x1
+ 1878 0353 63        		.byte	0x63
+ 1879 0354 93        		.byte	0x93
+ 1880 0355 01        		.uleb128 0x1
+ 1881 0356 64        		.byte	0x64
+ 1882 0357 93        		.byte	0x93
+ 1883 0358 01        		.uleb128 0x1
+ 1884 0359 65        		.byte	0x65
+ 1885 035a 93        		.byte	0x93
+ 1886 035b 01        		.uleb128 0x1
+ 1887 035c 6C05 0000 		.long	.LVL56-.Ltext0
+ 1888 0360 7205 0000 		.long	.LVL57-.Ltext0
+ 1889 0364 0C00      		.word	0xc
+ 1890 0366 62        		.byte	0x62
+ 1891 0367 93        		.byte	0x93
+ 1892 0368 01        		.uleb128 0x1
+ 1893 0369 63        		.byte	0x63
+ 1894 036a 93        		.byte	0x93
+ 1895 036b 01        		.uleb128 0x1
+ 1896 036c 64        		.byte	0x64
+ 1897 036d 93        		.byte	0x93
+ 1898 036e 01        		.uleb128 0x1
+ 1899 036f 65        		.byte	0x65
+ 1900 0370 93        		.byte	0x93
+ 1901 0371 01        		.uleb128 0x1
+ 1902 0372 0000 0000 		.long	0x0
+ 1903 0376 0000 0000 		.long	0x0
+ 1904               	.LLST41:
+ 1905 037a 8C05 0000 		.long	.LVL58-.Ltext0
+ 1906 037e 8E05 0000 		.long	.LVL59-.Ltext0
+ 1907 0382 0C00      		.word	0xc
+ 1908 0384 62        		.byte	0x62
+ 1909 0385 93        		.byte	0x93
+ 1910 0386 01        		.uleb128 0x1
+ 1911 0387 63        		.byte	0x63
+ 1912 0388 93        		.byte	0x93
+ 1913 0389 01        		.uleb128 0x1
+ 1914 038a 64        		.byte	0x64
+ 1915 038b 93        		.byte	0x93
+ 1916 038c 01        		.uleb128 0x1
+ 1917 038d 65        		.byte	0x65
+ 1918 038e 93        		.byte	0x93
+ 1919 038f 01        		.uleb128 0x1
+ 1920 0390 CE05 0000 		.long	.LVL61-.Ltext0
+ 1921 0394 1206 0000 		.long	.LVL64-.Ltext0
+ 1922 0398 0C00      		.word	0xc
+ 1923 039a 62        		.byte	0x62
+ 1924 039b 93        		.byte	0x93
+ 1925 039c 01        		.uleb128 0x1
+ 1926 039d 63        		.byte	0x63
+ 1927 039e 93        		.byte	0x93
+ 1928 039f 01        		.uleb128 0x1
+ 1929 03a0 64        		.byte	0x64
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 35
+
+
+ 1930 03a1 93        		.byte	0x93
+ 1931 03a2 01        		.uleb128 0x1
+ 1932 03a3 65        		.byte	0x65
+ 1933 03a4 93        		.byte	0x93
+ 1934 03a5 01        		.uleb128 0x1
+ 1935 03a6 0000 0000 		.long	0x0
+ 1936 03aa 0000 0000 		.long	0x0
+ 1937               	.LLST42:
+ 1938 03ae 9005 0000 		.long	.LVL60-.Ltext0
+ 1939 03b2 CE05 0000 		.long	.LVL61-.Ltext0
+ 1940 03b6 0C00      		.word	0xc
+ 1941 03b8 62        		.byte	0x62
+ 1942 03b9 93        		.byte	0x93
+ 1943 03ba 01        		.uleb128 0x1
+ 1944 03bb 63        		.byte	0x63
+ 1945 03bc 93        		.byte	0x93
+ 1946 03bd 01        		.uleb128 0x1
+ 1947 03be 64        		.byte	0x64
+ 1948 03bf 93        		.byte	0x93
+ 1949 03c0 01        		.uleb128 0x1
+ 1950 03c1 65        		.byte	0x65
+ 1951 03c2 93        		.byte	0x93
+ 1952 03c3 01        		.uleb128 0x1
+ 1953 03c4 F205 0000 		.long	.LVL62-.Ltext0
+ 1954 03c8 1206 0000 		.long	.LVL64-.Ltext0
+ 1955 03cc 0C00      		.word	0xc
+ 1956 03ce 62        		.byte	0x62
+ 1957 03cf 93        		.byte	0x93
+ 1958 03d0 01        		.uleb128 0x1
+ 1959 03d1 63        		.byte	0x63
+ 1960 03d2 93        		.byte	0x93
+ 1961 03d3 01        		.uleb128 0x1
+ 1962 03d4 64        		.byte	0x64
+ 1963 03d5 93        		.byte	0x93
+ 1964 03d6 01        		.uleb128 0x1
+ 1965 03d7 65        		.byte	0x65
+ 1966 03d8 93        		.byte	0x93
+ 1967 03d9 01        		.uleb128 0x1
+ 1968 03da 0000 0000 		.long	0x0
+ 1969 03de 0000 0000 		.long	0x0
+ 1970               		.section	.debug_info
+ 1971 0000 2107 0000 		.long	0x721
+ 1972 0004 0200      		.word	0x2
+ 1973 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 1974 000a 04        		.byte	0x4
+ 1975 000b 01        		.uleb128 0x1
+ 1976 000c 0000 0000 		.long	.LASF49
+ 1977 0010 01        		.byte	0x1
+ 1978 0011 0000 0000 		.long	.LASF50
+ 1979 0015 0000 0000 		.long	.LASF51
+ 1980 0019 0000 0000 		.long	.Ltext0
+ 1981 001d 0000 0000 		.long	.Letext0
+ 1982 0021 0000 0000 		.long	.Ldebug_line0
+ 1983 0025 02        		.uleb128 0x2
+ 1984 0026 0000 0000 		.long	.LASF0
+ 1985 002a 02        		.byte	0x2
+ 1986 002b 79        		.byte	0x79
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 36
+
+
+ 1987 002c 3000 0000 		.long	0x30
+ 1988 0030 03        		.uleb128 0x3
+ 1989 0031 01        		.byte	0x1
+ 1990 0032 06        		.byte	0x6
+ 1991 0033 0000 0000 		.long	.LASF2
+ 1992 0037 02        		.uleb128 0x2
+ 1993 0038 0000 0000 		.long	.LASF1
+ 1994 003c 02        		.byte	0x2
+ 1995 003d 7A        		.byte	0x7a
+ 1996 003e 4200 0000 		.long	0x42
+ 1997 0042 03        		.uleb128 0x3
+ 1998 0043 01        		.byte	0x1
+ 1999 0044 08        		.byte	0x8
+ 2000 0045 0000 0000 		.long	.LASF3
+ 2001 0049 04        		.uleb128 0x4
+ 2002 004a 02        		.byte	0x2
+ 2003 004b 05        		.byte	0x5
+ 2004 004c 696E 7400 		.string	"int"
+ 2005 0050 02        		.uleb128 0x2
+ 2006 0051 0000 0000 		.long	.LASF4
+ 2007 0055 02        		.byte	0x2
+ 2008 0056 7C        		.byte	0x7c
+ 2009 0057 5B00 0000 		.long	0x5b
+ 2010 005b 03        		.uleb128 0x3
+ 2011 005c 02        		.byte	0x2
+ 2012 005d 07        		.byte	0x7
+ 2013 005e 0000 0000 		.long	.LASF5
+ 2014 0062 03        		.uleb128 0x3
+ 2015 0063 04        		.byte	0x4
+ 2016 0064 05        		.byte	0x5
+ 2017 0065 0000 0000 		.long	.LASF6
+ 2018 0069 03        		.uleb128 0x3
+ 2019 006a 04        		.byte	0x4
+ 2020 006b 07        		.byte	0x7
+ 2021 006c 0000 0000 		.long	.LASF7
+ 2022 0070 03        		.uleb128 0x3
+ 2023 0071 08        		.byte	0x8
+ 2024 0072 05        		.byte	0x5
+ 2025 0073 0000 0000 		.long	.LASF8
+ 2026 0077 03        		.uleb128 0x3
+ 2027 0078 08        		.byte	0x8
+ 2028 0079 07        		.byte	0x7
+ 2029 007a 0000 0000 		.long	.LASF9
+ 2030 007e 05        		.uleb128 0x5
+ 2031 007f 43        		.byte	0x43
+ 2032 0080 01        		.byte	0x1
+ 2033 0081 10        		.byte	0x10
+ 2034 0082 BF00 0000 		.long	0xbf
+ 2035 0086 06        		.uleb128 0x6
+ 2036 0087 0000 0000 		.long	.LASF10
+ 2037 008b 01        		.byte	0x1
+ 2038 008c 11        		.byte	0x11
+ 2039 008d BF00 0000 		.long	0xbf
+ 2040 0091 02        		.byte	0x2
+ 2041 0092 23        		.byte	0x23
+ 2042 0093 00        		.uleb128 0x0
+ 2043 0094 06        		.uleb128 0x6
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 37
+
+
+ 2044 0095 0000 0000 		.long	.LASF11
+ 2045 0099 01        		.byte	0x1
+ 2046 009a 12        		.byte	0x12
+ 2047 009b 3700 0000 		.long	0x37
+ 2048 009f 02        		.byte	0x2
+ 2049 00a0 23        		.byte	0x23
+ 2050 00a1 40        		.uleb128 0x40
+ 2051 00a2 06        		.uleb128 0x6
+ 2052 00a3 0000 0000 		.long	.LASF12
+ 2053 00a7 01        		.byte	0x1
+ 2054 00a8 13        		.byte	0x13
+ 2055 00a9 3700 0000 		.long	0x37
+ 2056 00ad 02        		.byte	0x2
+ 2057 00ae 23        		.byte	0x23
+ 2058 00af 41        		.uleb128 0x41
+ 2059 00b0 06        		.uleb128 0x6
+ 2060 00b1 0000 0000 		.long	.LASF13
+ 2061 00b5 01        		.byte	0x1
+ 2062 00b6 14        		.byte	0x14
+ 2063 00b7 3700 0000 		.long	0x37
+ 2064 00bb 02        		.byte	0x2
+ 2065 00bc 23        		.byte	0x23
+ 2066 00bd 42        		.uleb128 0x42
+ 2067 00be 00        		.byte	0x0
+ 2068 00bf 07        		.uleb128 0x7
+ 2069 00c0 3700 0000 		.long	0x37
+ 2070 00c4 CF00 0000 		.long	0xcf
+ 2071 00c8 08        		.uleb128 0x8
+ 2072 00c9 CF00 0000 		.long	0xcf
+ 2073 00cd 3F        		.byte	0x3f
+ 2074 00ce 00        		.byte	0x0
+ 2075 00cf 09        		.uleb128 0x9
+ 2076 00d0 02        		.byte	0x2
+ 2077 00d1 07        		.byte	0x7
+ 2078 00d2 02        		.uleb128 0x2
+ 2079 00d3 0000 0000 		.long	.LASF14
+ 2080 00d7 01        		.byte	0x1
+ 2081 00d8 15        		.byte	0x15
+ 2082 00d9 7E00 0000 		.long	0x7e
+ 2083 00dd 0A        		.uleb128 0xa
+ 2084 00de 01        		.byte	0x1
+ 2085 00df 0000 0000 		.long	.LASF15
+ 2086 00e3 01        		.byte	0x1
+ 2087 00e4 9B        		.byte	0x9b
+ 2088 00e5 01        		.byte	0x1
+ 2089 00e6 3700 0000 		.long	0x37
+ 2090 00ea 01        		.byte	0x1
+ 2091 00eb FA00 0000 		.long	0xfa
+ 2092 00ef 0B        		.uleb128 0xb
+ 2093 00f0 6362 00   		.string	"cb"
+ 2094 00f3 01        		.byte	0x1
+ 2095 00f4 9B        		.byte	0x9b
+ 2096 00f5 FA00 0000 		.long	0xfa
+ 2097 00f9 00        		.byte	0x0
+ 2098 00fa 0C        		.uleb128 0xc
+ 2099 00fb 02        		.byte	0x2
+ 2100 00fc D200 0000 		.long	0xd2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 38
+
+
+ 2101 0100 0A        		.uleb128 0xa
+ 2102 0101 01        		.byte	0x1
+ 2103 0102 0000 0000 		.long	.LASF16
+ 2104 0106 01        		.byte	0x1
+ 2105 0107 A0        		.byte	0xa0
+ 2106 0108 01        		.byte	0x1
+ 2107 0109 3700 0000 		.long	0x37
+ 2108 010d 01        		.byte	0x1
+ 2109 010e 1D01 0000 		.long	0x11d
+ 2110 0112 0B        		.uleb128 0xb
+ 2111 0113 6362 00   		.string	"cb"
+ 2112 0116 01        		.byte	0x1
+ 2113 0117 A0        		.byte	0xa0
+ 2114 0118 FA00 0000 		.long	0xfa
+ 2115 011c 00        		.byte	0x0
+ 2116 011d 0D        		.uleb128 0xd
+ 2117 011e 01        		.byte	0x1
+ 2118 011f 0000 0000 		.long	.LASF17
+ 2119 0123 01        		.byte	0x1
+ 2120 0124 95        		.byte	0x95
+ 2121 0125 01        		.byte	0x1
+ 2122 0126 01        		.byte	0x1
+ 2123 0127 3601 0000 		.long	0x136
+ 2124 012b 0B        		.uleb128 0xb
+ 2125 012c 6362 00   		.string	"cb"
+ 2126 012f 01        		.byte	0x1
+ 2127 0130 95        		.byte	0x95
+ 2128 0131 FA00 0000 		.long	0xfa
+ 2129 0135 00        		.byte	0x0
+ 2130 0136 0E        		.uleb128 0xe
+ 2131 0137 01        		.byte	0x1
+ 2132 0138 0000 0000 		.long	.LASF52
+ 2133 013c 01        		.byte	0x1
+ 2134 013d 3001      		.word	0x130
+ 2135 013f 01        		.byte	0x1
+ 2136 0140 3700 0000 		.long	0x37
+ 2137 0144 01        		.byte	0x1
+ 2138 0145 0F        		.uleb128 0xf
+ 2139 0146 01        		.byte	0x1
+ 2140 0147 0000 0000 		.long	.LASF18
+ 2141 014b 01        		.byte	0x1
+ 2142 014c 6401      		.word	0x164
+ 2143 014e 01        		.byte	0x1
+ 2144 014f 01        		.byte	0x1
+ 2145 0150 6C01 0000 		.long	0x16c
+ 2146 0154 10        		.uleb128 0x10
+ 2147 0155 6D73 00   		.string	"ms"
+ 2148 0158 01        		.byte	0x1
+ 2149 0159 6401      		.word	0x164
+ 2150 015b 6900 0000 		.long	0x69
+ 2151 015f 11        		.uleb128 0x11
+ 2152 0160 0000 0000 		.long	.LASF37
+ 2153 0164 01        		.byte	0x1
+ 2154 0165 6501      		.word	0x165
+ 2155 0167 6900 0000 		.long	0x69
+ 2156 016b 00        		.byte	0x0
+ 2157 016c 12        		.uleb128 0x12
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 39
+
+
+ 2158 016d 1D01 0000 		.long	0x11d
+ 2159 0171 0000 0000 		.long	.LFB3
+ 2160 0175 0000 0000 		.long	.LFE3
+ 2161 0179 02        		.byte	0x2
+ 2162 017a 90        		.byte	0x90
+ 2163 017b 20        		.uleb128 0x20
+ 2164 017c 8A01 0000 		.long	0x18a
+ 2165 0180 13        		.uleb128 0x13
+ 2166 0181 2B01 0000 		.long	0x12b
+ 2167 0185 0000 0000 		.long	.LLST1
+ 2168 0189 00        		.byte	0x0
+ 2169 018a 12        		.uleb128 0x12
+ 2170 018b DD00 0000 		.long	0xdd
+ 2171 018f 0000 0000 		.long	.LFB4
+ 2172 0193 0000 0000 		.long	.LFE4
+ 2173 0197 02        		.byte	0x2
+ 2174 0198 90        		.byte	0x90
+ 2175 0199 20        		.uleb128 0x20
+ 2176 019a A801 0000 		.long	0x1a8
+ 2177 019e 13        		.uleb128 0x13
+ 2178 019f EF00 0000 		.long	0xef
+ 2179 01a3 0000 0000 		.long	.LLST3
+ 2180 01a7 00        		.byte	0x0
+ 2181 01a8 12        		.uleb128 0x12
+ 2182 01a9 0001 0000 		.long	0x100
+ 2183 01ad 0000 0000 		.long	.LFB5
+ 2184 01b1 0000 0000 		.long	.LFE5
+ 2185 01b5 02        		.byte	0x2
+ 2186 01b6 90        		.byte	0x90
+ 2187 01b7 20        		.uleb128 0x20
+ 2188 01b8 C601 0000 		.long	0x1c6
+ 2189 01bc 13        		.uleb128 0x13
+ 2190 01bd 1201 0000 		.long	0x112
+ 2191 01c1 0000 0000 		.long	.LLST5
+ 2192 01c5 00        		.byte	0x0
+ 2193 01c6 14        		.uleb128 0x14
+ 2194 01c7 01        		.byte	0x1
+ 2195 01c8 0000 0000 		.long	.LASF20
+ 2196 01cc 01        		.byte	0x1
+ 2197 01cd A5        		.byte	0xa5
+ 2198 01ce 01        		.byte	0x1
+ 2199 01cf 3700 0000 		.long	0x37
+ 2200 01d3 0000 0000 		.long	.LFB6
+ 2201 01d7 0000 0000 		.long	.LFE6
+ 2202 01db 02        		.byte	0x2
+ 2203 01dc 90        		.byte	0x90
+ 2204 01dd 20        		.uleb128 0x20
+ 2205 01de 1302 0000 		.long	0x213
+ 2206 01e2 15        		.uleb128 0x15
+ 2207 01e3 6362 00   		.string	"cb"
+ 2208 01e6 01        		.byte	0x1
+ 2209 01e7 A5        		.byte	0xa5
+ 2210 01e8 FA00 0000 		.long	0xfa
+ 2211 01ec 0000 0000 		.long	.LLST7
+ 2212 01f0 16        		.uleb128 0x16
+ 2213 01f1 0000 0000 		.long	.LASF19
+ 2214 01f5 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 40
+
+
+ 2215 01f6 A5        		.byte	0xa5
+ 2216 01f7 3700 0000 		.long	0x37
+ 2217 01fb 01        		.byte	0x1
+ 2218 01fc 66        		.byte	0x66
+ 2219 01fd 17        		.uleb128 0x17
+ 2220 01fe DD00 0000 		.long	0xdd
+ 2221 0202 0000 0000 		.long	.LBB31
+ 2222 0206 0000 0000 		.long	.LBE31
+ 2223 020a 01        		.byte	0x1
+ 2224 020b A6        		.byte	0xa6
+ 2225 020c 18        		.uleb128 0x18
+ 2226 020d 9E01 0000 		.long	0x19e
+ 2227 0211 00        		.byte	0x0
+ 2228 0212 00        		.byte	0x0
+ 2229 0213 14        		.uleb128 0x14
+ 2230 0214 01        		.byte	0x1
+ 2231 0215 0000 0000 		.long	.LASF21
+ 2232 0219 01        		.byte	0x1
+ 2233 021a AF        		.byte	0xaf
+ 2234 021b 01        		.byte	0x1
+ 2235 021c 3700 0000 		.long	0x37
+ 2236 0220 0000 0000 		.long	.LFB7
+ 2237 0224 0000 0000 		.long	.LFE7
+ 2238 0228 02        		.byte	0x2
+ 2239 0229 90        		.byte	0x90
+ 2240 022a 20        		.uleb128 0x20
+ 2241 022b 6502 0000 		.long	0x265
+ 2242 022f 15        		.uleb128 0x15
+ 2243 0230 6362 00   		.string	"cb"
+ 2244 0233 01        		.byte	0x1
+ 2245 0234 AF        		.byte	0xaf
+ 2246 0235 FA00 0000 		.long	0xfa
+ 2247 0239 0000 0000 		.long	.LLST9
+ 2248 023d 16        		.uleb128 0x16
+ 2249 023e 0000 0000 		.long	.LASF19
+ 2250 0242 01        		.byte	0x1
+ 2251 0243 AF        		.byte	0xaf
+ 2252 0244 6502 0000 		.long	0x265
+ 2253 0248 06        		.byte	0x6
+ 2254 0249 66        		.byte	0x66
+ 2255 024a 93        		.byte	0x93
+ 2256 024b 01        		.uleb128 0x1
+ 2257 024c 67        		.byte	0x67
+ 2258 024d 93        		.byte	0x93
+ 2259 024e 01        		.uleb128 0x1
+ 2260 024f 17        		.uleb128 0x17
+ 2261 0250 0001 0000 		.long	0x100
+ 2262 0254 0000 0000 		.long	.LBB33
+ 2263 0258 0000 0000 		.long	.LBE33
+ 2264 025c 01        		.byte	0x1
+ 2265 025d B0        		.byte	0xb0
+ 2266 025e 18        		.uleb128 0x18
+ 2267 025f BC01 0000 		.long	0x1bc
+ 2268 0263 00        		.byte	0x0
+ 2269 0264 00        		.byte	0x0
+ 2270 0265 0C        		.uleb128 0xc
+ 2271 0266 02        		.byte	0x2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 41
+
+
+ 2272 0267 3700 0000 		.long	0x37
+ 2273 026b 19        		.uleb128 0x19
+ 2274 026c 01        		.byte	0x1
+ 2275 026d 0000 0000 		.long	.LASF22
+ 2276 0271 01        		.byte	0x1
+ 2277 0272 B9        		.byte	0xb9
+ 2278 0273 01        		.byte	0x1
+ 2279 0274 0000 0000 		.long	.LFB8
+ 2280 0278 0000 0000 		.long	.LFE8
+ 2281 027c 02        		.byte	0x2
+ 2282 027d 90        		.byte	0x90
+ 2283 027e 20        		.uleb128 0x20
+ 2284 027f 9302 0000 		.long	0x293
+ 2285 0283 1A        		.uleb128 0x1a
+ 2286 0284 0000 0000 		.long	.LASF24
+ 2287 0288 01        		.byte	0x1
+ 2288 0289 BA        		.byte	0xba
+ 2289 028a 3700 0000 		.long	0x37
+ 2290 028e 0000 0000 		.long	.LLST11
+ 2291 0292 00        		.byte	0x0
+ 2292 0293 19        		.uleb128 0x19
+ 2293 0294 01        		.byte	0x1
+ 2294 0295 0000 0000 		.long	.LASF23
+ 2295 0299 01        		.byte	0x1
+ 2296 029a D9        		.byte	0xd9
+ 2297 029b 01        		.byte	0x1
+ 2298 029c 0000 0000 		.long	.LFB9
+ 2299 02a0 0000 0000 		.long	.LFE9
+ 2300 02a4 02        		.byte	0x2
+ 2301 02a5 90        		.byte	0x90
+ 2302 02a6 20        		.uleb128 0x20
+ 2303 02a7 DD02 0000 		.long	0x2dd
+ 2304 02ab 1B        		.uleb128 0x1b
+ 2305 02ac 0001 0000 		.long	0x100
+ 2306 02b0 0000 0000 		.long	.LBB35
+ 2307 02b4 0000 0000 		.long	.LBE35
+ 2308 02b8 01        		.byte	0x1
+ 2309 02b9 DB        		.byte	0xdb
+ 2310 02ba C402 0000 		.long	0x2c4
+ 2311 02be 18        		.uleb128 0x18
+ 2312 02bf BC01 0000 		.long	0x1bc
+ 2313 02c3 00        		.byte	0x0
+ 2314 02c4 1C        		.uleb128 0x1c
+ 2315 02c5 0000 0000 		.long	.LBB37
+ 2316 02c9 0000 0000 		.long	.LBE37
+ 2317 02cd 1D        		.uleb128 0x1d
+ 2318 02ce 0000 0000 		.long	.LASF24
+ 2319 02d2 01        		.byte	0x1
+ 2320 02d3 E0        		.byte	0xe0
+ 2321 02d4 3700 0000 		.long	0x37
+ 2322 02d8 02        		.byte	0x2
+ 2323 02d9 8C        		.byte	0x8c
+ 2324 02da 01        		.sleb128 1
+ 2325 02db 00        		.byte	0x0
+ 2326 02dc 00        		.byte	0x0
+ 2327 02dd 1E        		.uleb128 0x1e
+ 2328 02de 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 42
+
+
+ 2329 02df 0000 0000 		.long	.LASF26
+ 2330 02e3 01        		.byte	0x1
+ 2331 02e4 E7        		.byte	0xe7
+ 2332 02e5 01        		.byte	0x1
+ 2333 02e6 0000 0000 		.long	.LFB10
+ 2334 02ea 0000 0000 		.long	.LFE10
+ 2335 02ee 02        		.byte	0x2
+ 2336 02ef 90        		.byte	0x90
+ 2337 02f0 20        		.uleb128 0x20
+ 2338 02f1 1F        		.uleb128 0x1f
+ 2339 02f2 3601 0000 		.long	0x136
+ 2340 02f6 0000 0000 		.long	.LFB15
+ 2341 02fa 0000 0000 		.long	.LFE15
+ 2342 02fe 02        		.byte	0x2
+ 2343 02ff 90        		.byte	0x90
+ 2344 0300 20        		.uleb128 0x20
+ 2345 0301 20        		.uleb128 0x20
+ 2346 0302 01        		.byte	0x1
+ 2347 0303 0000 0000 		.long	.LASF25
+ 2348 0307 01        		.byte	0x1
+ 2349 0308 3801      		.word	0x138
+ 2350 030a 01        		.byte	0x1
+ 2351 030b 0000 0000 		.long	.LFB16
+ 2352 030f 0000 0000 		.long	.LFE16
+ 2353 0313 02        		.byte	0x2
+ 2354 0314 90        		.byte	0x90
+ 2355 0315 20        		.uleb128 0x20
+ 2356 0316 4103 0000 		.long	0x341
+ 2357 031a 21        		.uleb128 0x21
+ 2358 031b 0000 0000 		.long	.LASF24
+ 2359 031f 01        		.byte	0x1
+ 2360 0320 3801      		.word	0x138
+ 2361 0322 3700 0000 		.long	0x37
+ 2362 0326 0000 0000 		.long	.LLST16
+ 2363 032a 22        		.uleb128 0x22
+ 2364 032b DD00 0000 		.long	0xdd
+ 2365 032f 0000 0000 		.long	.LBB38
+ 2366 0333 0000 0000 		.long	.LBE38
+ 2367 0337 01        		.byte	0x1
+ 2368 0338 3A01      		.word	0x13a
+ 2369 033a 18        		.uleb128 0x18
+ 2370 033b 9E01 0000 		.long	0x19e
+ 2371 033f 00        		.byte	0x0
+ 2372 0340 00        		.byte	0x0
+ 2373 0341 23        		.uleb128 0x23
+ 2374 0342 01        		.byte	0x1
+ 2375 0343 0000 0000 		.long	.LASF27
+ 2376 0347 01        		.byte	0x1
+ 2377 0348 2A01      		.word	0x12a
+ 2378 034a 01        		.byte	0x1
+ 2379 034b 0000 0000 		.long	.LFB14
+ 2380 034f 0000 0000 		.long	.LFE14
+ 2381 0353 02        		.byte	0x2
+ 2382 0354 90        		.byte	0x90
+ 2383 0355 20        		.uleb128 0x20
+ 2384 0356 23        		.uleb128 0x23
+ 2385 0357 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 43
+
+
+ 2386 0358 0000 0000 		.long	.LASF28
+ 2387 035c 01        		.byte	0x1
+ 2388 035d 2401      		.word	0x124
+ 2389 035f 01        		.byte	0x1
+ 2390 0360 0000 0000 		.long	.LFB13
+ 2391 0364 0000 0000 		.long	.LFE13
+ 2392 0368 02        		.byte	0x2
+ 2393 0369 90        		.byte	0x90
+ 2394 036a 20        		.uleb128 0x20
+ 2395 036b 24        		.uleb128 0x24
+ 2396 036c 01        		.byte	0x1
+ 2397 036d 0000 0000 		.long	.LASF29
+ 2398 0371 01        		.byte	0x1
+ 2399 0372 4101      		.word	0x141
+ 2400 0374 01        		.byte	0x1
+ 2401 0375 3700 0000 		.long	0x37
+ 2402 0379 0000 0000 		.long	.LFB17
+ 2403 037d 0000 0000 		.long	.LFE17
+ 2404 0381 02        		.byte	0x2
+ 2405 0382 90        		.byte	0x90
+ 2406 0383 20        		.uleb128 0x20
+ 2407 0384 AF03 0000 		.long	0x3af
+ 2408 0388 25        		.uleb128 0x25
+ 2409 0389 0000 0000 		.long	.LASF24
+ 2410 038d 01        		.byte	0x1
+ 2411 038e 4201      		.word	0x142
+ 2412 0390 3700 0000 		.long	0x37
+ 2413 0394 0000 0000 		.long	.LLST20
+ 2414 0398 22        		.uleb128 0x22
+ 2415 0399 0001 0000 		.long	0x100
+ 2416 039d 0000 0000 		.long	.LBB40
+ 2417 03a1 0000 0000 		.long	.LBE40
+ 2418 03a5 01        		.byte	0x1
+ 2419 03a6 4401      		.word	0x144
+ 2420 03a8 18        		.uleb128 0x18
+ 2421 03a9 BC01 0000 		.long	0x1bc
+ 2422 03ad 00        		.byte	0x0
+ 2423 03ae 00        		.byte	0x0
+ 2424 03af 20        		.uleb128 0x20
+ 2425 03b0 01        		.byte	0x1
+ 2426 03b1 0000 0000 		.long	.LASF30
+ 2427 03b5 01        		.byte	0x1
+ 2428 03b6 4A01      		.word	0x14a
+ 2429 03b8 01        		.byte	0x1
+ 2430 03b9 0000 0000 		.long	.LFB18
+ 2431 03bd 0000 0000 		.long	.LFE18
+ 2432 03c1 02        		.byte	0x2
+ 2433 03c2 90        		.byte	0x90
+ 2434 03c3 20        		.uleb128 0x20
+ 2435 03c4 F903 0000 		.long	0x3f9
+ 2436 03c8 26        		.uleb128 0x26
+ 2437 03c9 1D01 0000 		.long	0x11d
+ 2438 03cd 0000 0000 		.long	.LBB42
+ 2439 03d1 0000 0000 		.long	.LBE42
+ 2440 03d5 01        		.byte	0x1
+ 2441 03d6 5801      		.word	0x158
+ 2442 03d8 E203 0000 		.long	0x3e2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 44
+
+
+ 2443 03dc 18        		.uleb128 0x18
+ 2444 03dd 8001 0000 		.long	0x180
+ 2445 03e1 00        		.byte	0x0
+ 2446 03e2 22        		.uleb128 0x22
+ 2447 03e3 1D01 0000 		.long	0x11d
+ 2448 03e7 0000 0000 		.long	.LBB44
+ 2449 03eb 0000 0000 		.long	.LBE44
+ 2450 03ef 01        		.byte	0x1
+ 2451 03f0 5901      		.word	0x159
+ 2452 03f2 18        		.uleb128 0x18
+ 2453 03f3 8001 0000 		.long	0x180
+ 2454 03f7 00        		.byte	0x0
+ 2455 03f8 00        		.byte	0x0
+ 2456 03f9 23        		.uleb128 0x23
+ 2457 03fa 01        		.byte	0x1
+ 2458 03fb 0000 0000 		.long	.LASF31
+ 2459 03ff 01        		.byte	0x1
+ 2460 0400 5C01      		.word	0x15c
+ 2461 0402 01        		.byte	0x1
+ 2462 0403 0000 0000 		.long	.LFB19
+ 2463 0407 0000 0000 		.long	.LFE19
+ 2464 040b 02        		.byte	0x2
+ 2465 040c 90        		.byte	0x90
+ 2466 040d 20        		.uleb128 0x20
+ 2467 040e 12        		.uleb128 0x12
+ 2468 040f 4501 0000 		.long	0x145
+ 2469 0413 0000 0000 		.long	.LFB20
+ 2470 0417 0000 0000 		.long	.LFE20
+ 2471 041b 02        		.byte	0x2
+ 2472 041c 90        		.byte	0x90
+ 2473 041d 20        		.uleb128 0x20
+ 2474 041e 3E04 0000 		.long	0x43e
+ 2475 0422 13        		.uleb128 0x13
+ 2476 0423 5401 0000 		.long	0x154
+ 2477 0427 0000 0000 		.long	.LLST24
+ 2478 042b 27        		.uleb128 0x27
+ 2479 042c 5F01 0000 		.long	0x15f
+ 2480 0430 0C        		.byte	0xc
+ 2481 0431 62        		.byte	0x62
+ 2482 0432 93        		.byte	0x93
+ 2483 0433 01        		.uleb128 0x1
+ 2484 0434 63        		.byte	0x63
+ 2485 0435 93        		.byte	0x93
+ 2486 0436 01        		.uleb128 0x1
+ 2487 0437 64        		.byte	0x64
+ 2488 0438 93        		.byte	0x93
+ 2489 0439 01        		.uleb128 0x1
+ 2490 043a 65        		.byte	0x65
+ 2491 043b 93        		.byte	0x93
+ 2492 043c 01        		.uleb128 0x1
+ 2493 043d 00        		.byte	0x0
+ 2494 043e 24        		.uleb128 0x24
+ 2495 043f 01        		.byte	0x1
+ 2496 0440 0000 0000 		.long	.LASF32
+ 2497 0444 01        		.byte	0x1
+ 2498 0445 0901      		.word	0x109
+ 2499 0447 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 45
+
+
+ 2500 0448 3700 0000 		.long	0x37
+ 2501 044c 0000 0000 		.long	.LFB12
+ 2502 0450 0000 0000 		.long	.LFE12
+ 2503 0454 02        		.byte	0x2
+ 2504 0455 90        		.byte	0x90
+ 2505 0456 20        		.uleb128 0x20
+ 2506 0457 AC04 0000 		.long	0x4ac
+ 2507 045b 28        		.uleb128 0x28
+ 2508 045c 6275 6600 		.string	"buf"
+ 2509 0460 01        		.byte	0x1
+ 2510 0461 0901      		.word	0x109
+ 2511 0463 6502 0000 		.long	0x265
+ 2512 0467 0000 0000 		.long	.LLST26
+ 2513 046b 28        		.uleb128 0x28
+ 2514 046c 6E00      		.string	"n"
+ 2515 046e 01        		.byte	0x1
+ 2516 046f 0901      		.word	0x109
+ 2517 0471 3700 0000 		.long	0x37
+ 2518 0475 0000 0000 		.long	.LLST27
+ 2519 0479 25        		.uleb128 0x25
+ 2520 047a 0000 0000 		.long	.LASF24
+ 2521 047e 01        		.byte	0x1
+ 2522 047f 0A01      		.word	0x10a
+ 2523 0481 3700 0000 		.long	0x37
+ 2524 0485 0000 0000 		.long	.LLST28
+ 2525 0489 25        		.uleb128 0x25
+ 2526 048a 0000 0000 		.long	.LASF33
+ 2527 048e 01        		.byte	0x1
+ 2528 048f 0A01      		.word	0x10a
+ 2529 0491 3700 0000 		.long	0x37
+ 2530 0495 0000 0000 		.long	.LLST29
+ 2531 0499 29        		.uleb128 0x29
+ 2532 049a 0000 0000 		.long	.LASF34
+ 2533 049e 01        		.byte	0x1
+ 2534 049f 0B01      		.word	0x10b
+ 2535 04a1 3700 0000 		.long	0x37
+ 2536 04a5 05        		.byte	0x5
+ 2537 04a6 03        		.byte	0x3
+ 2538 04a7 0000 0000 		.long	position.1591
+ 2539 04ab 00        		.byte	0x0
+ 2540 04ac 14        		.uleb128 0x14
+ 2541 04ad 01        		.byte	0x1
+ 2542 04ae 0000 0000 		.long	.LASF35
+ 2543 04b2 01        		.byte	0x1
+ 2544 04b3 EB        		.byte	0xeb
+ 2545 04b4 01        		.byte	0x1
+ 2546 04b5 3700 0000 		.long	0x37
+ 2547 04b9 0000 0000 		.long	.LFB11
+ 2548 04bd 0000 0000 		.long	.LFE11
+ 2549 04c1 02        		.byte	0x2
+ 2550 04c2 90        		.byte	0x90
+ 2551 04c3 20        		.uleb128 0x20
+ 2552 04c4 2E05 0000 		.long	0x52e
+ 2553 04c8 15        		.uleb128 0x15
+ 2554 04c9 6275 6600 		.string	"buf"
+ 2555 04cd 01        		.byte	0x1
+ 2556 04ce EB        		.byte	0xeb
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 46
+
+
+ 2557 04cf 6502 0000 		.long	0x265
+ 2558 04d3 0000 0000 		.long	.LLST31
+ 2559 04d7 15        		.uleb128 0x15
+ 2560 04d8 6E00      		.string	"n"
+ 2561 04da 01        		.byte	0x1
+ 2562 04db EB        		.byte	0xeb
+ 2563 04dc 3700 0000 		.long	0x37
+ 2564 04e0 0000 0000 		.long	.LLST32
+ 2565 04e4 2A        		.uleb128 0x2a
+ 2566 04e5 0000 0000 		.long	.LASF36
+ 2567 04e9 01        		.byte	0x1
+ 2568 04ea EB        		.byte	0xeb
+ 2569 04eb 2500 0000 		.long	0x25
+ 2570 04ef 0000 0000 		.long	.LLST33
+ 2571 04f3 2B        		.uleb128 0x2b
+ 2572 04f4 0000 0000 		.long	.LASF24
+ 2573 04f8 01        		.byte	0x1
+ 2574 04f9 EC        		.byte	0xec
+ 2575 04fa 3700 0000 		.long	0x37
+ 2576 04fe 1A        		.uleb128 0x1a
+ 2577 04ff 0000 0000 		.long	.LASF33
+ 2578 0503 01        		.byte	0x1
+ 2579 0504 EC        		.byte	0xec
+ 2580 0505 3700 0000 		.long	0x37
+ 2581 0509 0000 0000 		.long	.LLST34
+ 2582 050d 2C        		.uleb128 0x2c
+ 2583 050e 3601 0000 		.long	0x136
+ 2584 0512 0000 0000 		.long	.LBB46
+ 2585 0516 0000 0000 		.long	.LBE46
+ 2586 051a 01        		.byte	0x1
+ 2587 051b EF        		.byte	0xef
+ 2588 051c 1D        		.uleb128 0x1d
+ 2589 051d 0000 0000 		.long	.LASF34
+ 2590 0521 01        		.byte	0x1
+ 2591 0522 ED        		.byte	0xed
+ 2592 0523 3700 0000 		.long	0x37
+ 2593 0527 05        		.byte	0x5
+ 2594 0528 03        		.byte	0x3
+ 2595 0529 0000 0000 		.long	position.1566
+ 2596 052d 00        		.byte	0x0
+ 2597 052e 14        		.uleb128 0x14
+ 2598 052f 01        		.byte	0x1
+ 2599 0530 0000 0000 		.long	.LASF38
+ 2600 0534 01        		.byte	0x1
+ 2601 0535 2F        		.byte	0x2f
+ 2602 0536 01        		.byte	0x1
+ 2603 0537 4900 0000 		.long	0x49
+ 2604 053b 0000 0000 		.long	.LFB2
+ 2605 053f 0000 0000 		.long	.LFE2
+ 2606 0543 02        		.byte	0x2
+ 2607 0544 90        		.byte	0x90
+ 2608 0545 20        		.uleb128 0x20
+ 2609 0546 2E06 0000 		.long	0x62e
+ 2610 054a 2D        		.uleb128 0x2d
+ 2611 054b 6900      		.string	"i"
+ 2612 054d 01        		.byte	0x1
+ 2613 054e 30        		.byte	0x30
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 47
+
+
+ 2614 054f 3700 0000 		.long	0x37
+ 2615 0553 0000 0000 		.long	.LLST36
+ 2616 0557 2D        		.uleb128 0x2d
+ 2617 0558 6B00      		.string	"k"
+ 2618 055a 01        		.byte	0x1
+ 2619 055b 30        		.byte	0x30
+ 2620 055c 3700 0000 		.long	0x37
+ 2621 0560 0000 0000 		.long	.LLST37
+ 2622 0564 1A        		.uleb128 0x1a
+ 2623 0565 0000 0000 		.long	.LASF39
+ 2624 0569 01        		.byte	0x1
+ 2625 056a 31        		.byte	0x31
+ 2626 056b 5000 0000 		.long	0x50
+ 2627 056f 0000 0000 		.long	.LLST38
+ 2628 0573 2C        		.uleb128 0x2c
+ 2629 0574 3601 0000 		.long	0x136
+ 2630 0578 0000 0000 		.long	.LBB48
+ 2631 057c 0000 0000 		.long	.LBE48
+ 2632 0580 01        		.byte	0x1
+ 2633 0581 4C        		.byte	0x4c
+ 2634 0582 2E        		.uleb128 0x2e
+ 2635 0583 4501 0000 		.long	0x145
+ 2636 0587 0000 0000 		.long	.Ldebug_ranges0+0x0
+ 2637 058b 01        		.byte	0x1
+ 2638 058c 56        		.byte	0x56
+ 2639 058d A605 0000 		.long	0x5a6
+ 2640 0591 18        		.uleb128 0x18
+ 2641 0592 2204 0000 		.long	0x422
+ 2642 0596 2F        		.uleb128 0x2f
+ 2643 0597 0000 0000 		.long	.Ldebug_ranges0+0x18
+ 2644 059b 30        		.uleb128 0x30
+ 2645 059c 5F01 0000 		.long	0x15f
+ 2646 05a0 0000 0000 		.long	.LLST39
+ 2647 05a4 00        		.byte	0x0
+ 2648 05a5 00        		.byte	0x0
+ 2649 05a6 1B        		.uleb128 0x1b
+ 2650 05a7 4501 0000 		.long	0x145
+ 2651 05ab 0000 0000 		.long	.LBB53
+ 2652 05af 0000 0000 		.long	.LBE53
+ 2653 05b3 01        		.byte	0x1
+ 2654 05b4 50        		.byte	0x50
+ 2655 05b5 D205 0000 		.long	0x5d2
+ 2656 05b9 18        		.uleb128 0x18
+ 2657 05ba 2204 0000 		.long	0x422
+ 2658 05be 1C        		.uleb128 0x1c
+ 2659 05bf 0000 0000 		.long	.LBB54
+ 2660 05c3 0000 0000 		.long	.LBE54
+ 2661 05c7 30        		.uleb128 0x30
+ 2662 05c8 5F01 0000 		.long	0x15f
+ 2663 05cc 0000 0000 		.long	.LLST40
+ 2664 05d0 00        		.byte	0x0
+ 2665 05d1 00        		.byte	0x0
+ 2666 05d2 2C        		.uleb128 0x2c
+ 2667 05d3 3601 0000 		.long	0x136
+ 2668 05d7 0000 0000 		.long	.LBB56
+ 2669 05db 0000 0000 		.long	.LBE56
+ 2670 05df 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 48
+
+
+ 2671 05e0 5F        		.byte	0x5f
+ 2672 05e1 2E        		.uleb128 0x2e
+ 2673 05e2 4501 0000 		.long	0x145
+ 2674 05e6 0000 0000 		.long	.Ldebug_ranges0+0x30
+ 2675 05ea 01        		.byte	0x1
+ 2676 05eb 69        		.byte	0x69
+ 2677 05ec 0506 0000 		.long	0x605
+ 2678 05f0 18        		.uleb128 0x18
+ 2679 05f1 2204 0000 		.long	0x422
+ 2680 05f5 2F        		.uleb128 0x2f
+ 2681 05f6 0000 0000 		.long	.Ldebug_ranges0+0x48
+ 2682 05fa 30        		.uleb128 0x30
+ 2683 05fb 5F01 0000 		.long	0x15f
+ 2684 05ff 0000 0000 		.long	.LLST41
+ 2685 0603 00        		.byte	0x0
+ 2686 0604 00        		.byte	0x0
+ 2687 0605 17        		.uleb128 0x17
+ 2688 0606 4501 0000 		.long	0x145
+ 2689 060a 0000 0000 		.long	.LBB61
+ 2690 060e 0000 0000 		.long	.LBE61
+ 2691 0612 01        		.byte	0x1
+ 2692 0613 63        		.byte	0x63
+ 2693 0614 18        		.uleb128 0x18
+ 2694 0615 2204 0000 		.long	0x422
+ 2695 0619 1C        		.uleb128 0x1c
+ 2696 061a 0000 0000 		.long	.LBB62
+ 2697 061e 0000 0000 		.long	.LBE62
+ 2698 0622 30        		.uleb128 0x30
+ 2699 0623 5F01 0000 		.long	0x15f
+ 2700 0627 0000 0000 		.long	.LLST42
+ 2701 062b 00        		.byte	0x0
+ 2702 062c 00        		.byte	0x0
+ 2703 062d 00        		.byte	0x0
+ 2704 062e 07        		.uleb128 0x7
+ 2705 062f 3700 0000 		.long	0x37
+ 2706 0633 3E06 0000 		.long	0x63e
+ 2707 0637 08        		.uleb128 0x8
+ 2708 0638 CF00 0000 		.long	0xcf
+ 2709 063c 09        		.byte	0x9
+ 2710 063d 00        		.byte	0x0
+ 2711 063e 1D        		.uleb128 0x1d
+ 2712 063f 0000 0000 		.long	.LASF40
+ 2713 0643 01        		.byte	0x1
+ 2714 0644 17        		.byte	0x17
+ 2715 0645 2E06 0000 		.long	0x62e
+ 2716 0649 05        		.byte	0x5
+ 2717 064a 03        		.byte	0x3
+ 2718 064b 0000 0000 		.long	binary_string
+ 2719 064f 07        		.uleb128 0x7
+ 2720 0650 3700 0000 		.long	0x37
+ 2721 0654 5F06 0000 		.long	0x65f
+ 2722 0658 08        		.uleb128 0x8
+ 2723 0659 CF00 0000 		.long	0xcf
+ 2724 065d 48        		.byte	0x48
+ 2725 065e 00        		.byte	0x0
+ 2726 065f 1D        		.uleb128 0x1d
+ 2727 0660 0000 0000 		.long	.LASF41
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 49
+
+
+ 2728 0664 01        		.byte	0x1
+ 2729 0665 18        		.byte	0x18
+ 2730 0666 4F06 0000 		.long	0x64f
+ 2731 066a 05        		.byte	0x5
+ 2732 066b 03        		.byte	0x3
+ 2733 066c 0000 0000 		.long	str1
+ 2734 0670 07        		.uleb128 0x7
+ 2735 0671 3700 0000 		.long	0x37
+ 2736 0675 8006 0000 		.long	0x680
+ 2737 0679 08        		.uleb128 0x8
+ 2738 067a CF00 0000 		.long	0xcf
+ 2739 067e 26        		.byte	0x26
+ 2740 067f 00        		.byte	0x0
+ 2741 0680 1D        		.uleb128 0x1d
+ 2742 0681 0000 0000 		.long	.LASF42
+ 2743 0685 01        		.byte	0x1
+ 2744 0686 19        		.byte	0x19
+ 2745 0687 7006 0000 		.long	0x670
+ 2746 068b 05        		.byte	0x5
+ 2747 068c 03        		.byte	0x3
+ 2748 068d 0000 0000 		.long	str2
+ 2749 0691 07        		.uleb128 0x7
+ 2750 0692 3700 0000 		.long	0x37
+ 2751 0696 A106 0000 		.long	0x6a1
+ 2752 069a 08        		.uleb128 0x8
+ 2753 069b CF00 0000 		.long	0xcf
+ 2754 069f FF        		.byte	0xff
+ 2755 06a0 00        		.byte	0x0
+ 2756 06a1 1D        		.uleb128 0x1d
+ 2757 06a2 0000 0000 		.long	.LASF43
+ 2758 06a6 01        		.byte	0x1
+ 2759 06a7 1A        		.byte	0x1a
+ 2760 06a8 9106 0000 		.long	0x691
+ 2761 06ac 05        		.byte	0x5
+ 2762 06ad 03        		.byte	0x3
+ 2763 06ae 0000 0000 		.long	readBuffer
+ 2764 06b2 1D        		.uleb128 0x1d
+ 2765 06b3 0000 0000 		.long	.LASF44
+ 2766 06b7 01        		.byte	0x1
+ 2767 06b8 1B        		.byte	0x1b
+ 2768 06b9 C306 0000 		.long	0x6c3
+ 2769 06bd 05        		.byte	0x5
+ 2770 06be 03        		.byte	0x3
+ 2771 06bf 0000 0000 		.long	flow
+ 2772 06c3 31        		.uleb128 0x31
+ 2773 06c4 3700 0000 		.long	0x37
+ 2774 06c8 32        		.uleb128 0x32
+ 2775 06c9 6573 6300 		.string	"esc"
+ 2776 06cd 01        		.byte	0x1
+ 2777 06ce 1B        		.byte	0x1b
+ 2778 06cf C306 0000 		.long	0x6c3
+ 2779 06d3 05        		.byte	0x5
+ 2780 06d4 03        		.byte	0x3
+ 2781 06d5 0000 0000 		.long	esc
+ 2782 06d9 1D        		.uleb128 0x1d
+ 2783 06da 0000 0000 		.long	.LASF45
+ 2784 06de 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 50
+
+
+ 2785 06df 1B        		.byte	0x1b
+ 2786 06e0 C306 0000 		.long	0x6c3
+ 2787 06e4 05        		.byte	0x5
+ 2788 06e5 03        		.byte	0x3
+ 2789 06e6 0000 0000 		.long	receiver_flow
+ 2790 06ea 1D        		.uleb128 0x1d
+ 2791 06eb 0000 0000 		.long	.LASF46
+ 2792 06ef 01        		.byte	0x1
+ 2793 06f0 1C        		.byte	0x1c
+ 2794 06f1 FB06 0000 		.long	0x6fb
+ 2795 06f5 05        		.byte	0x5
+ 2796 06f6 03        		.byte	0x3
+ 2797 06f7 0000 0000 		.long	milisecond_count
+ 2798 06fb 31        		.uleb128 0x31
+ 2799 06fc 6900 0000 		.long	0x69
+ 2800 0700 33        		.uleb128 0x33
+ 2801 0701 0000 0000 		.long	.LASF47
+ 2802 0705 01        		.byte	0x1
+ 2803 0706 1D        		.byte	0x1d
+ 2804 0707 D200 0000 		.long	0xd2
+ 2805 070b 01        		.byte	0x1
+ 2806 070c 05        		.byte	0x5
+ 2807 070d 03        		.byte	0x3
+ 2808 070e 0000 0000 		.long	rxBuffer
+ 2809 0712 33        		.uleb128 0x33
+ 2810 0713 0000 0000 		.long	.LASF48
+ 2811 0717 01        		.byte	0x1
+ 2812 0718 1D        		.byte	0x1d
+ 2813 0719 D200 0000 		.long	0xd2
+ 2814 071d 01        		.byte	0x1
+ 2815 071e 05        		.byte	0x5
+ 2816 071f 03        		.byte	0x3
+ 2817 0720 0000 0000 		.long	txBuffer
+ 2818 0724 00        		.byte	0x0
+ 2819               		.section	.debug_abbrev
+ 2820 0000 01        		.uleb128 0x1
+ 2821 0001 11        		.uleb128 0x11
+ 2822 0002 01        		.byte	0x1
+ 2823 0003 25        		.uleb128 0x25
+ 2824 0004 0E        		.uleb128 0xe
+ 2825 0005 13        		.uleb128 0x13
+ 2826 0006 0B        		.uleb128 0xb
+ 2827 0007 03        		.uleb128 0x3
+ 2828 0008 0E        		.uleb128 0xe
+ 2829 0009 1B        		.uleb128 0x1b
+ 2830 000a 0E        		.uleb128 0xe
+ 2831 000b 11        		.uleb128 0x11
+ 2832 000c 01        		.uleb128 0x1
+ 2833 000d 12        		.uleb128 0x12
+ 2834 000e 01        		.uleb128 0x1
+ 2835 000f 10        		.uleb128 0x10
+ 2836 0010 06        		.uleb128 0x6
+ 2837 0011 00        		.byte	0x0
+ 2838 0012 00        		.byte	0x0
+ 2839 0013 02        		.uleb128 0x2
+ 2840 0014 16        		.uleb128 0x16
+ 2841 0015 00        		.byte	0x0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 51
+
+
+ 2842 0016 03        		.uleb128 0x3
+ 2843 0017 0E        		.uleb128 0xe
+ 2844 0018 3A        		.uleb128 0x3a
+ 2845 0019 0B        		.uleb128 0xb
+ 2846 001a 3B        		.uleb128 0x3b
+ 2847 001b 0B        		.uleb128 0xb
+ 2848 001c 49        		.uleb128 0x49
+ 2849 001d 13        		.uleb128 0x13
+ 2850 001e 00        		.byte	0x0
+ 2851 001f 00        		.byte	0x0
+ 2852 0020 03        		.uleb128 0x3
+ 2853 0021 24        		.uleb128 0x24
+ 2854 0022 00        		.byte	0x0
+ 2855 0023 0B        		.uleb128 0xb
+ 2856 0024 0B        		.uleb128 0xb
+ 2857 0025 3E        		.uleb128 0x3e
+ 2858 0026 0B        		.uleb128 0xb
+ 2859 0027 03        		.uleb128 0x3
+ 2860 0028 0E        		.uleb128 0xe
+ 2861 0029 00        		.byte	0x0
+ 2862 002a 00        		.byte	0x0
+ 2863 002b 04        		.uleb128 0x4
+ 2864 002c 24        		.uleb128 0x24
+ 2865 002d 00        		.byte	0x0
+ 2866 002e 0B        		.uleb128 0xb
+ 2867 002f 0B        		.uleb128 0xb
+ 2868 0030 3E        		.uleb128 0x3e
+ 2869 0031 0B        		.uleb128 0xb
+ 2870 0032 03        		.uleb128 0x3
+ 2871 0033 08        		.uleb128 0x8
+ 2872 0034 00        		.byte	0x0
+ 2873 0035 00        		.byte	0x0
+ 2874 0036 05        		.uleb128 0x5
+ 2875 0037 13        		.uleb128 0x13
+ 2876 0038 01        		.byte	0x1
+ 2877 0039 0B        		.uleb128 0xb
+ 2878 003a 0B        		.uleb128 0xb
+ 2879 003b 3A        		.uleb128 0x3a
+ 2880 003c 0B        		.uleb128 0xb
+ 2881 003d 3B        		.uleb128 0x3b
+ 2882 003e 0B        		.uleb128 0xb
+ 2883 003f 01        		.uleb128 0x1
+ 2884 0040 13        		.uleb128 0x13
+ 2885 0041 00        		.byte	0x0
+ 2886 0042 00        		.byte	0x0
+ 2887 0043 06        		.uleb128 0x6
+ 2888 0044 0D        		.uleb128 0xd
+ 2889 0045 00        		.byte	0x0
+ 2890 0046 03        		.uleb128 0x3
+ 2891 0047 0E        		.uleb128 0xe
+ 2892 0048 3A        		.uleb128 0x3a
+ 2893 0049 0B        		.uleb128 0xb
+ 2894 004a 3B        		.uleb128 0x3b
+ 2895 004b 0B        		.uleb128 0xb
+ 2896 004c 49        		.uleb128 0x49
+ 2897 004d 13        		.uleb128 0x13
+ 2898 004e 38        		.uleb128 0x38
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 52
+
+
+ 2899 004f 0A        		.uleb128 0xa
+ 2900 0050 00        		.byte	0x0
+ 2901 0051 00        		.byte	0x0
+ 2902 0052 07        		.uleb128 0x7
+ 2903 0053 01        		.uleb128 0x1
+ 2904 0054 01        		.byte	0x1
+ 2905 0055 49        		.uleb128 0x49
+ 2906 0056 13        		.uleb128 0x13
+ 2907 0057 01        		.uleb128 0x1
+ 2908 0058 13        		.uleb128 0x13
+ 2909 0059 00        		.byte	0x0
+ 2910 005a 00        		.byte	0x0
+ 2911 005b 08        		.uleb128 0x8
+ 2912 005c 21        		.uleb128 0x21
+ 2913 005d 00        		.byte	0x0
+ 2914 005e 49        		.uleb128 0x49
+ 2915 005f 13        		.uleb128 0x13
+ 2916 0060 2F        		.uleb128 0x2f
+ 2917 0061 0B        		.uleb128 0xb
+ 2918 0062 00        		.byte	0x0
+ 2919 0063 00        		.byte	0x0
+ 2920 0064 09        		.uleb128 0x9
+ 2921 0065 24        		.uleb128 0x24
+ 2922 0066 00        		.byte	0x0
+ 2923 0067 0B        		.uleb128 0xb
+ 2924 0068 0B        		.uleb128 0xb
+ 2925 0069 3E        		.uleb128 0x3e
+ 2926 006a 0B        		.uleb128 0xb
+ 2927 006b 00        		.byte	0x0
+ 2928 006c 00        		.byte	0x0
+ 2929 006d 0A        		.uleb128 0xa
+ 2930 006e 2E        		.uleb128 0x2e
+ 2931 006f 01        		.byte	0x1
+ 2932 0070 3F        		.uleb128 0x3f
+ 2933 0071 0C        		.uleb128 0xc
+ 2934 0072 03        		.uleb128 0x3
+ 2935 0073 0E        		.uleb128 0xe
+ 2936 0074 3A        		.uleb128 0x3a
+ 2937 0075 0B        		.uleb128 0xb
+ 2938 0076 3B        		.uleb128 0x3b
+ 2939 0077 0B        		.uleb128 0xb
+ 2940 0078 27        		.uleb128 0x27
+ 2941 0079 0C        		.uleb128 0xc
+ 2942 007a 49        		.uleb128 0x49
+ 2943 007b 13        		.uleb128 0x13
+ 2944 007c 20        		.uleb128 0x20
+ 2945 007d 0B        		.uleb128 0xb
+ 2946 007e 01        		.uleb128 0x1
+ 2947 007f 13        		.uleb128 0x13
+ 2948 0080 00        		.byte	0x0
+ 2949 0081 00        		.byte	0x0
+ 2950 0082 0B        		.uleb128 0xb
+ 2951 0083 05        		.uleb128 0x5
+ 2952 0084 00        		.byte	0x0
+ 2953 0085 03        		.uleb128 0x3
+ 2954 0086 08        		.uleb128 0x8
+ 2955 0087 3A        		.uleb128 0x3a
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 53
+
+
+ 2956 0088 0B        		.uleb128 0xb
+ 2957 0089 3B        		.uleb128 0x3b
+ 2958 008a 0B        		.uleb128 0xb
+ 2959 008b 49        		.uleb128 0x49
+ 2960 008c 13        		.uleb128 0x13
+ 2961 008d 00        		.byte	0x0
+ 2962 008e 00        		.byte	0x0
+ 2963 008f 0C        		.uleb128 0xc
+ 2964 0090 0F        		.uleb128 0xf
+ 2965 0091 00        		.byte	0x0
+ 2966 0092 0B        		.uleb128 0xb
+ 2967 0093 0B        		.uleb128 0xb
+ 2968 0094 49        		.uleb128 0x49
+ 2969 0095 13        		.uleb128 0x13
+ 2970 0096 00        		.byte	0x0
+ 2971 0097 00        		.byte	0x0
+ 2972 0098 0D        		.uleb128 0xd
+ 2973 0099 2E        		.uleb128 0x2e
+ 2974 009a 01        		.byte	0x1
+ 2975 009b 3F        		.uleb128 0x3f
+ 2976 009c 0C        		.uleb128 0xc
+ 2977 009d 03        		.uleb128 0x3
+ 2978 009e 0E        		.uleb128 0xe
+ 2979 009f 3A        		.uleb128 0x3a
+ 2980 00a0 0B        		.uleb128 0xb
+ 2981 00a1 3B        		.uleb128 0x3b
+ 2982 00a2 0B        		.uleb128 0xb
+ 2983 00a3 27        		.uleb128 0x27
+ 2984 00a4 0C        		.uleb128 0xc
+ 2985 00a5 20        		.uleb128 0x20
+ 2986 00a6 0B        		.uleb128 0xb
+ 2987 00a7 01        		.uleb128 0x1
+ 2988 00a8 13        		.uleb128 0x13
+ 2989 00a9 00        		.byte	0x0
+ 2990 00aa 00        		.byte	0x0
+ 2991 00ab 0E        		.uleb128 0xe
+ 2992 00ac 2E        		.uleb128 0x2e
+ 2993 00ad 00        		.byte	0x0
+ 2994 00ae 3F        		.uleb128 0x3f
+ 2995 00af 0C        		.uleb128 0xc
+ 2996 00b0 03        		.uleb128 0x3
+ 2997 00b1 0E        		.uleb128 0xe
+ 2998 00b2 3A        		.uleb128 0x3a
+ 2999 00b3 0B        		.uleb128 0xb
+ 3000 00b4 3B        		.uleb128 0x3b
+ 3001 00b5 05        		.uleb128 0x5
+ 3002 00b6 27        		.uleb128 0x27
+ 3003 00b7 0C        		.uleb128 0xc
+ 3004 00b8 49        		.uleb128 0x49
+ 3005 00b9 13        		.uleb128 0x13
+ 3006 00ba 20        		.uleb128 0x20
+ 3007 00bb 0B        		.uleb128 0xb
+ 3008 00bc 00        		.byte	0x0
+ 3009 00bd 00        		.byte	0x0
+ 3010 00be 0F        		.uleb128 0xf
+ 3011 00bf 2E        		.uleb128 0x2e
+ 3012 00c0 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 54
+
+
+ 3013 00c1 3F        		.uleb128 0x3f
+ 3014 00c2 0C        		.uleb128 0xc
+ 3015 00c3 03        		.uleb128 0x3
+ 3016 00c4 0E        		.uleb128 0xe
+ 3017 00c5 3A        		.uleb128 0x3a
+ 3018 00c6 0B        		.uleb128 0xb
+ 3019 00c7 3B        		.uleb128 0x3b
+ 3020 00c8 05        		.uleb128 0x5
+ 3021 00c9 27        		.uleb128 0x27
+ 3022 00ca 0C        		.uleb128 0xc
+ 3023 00cb 20        		.uleb128 0x20
+ 3024 00cc 0B        		.uleb128 0xb
+ 3025 00cd 01        		.uleb128 0x1
+ 3026 00ce 13        		.uleb128 0x13
+ 3027 00cf 00        		.byte	0x0
+ 3028 00d0 00        		.byte	0x0
+ 3029 00d1 10        		.uleb128 0x10
+ 3030 00d2 05        		.uleb128 0x5
+ 3031 00d3 00        		.byte	0x0
+ 3032 00d4 03        		.uleb128 0x3
+ 3033 00d5 08        		.uleb128 0x8
+ 3034 00d6 3A        		.uleb128 0x3a
+ 3035 00d7 0B        		.uleb128 0xb
+ 3036 00d8 3B        		.uleb128 0x3b
+ 3037 00d9 05        		.uleb128 0x5
+ 3038 00da 49        		.uleb128 0x49
+ 3039 00db 13        		.uleb128 0x13
+ 3040 00dc 00        		.byte	0x0
+ 3041 00dd 00        		.byte	0x0
+ 3042 00de 11        		.uleb128 0x11
+ 3043 00df 34        		.uleb128 0x34
+ 3044 00e0 00        		.byte	0x0
+ 3045 00e1 03        		.uleb128 0x3
+ 3046 00e2 0E        		.uleb128 0xe
+ 3047 00e3 3A        		.uleb128 0x3a
+ 3048 00e4 0B        		.uleb128 0xb
+ 3049 00e5 3B        		.uleb128 0x3b
+ 3050 00e6 05        		.uleb128 0x5
+ 3051 00e7 49        		.uleb128 0x49
+ 3052 00e8 13        		.uleb128 0x13
+ 3053 00e9 00        		.byte	0x0
+ 3054 00ea 00        		.byte	0x0
+ 3055 00eb 12        		.uleb128 0x12
+ 3056 00ec 2E        		.uleb128 0x2e
+ 3057 00ed 01        		.byte	0x1
+ 3058 00ee 31        		.uleb128 0x31
+ 3059 00ef 13        		.uleb128 0x13
+ 3060 00f0 11        		.uleb128 0x11
+ 3061 00f1 01        		.uleb128 0x1
+ 3062 00f2 12        		.uleb128 0x12
+ 3063 00f3 01        		.uleb128 0x1
+ 3064 00f4 40        		.uleb128 0x40
+ 3065 00f5 0A        		.uleb128 0xa
+ 3066 00f6 01        		.uleb128 0x1
+ 3067 00f7 13        		.uleb128 0x13
+ 3068 00f8 00        		.byte	0x0
+ 3069 00f9 00        		.byte	0x0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 55
+
+
+ 3070 00fa 13        		.uleb128 0x13
+ 3071 00fb 05        		.uleb128 0x5
+ 3072 00fc 00        		.byte	0x0
+ 3073 00fd 31        		.uleb128 0x31
+ 3074 00fe 13        		.uleb128 0x13
+ 3075 00ff 02        		.uleb128 0x2
+ 3076 0100 06        		.uleb128 0x6
+ 3077 0101 00        		.byte	0x0
+ 3078 0102 00        		.byte	0x0
+ 3079 0103 14        		.uleb128 0x14
+ 3080 0104 2E        		.uleb128 0x2e
+ 3081 0105 01        		.byte	0x1
+ 3082 0106 3F        		.uleb128 0x3f
+ 3083 0107 0C        		.uleb128 0xc
+ 3084 0108 03        		.uleb128 0x3
+ 3085 0109 0E        		.uleb128 0xe
+ 3086 010a 3A        		.uleb128 0x3a
+ 3087 010b 0B        		.uleb128 0xb
+ 3088 010c 3B        		.uleb128 0x3b
+ 3089 010d 0B        		.uleb128 0xb
+ 3090 010e 27        		.uleb128 0x27
+ 3091 010f 0C        		.uleb128 0xc
+ 3092 0110 49        		.uleb128 0x49
+ 3093 0111 13        		.uleb128 0x13
+ 3094 0112 11        		.uleb128 0x11
+ 3095 0113 01        		.uleb128 0x1
+ 3096 0114 12        		.uleb128 0x12
+ 3097 0115 01        		.uleb128 0x1
+ 3098 0116 40        		.uleb128 0x40
+ 3099 0117 0A        		.uleb128 0xa
+ 3100 0118 01        		.uleb128 0x1
+ 3101 0119 13        		.uleb128 0x13
+ 3102 011a 00        		.byte	0x0
+ 3103 011b 00        		.byte	0x0
+ 3104 011c 15        		.uleb128 0x15
+ 3105 011d 05        		.uleb128 0x5
+ 3106 011e 00        		.byte	0x0
+ 3107 011f 03        		.uleb128 0x3
+ 3108 0120 08        		.uleb128 0x8
+ 3109 0121 3A        		.uleb128 0x3a
+ 3110 0122 0B        		.uleb128 0xb
+ 3111 0123 3B        		.uleb128 0x3b
+ 3112 0124 0B        		.uleb128 0xb
+ 3113 0125 49        		.uleb128 0x49
+ 3114 0126 13        		.uleb128 0x13
+ 3115 0127 02        		.uleb128 0x2
+ 3116 0128 06        		.uleb128 0x6
+ 3117 0129 00        		.byte	0x0
+ 3118 012a 00        		.byte	0x0
+ 3119 012b 16        		.uleb128 0x16
+ 3120 012c 05        		.uleb128 0x5
+ 3121 012d 00        		.byte	0x0
+ 3122 012e 03        		.uleb128 0x3
+ 3123 012f 0E        		.uleb128 0xe
+ 3124 0130 3A        		.uleb128 0x3a
+ 3125 0131 0B        		.uleb128 0xb
+ 3126 0132 3B        		.uleb128 0x3b
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 56
+
+
+ 3127 0133 0B        		.uleb128 0xb
+ 3128 0134 49        		.uleb128 0x49
+ 3129 0135 13        		.uleb128 0x13
+ 3130 0136 02        		.uleb128 0x2
+ 3131 0137 0A        		.uleb128 0xa
+ 3132 0138 00        		.byte	0x0
+ 3133 0139 00        		.byte	0x0
+ 3134 013a 17        		.uleb128 0x17
+ 3135 013b 1D        		.uleb128 0x1d
+ 3136 013c 01        		.byte	0x1
+ 3137 013d 31        		.uleb128 0x31
+ 3138 013e 13        		.uleb128 0x13
+ 3139 013f 11        		.uleb128 0x11
+ 3140 0140 01        		.uleb128 0x1
+ 3141 0141 12        		.uleb128 0x12
+ 3142 0142 01        		.uleb128 0x1
+ 3143 0143 58        		.uleb128 0x58
+ 3144 0144 0B        		.uleb128 0xb
+ 3145 0145 59        		.uleb128 0x59
+ 3146 0146 0B        		.uleb128 0xb
+ 3147 0147 00        		.byte	0x0
+ 3148 0148 00        		.byte	0x0
+ 3149 0149 18        		.uleb128 0x18
+ 3150 014a 05        		.uleb128 0x5
+ 3151 014b 00        		.byte	0x0
+ 3152 014c 31        		.uleb128 0x31
+ 3153 014d 13        		.uleb128 0x13
+ 3154 014e 00        		.byte	0x0
+ 3155 014f 00        		.byte	0x0
+ 3156 0150 19        		.uleb128 0x19
+ 3157 0151 2E        		.uleb128 0x2e
+ 3158 0152 01        		.byte	0x1
+ 3159 0153 3F        		.uleb128 0x3f
+ 3160 0154 0C        		.uleb128 0xc
+ 3161 0155 03        		.uleb128 0x3
+ 3162 0156 0E        		.uleb128 0xe
+ 3163 0157 3A        		.uleb128 0x3a
+ 3164 0158 0B        		.uleb128 0xb
+ 3165 0159 3B        		.uleb128 0x3b
+ 3166 015a 0B        		.uleb128 0xb
+ 3167 015b 27        		.uleb128 0x27
+ 3168 015c 0C        		.uleb128 0xc
+ 3169 015d 11        		.uleb128 0x11
+ 3170 015e 01        		.uleb128 0x1
+ 3171 015f 12        		.uleb128 0x12
+ 3172 0160 01        		.uleb128 0x1
+ 3173 0161 40        		.uleb128 0x40
+ 3174 0162 0A        		.uleb128 0xa
+ 3175 0163 01        		.uleb128 0x1
+ 3176 0164 13        		.uleb128 0x13
+ 3177 0165 00        		.byte	0x0
+ 3178 0166 00        		.byte	0x0
+ 3179 0167 1A        		.uleb128 0x1a
+ 3180 0168 34        		.uleb128 0x34
+ 3181 0169 00        		.byte	0x0
+ 3182 016a 03        		.uleb128 0x3
+ 3183 016b 0E        		.uleb128 0xe
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 57
+
+
+ 3184 016c 3A        		.uleb128 0x3a
+ 3185 016d 0B        		.uleb128 0xb
+ 3186 016e 3B        		.uleb128 0x3b
+ 3187 016f 0B        		.uleb128 0xb
+ 3188 0170 49        		.uleb128 0x49
+ 3189 0171 13        		.uleb128 0x13
+ 3190 0172 02        		.uleb128 0x2
+ 3191 0173 06        		.uleb128 0x6
+ 3192 0174 00        		.byte	0x0
+ 3193 0175 00        		.byte	0x0
+ 3194 0176 1B        		.uleb128 0x1b
+ 3195 0177 1D        		.uleb128 0x1d
+ 3196 0178 01        		.byte	0x1
+ 3197 0179 31        		.uleb128 0x31
+ 3198 017a 13        		.uleb128 0x13
+ 3199 017b 11        		.uleb128 0x11
+ 3200 017c 01        		.uleb128 0x1
+ 3201 017d 12        		.uleb128 0x12
+ 3202 017e 01        		.uleb128 0x1
+ 3203 017f 58        		.uleb128 0x58
+ 3204 0180 0B        		.uleb128 0xb
+ 3205 0181 59        		.uleb128 0x59
+ 3206 0182 0B        		.uleb128 0xb
+ 3207 0183 01        		.uleb128 0x1
+ 3208 0184 13        		.uleb128 0x13
+ 3209 0185 00        		.byte	0x0
+ 3210 0186 00        		.byte	0x0
+ 3211 0187 1C        		.uleb128 0x1c
+ 3212 0188 0B        		.uleb128 0xb
+ 3213 0189 01        		.byte	0x1
+ 3214 018a 11        		.uleb128 0x11
+ 3215 018b 01        		.uleb128 0x1
+ 3216 018c 12        		.uleb128 0x12
+ 3217 018d 01        		.uleb128 0x1
+ 3218 018e 00        		.byte	0x0
+ 3219 018f 00        		.byte	0x0
+ 3220 0190 1D        		.uleb128 0x1d
+ 3221 0191 34        		.uleb128 0x34
+ 3222 0192 00        		.byte	0x0
+ 3223 0193 03        		.uleb128 0x3
+ 3224 0194 0E        		.uleb128 0xe
+ 3225 0195 3A        		.uleb128 0x3a
+ 3226 0196 0B        		.uleb128 0xb
+ 3227 0197 3B        		.uleb128 0x3b
+ 3228 0198 0B        		.uleb128 0xb
+ 3229 0199 49        		.uleb128 0x49
+ 3230 019a 13        		.uleb128 0x13
+ 3231 019b 02        		.uleb128 0x2
+ 3232 019c 0A        		.uleb128 0xa
+ 3233 019d 00        		.byte	0x0
+ 3234 019e 00        		.byte	0x0
+ 3235 019f 1E        		.uleb128 0x1e
+ 3236 01a0 2E        		.uleb128 0x2e
+ 3237 01a1 00        		.byte	0x0
+ 3238 01a2 3F        		.uleb128 0x3f
+ 3239 01a3 0C        		.uleb128 0xc
+ 3240 01a4 03        		.uleb128 0x3
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 58
+
+
+ 3241 01a5 0E        		.uleb128 0xe
+ 3242 01a6 3A        		.uleb128 0x3a
+ 3243 01a7 0B        		.uleb128 0xb
+ 3244 01a8 3B        		.uleb128 0x3b
+ 3245 01a9 0B        		.uleb128 0xb
+ 3246 01aa 27        		.uleb128 0x27
+ 3247 01ab 0C        		.uleb128 0xc
+ 3248 01ac 11        		.uleb128 0x11
+ 3249 01ad 01        		.uleb128 0x1
+ 3250 01ae 12        		.uleb128 0x12
+ 3251 01af 01        		.uleb128 0x1
+ 3252 01b0 40        		.uleb128 0x40
+ 3253 01b1 0A        		.uleb128 0xa
+ 3254 01b2 00        		.byte	0x0
+ 3255 01b3 00        		.byte	0x0
+ 3256 01b4 1F        		.uleb128 0x1f
+ 3257 01b5 2E        		.uleb128 0x2e
+ 3258 01b6 00        		.byte	0x0
+ 3259 01b7 31        		.uleb128 0x31
+ 3260 01b8 13        		.uleb128 0x13
+ 3261 01b9 11        		.uleb128 0x11
+ 3262 01ba 01        		.uleb128 0x1
+ 3263 01bb 12        		.uleb128 0x12
+ 3264 01bc 01        		.uleb128 0x1
+ 3265 01bd 40        		.uleb128 0x40
+ 3266 01be 0A        		.uleb128 0xa
+ 3267 01bf 00        		.byte	0x0
+ 3268 01c0 00        		.byte	0x0
+ 3269 01c1 20        		.uleb128 0x20
+ 3270 01c2 2E        		.uleb128 0x2e
+ 3271 01c3 01        		.byte	0x1
+ 3272 01c4 3F        		.uleb128 0x3f
+ 3273 01c5 0C        		.uleb128 0xc
+ 3274 01c6 03        		.uleb128 0x3
+ 3275 01c7 0E        		.uleb128 0xe
+ 3276 01c8 3A        		.uleb128 0x3a
+ 3277 01c9 0B        		.uleb128 0xb
+ 3278 01ca 3B        		.uleb128 0x3b
+ 3279 01cb 05        		.uleb128 0x5
+ 3280 01cc 27        		.uleb128 0x27
+ 3281 01cd 0C        		.uleb128 0xc
+ 3282 01ce 11        		.uleb128 0x11
+ 3283 01cf 01        		.uleb128 0x1
+ 3284 01d0 12        		.uleb128 0x12
+ 3285 01d1 01        		.uleb128 0x1
+ 3286 01d2 40        		.uleb128 0x40
+ 3287 01d3 0A        		.uleb128 0xa
+ 3288 01d4 01        		.uleb128 0x1
+ 3289 01d5 13        		.uleb128 0x13
+ 3290 01d6 00        		.byte	0x0
+ 3291 01d7 00        		.byte	0x0
+ 3292 01d8 21        		.uleb128 0x21
+ 3293 01d9 05        		.uleb128 0x5
+ 3294 01da 00        		.byte	0x0
+ 3295 01db 03        		.uleb128 0x3
+ 3296 01dc 0E        		.uleb128 0xe
+ 3297 01dd 3A        		.uleb128 0x3a
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 59
+
+
+ 3298 01de 0B        		.uleb128 0xb
+ 3299 01df 3B        		.uleb128 0x3b
+ 3300 01e0 05        		.uleb128 0x5
+ 3301 01e1 49        		.uleb128 0x49
+ 3302 01e2 13        		.uleb128 0x13
+ 3303 01e3 02        		.uleb128 0x2
+ 3304 01e4 06        		.uleb128 0x6
+ 3305 01e5 00        		.byte	0x0
+ 3306 01e6 00        		.byte	0x0
+ 3307 01e7 22        		.uleb128 0x22
+ 3308 01e8 1D        		.uleb128 0x1d
+ 3309 01e9 01        		.byte	0x1
+ 3310 01ea 31        		.uleb128 0x31
+ 3311 01eb 13        		.uleb128 0x13
+ 3312 01ec 11        		.uleb128 0x11
+ 3313 01ed 01        		.uleb128 0x1
+ 3314 01ee 12        		.uleb128 0x12
+ 3315 01ef 01        		.uleb128 0x1
+ 3316 01f0 58        		.uleb128 0x58
+ 3317 01f1 0B        		.uleb128 0xb
+ 3318 01f2 59        		.uleb128 0x59
+ 3319 01f3 05        		.uleb128 0x5
+ 3320 01f4 00        		.byte	0x0
+ 3321 01f5 00        		.byte	0x0
+ 3322 01f6 23        		.uleb128 0x23
+ 3323 01f7 2E        		.uleb128 0x2e
+ 3324 01f8 00        		.byte	0x0
+ 3325 01f9 3F        		.uleb128 0x3f
+ 3326 01fa 0C        		.uleb128 0xc
+ 3327 01fb 03        		.uleb128 0x3
+ 3328 01fc 0E        		.uleb128 0xe
+ 3329 01fd 3A        		.uleb128 0x3a
+ 3330 01fe 0B        		.uleb128 0xb
+ 3331 01ff 3B        		.uleb128 0x3b
+ 3332 0200 05        		.uleb128 0x5
+ 3333 0201 27        		.uleb128 0x27
+ 3334 0202 0C        		.uleb128 0xc
+ 3335 0203 11        		.uleb128 0x11
+ 3336 0204 01        		.uleb128 0x1
+ 3337 0205 12        		.uleb128 0x12
+ 3338 0206 01        		.uleb128 0x1
+ 3339 0207 40        		.uleb128 0x40
+ 3340 0208 0A        		.uleb128 0xa
+ 3341 0209 00        		.byte	0x0
+ 3342 020a 00        		.byte	0x0
+ 3343 020b 24        		.uleb128 0x24
+ 3344 020c 2E        		.uleb128 0x2e
+ 3345 020d 01        		.byte	0x1
+ 3346 020e 3F        		.uleb128 0x3f
+ 3347 020f 0C        		.uleb128 0xc
+ 3348 0210 03        		.uleb128 0x3
+ 3349 0211 0E        		.uleb128 0xe
+ 3350 0212 3A        		.uleb128 0x3a
+ 3351 0213 0B        		.uleb128 0xb
+ 3352 0214 3B        		.uleb128 0x3b
+ 3353 0215 05        		.uleb128 0x5
+ 3354 0216 27        		.uleb128 0x27
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 60
+
+
+ 3355 0217 0C        		.uleb128 0xc
+ 3356 0218 49        		.uleb128 0x49
+ 3357 0219 13        		.uleb128 0x13
+ 3358 021a 11        		.uleb128 0x11
+ 3359 021b 01        		.uleb128 0x1
+ 3360 021c 12        		.uleb128 0x12
+ 3361 021d 01        		.uleb128 0x1
+ 3362 021e 40        		.uleb128 0x40
+ 3363 021f 0A        		.uleb128 0xa
+ 3364 0220 01        		.uleb128 0x1
+ 3365 0221 13        		.uleb128 0x13
+ 3366 0222 00        		.byte	0x0
+ 3367 0223 00        		.byte	0x0
+ 3368 0224 25        		.uleb128 0x25
+ 3369 0225 34        		.uleb128 0x34
+ 3370 0226 00        		.byte	0x0
+ 3371 0227 03        		.uleb128 0x3
+ 3372 0228 0E        		.uleb128 0xe
+ 3373 0229 3A        		.uleb128 0x3a
+ 3374 022a 0B        		.uleb128 0xb
+ 3375 022b 3B        		.uleb128 0x3b
+ 3376 022c 05        		.uleb128 0x5
+ 3377 022d 49        		.uleb128 0x49
+ 3378 022e 13        		.uleb128 0x13
+ 3379 022f 02        		.uleb128 0x2
+ 3380 0230 06        		.uleb128 0x6
+ 3381 0231 00        		.byte	0x0
+ 3382 0232 00        		.byte	0x0
+ 3383 0233 26        		.uleb128 0x26
+ 3384 0234 1D        		.uleb128 0x1d
+ 3385 0235 01        		.byte	0x1
+ 3386 0236 31        		.uleb128 0x31
+ 3387 0237 13        		.uleb128 0x13
+ 3388 0238 11        		.uleb128 0x11
+ 3389 0239 01        		.uleb128 0x1
+ 3390 023a 12        		.uleb128 0x12
+ 3391 023b 01        		.uleb128 0x1
+ 3392 023c 58        		.uleb128 0x58
+ 3393 023d 0B        		.uleb128 0xb
+ 3394 023e 59        		.uleb128 0x59
+ 3395 023f 05        		.uleb128 0x5
+ 3396 0240 01        		.uleb128 0x1
+ 3397 0241 13        		.uleb128 0x13
+ 3398 0242 00        		.byte	0x0
+ 3399 0243 00        		.byte	0x0
+ 3400 0244 27        		.uleb128 0x27
+ 3401 0245 34        		.uleb128 0x34
+ 3402 0246 00        		.byte	0x0
+ 3403 0247 31        		.uleb128 0x31
+ 3404 0248 13        		.uleb128 0x13
+ 3405 0249 02        		.uleb128 0x2
+ 3406 024a 0A        		.uleb128 0xa
+ 3407 024b 00        		.byte	0x0
+ 3408 024c 00        		.byte	0x0
+ 3409 024d 28        		.uleb128 0x28
+ 3410 024e 05        		.uleb128 0x5
+ 3411 024f 00        		.byte	0x0
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 61
+
+
+ 3412 0250 03        		.uleb128 0x3
+ 3413 0251 08        		.uleb128 0x8
+ 3414 0252 3A        		.uleb128 0x3a
+ 3415 0253 0B        		.uleb128 0xb
+ 3416 0254 3B        		.uleb128 0x3b
+ 3417 0255 05        		.uleb128 0x5
+ 3418 0256 49        		.uleb128 0x49
+ 3419 0257 13        		.uleb128 0x13
+ 3420 0258 02        		.uleb128 0x2
+ 3421 0259 06        		.uleb128 0x6
+ 3422 025a 00        		.byte	0x0
+ 3423 025b 00        		.byte	0x0
+ 3424 025c 29        		.uleb128 0x29
+ 3425 025d 34        		.uleb128 0x34
+ 3426 025e 00        		.byte	0x0
+ 3427 025f 03        		.uleb128 0x3
+ 3428 0260 0E        		.uleb128 0xe
+ 3429 0261 3A        		.uleb128 0x3a
+ 3430 0262 0B        		.uleb128 0xb
+ 3431 0263 3B        		.uleb128 0x3b
+ 3432 0264 05        		.uleb128 0x5
+ 3433 0265 49        		.uleb128 0x49
+ 3434 0266 13        		.uleb128 0x13
+ 3435 0267 02        		.uleb128 0x2
+ 3436 0268 0A        		.uleb128 0xa
+ 3437 0269 00        		.byte	0x0
+ 3438 026a 00        		.byte	0x0
+ 3439 026b 2A        		.uleb128 0x2a
+ 3440 026c 05        		.uleb128 0x5
+ 3441 026d 00        		.byte	0x0
+ 3442 026e 03        		.uleb128 0x3
+ 3443 026f 0E        		.uleb128 0xe
+ 3444 0270 3A        		.uleb128 0x3a
+ 3445 0271 0B        		.uleb128 0xb
+ 3446 0272 3B        		.uleb128 0x3b
+ 3447 0273 0B        		.uleb128 0xb
+ 3448 0274 49        		.uleb128 0x49
+ 3449 0275 13        		.uleb128 0x13
+ 3450 0276 02        		.uleb128 0x2
+ 3451 0277 06        		.uleb128 0x6
+ 3452 0278 00        		.byte	0x0
+ 3453 0279 00        		.byte	0x0
+ 3454 027a 2B        		.uleb128 0x2b
+ 3455 027b 34        		.uleb128 0x34
+ 3456 027c 00        		.byte	0x0
+ 3457 027d 03        		.uleb128 0x3
+ 3458 027e 0E        		.uleb128 0xe
+ 3459 027f 3A        		.uleb128 0x3a
+ 3460 0280 0B        		.uleb128 0xb
+ 3461 0281 3B        		.uleb128 0x3b
+ 3462 0282 0B        		.uleb128 0xb
+ 3463 0283 49        		.uleb128 0x49
+ 3464 0284 13        		.uleb128 0x13
+ 3465 0285 00        		.byte	0x0
+ 3466 0286 00        		.byte	0x0
+ 3467 0287 2C        		.uleb128 0x2c
+ 3468 0288 1D        		.uleb128 0x1d
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 62
+
+
+ 3469 0289 00        		.byte	0x0
+ 3470 028a 31        		.uleb128 0x31
+ 3471 028b 13        		.uleb128 0x13
+ 3472 028c 11        		.uleb128 0x11
+ 3473 028d 01        		.uleb128 0x1
+ 3474 028e 12        		.uleb128 0x12
+ 3475 028f 01        		.uleb128 0x1
+ 3476 0290 58        		.uleb128 0x58
+ 3477 0291 0B        		.uleb128 0xb
+ 3478 0292 59        		.uleb128 0x59
+ 3479 0293 0B        		.uleb128 0xb
+ 3480 0294 00        		.byte	0x0
+ 3481 0295 00        		.byte	0x0
+ 3482 0296 2D        		.uleb128 0x2d
+ 3483 0297 34        		.uleb128 0x34
+ 3484 0298 00        		.byte	0x0
+ 3485 0299 03        		.uleb128 0x3
+ 3486 029a 08        		.uleb128 0x8
+ 3487 029b 3A        		.uleb128 0x3a
+ 3488 029c 0B        		.uleb128 0xb
+ 3489 029d 3B        		.uleb128 0x3b
+ 3490 029e 0B        		.uleb128 0xb
+ 3491 029f 49        		.uleb128 0x49
+ 3492 02a0 13        		.uleb128 0x13
+ 3493 02a1 02        		.uleb128 0x2
+ 3494 02a2 06        		.uleb128 0x6
+ 3495 02a3 00        		.byte	0x0
+ 3496 02a4 00        		.byte	0x0
+ 3497 02a5 2E        		.uleb128 0x2e
+ 3498 02a6 1D        		.uleb128 0x1d
+ 3499 02a7 01        		.byte	0x1
+ 3500 02a8 31        		.uleb128 0x31
+ 3501 02a9 13        		.uleb128 0x13
+ 3502 02aa 55        		.uleb128 0x55
+ 3503 02ab 06        		.uleb128 0x6
+ 3504 02ac 58        		.uleb128 0x58
+ 3505 02ad 0B        		.uleb128 0xb
+ 3506 02ae 59        		.uleb128 0x59
+ 3507 02af 0B        		.uleb128 0xb
+ 3508 02b0 01        		.uleb128 0x1
+ 3509 02b1 13        		.uleb128 0x13
+ 3510 02b2 00        		.byte	0x0
+ 3511 02b3 00        		.byte	0x0
+ 3512 02b4 2F        		.uleb128 0x2f
+ 3513 02b5 0B        		.uleb128 0xb
+ 3514 02b6 01        		.byte	0x1
+ 3515 02b7 55        		.uleb128 0x55
+ 3516 02b8 06        		.uleb128 0x6
+ 3517 02b9 00        		.byte	0x0
+ 3518 02ba 00        		.byte	0x0
+ 3519 02bb 30        		.uleb128 0x30
+ 3520 02bc 34        		.uleb128 0x34
+ 3521 02bd 00        		.byte	0x0
+ 3522 02be 31        		.uleb128 0x31
+ 3523 02bf 13        		.uleb128 0x13
+ 3524 02c0 02        		.uleb128 0x2
+ 3525 02c1 06        		.uleb128 0x6
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 63
+
+
+ 3526 02c2 00        		.byte	0x0
+ 3527 02c3 00        		.byte	0x0
+ 3528 02c4 31        		.uleb128 0x31
+ 3529 02c5 35        		.uleb128 0x35
+ 3530 02c6 00        		.byte	0x0
+ 3531 02c7 49        		.uleb128 0x49
+ 3532 02c8 13        		.uleb128 0x13
+ 3533 02c9 00        		.byte	0x0
+ 3534 02ca 00        		.byte	0x0
+ 3535 02cb 32        		.uleb128 0x32
+ 3536 02cc 34        		.uleb128 0x34
+ 3537 02cd 00        		.byte	0x0
+ 3538 02ce 03        		.uleb128 0x3
+ 3539 02cf 08        		.uleb128 0x8
+ 3540 02d0 3A        		.uleb128 0x3a
+ 3541 02d1 0B        		.uleb128 0xb
+ 3542 02d2 3B        		.uleb128 0x3b
+ 3543 02d3 0B        		.uleb128 0xb
+ 3544 02d4 49        		.uleb128 0x49
+ 3545 02d5 13        		.uleb128 0x13
+ 3546 02d6 02        		.uleb128 0x2
+ 3547 02d7 0A        		.uleb128 0xa
+ 3548 02d8 00        		.byte	0x0
+ 3549 02d9 00        		.byte	0x0
+ 3550 02da 33        		.uleb128 0x33
+ 3551 02db 34        		.uleb128 0x34
+ 3552 02dc 00        		.byte	0x0
+ 3553 02dd 03        		.uleb128 0x3
+ 3554 02de 0E        		.uleb128 0xe
+ 3555 02df 3A        		.uleb128 0x3a
+ 3556 02e0 0B        		.uleb128 0xb
+ 3557 02e1 3B        		.uleb128 0x3b
+ 3558 02e2 0B        		.uleb128 0xb
+ 3559 02e3 49        		.uleb128 0x49
+ 3560 02e4 13        		.uleb128 0x13
+ 3561 02e5 3F        		.uleb128 0x3f
+ 3562 02e6 0C        		.uleb128 0xc
+ 3563 02e7 02        		.uleb128 0x2
+ 3564 02e8 0A        		.uleb128 0xa
+ 3565 02e9 00        		.byte	0x0
+ 3566 02ea 00        		.byte	0x0
+ 3567 02eb 00        		.byte	0x0
+ 3568               		.section	.debug_pubnames,"",@progbits
+ 3569 0000 2701 0000 		.long	0x127
+ 3570 0004 0200      		.word	0x2
+ 3571 0006 0000 0000 		.long	.Ldebug_info0
+ 3572 000a 2507 0000 		.long	0x725
+ 3573 000e 6C01 0000 		.long	0x16c
+ 3574 0012 696E 6974 		.string	"initBuffer"
+ 3574      4275 6666 
+ 3574      6572 00
+ 3575 001d 8A01 0000 		.long	0x18a
+ 3576 0021 6973 4675 		.string	"isFull"
+ 3576      6C6C 00
+ 3577 0028 A801 0000 		.long	0x1a8
+ 3578 002c 6973 456D 		.string	"isEmpty"
+ 3578      7074 7900 
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 64
+
+
+ 3579 0034 C601 0000 		.long	0x1c6
+ 3580 0038 656E 7175 		.string	"enqueue"
+ 3580      6575 6500 
+ 3581 0040 1302 0000 		.long	0x213
+ 3582 0044 6465 7175 		.string	"dequeue"
+ 3582      6575 6500 
+ 3583 004c 6B02 0000 		.long	0x26b
+ 3584 0050 5F5F 7665 		.string	"__vector_18"
+ 3584      6374 6F72 
+ 3584      5F31 3800 
+ 3585 005c 9302 0000 		.long	0x293
+ 3586 0060 5F5F 7665 		.string	"__vector_19"
+ 3586      6374 6F72 
+ 3586      5F31 3900 
+ 3587 006c DD02 0000 		.long	0x2dd
+ 3588 0070 5F5F 7665 		.string	"__vector_11"
+ 3588      6374 6F72 
+ 3588      5F31 3100 
+ 3589 007c F102 0000 		.long	0x2f1
+ 3590 0080 6973 5F66 		.string	"is_flow_on"
+ 3590      6C6F 775F 
+ 3590      6F6E 00
+ 3591 008b 0103 0000 		.long	0x301
+ 3592 008f 5553 4152 		.string	"USART_Transmit"
+ 3592      545F 5472 
+ 3592      616E 736D 
+ 3592      6974 00
+ 3593 009e 4103 0000 		.long	0x341
+ 3594 00a2 666C 6F77 		.string	"flow_on"
+ 3594      5F6F 6E00 
+ 3595 00aa 5603 0000 		.long	0x356
+ 3596 00ae 666C 6F77 		.string	"flow_off"
+ 3596      5F6F 6666 
+ 3596      00
+ 3597 00b7 6B03 0000 		.long	0x36b
+ 3598 00bb 5553 4152 		.string	"USART_Receive"
+ 3598      545F 5265 
+ 3598      6365 6976 
+ 3598      6500 
+ 3599 00c9 AF03 0000 		.long	0x3af
+ 3600 00cd 7573 6172 		.string	"usart_init"
+ 3600      745F 696E 
+ 3600      6974 00
+ 3601 00d8 F903 0000 		.long	0x3f9
+ 3602 00dc 696E 6974 		.string	"initTimer1"
+ 3602      5469 6D65 
+ 3602      7231 00
+ 3603 00e7 0E04 0000 		.long	0x40e
+ 3604 00eb 6465 6C61 		.string	"delay"
+ 3604      7900 
+ 3605 00f1 3E04 0000 		.long	0x43e
+ 3606 00f5 7265 6164 		.string	"read"
+ 3606      00
+ 3607 00fa AC04 0000 		.long	0x4ac
+ 3608 00fe 7772 6974 		.string	"write"
+ 3608      6500 
+ 3609 0104 2E05 0000 		.long	0x52e
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 65
+
+
+ 3610 0108 6D61 696E 		.string	"main"
+ 3610      00
+ 3611 010d 0007 0000 		.long	0x700
+ 3612 0111 7278 4275 		.string	"rxBuffer"
+ 3612      6666 6572 
+ 3612      00
+ 3613 011a 1207 0000 		.long	0x712
+ 3614 011e 7478 4275 		.string	"txBuffer"
+ 3614      6666 6572 
+ 3614      00
+ 3615 0127 0000 0000 		.long	0x0
+ 3616               		.section	.debug_aranges,"",@progbits
+ 3617 0000 1C00 0000 		.long	0x1c
+ 3618 0004 0200      		.word	0x2
+ 3619 0006 0000 0000 		.long	.Ldebug_info0
+ 3620 000a 04        		.byte	0x4
+ 3621 000b 00        		.byte	0x0
+ 3622 000c 0000      		.word	0x0
+ 3623 000e 0000      		.word	0x0
+ 3624 0010 0000 0000 		.long	.Ltext0
+ 3625 0014 9406 0000 		.long	.Letext0-.Ltext0
+ 3626 0018 0000 0000 		.long	0x0
+ 3627 001c 0000 0000 		.long	0x0
+ 3628               		.section	.debug_ranges,"",@progbits
+ 3629               	.Ldebug_ranges0:
+ 3630 0000 F604 0000 		.long	.LBB50-.Ltext0
+ 3631 0004 0805 0000 		.long	.LBE50-.Ltext0
+ 3632 0008 4605 0000 		.long	.LBB55-.Ltext0
+ 3633 000c 6805 0000 		.long	.LBE55-.Ltext0
+ 3634 0010 0000 0000 		.long	0x0
+ 3635 0014 0000 0000 		.long	0x0
+ 3636 0018 F604 0000 		.long	.LBB51-.Ltext0
+ 3637 001c 0805 0000 		.long	.LBE51-.Ltext0
+ 3638 0020 4605 0000 		.long	.LBB52-.Ltext0
+ 3639 0024 6805 0000 		.long	.LBE52-.Ltext0
+ 3640 0028 0000 0000 		.long	0x0
+ 3641 002c 0000 0000 		.long	0x0
+ 3642 0030 7C05 0000 		.long	.LBB58-.Ltext0
+ 3643 0034 8E05 0000 		.long	.LBE58-.Ltext0
+ 3644 0038 CE05 0000 		.long	.LBB63-.Ltext0
+ 3645 003c F005 0000 		.long	.LBE63-.Ltext0
+ 3646 0040 0000 0000 		.long	0x0
+ 3647 0044 0000 0000 		.long	0x0
+ 3648 0048 7C05 0000 		.long	.LBB59-.Ltext0
+ 3649 004c 8E05 0000 		.long	.LBE59-.Ltext0
+ 3650 0050 CE05 0000 		.long	.LBB60-.Ltext0
+ 3651 0054 F005 0000 		.long	.LBE60-.Ltext0
+ 3652 0058 0000 0000 		.long	0x0
+ 3653 005c 0000 0000 		.long	0x0
+ 3654               		.section	.debug_line
+ 3655 0000 FA05 0000 		.long	.LELT0-.LSLT0
+ 3656               	.LSLT0:
+ 3657 0004 0200      		.word	0x2
+ 3658 0006 5300 0000 		.long	.LELTP0-.LASLTP0
+ 3659               	.LASLTP0:
+ 3660 000a 01        		.byte	0x1
+ 3661 000b 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 66
+
+
+ 3662 000c F6        		.byte	0xf6
+ 3663 000d F5        		.byte	0xf5
+ 3664 000e 0A        		.byte	0xa
+ 3665 000f 00        		.byte	0x0
+ 3666 0010 01        		.byte	0x1
+ 3667 0011 01        		.byte	0x1
+ 3668 0012 01        		.byte	0x1
+ 3669 0013 01        		.byte	0x1
+ 3670 0014 00        		.byte	0x0
+ 3671 0015 00        		.byte	0x0
+ 3672 0016 00        		.byte	0x0
+ 3673 0017 01        		.byte	0x1
+ 3674 0018 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include"
+ 3674      696E 6176 
+ 3674      722D 3230 
+ 3674      3130 3031 
+ 3674      3130 2F6C 
+ 3675 0044 00        		.byte	0
+ 3676 0045 00        		.byte	0x0
+ 3677 0046 6D61 696E 		.string	"main.c"
+ 3677      2E63 00
+ 3678 004d 00        		.uleb128 0x0
+ 3679 004e 00        		.uleb128 0x0
+ 3680 004f 00        		.uleb128 0x0
+ 3681 0050 7374 6469 		.string	"stdint.h"
+ 3681      6E74 2E68 
+ 3681      00
+ 3682 0059 01        		.uleb128 0x1
+ 3683 005a 00        		.uleb128 0x0
+ 3684 005b 00        		.uleb128 0x0
+ 3685 005c 00        		.byte	0x0
+ 3686               	.LELTP0:
+ 3687 005d 00        		.byte	0x0
+ 3688 005e 05        		.uleb128 0x5
+ 3689 005f 02        		.byte	0x2
+ 3690 0060 0000 0000 		.long	.LM1
+ 3691 0064 A8        		.byte	0xa8
+ 3692 0065 00        		.byte	0x0
+ 3693 0066 05        		.uleb128 0x5
+ 3694 0067 02        		.byte	0x2
+ 3695 0068 0000 0000 		.long	.LM2
+ 3696 006c 15        		.byte	0x15
+ 3697 006d 00        		.byte	0x0
+ 3698 006e 05        		.uleb128 0x5
+ 3699 006f 02        		.byte	0x2
+ 3700 0070 0000 0000 		.long	.LM3
+ 3701 0074 15        		.byte	0x15
+ 3702 0075 00        		.byte	0x0
+ 3703 0076 05        		.uleb128 0x5
+ 3704 0077 02        		.byte	0x2
+ 3705 0078 0000 0000 		.long	.LM4
+ 3706 007c 15        		.byte	0x15
+ 3707 007d 00        		.byte	0x0
+ 3708 007e 05        		.uleb128 0x5
+ 3709 007f 02        		.byte	0x2
+ 3710 0080 0000 0000 		.long	.LM5
+ 3711 0084 15        		.byte	0x15
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 67
+
+
+ 3712 0085 00        		.byte	0x0
+ 3713 0086 05        		.uleb128 0x5
+ 3714 0087 02        		.byte	0x2
+ 3715 0088 0000 0000 		.long	.LM6
+ 3716 008c 16        		.byte	0x16
+ 3717 008d 00        		.byte	0x0
+ 3718 008e 05        		.uleb128 0x5
+ 3719 008f 02        		.byte	0x2
+ 3720 0090 0000 0000 		.long	.LM7
+ 3721 0094 01        		.byte	0x1
+ 3722 0095 00        		.byte	0x0
+ 3723 0096 05        		.uleb128 0x5
+ 3724 0097 02        		.byte	0x2
+ 3725 0098 0000 0000 		.long	.LM8
+ 3726 009c 17        		.byte	0x17
+ 3727 009d 00        		.byte	0x0
+ 3728 009e 05        		.uleb128 0x5
+ 3729 009f 02        		.byte	0x2
+ 3730 00a0 0000 0000 		.long	.LM9
+ 3731 00a4 16        		.byte	0x16
+ 3732 00a5 00        		.byte	0x0
+ 3733 00a6 05        		.uleb128 0x5
+ 3734 00a7 02        		.byte	0x2
+ 3735 00a8 0000 0000 		.long	.LM10
+ 3736 00ac 01        		.byte	0x1
+ 3737 00ad 00        		.byte	0x0
+ 3738 00ae 05        		.uleb128 0x5
+ 3739 00af 02        		.byte	0x2
+ 3740 00b0 0000 0000 		.long	.LM11
+ 3741 00b4 17        		.byte	0x17
+ 3742 00b5 00        		.byte	0x0
+ 3743 00b6 05        		.uleb128 0x5
+ 3744 00b7 02        		.byte	0x2
+ 3745 00b8 0000 0000 		.long	.LM12
+ 3746 00bc 16        		.byte	0x16
+ 3747 00bd 00        		.byte	0x0
+ 3748 00be 05        		.uleb128 0x5
+ 3749 00bf 02        		.byte	0x2
+ 3750 00c0 0000 0000 		.long	.LM13
+ 3751 00c4 0B        		.byte	0xb
+ 3752 00c5 00        		.byte	0x0
+ 3753 00c6 05        		.uleb128 0x5
+ 3754 00c7 02        		.byte	0x2
+ 3755 00c8 0000 0000 		.long	.LM14
+ 3756 00cc 25        		.byte	0x25
+ 3757 00cd 00        		.byte	0x0
+ 3758 00ce 05        		.uleb128 0x5
+ 3759 00cf 02        		.byte	0x2
+ 3760 00d0 0000 0000 		.long	.LM15
+ 3761 00d4 10        		.byte	0x10
+ 3762 00d5 00        		.byte	0x0
+ 3763 00d6 05        		.uleb128 0x5
+ 3764 00d7 02        		.byte	0x2
+ 3765 00d8 0000 0000 		.long	.LM16
+ 3766 00dc 15        		.byte	0x15
+ 3767 00dd 00        		.byte	0x0
+ 3768 00de 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 68
+
+
+ 3769 00df 02        		.byte	0x2
+ 3770 00e0 0000 0000 		.long	.LM17
+ 3771 00e4 15        		.byte	0x15
+ 3772 00e5 00        		.byte	0x0
+ 3773 00e6 05        		.uleb128 0x5
+ 3774 00e7 02        		.byte	0x2
+ 3775 00e8 0000 0000 		.long	.LM18
+ 3776 00ec 18        		.byte	0x18
+ 3777 00ed 00        		.byte	0x0
+ 3778 00ee 05        		.uleb128 0x5
+ 3779 00ef 02        		.byte	0x2
+ 3780 00f0 0000 0000 		.long	.LM19
+ 3781 00f4 03        		.byte	0x3
+ 3782 00f5 72        		.sleb128 -14
+ 3783 00f6 01        		.byte	0x1
+ 3784 00f7 00        		.byte	0x0
+ 3785 00f8 05        		.uleb128 0x5
+ 3786 00f9 02        		.byte	0x2
+ 3787 00fa 0000 0000 		.long	.LM20
+ 3788 00fe 2A        		.byte	0x2a
+ 3789 00ff 00        		.byte	0x0
+ 3790 0100 05        		.uleb128 0x5
+ 3791 0101 02        		.byte	0x2
+ 3792 0102 0000 0000 		.long	.LM21
+ 3793 0106 10        		.byte	0x10
+ 3794 0107 00        		.byte	0x0
+ 3795 0108 05        		.uleb128 0x5
+ 3796 0109 02        		.byte	0x2
+ 3797 010a 0000 0000 		.long	.LM22
+ 3798 010e 15        		.byte	0x15
+ 3799 010f 00        		.byte	0x0
+ 3800 0110 05        		.uleb128 0x5
+ 3801 0111 02        		.byte	0x2
+ 3802 0112 0000 0000 		.long	.LM23
+ 3803 0116 15        		.byte	0x15
+ 3804 0117 00        		.byte	0x0
+ 3805 0118 05        		.uleb128 0x5
+ 3806 0119 02        		.byte	0x2
+ 3807 011a 0000 0000 		.long	.LM24
+ 3808 011e 18        		.byte	0x18
+ 3809 011f 00        		.byte	0x0
+ 3810 0120 05        		.uleb128 0x5
+ 3811 0121 02        		.byte	0x2
+ 3812 0122 0000 0000 		.long	.LM25
+ 3813 0126 15        		.byte	0x15
+ 3814 0127 00        		.byte	0x0
+ 3815 0128 05        		.uleb128 0x5
+ 3816 0129 02        		.byte	0x2
+ 3817 012a 0000 0000 		.long	.LM26
+ 3818 012e 16        		.byte	0x16
+ 3819 012f 00        		.byte	0x0
+ 3820 0130 05        		.uleb128 0x5
+ 3821 0131 02        		.byte	0x2
+ 3822 0132 0000 0000 		.long	.LM27
+ 3823 0136 16        		.byte	0x16
+ 3824 0137 00        		.byte	0x0
+ 3825 0138 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 69
+
+
+ 3826 0139 02        		.byte	0x2
+ 3827 013a 0000 0000 		.long	.LM28
+ 3828 013e 17        		.byte	0x17
+ 3829 013f 00        		.byte	0x0
+ 3830 0140 05        		.uleb128 0x5
+ 3831 0141 02        		.byte	0x2
+ 3832 0142 0000 0000 		.long	.LM29
+ 3833 0146 15        		.byte	0x15
+ 3834 0147 00        		.byte	0x0
+ 3835 0148 05        		.uleb128 0x5
+ 3836 0149 02        		.byte	0x2
+ 3837 014a 0000 0000 		.long	.LM30
+ 3838 014e 17        		.byte	0x17
+ 3839 014f 00        		.byte	0x0
+ 3840 0150 05        		.uleb128 0x5
+ 3841 0151 02        		.byte	0x2
+ 3842 0152 0000 0000 		.long	.LM31
+ 3843 0156 15        		.byte	0x15
+ 3844 0157 00        		.byte	0x0
+ 3845 0158 05        		.uleb128 0x5
+ 3846 0159 02        		.byte	0x2
+ 3847 015a 0000 0000 		.long	.LM32
+ 3848 015e 17        		.byte	0x17
+ 3849 015f 00        		.byte	0x0
+ 3850 0160 05        		.uleb128 0x5
+ 3851 0161 02        		.byte	0x2
+ 3852 0162 0000 0000 		.long	.LM33
+ 3853 0166 18        		.byte	0x18
+ 3854 0167 00        		.byte	0x0
+ 3855 0168 05        		.uleb128 0x5
+ 3856 0169 02        		.byte	0x2
+ 3857 016a 0000 0000 		.long	.LM34
+ 3858 016e 18        		.byte	0x18
+ 3859 016f 00        		.byte	0x0
+ 3860 0170 05        		.uleb128 0x5
+ 3861 0171 02        		.byte	0x2
+ 3862 0172 0000 0000 		.long	.LM35
+ 3863 0176 18        		.byte	0x18
+ 3864 0177 00        		.byte	0x0
+ 3865 0178 05        		.uleb128 0x5
+ 3866 0179 02        		.byte	0x2
+ 3867 017a 0000 0000 		.long	.LM36
+ 3868 017e 16        		.byte	0x16
+ 3869 017f 00        		.byte	0x0
+ 3870 0180 05        		.uleb128 0x5
+ 3871 0181 02        		.byte	0x2
+ 3872 0182 0000 0000 		.long	.LM37
+ 3873 0186 16        		.byte	0x16
+ 3874 0187 00        		.byte	0x0
+ 3875 0188 05        		.uleb128 0x5
+ 3876 0189 02        		.byte	0x2
+ 3877 018a 0000 0000 		.long	.LM38
+ 3878 018e 03        		.byte	0x3
+ 3879 018f 48        		.sleb128 -56
+ 3880 0190 01        		.byte	0x1
+ 3881 0191 00        		.byte	0x0
+ 3882 0192 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 70
+
+
+ 3883 0193 02        		.byte	0x2
+ 3884 0194 0000 0000 		.long	.LM39
+ 3885 0198 4F        		.byte	0x4f
+ 3886 0199 00        		.byte	0x0
+ 3887 019a 05        		.uleb128 0x5
+ 3888 019b 02        		.byte	0x2
+ 3889 019c 0000 0000 		.long	.LM40
+ 3890 01a0 19        		.byte	0x19
+ 3891 01a1 00        		.byte	0x0
+ 3892 01a2 05        		.uleb128 0x5
+ 3893 01a3 02        		.byte	0x2
+ 3894 01a4 0000 0000 		.long	.LM41
+ 3895 01a8 15        		.byte	0x15
+ 3896 01a9 00        		.byte	0x0
+ 3897 01aa 05        		.uleb128 0x5
+ 3898 01ab 02        		.byte	0x2
+ 3899 01ac 0000 0000 		.long	.LM42
+ 3900 01b0 16        		.byte	0x16
+ 3901 01b1 00        		.byte	0x0
+ 3902 01b2 05        		.uleb128 0x5
+ 3903 01b3 02        		.byte	0x2
+ 3904 01b4 0000 0000 		.long	.LM43
+ 3905 01b8 17        		.byte	0x17
+ 3906 01b9 00        		.byte	0x0
+ 3907 01ba 05        		.uleb128 0x5
+ 3908 01bb 02        		.byte	0x2
+ 3909 01bc 0000 0000 		.long	.LM44
+ 3910 01c0 15        		.byte	0x15
+ 3911 01c1 00        		.byte	0x0
+ 3912 01c2 05        		.uleb128 0x5
+ 3913 01c3 02        		.byte	0x2
+ 3914 01c4 0000 0000 		.long	.LM45
+ 3915 01c8 15        		.byte	0x15
+ 3916 01c9 00        		.byte	0x0
+ 3917 01ca 05        		.uleb128 0x5
+ 3918 01cb 02        		.byte	0x2
+ 3919 01cc 0000 0000 		.long	.LM46
+ 3920 01d0 5B        		.byte	0x5b
+ 3921 01d1 00        		.byte	0x0
+ 3922 01d2 05        		.uleb128 0x5
+ 3923 01d3 02        		.byte	0x2
+ 3924 01d4 0000 0000 		.long	.LM47
+ 3925 01d8 16        		.byte	0x16
+ 3926 01d9 00        		.byte	0x0
+ 3927 01da 05        		.uleb128 0x5
+ 3928 01db 02        		.byte	0x2
+ 3929 01dc 0000 0000 		.long	.LM48
+ 3930 01e0 18        		.byte	0x18
+ 3931 01e1 00        		.byte	0x0
+ 3932 01e2 05        		.uleb128 0x5
+ 3933 01e3 02        		.byte	0x2
+ 3934 01e4 0000 0000 		.long	.LM49
+ 3935 01e8 16        		.byte	0x16
+ 3936 01e9 00        		.byte	0x0
+ 3937 01ea 05        		.uleb128 0x5
+ 3938 01eb 02        		.byte	0x2
+ 3939 01ec 0000 0000 		.long	.LM50
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 71
+
+
+ 3940 01f0 03        		.byte	0x3
+ 3941 01f1 E47E      		.sleb128 -156
+ 3942 01f3 01        		.byte	0x1
+ 3943 01f4 00        		.byte	0x0
+ 3944 01f5 05        		.uleb128 0x5
+ 3945 01f6 02        		.byte	0x2
+ 3946 01f7 0000 0000 		.long	.LM51
+ 3947 01fb B4        		.byte	0xb4
+ 3948 01fc 00        		.byte	0x0
+ 3949 01fd 05        		.uleb128 0x5
+ 3950 01fe 02        		.byte	0x2
+ 3951 01ff 0000 0000 		.long	.LM52
+ 3952 0203 16        		.byte	0x16
+ 3953 0204 00        		.byte	0x0
+ 3954 0205 05        		.uleb128 0x5
+ 3955 0206 02        		.byte	0x2
+ 3956 0207 0000 0000 		.long	.LM53
+ 3957 020b 15        		.byte	0x15
+ 3958 020c 00        		.byte	0x0
+ 3959 020d 05        		.uleb128 0x5
+ 3960 020e 02        		.byte	0x2
+ 3961 020f 0000 0000 		.long	.LM54
+ 3962 0213 03        		.byte	0x3
+ 3963 0214 6B        		.sleb128 -21
+ 3964 0215 01        		.byte	0x1
+ 3965 0216 00        		.byte	0x0
+ 3966 0217 05        		.uleb128 0x5
+ 3967 0218 02        		.byte	0x2
+ 3968 0219 0000 0000 		.long	.LM55
+ 3969 021d 16        		.byte	0x16
+ 3970 021e 00        		.byte	0x0
+ 3971 021f 05        		.uleb128 0x5
+ 3972 0220 02        		.byte	0x2
+ 3973 0221 0000 0000 		.long	.LM56
+ 3974 0225 15        		.byte	0x15
+ 3975 0226 00        		.byte	0x0
+ 3976 0227 05        		.uleb128 0x5
+ 3977 0228 02        		.byte	0x2
+ 3978 0229 0000 0000 		.long	.LM57
+ 3979 022d 15        		.byte	0x15
+ 3980 022e 00        		.byte	0x0
+ 3981 022f 05        		.uleb128 0x5
+ 3982 0230 02        		.byte	0x2
+ 3983 0231 0000 0000 		.long	.LM58
+ 3984 0235 0A        		.byte	0xa
+ 3985 0236 00        		.byte	0x0
+ 3986 0237 05        		.uleb128 0x5
+ 3987 0238 02        		.byte	0x2
+ 3988 0239 0000 0000 		.long	.LM59
+ 3989 023d 16        		.byte	0x16
+ 3990 023e 00        		.byte	0x0
+ 3991 023f 05        		.uleb128 0x5
+ 3992 0240 02        		.byte	0x2
+ 3993 0241 0000 0000 		.long	.LM60
+ 3994 0245 15        		.byte	0x15
+ 3995 0246 00        		.byte	0x0
+ 3996 0247 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 72
+
+
+ 3997 0248 02        		.byte	0x2
+ 3998 0249 0000 0000 		.long	.LM61
+ 3999 024d 15        		.byte	0x15
+ 4000 024e 00        		.byte	0x0
+ 4001 024f 05        		.uleb128 0x5
+ 4002 0250 02        		.byte	0x2
+ 4003 0251 0000 0000 		.long	.LM62
+ 4004 0255 2D        		.byte	0x2d
+ 4005 0256 00        		.byte	0x0
+ 4006 0257 05        		.uleb128 0x5
+ 4007 0258 02        		.byte	0x2
+ 4008 0259 0000 0000 		.long	.LM63
+ 4009 025d 03        		.byte	0x3
+ 4010 025e E07E      		.sleb128 -160
+ 4011 0260 01        		.byte	0x1
+ 4012 0261 00        		.byte	0x0
+ 4013 0262 05        		.uleb128 0x5
+ 4014 0263 02        		.byte	0x2
+ 4015 0264 0000 0000 		.long	.LM64
+ 4016 0268 B9        		.byte	0xb9
+ 4017 0269 00        		.byte	0x0
+ 4018 026a 05        		.uleb128 0x5
+ 4019 026b 02        		.byte	0x2
+ 4020 026c 0000 0000 		.long	.LM65
+ 4021 0270 16        		.byte	0x16
+ 4022 0271 00        		.byte	0x0
+ 4023 0272 05        		.uleb128 0x5
+ 4024 0273 02        		.byte	0x2
+ 4025 0274 0000 0000 		.long	.LM66
+ 4026 0278 16        		.byte	0x16
+ 4027 0279 00        		.byte	0x0
+ 4028 027a 05        		.uleb128 0x5
+ 4029 027b 02        		.byte	0x2
+ 4030 027c 0000 0000 		.long	.LM67
+ 4031 0280 16        		.byte	0x16
+ 4032 0281 00        		.byte	0x0
+ 4033 0282 05        		.uleb128 0x5
+ 4034 0283 02        		.byte	0x2
+ 4035 0284 0000 0000 		.long	.LM68
+ 4036 0288 15        		.byte	0x15
+ 4037 0289 00        		.byte	0x0
+ 4038 028a 05        		.uleb128 0x5
+ 4039 028b 02        		.byte	0x2
+ 4040 028c 0000 0000 		.long	.LM69
+ 4041 0290 16        		.byte	0x16
+ 4042 0291 00        		.byte	0x0
+ 4043 0292 05        		.uleb128 0x5
+ 4044 0293 02        		.byte	0x2
+ 4045 0294 0000 0000 		.long	.LM70
+ 4046 0298 15        		.byte	0x15
+ 4047 0299 00        		.byte	0x0
+ 4048 029a 05        		.uleb128 0x5
+ 4049 029b 02        		.byte	0x2
+ 4050 029c 0000 0000 		.long	.LM71
+ 4051 02a0 15        		.byte	0x15
+ 4052 02a1 00        		.byte	0x0
+ 4053 02a2 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 73
+
+
+ 4054 02a3 02        		.byte	0x2
+ 4055 02a4 0000 0000 		.long	.LM72
+ 4056 02a8 16        		.byte	0x16
+ 4057 02a9 00        		.byte	0x0
+ 4058 02aa 05        		.uleb128 0x5
+ 4059 02ab 02        		.byte	0x2
+ 4060 02ac 0000 0000 		.long	.LM73
+ 4061 02b0 15        		.byte	0x15
+ 4062 02b1 00        		.byte	0x0
+ 4063 02b2 05        		.uleb128 0x5
+ 4064 02b3 02        		.byte	0x2
+ 4065 02b4 0000 0000 		.long	.LM74
+ 4066 02b8 16        		.byte	0x16
+ 4067 02b9 00        		.byte	0x0
+ 4068 02ba 05        		.uleb128 0x5
+ 4069 02bb 02        		.byte	0x2
+ 4070 02bc 0000 0000 		.long	.LM75
+ 4071 02c0 03        		.byte	0x3
+ 4072 02c1 C07E      		.sleb128 -192
+ 4073 02c3 01        		.byte	0x1
+ 4074 02c4 00        		.byte	0x0
+ 4075 02c5 05        		.uleb128 0x5
+ 4076 02c6 02        		.byte	0x2
+ 4077 02c7 0000 0000 		.long	.LM76
+ 4078 02cb 15        		.byte	0x15
+ 4079 02cc 00        		.byte	0x0
+ 4080 02cd 05        		.uleb128 0x5
+ 4081 02ce 02        		.byte	0x2
+ 4082 02cf 0000 0000 		.long	.LM77
+ 4083 02d3 15        		.byte	0x15
+ 4084 02d4 00        		.byte	0x0
+ 4085 02d5 05        		.uleb128 0x5
+ 4086 02d6 02        		.byte	0x2
+ 4087 02d7 0000 0000 		.long	.LM78
+ 4088 02db 12        		.byte	0x12
+ 4089 02dc 00        		.byte	0x0
+ 4090 02dd 05        		.uleb128 0x5
+ 4091 02de 02        		.byte	0x2
+ 4092 02df 0000 0000 		.long	.LM79
+ 4093 02e3 15        		.byte	0x15
+ 4094 02e4 00        		.byte	0x0
+ 4095 02e5 05        		.uleb128 0x5
+ 4096 02e6 02        		.byte	0x2
+ 4097 02e7 0000 0000 		.long	.LM80
+ 4098 02eb 15        		.byte	0x15
+ 4099 02ec 00        		.byte	0x0
+ 4100 02ed 05        		.uleb128 0x5
+ 4101 02ee 02        		.byte	0x2
+ 4102 02ef 0000 0000 		.long	.LM81
+ 4103 02f3 D6        		.byte	0xd6
+ 4104 02f4 00        		.byte	0x0
+ 4105 02f5 05        		.uleb128 0x5
+ 4106 02f6 02        		.byte	0x2
+ 4107 02f7 0000 0000 		.long	.LM82
+ 4108 02fb 16        		.byte	0x16
+ 4109 02fc 00        		.byte	0x0
+ 4110 02fd 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 74
+
+
+ 4111 02fe 02        		.byte	0x2
+ 4112 02ff 0000 0000 		.long	.LM83
+ 4113 0303 15        		.byte	0x15
+ 4114 0304 00        		.byte	0x0
+ 4115 0305 05        		.uleb128 0x5
+ 4116 0306 02        		.byte	0x2
+ 4117 0307 0000 0000 		.long	.LM84
+ 4118 030b 15        		.byte	0x15
+ 4119 030c 00        		.byte	0x0
+ 4120 030d 05        		.uleb128 0x5
+ 4121 030e 02        		.byte	0x2
+ 4122 030f 0000 0000 		.long	.LM85
+ 4123 0313 15        		.byte	0x15
+ 4124 0314 00        		.byte	0x0
+ 4125 0315 05        		.uleb128 0x5
+ 4126 0316 02        		.byte	0x2
+ 4127 0317 0000 0000 		.long	.LM86
+ 4128 031b 15        		.byte	0x15
+ 4129 031c 00        		.byte	0x0
+ 4130 031d 05        		.uleb128 0x5
+ 4131 031e 02        		.byte	0x2
+ 4132 031f 0000 0000 		.long	.LM87
+ 4133 0323 15        		.byte	0x15
+ 4134 0324 00        		.byte	0x0
+ 4135 0325 05        		.uleb128 0x5
+ 4136 0326 02        		.byte	0x2
+ 4137 0327 0000 0000 		.long	.LM88
+ 4138 032b 17        		.byte	0x17
+ 4139 032c 00        		.byte	0x0
+ 4140 032d 05        		.uleb128 0x5
+ 4141 032e 02        		.byte	0x2
+ 4142 032f 0000 0000 		.long	.LM89
+ 4143 0333 15        		.byte	0x15
+ 4144 0334 00        		.byte	0x0
+ 4145 0335 05        		.uleb128 0x5
+ 4146 0336 02        		.byte	0x2
+ 4147 0337 0000 0000 		.long	.LM90
+ 4148 033b 15        		.byte	0x15
+ 4149 033c 00        		.byte	0x0
+ 4150 033d 05        		.uleb128 0x5
+ 4151 033e 02        		.byte	0x2
+ 4152 033f 0000 0000 		.long	.LM91
+ 4153 0343 15        		.byte	0x15
+ 4154 0344 00        		.byte	0x0
+ 4155 0345 05        		.uleb128 0x5
+ 4156 0346 02        		.byte	0x2
+ 4157 0347 0000 0000 		.long	.LM92
+ 4158 034b 03        		.byte	0x3
+ 4159 034c A27F      		.sleb128 -94
+ 4160 034e 01        		.byte	0x1
+ 4161 034f 00        		.byte	0x0
+ 4162 0350 05        		.uleb128 0x5
+ 4163 0351 02        		.byte	0x2
+ 4164 0352 0000 0000 		.long	.LM93
+ 4165 0356 01        		.byte	0x1
+ 4166 0357 00        		.byte	0x0
+ 4167 0358 05        		.uleb128 0x5
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 75
+
+
+ 4168 0359 02        		.byte	0x2
+ 4169 035a 0000 0000 		.long	.LM94
+ 4170 035e 18        		.byte	0x18
+ 4171 035f 00        		.byte	0x0
+ 4172 0360 05        		.uleb128 0x5
+ 4173 0361 02        		.byte	0x2
+ 4174 0362 0000 0000 		.long	.LM95
+ 4175 0366 15        		.byte	0x15
+ 4176 0367 00        		.byte	0x0
+ 4177 0368 05        		.uleb128 0x5
+ 4178 0369 02        		.byte	0x2
+ 4179 036a 0000 0000 		.long	.LM96
+ 4180 036e 17        		.byte	0x17
+ 4181 036f 00        		.byte	0x0
+ 4182 0370 05        		.uleb128 0x5
+ 4183 0371 02        		.byte	0x2
+ 4184 0372 0000 0000 		.long	.LM97
+ 4185 0376 15        		.byte	0x15
+ 4186 0377 00        		.byte	0x0
+ 4187 0378 05        		.uleb128 0x5
+ 4188 0379 02        		.byte	0x2
+ 4189 037a 0000 0000 		.long	.LM98
+ 4190 037e 15        		.byte	0x15
+ 4191 037f 00        		.byte	0x0
+ 4192 0380 05        		.uleb128 0x5
+ 4193 0381 02        		.byte	0x2
+ 4194 0382 0000 0000 		.long	.LM99
+ 4195 0386 17        		.byte	0x17
+ 4196 0387 00        		.byte	0x0
+ 4197 0388 05        		.uleb128 0x5
+ 4198 0389 02        		.byte	0x2
+ 4199 038a 0000 0000 		.long	.LM100
+ 4200 038e 15        		.byte	0x15
+ 4201 038f 00        		.byte	0x0
+ 4202 0390 05        		.uleb128 0x5
+ 4203 0391 02        		.byte	0x2
+ 4204 0392 0000 0000 		.long	.LM101
+ 4205 0396 15        		.byte	0x15
+ 4206 0397 00        		.byte	0x0
+ 4207 0398 05        		.uleb128 0x5
+ 4208 0399 02        		.byte	0x2
+ 4209 039a 0000 0000 		.long	.LM102
+ 4210 039e 18        		.byte	0x18
+ 4211 039f 00        		.byte	0x0
+ 4212 03a0 05        		.uleb128 0x5
+ 4213 03a1 02        		.byte	0x2
+ 4214 03a2 0000 0000 		.long	.LM103
+ 4215 03a6 15        		.byte	0x15
+ 4216 03a7 00        		.byte	0x0
+ 4217 03a8 05        		.uleb128 0x5
+ 4218 03a9 02        		.byte	0x2
+ 4219 03aa 0000 0000 		.long	.LM104
+ 4220 03ae 15        		.byte	0x15
+ 4221 03af 00        		.byte	0x0
+ 4222 03b0 05        		.uleb128 0x5
+ 4223 03b1 02        		.byte	0x2
+ 4224 03b2 0000 0000 		.long	.LM105
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 76
+
+
+ 4225 03b6 03        		.byte	0x3
+ 4226 03b7 6E        		.sleb128 -18
+ 4227 03b8 01        		.byte	0x1
+ 4228 03b9 00        		.byte	0x0
+ 4229 03ba 05        		.uleb128 0x5
+ 4230 03bb 02        		.byte	0x2
+ 4231 03bc 0000 0000 		.long	.LM106
+ 4232 03c0 2A        		.byte	0x2a
+ 4233 03c1 00        		.byte	0x0
+ 4234 03c2 05        		.uleb128 0x5
+ 4235 03c3 02        		.byte	0x2
+ 4236 03c4 0000 0000 		.long	.LM107
+ 4237 03c8 03        		.byte	0x3
+ 4238 03c9 49        		.sleb128 -55
+ 4239 03ca 01        		.byte	0x1
+ 4240 03cb 00        		.byte	0x0
+ 4241 03cc 05        		.uleb128 0x5
+ 4242 03cd 02        		.byte	0x2
+ 4243 03ce 0000 0000 		.long	.LM108
+ 4244 03d2 01        		.byte	0x1
+ 4245 03d3 00        		.byte	0x0
+ 4246 03d4 05        		.uleb128 0x5
+ 4247 03d5 02        		.byte	0x2
+ 4248 03d6 0000 0000 		.long	.LM109
+ 4249 03da 5B        		.byte	0x5b
+ 4250 03db 00        		.byte	0x0
+ 4251 03dc 05        		.uleb128 0x5
+ 4252 03dd 02        		.byte	0x2
+ 4253 03de 0000 0000 		.long	.LM110
+ 4254 03e2 03        		.byte	0x3
+ 4255 03e3 40        		.sleb128 -64
+ 4256 03e4 01        		.byte	0x1
+ 4257 03e5 00        		.byte	0x0
+ 4258 03e6 05        		.uleb128 0x5
+ 4259 03e7 02        		.byte	0x2
+ 4260 03e8 0000 0000 		.long	.LM111
+ 4261 03ec 15        		.byte	0x15
+ 4262 03ed 00        		.byte	0x0
+ 4263 03ee 05        		.uleb128 0x5
+ 4264 03ef 02        		.byte	0x2
+ 4265 03f0 0000 0000 		.long	.LM112
+ 4266 03f4 1A        		.byte	0x1a
+ 4267 03f5 00        		.byte	0x0
+ 4268 03f6 05        		.uleb128 0x5
+ 4269 03f7 02        		.byte	0x2
+ 4270 03f8 0000 0000 		.long	.LM113
+ 4271 03fc 15        		.byte	0x15
+ 4272 03fd 00        		.byte	0x0
+ 4273 03fe 05        		.uleb128 0x5
+ 4274 03ff 02        		.byte	0x2
+ 4275 0400 0000 0000 		.long	.LM114
+ 4276 0404 17        		.byte	0x17
+ 4277 0405 00        		.byte	0x0
+ 4278 0406 05        		.uleb128 0x5
+ 4279 0407 02        		.byte	0x2
+ 4280 0408 0000 0000 		.long	.LM115
+ 4281 040c 15        		.byte	0x15
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 77
+
+
+ 4282 040d 00        		.byte	0x0
+ 4283 040e 05        		.uleb128 0x5
+ 4284 040f 02        		.byte	0x2
+ 4285 0410 0000 0000 		.long	.LM116
+ 4286 0414 15        		.byte	0x15
+ 4287 0415 00        		.byte	0x0
+ 4288 0416 05        		.uleb128 0x5
+ 4289 0417 02        		.byte	0x2
+ 4290 0418 0000 0000 		.long	.LM117
+ 4291 041c 03        		.byte	0x3
+ 4292 041d 6F        		.sleb128 -17
+ 4293 041e 01        		.byte	0x1
+ 4294 041f 00        		.byte	0x0
+ 4295 0420 05        		.uleb128 0x5
+ 4296 0421 02        		.byte	0x2
+ 4297 0422 0000 0000 		.long	.LM118
+ 4298 0426 28        		.byte	0x28
+ 4299 0427 00        		.byte	0x0
+ 4300 0428 05        		.uleb128 0x5
+ 4301 0429 02        		.byte	0x2
+ 4302 042a 0000 0000 		.long	.LM119
+ 4303 042e 15        		.byte	0x15
+ 4304 042f 00        		.byte	0x0
+ 4305 0430 05        		.uleb128 0x5
+ 4306 0431 02        		.byte	0x2
+ 4307 0432 0000 0000 		.long	.LM120
+ 4308 0436 15        		.byte	0x15
+ 4309 0437 00        		.byte	0x0
+ 4310 0438 05        		.uleb128 0x5
+ 4311 0439 02        		.byte	0x2
+ 4312 043a 0000 0000 		.long	.LM121
+ 4313 043e 17        		.byte	0x17
+ 4314 043f 00        		.byte	0x0
+ 4315 0440 05        		.uleb128 0x5
+ 4316 0441 02        		.byte	0x2
+ 4317 0442 0000 0000 		.long	.LM122
+ 4318 0446 03        		.byte	0x3
+ 4319 0447 A87E      		.sleb128 -216
+ 4320 0449 01        		.byte	0x1
+ 4321 044a 00        		.byte	0x0
+ 4322 044b 05        		.uleb128 0x5
+ 4323 044c 02        		.byte	0x2
+ 4324 044d 0000 0000 		.long	.LM123
+ 4325 0451 17        		.byte	0x17
+ 4326 0452 00        		.byte	0x0
+ 4327 0453 05        		.uleb128 0x5
+ 4328 0454 02        		.byte	0x2
+ 4329 0455 0000 0000 		.long	.LM124
+ 4330 0459 15        		.byte	0x15
+ 4331 045a 00        		.byte	0x0
+ 4332 045b 05        		.uleb128 0x5
+ 4333 045c 02        		.byte	0x2
+ 4334 045d 0000 0000 		.long	.LM125
+ 4335 0461 16        		.byte	0x16
+ 4336 0462 00        		.byte	0x0
+ 4337 0463 05        		.uleb128 0x5
+ 4338 0464 02        		.byte	0x2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 78
+
+
+ 4339 0465 0000 0000 		.long	.LM126
+ 4340 0469 15        		.byte	0x15
+ 4341 046a 00        		.byte	0x0
+ 4342 046b 05        		.uleb128 0x5
+ 4343 046c 02        		.byte	0x2
+ 4344 046d 0000 0000 		.long	.LM127
+ 4345 0471 15        		.byte	0x15
+ 4346 0472 00        		.byte	0x0
+ 4347 0473 05        		.uleb128 0x5
+ 4348 0474 02        		.byte	0x2
+ 4349 0475 0000 0000 		.long	.LM128
+ 4350 0479 19        		.byte	0x19
+ 4351 047a 00        		.byte	0x0
+ 4352 047b 05        		.uleb128 0x5
+ 4353 047c 02        		.byte	0x2
+ 4354 047d 0000 0000 		.long	.LM129
+ 4355 0481 16        		.byte	0x16
+ 4356 0482 00        		.byte	0x0
+ 4357 0483 05        		.uleb128 0x5
+ 4358 0484 02        		.byte	0x2
+ 4359 0485 0000 0000 		.long	.LM130
+ 4360 0489 16        		.byte	0x16
+ 4361 048a 00        		.byte	0x0
+ 4362 048b 05        		.uleb128 0x5
+ 4363 048c 02        		.byte	0x2
+ 4364 048d 0000 0000 		.long	.LM131
+ 4365 0491 15        		.byte	0x15
+ 4366 0492 00        		.byte	0x0
+ 4367 0493 05        		.uleb128 0x5
+ 4368 0494 02        		.byte	0x2
+ 4369 0495 0000 0000 		.long	.LM132
+ 4370 0499 17        		.byte	0x17
+ 4371 049a 00        		.byte	0x0
+ 4372 049b 05        		.uleb128 0x5
+ 4373 049c 02        		.byte	0x2
+ 4374 049d 0000 0000 		.long	.LM133
+ 4375 04a1 0F        		.byte	0xf
+ 4376 04a2 00        		.byte	0x0
+ 4377 04a3 05        		.uleb128 0x5
+ 4378 04a4 02        		.byte	0x2
+ 4379 04a5 0000 0000 		.long	.LM134
+ 4380 04a9 1E        		.byte	0x1e
+ 4381 04aa 00        		.byte	0x0
+ 4382 04ab 05        		.uleb128 0x5
+ 4383 04ac 02        		.byte	0x2
+ 4384 04ad 0000 0000 		.long	.LM135
+ 4385 04b1 13        		.byte	0x13
+ 4386 04b2 00        		.byte	0x0
+ 4387 04b3 05        		.uleb128 0x5
+ 4388 04b4 02        		.byte	0x2
+ 4389 04b5 0000 0000 		.long	.LM136
+ 4390 04b9 17        		.byte	0x17
+ 4391 04ba 00        		.byte	0x0
+ 4392 04bb 05        		.uleb128 0x5
+ 4393 04bc 02        		.byte	0x2
+ 4394 04bd 0000 0000 		.long	.LM137
+ 4395 04c1 FB        		.byte	0xfb
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 79
+
+
+ 4396 04c2 00        		.byte	0x0
+ 4397 04c3 05        		.uleb128 0x5
+ 4398 04c4 02        		.byte	0x2
+ 4399 04c5 0000 0000 		.long	.LM138
+ 4400 04c9 03        		.byte	0x3
+ 4401 04ca 9D7E      		.sleb128 -227
+ 4402 04cc 01        		.byte	0x1
+ 4403 04cd 00        		.byte	0x0
+ 4404 04ce 05        		.uleb128 0x5
+ 4405 04cf 02        		.byte	0x2
+ 4406 04d0 0000 0000 		.long	.LM139
+ 4407 04d4 1A        		.byte	0x1a
+ 4408 04d5 00        		.byte	0x0
+ 4409 04d6 05        		.uleb128 0x5
+ 4410 04d7 02        		.byte	0x2
+ 4411 04d8 0000 0000 		.long	.LM140
+ 4412 04dc 03        		.byte	0x3
+ 4413 04dd 9002      		.sleb128 272
+ 4414 04df 01        		.byte	0x1
+ 4415 04e0 00        		.byte	0x0
+ 4416 04e1 05        		.uleb128 0x5
+ 4417 04e2 02        		.byte	0x2
+ 4418 04e3 0000 0000 		.long	.LM141
+ 4419 04e7 03        		.byte	0x3
+ 4420 04e8 EA7D      		.sleb128 -278
+ 4421 04ea 01        		.byte	0x1
+ 4422 04eb 00        		.byte	0x0
+ 4423 04ec 05        		.uleb128 0x5
+ 4424 04ed 02        		.byte	0x2
+ 4425 04ee 0000 0000 		.long	.LM142
+ 4426 04f2 03        		.byte	0x3
+ 4427 04f3 9602      		.sleb128 278
+ 4428 04f5 01        		.byte	0x1
+ 4429 04f6 00        		.byte	0x0
+ 4430 04f7 05        		.uleb128 0x5
+ 4431 04f8 02        		.byte	0x2
+ 4432 04f9 0000 0000 		.long	.LM143
+ 4433 04fd 15        		.byte	0x15
+ 4434 04fe 00        		.byte	0x0
+ 4435 04ff 05        		.uleb128 0x5
+ 4436 0500 02        		.byte	0x2
+ 4437 0501 0000 0000 		.long	.LM144
+ 4438 0505 03        		.byte	0x3
+ 4439 0506 E87D      		.sleb128 -280
+ 4440 0508 01        		.byte	0x1
+ 4441 0509 00        		.byte	0x0
+ 4442 050a 05        		.uleb128 0x5
+ 4443 050b 02        		.byte	0x2
+ 4444 050c 0000 0000 		.long	.LM145
+ 4445 0510 03        		.byte	0x3
+ 4446 0511 9802      		.sleb128 280
+ 4447 0513 01        		.byte	0x1
+ 4448 0514 00        		.byte	0x0
+ 4449 0515 05        		.uleb128 0x5
+ 4450 0516 02        		.byte	0x2
+ 4451 0517 0000 0000 		.long	.LM146
+ 4452 051b 03        		.byte	0x3
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 80
+
+
+ 4453 051c F17D      		.sleb128 -271
+ 4454 051e 01        		.byte	0x1
+ 4455 051f 00        		.byte	0x0
+ 4456 0520 05        		.uleb128 0x5
+ 4457 0521 02        		.byte	0x2
+ 4458 0522 0000 0000 		.long	.LM147
+ 4459 0526 17        		.byte	0x17
+ 4460 0527 00        		.byte	0x0
+ 4461 0528 05        		.uleb128 0x5
+ 4462 0529 02        		.byte	0x2
+ 4463 052a 0000 0000 		.long	.LM148
+ 4464 052e 18        		.byte	0x18
+ 4465 052f 00        		.byte	0x0
+ 4466 0530 05        		.uleb128 0x5
+ 4467 0531 02        		.byte	0x2
+ 4468 0532 0000 0000 		.long	.LM149
+ 4469 0536 E8        		.byte	0xe8
+ 4470 0537 00        		.byte	0x0
+ 4471 0538 05        		.uleb128 0x5
+ 4472 0539 02        		.byte	0x2
+ 4473 053a 0000 0000 		.long	.LM150
+ 4474 053e 03        		.byte	0x3
+ 4475 053f B67E      		.sleb128 -202
+ 4476 0541 01        		.byte	0x1
+ 4477 0542 00        		.byte	0x0
+ 4478 0543 05        		.uleb128 0x5
+ 4479 0544 02        		.byte	0x2
+ 4480 0545 0000 0000 		.long	.LM151
+ 4481 0549 03        		.byte	0x3
+ 4482 054a FD01      		.sleb128 253
+ 4483 054c 01        		.byte	0x1
+ 4484 054d 00        		.byte	0x0
+ 4485 054e 05        		.uleb128 0x5
+ 4486 054f 02        		.byte	0x2
+ 4487 0550 0000 0000 		.long	.LM152
+ 4488 0554 03        		.byte	0x3
+ 4489 0555 FD7D      		.sleb128 -259
+ 4490 0557 01        		.byte	0x1
+ 4491 0558 00        		.byte	0x0
+ 4492 0559 05        		.uleb128 0x5
+ 4493 055a 02        		.byte	0x2
+ 4494 055b 0000 0000 		.long	.LM153
+ 4495 055f 03        		.byte	0x3
+ 4496 0560 8302      		.sleb128 259
+ 4497 0562 01        		.byte	0x1
+ 4498 0563 00        		.byte	0x0
+ 4499 0564 05        		.uleb128 0x5
+ 4500 0565 02        		.byte	0x2
+ 4501 0566 0000 0000 		.long	.LM154
+ 4502 056a 15        		.byte	0x15
+ 4503 056b 00        		.byte	0x0
+ 4504 056c 05        		.uleb128 0x5
+ 4505 056d 02        		.byte	0x2
+ 4506 056e 0000 0000 		.long	.LM155
+ 4507 0572 03        		.byte	0x3
+ 4508 0573 FB7D      		.sleb128 -261
+ 4509 0575 01        		.byte	0x1
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 81
+
+
+ 4510 0576 00        		.byte	0x0
+ 4511 0577 05        		.uleb128 0x5
+ 4512 0578 02        		.byte	0x2
+ 4513 0579 0000 0000 		.long	.LM156
+ 4514 057d 03        		.byte	0x3
+ 4515 057e 8502      		.sleb128 261
+ 4516 0580 01        		.byte	0x1
+ 4517 0581 00        		.byte	0x0
+ 4518 0582 05        		.uleb128 0x5
+ 4519 0583 02        		.byte	0x2
+ 4520 0584 0000 0000 		.long	.LM157
+ 4521 0588 03        		.byte	0x3
+ 4522 0589 847E      		.sleb128 -252
+ 4523 058b 01        		.byte	0x1
+ 4524 058c 00        		.byte	0x0
+ 4525 058d 05        		.uleb128 0x5
+ 4526 058e 02        		.byte	0x2
+ 4527 058f 0000 0000 		.long	.LM158
+ 4528 0593 17        		.byte	0x17
+ 4529 0594 00        		.byte	0x0
+ 4530 0595 05        		.uleb128 0x5
+ 4531 0596 02        		.byte	0x2
+ 4532 0597 0000 0000 		.long	.LM159
+ 4533 059b 17        		.byte	0x17
+ 4534 059c 00        		.byte	0x0
+ 4535 059d 05        		.uleb128 0x5
+ 4536 059e 02        		.byte	0x2
+ 4537 059f 0000 0000 		.long	.LM160
+ 4538 05a3 15        		.byte	0x15
+ 4539 05a4 00        		.byte	0x0
+ 4540 05a5 05        		.uleb128 0x5
+ 4541 05a6 02        		.byte	0x2
+ 4542 05a7 0000 0000 		.long	.LM161
+ 4543 05ab 16        		.byte	0x16
+ 4544 05ac 00        		.byte	0x0
+ 4545 05ad 05        		.uleb128 0x5
+ 4546 05ae 02        		.byte	0x2
+ 4547 05af 0000 0000 		.long	.LM162
+ 4548 05b3 18        		.byte	0x18
+ 4549 05b4 00        		.byte	0x0
+ 4550 05b5 05        		.uleb128 0x5
+ 4551 05b6 02        		.byte	0x2
+ 4552 05b7 0000 0000 		.long	.LM163
+ 4553 05bb 1A        		.byte	0x1a
+ 4554 05bc 00        		.byte	0x0
+ 4555 05bd 05        		.uleb128 0x5
+ 4556 05be 02        		.byte	0x2
+ 4557 05bf 0000 0000 		.long	.LM164
+ 4558 05c3 16        		.byte	0x16
+ 4559 05c4 00        		.byte	0x0
+ 4560 05c5 05        		.uleb128 0x5
+ 4561 05c6 02        		.byte	0x2
+ 4562 05c7 0000 0000 		.long	.LM165
+ 4563 05cb 15        		.byte	0x15
+ 4564 05cc 00        		.byte	0x0
+ 4565 05cd 05        		.uleb128 0x5
+ 4566 05ce 02        		.byte	0x2
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 82
+
+
+ 4567 05cf 0000 0000 		.long	.LM166
+ 4568 05d3 17        		.byte	0x17
+ 4569 05d4 00        		.byte	0x0
+ 4570 05d5 05        		.uleb128 0x5
+ 4571 05d6 02        		.byte	0x2
+ 4572 05d7 0000 0000 		.long	.LM167
+ 4573 05db 17        		.byte	0x17
+ 4574 05dc 00        		.byte	0x0
+ 4575 05dd 05        		.uleb128 0x5
+ 4576 05de 02        		.byte	0x2
+ 4577 05df 0000 0000 		.long	.LM168
+ 4578 05e3 16        		.byte	0x16
+ 4579 05e4 00        		.byte	0x0
+ 4580 05e5 05        		.uleb128 0x5
+ 4581 05e6 02        		.byte	0x2
+ 4582 05e7 0000 0000 		.long	.LM169
+ 4583 05eb 15        		.byte	0x15
+ 4584 05ec 00        		.byte	0x0
+ 4585 05ed 05        		.uleb128 0x5
+ 4586 05ee 02        		.byte	0x2
+ 4587 05ef 0000 0000 		.long	.LM170
+ 4588 05f3 17        		.byte	0x17
+ 4589 05f4 00        		.byte	0x0
+ 4590 05f5 05        		.uleb128 0x5
+ 4591 05f6 02        		.byte	0x2
+ 4592 05f7 0000 0000 		.long	.Letext0
+ 4593 05fb 00        		.byte	0x0
+ 4594 05fc 01        		.uleb128 0x1
+ 4595 05fd 01        		.byte	0x1
+ 4596               	.LELT0:
+ 4597 05fe 1600 0000 		.section	.debug_str,"MS",@progbits,1
+ 4597      0200 1000 
+ 4597      0000 0101 
+ 4597      FB0E 0A00 
+ 4597      0101 0101 
+ 4598               	.LASF46:
+ 4599 0000 6D69 6C69 		.string	"milisecond_count"
+ 4599      7365 636F 
+ 4599      6E64 5F63 
+ 4599      6F75 6E74 
+ 4599      00
+ 4600               	.LASF37:
+ 4601 0011 7374 6172 		.string	"start_time"
+ 4601      745F 7469 
+ 4601      6D65 00
+ 4602               	.LASF27:
+ 4603 001c 666C 6F77 		.string	"flow_on"
+ 4603      5F6F 6E00 
+ 4604               	.LASF44:
+ 4605 0024 666C 6F77 		.string	"flow"
+ 4605      00
+ 4606               	.LASF19:
+ 4607 0029 6974 656D 		.string	"item"
+ 4607      00
+ 4608               	.LASF13:
+ 4609 002e 636F 756E 		.string	"count"
+ 4609      7400 
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 83
+
+
+ 4610               	.LASF28:
+ 4611 0034 666C 6F77 		.string	"flow_off"
+ 4611      5F6F 6666 
+ 4611      00
+ 4612               	.LASF45:
+ 4613 003d 7265 6365 		.string	"receiver_flow"
+ 4613      6976 6572 
+ 4613      5F66 6C6F 
+ 4613      7700 
+ 4614               	.LASF39:
+ 4615 004b 7265 6365 		.string	"received_bytes"
+ 4615      6976 6564 
+ 4615      5F62 7974 
+ 4615      6573 00
+ 4616               	.LASF0:
+ 4617 005a 696E 7438 		.string	"int8_t"
+ 4617      5F74 00
+ 4618               	.LASF26:
+ 4619 0061 5F5F 7665 		.string	"__vector_11"
+ 4619      6374 6F72 
+ 4619      5F31 3100 
+ 4620               	.LASF15:
+ 4621 006d 6973 4675 		.string	"isFull"
+ 4621      6C6C 00
+ 4622               	.LASF52:
+ 4623 0074 6973 5F66 		.string	"is_flow_on"
+ 4623      6C6F 775F 
+ 4623      6F6E 00
+ 4624               	.LASF29:
+ 4625 007f 5553 4152 		.string	"USART_Receive"
+ 4625      545F 5265 
+ 4625      6365 6976 
+ 4625      6500 
+ 4626               	.LASF24:
+ 4627 008d 6461 7461 		.string	"data"
+ 4627      00
+ 4628               	.LASF18:
+ 4629 0092 6465 6C61 		.string	"delay"
+ 4629      7900 
+ 4630               	.LASF23:
+ 4631 0098 5F5F 7665 		.string	"__vector_19"
+ 4631      6374 6F72 
+ 4631      5F31 3900 
+ 4632               	.LASF3:
+ 4633 00a4 756E 7369 		.string	"unsigned char"
+ 4633      676E 6564 
+ 4633      2063 6861 
+ 4633      7200 
+ 4634               	.LASF48:
+ 4635 00b2 7478 4275 		.string	"txBuffer"
+ 4635      6666 6572 
+ 4635      00
+ 4636               	.LASF7:
+ 4637 00bb 6C6F 6E67 		.string	"long unsigned int"
+ 4637      2075 6E73 
+ 4637      6967 6E65 
+ 4637      6420 696E 
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 84
+
+
+ 4637      7400 
+ 4638               	.LASF47:
+ 4639 00cd 7278 4275 		.string	"rxBuffer"
+ 4639      6666 6572 
+ 4639      00
+ 4640               	.LASF49:
+ 4641 00d6 474E 5520 		.string	"GNU C 4.3.3"
+ 4641      4320 342E 
+ 4641      332E 3300 
+ 4642               	.LASF35:
+ 4643 00e2 7772 6974 		.string	"write"
+ 4643      6500 
+ 4644               	.LASF41:
+ 4645 00e8 7374 7231 		.string	"str1"
+ 4645      00
+ 4646               	.LASF33:
+ 4647 00ed 636F 756E 		.string	"counter"
+ 4647      7465 7200 
+ 4648               	.LASF17:
+ 4649 00f5 696E 6974 		.string	"initBuffer"
+ 4649      4275 6666 
+ 4649      6572 00
+ 4650               	.LASF38:
+ 4651 0100 6D61 696E 		.string	"main"
+ 4651      00
+ 4652               	.LASF42:
+ 4653 0105 7374 7232 		.string	"str2"
+ 4653      00
+ 4654               	.LASF11:
+ 4655 010a 6865 6164 		.string	"head"
+ 4655      00
+ 4656               	.LASF34:
+ 4657 010f 706F 7369 		.string	"position"
+ 4657      7469 6F6E 
+ 4657      00
+ 4658               	.LASF25:
+ 4659 0118 5553 4152 		.string	"USART_Transmit"
+ 4659      545F 5472 
+ 4659      616E 736D 
+ 4659      6974 00
+ 4660               	.LASF5:
+ 4661 0127 756E 7369 		.string	"unsigned int"
+ 4661      676E 6564 
+ 4661      2069 6E74 
+ 4661      00
+ 4662               	.LASF36:
+ 4663 0134 636C 6F73 		.string	"close_packet"
+ 4663      655F 7061 
+ 4663      636B 6574 
+ 4663      00
+ 4664               	.LASF9:
+ 4665 0141 6C6F 6E67 		.string	"long long unsigned int"
+ 4665      206C 6F6E 
+ 4665      6720 756E 
+ 4665      7369 676E 
+ 4665      6564 2069 
+ 4666               	.LASF1:
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 85
+
+
+ 4667 0158 7569 6E74 		.string	"uint8_t"
+ 4667      385F 7400 
+ 4668               	.LASF30:
+ 4669 0160 7573 6172 		.string	"usart_init"
+ 4669      745F 696E 
+ 4669      6974 00
+ 4670               	.LASF8:
+ 4671 016b 6C6F 6E67 		.string	"long long int"
+ 4671      206C 6F6E 
+ 4671      6720 696E 
+ 4671      7400 
+ 4672               	.LASF50:
+ 4673 0179 6D61 696E 		.string	"main.c"
+ 4673      2E63 00
+ 4674               	.LASF51:
+ 4675 0180 433A 5C55 		.string	"C:\\Users\\arthu\\Documents\\Embarcados_rtos\\lista1-usart"
+ 4675      7365 7273 
+ 4675      5C61 7274 
+ 4675      6875 5C44 
+ 4675      6F63 756D 
+ 4676               	.LASF31:
+ 4677 01b6 696E 6974 		.string	"initTimer1"
+ 4677      5469 6D65 
+ 4677      7231 00
+ 4678               	.LASF20:
+ 4679 01c1 656E 7175 		.string	"enqueue"
+ 4679      6575 6500 
+ 4680               	.LASF16:
+ 4681 01c9 6973 456D 		.string	"isEmpty"
+ 4681      7074 7900 
+ 4682               	.LASF10:
+ 4683 01d1 6275 6666 		.string	"buffer"
+ 4683      6572 00
+ 4684               	.LASF4:
+ 4685 01d8 7569 6E74 		.string	"uint16_t"
+ 4685      3136 5F74 
+ 4685      00
+ 4686               	.LASF12:
+ 4687 01e1 7461 696C 		.string	"tail"
+ 4687      00
+ 4688               	.LASF22:
+ 4689 01e6 5F5F 7665 		.string	"__vector_18"
+ 4689      6374 6F72 
+ 4689      5F31 3800 
+ 4690               	.LASF21:
+ 4691 01f2 6465 7175 		.string	"dequeue"
+ 4691      6575 6500 
+ 4692               	.LASF6:
+ 4693 01fa 6C6F 6E67 		.string	"long int"
+ 4693      2069 6E74 
+ 4693      00
+ 4694               	.LASF43:
+ 4695 0203 7265 6164 		.string	"readBuffer"
+ 4695      4275 6666 
+ 4695      6572 00
+ 4696               	.LASF40:
+ 4697 020e 6269 6E61 		.string	"binary_string"
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 86
+
+
+ 4697      7279 5F73 
+ 4697      7472 696E 
+ 4697      6700 
+ 4698               	.LASF14:
+ 4699 021c 4369 7263 		.string	"CircularBuffer"
+ 4699      756C 6172 
+ 4699      4275 6666 
+ 4699      6572 00
+ 4700               	.LASF2:
+ 4701 022b 7369 676E 		.string	"signed char"
+ 4701      6564 2063 
+ 4701      6861 7200 
+ 4702               	.LASF32:
+ 4703 0237 7265 6164 		.string	"read"
+ 4703      00
+ 4704               	.global __do_copy_data
+ 4705               	.global __do_clear_bss
+GAS LISTING C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s 			page 87
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:2      *ABS*:0000003f __SREG__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:3      *ABS*:0000003e __SP_H__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:4      *ABS*:0000003d __SP_L__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:5      *ABS*:00000034 __CCP__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:18     .text:00000000 initBuffer
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:42     .text:0000000e isFull
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:67     .text:00000022 isEmpty
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:92     .text:00000036 enqueue
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:146    .text:00000070 dequeue
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:202    .text:000000b0 __vector_18
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1282   .bss:00000003 esc
+                             .bss:00000000 flow
+                            *COM*:00000043 rxBuffer
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:307    .text:00000154 __vector_19
+                            *COM*:00000043 txBuffer
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:388    .text:000001d0 __vector_11
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1289   .bss:00000104 milisecond_count
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:429    .text:0000021a is_flow_on
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:445    .text:00000224 USART_Transmit
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:481    .text:00000244 flow_on
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1279   .data:00000000 receiver_flow
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:499    .text:00000252 flow_off
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:516    .text:0000025e USART_Receive
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:557    .text:0000028a usart_init
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:613    .text:000002cc initTimer1
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:646    .text:000002f4 delay
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:691    .text:0000033c read
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1275   .bss:00000001 position.1591
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:791    .text:000003ba write
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1281   .bss:00000002 position.1566
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:910    .text:0000045a main
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1286   .data:00000001 str1
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1283   .bss:00000004 readBuffer
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1292   .data:0000004a binary_string
+C:\Users\arthu\AppData\Local\Temp/cc0q21ke.s:1305   .data:00000054 str2
+
+UNDEFINED SYMBOLS
+strcmp
+__do_copy_data
+__do_clear_bss
