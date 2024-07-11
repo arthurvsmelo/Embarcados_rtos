@@ -37,7 +37,7 @@ uint8_t write(uint8_t *buf, uint8_t n, int8_t close_packet);
 uint8_t read(uint8_t *buf, uint8_t n);
 void flow_off(void);
 void flow_on(void);
-uint8_t is_flow_on();
+uint8_t is_flow_on(void);
 void USART_Transmit(uint8_t data);
 uint8_t USART_Receive(void);
 void usart_init(void);
@@ -45,7 +45,7 @@ void initTimer1(void);
 void delay(unsigned long ms);
 
 int main(void) {
-    uint8_t i, k = 5;
+    uint8_t i, j = 20, k = 5, trash_data;
     uint16_t received_bytes = 0;
     DDRB |= (1 << PB5);   /* Configura pino 5 da porta B (led onboard) como saída */
     PORTB &= ~(1 << PB5);  /* Configura o pino do led em estado LOW como default */
@@ -57,9 +57,9 @@ int main(void) {
     /* Implemente os testes aqui. Veja o texto para os detalhes */
     
     /* Teste 2 */
-    write(str1, strlen(str1), (int8_t)1);
+    write(str1, strlen((const char *)str1), (int8_t)1);
     /* Teste 3 */
-    i = strlen(str1);
+    i = strlen((const char *)str1);
     while(i){
         if(i < 10){
             write(str1, (uint8_t)10, (int8_t)1);  /* fecha o pacote */
@@ -73,34 +73,46 @@ int main(void) {
         received_bytes += (read(readBuffer, 1) - 1);  /* read retorna 2 enquanto não receber caractere de sincronismo */
     }
     flow_off();
-    if(!is_flow_on()){
-        /* pisca o led por 5s a uma taxa de 1hz */
+
+    while(j){
+        /* lê 20 bytes do buffer e descarta */
+        dequeue(&rxBuffer, &trash_data);
+        j--;
+    }
+    if(isEmpty(&rxBuffer)){
+        /* se buffer vazio, pisca o led por 5s a uma taxa de 1hz */
         while(k--){
             PORTB ^= (1 << PB5);
             delay(1000);
         }
     }
     else{
-        /* acende o led por 5 seg continuamente */
+        /* se ainda há dados no buffer, acende o led por 5 seg continuamente */
         PORTB |= (1 << PB5);
         delay(5000);
         PORTB &= ~(1 << PB5);
     }
+    j = 20;
     /* Teste 5 */
     PORTB &= ~(1 << PB5); /* apaga o led */
     while(received_bytes <= 300){
         received_bytes += (read(readBuffer, 1) - 1);
     }
     flow_off();
-    if(!is_flow_on()){
-        /* pisca o led por 5s a uma taxa de 1hz */
+    while(j){
+        /* lê 20 bytes do buffer e descarta */
+        dequeue(&rxBuffer, &trash_data);
+        j--;
+    }
+    if(isEmpty(&rxBuffer)){
+        /* se buffer vazio, pisca o led por 5s a uma taxa de 1hz */
         while(k--){
             PORTB ^= (1 << PB5);
             delay(1000);
         }
     }
     else{
-        /* acende o led por 5 seg continuamente */
+        /* se ainda há dados no buffer, acende o led por 5 seg continuamente */
         PORTB |= (1 << PB5);
         delay(5000);
         PORTB &= ~(1 << PB5);
@@ -109,10 +121,10 @@ int main(void) {
     PORTB &= ~(1 << PB5); /* apaga o led */
     /* envia a string binária sem fechar o pacote */
     while(1){
-        if(write(binary_string, strlen(binary_string), (int8_t)0) == 0){
+        if(write(binary_string, strlen((const char *)binary_string), (int8_t)0) == 0){
             PORTB |= (1 << PB5); /* acende o led enquanto a função write retornar 0 (se o fluxo estiver fechado)*/
         }
-        else if(write(binary_string, strlen(binary_string), (int8_t)0) == strlen(binary_string)){
+        else if(write(binary_string, strlen((const char *)binary_string), (int8_t)0) == strlen((const char *)binary_string)){
             break; /* só sai do while quando toda a string for enviada */
         }
         else{
@@ -124,7 +136,7 @@ int main(void) {
         /* Passo 7 (a) */
         read(readBuffer, 254);
         /* strcmp devolve 0 se as strings forem iguais */
-        if(!strcmp(str2, readBuffer)){
+        if(!strcmp((const char *)str2, (const char *)readBuffer)){
             PORTB |= (1 << PB5);  /* acende o led se forem iguais */
         }
         else{
@@ -133,7 +145,7 @@ int main(void) {
         /* Passo 7 (b) */
         while(read(readBuffer, 10) == 11); /* função read retorna n+1 se pacote não foi finalizado */
         /* strcmp devolve 0 se as strings forem iguais */
-        if(!strcmp(str2, readBuffer)){
+        if(!strcmp((const char *)str2, (const char *)readBuffer)){
             PORTB |= (1 << PB5);  /* acende o led se forem iguais */
         }
         else{
@@ -239,7 +251,7 @@ uint8_t write(uint8_t *buf, uint8_t n, int8_t close_packet){
         if(!is_flow_on()){
             return 0;
         }
-        else if(position > strlen(buf) || buf[position] == '\0'){
+        else if(position > strlen((const char *)buf) || buf[position] == '\0'){
             position = 0;
             break;
         }
@@ -275,7 +287,7 @@ uint8_t read(uint8_t *buf, uint8_t n){
             position = 0;  /* fim do pacote, reseta a posição do índice do buffer */
             return counter;
         }
-        else if(position > strlen(buf)){
+        else if(position > strlen((const char *)buf)){
             buf[position] = '\0';  /* se buffer estourar, fecha a string e reseta o índice */
             position = 0;
             break;
