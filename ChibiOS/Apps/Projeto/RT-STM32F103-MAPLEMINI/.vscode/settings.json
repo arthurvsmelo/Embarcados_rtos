@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "ch.h": "c",
+        "hal.h": "c",
+        "hal_lld.h": "c"
+    }
+}
