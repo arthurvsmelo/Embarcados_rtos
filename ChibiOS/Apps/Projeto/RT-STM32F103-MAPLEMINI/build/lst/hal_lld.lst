@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
   55 003d C9010000 		.4byte	.LASF3
   56 0041 01       		.uleb128 0x1
   57 0042 01       		.byte	0x1
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 2
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 2
 
 
   58 0043 08       		.byte	0x8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  112 00ae 00       		.byte	0
  113 00af 02       		.uleb128 0x2
  114 00b0 20000000 		.4byte	.LASF13
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 3
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 3
 
 
  115 00b4 5A01     		.2byte	0x15a
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  169 0130 B301     		.2byte	0x1b3
  170 0132 83000000 		.4byte	0x83
  171 0136 04       		.byte	0x4
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 4
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 4
 
 
  172 0137 00       		.byte	0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  226 01b6 03       		.uleb128 0x3
  227 01b7 43535200 		.ascii	"CSR\000"
  228 01bb C501     		.2byte	0x1c5
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 5
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 5
 
 
  229 01bd 83000000 		.4byte	0x83
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  283 0013 3B       		.uleb128 0x3b
  284 0014 05       		.uleb128 0x5
  285 0015 39       		.uleb128 0x39
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 6
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 6
 
 
  286 0016 21       		.uleb128 0x21
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  340 004c 39       		.uleb128 0x39
  341 004d 21       		.uleb128 0x21
  342 004e 03       		.sleb128 3
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 7
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 7
 
 
  343 004f 49       		.uleb128 0x49
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  397 0085 24       		.uleb128 0x24
  398 0086 00       		.byte	0
  399 0087 0B       		.uleb128 0xb
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 8
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 8
 
 
  400 0088 0B       		.uleb128 0xb
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  454 00be 0B       		.uleb128 0xb
  455 00bf 3B       		.uleb128 0x3b
  456 00c0 05       		.uleb128 0x5
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 9
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 9
 
 
  457 00c1 39       		.uleb128 0x39
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  511 0021 05       		.uleb128 0x5
  512 0022 8E000000 		.4byte	.LASF36
  513 0026 35010000 		.4byte	.LASF37
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 10
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 10
 
 
  514 002a 68000000 		.4byte	.LASF38
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  556              	.LASF9:
  557 003f 6C6F6E67 		.ascii	"long long unsigned int\000"
  557      206C6F6E 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 11
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 11
 
 
  557      6720756E 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  580              	.LASF20:
  581 010d 41504232 		.ascii	"APB2RSTR\000"
  581      52535452 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 12
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 12
 
 
  581      00
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  606      20646F75 
  606      626C6500 
  607              	.LASF3:
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 13
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 13
 
 
  608 01c9 7369676E 		.ascii	"signed char\000"
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  625      706F7274 
  626              	.LASF36:
  627 008e 443A5C43 		.ascii	"D:\\ChibiOS_21.11.3\\Apps\\Projeto\\RT-STM32F103-MA"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 14
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 14
 
 
  627      68696269 
@@ -830,15 +830,15 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  643      325F6973 
  643      722E6800 
  644              		.text
- 645              		.section	.gnu.lto_.profile.bfad2831,"e",%progbits
+ 645              		.section	.gnu.lto_.profile.c045c373,"e",%progbits
  646 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
  646      00010000 
  646      120003
  647              		.text
- 648              		.section	.gnu.lto_.icf.bfad2831,"e",%progbits
+ 648              		.section	.gnu.lto_.icf.c045c373,"e",%progbits
  649 0000 789C5BC7 		.ascii	"x\234[\307\200\000\314\014\317\226\2359\311\251\302"
  649      8000CC0C 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 15
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 15
 
 
  649      CF969D39 
@@ -852,7 +852,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  651      F1310000 
  651      15600A8A 
  652              		.text
- 653              		.section	.gnu.lto_.ipa_sra.bfad2831,"e",%progbits
+ 653              		.section	.gnu.lto_.ipa_sra.c045c373,"e",%progbits
  654 0000 789CE362 		.ascii	"x\234\343b@\000&\006\006F\006F b\000\000\001\030\000"
  654      40002606 
  654      06460646 
@@ -860,7 +860,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  654      011800
  655 0013 11       		.ascii	"\021"
  656              		.text
- 657              		.section	.gnu.lto_.inline.bfad2831,"e",%progbits
+ 657              		.section	.gnu.lto_.inline.c045c373,"e",%progbits
  658 0000 789C0B60 		.ascii	"x\234\013`@\000&\006\006\311\206\206\206\016\246\014"
  658      40002606 
  658      06C98686 
@@ -880,25 +880,25 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  661      0000E94A 
  661      1187
  662              		.text
- 663              		.section	.gnu.lto_.jmpfuncs.bfad2831,"e",%progbits
+ 663              		.section	.gnu.lto_.jmpfuncs.c045c373,"e",%progbits
  664 0000 789CE364 		.ascii	"x\234\343d@\000&\020\301\010\304\000\000\350\000\015"
  664      40002610 
  664      C108C400 
  664      00E8000D 
  665              		.text
- 666              		.section	.gnu.lto_.pureconst.bfad2831,"e",%progbits
+ 666              		.section	.gnu.lto_.pureconst.c045c373,"e",%progbits
  667 0000 789C6367 		.ascii	"x\234cg```b\230\305\3028\213\005\000\004\263\001G"
  667      60606062 
  667      98C5C238 
  667      8B050004 
  667      B30147
  668              		.text
- 669              		.section	.gnu.lto_.ipa_modref.bfad2831,"e",%progbits
+ 669              		.section	.gnu.lto_.ipa_modref.c045c373,"e",%progbits
  670 0000 789CF363 		.ascii	"x\234\363c@\000&\010\311\304\302\300\310\304\312\310"
  670      40002608 
  670      C9C4C2C0 
  670      C8C4CAC8 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 16
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 16
 
 
  671 0010 C0C406A1 		.ascii	"\300\304\006\241\261\210\2601\202T2\302\304\221T\260"
@@ -909,11 +909,11 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  672      002F6800 
  672      D5
  673              		.text
- 674              		.section	.gnu.lto_.lto.bfad2831,"e",%progbits
+ 674              		.section	.gnu.lto_.lto.c045c373,"e",%progbits
  675 0000 0D000100 		.ascii	"\015\000\001\000\001\000\000\000"
  675      01000000 
  676              		.text
- 677              		.section	.gnu.lto_hal_lld_init.310.bfad2831,"e",%progbits
+ 677              		.section	.gnu.lto_hal_lld_init.310.c045c373,"e",%progbits
  678 0000 789C7D93 		.ascii	"x\234}\223Oh\023A\024\306\337\233\331\254\261\241\206"
  678      4F681341 
  678      14C6DF9B 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  686      4DC2431C 
  686      95DD45A4 
  686      A7
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 17
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 17
 
 
  687 00a9 48CE7BAB 		.ascii	"H\316{\253\236\212\330\252\316\012q\255eje\343.\333"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  697      A30474BE 
  698 017d FC7250BE 		.ascii	"\374rP\276\325Q\270\316\377\336\215bp\356\240\224\241"
  698      D551B8CE 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 18
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 18
 
 
  698      FFDE8D62 
@@ -1077,8 +1077,8 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  709      E00FB116 
  709      5ACD
  710              		.text
- 711              		.section	.gnu.lto_stm32_clock_init.311.bfad2831,"e",%progbits
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 19
+ 711              		.section	.gnu.lto_stm32_clock_init.311.c045c373,"e",%progbits
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 19
 
 
  712 0000 789C7D54 		.ascii	"x\234}T[h\024W\030>\377\371\347\266\367K.\364\245\226"
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  723      2A490FF1 
  723      92A47F2E 
  723      E971E2F4 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 20
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 20
 
 
  723      3AB3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  735 01ab F70BE0F0 		.ascii	"\367\013\340\360\313\232\177A\325Z\200\\4\373f\310\312"
  735      CB9A7F41 
  735      D55A805C 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 21
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 21
 
 
  735      34FB66C8 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  747 027b AEE63C57 		.ascii	"\256\346<W\261 W\277\313\324\016\366\375\202\030\307"
  747      B12057BF 
  747      CBD40EF6 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 22
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 22
 
 
  747      FD8218C7 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  759      69C9B4E6 
  760 0354 56747676 		.ascii	"Vtvv\345\326\354\310o\333\2743\237{w\335\242\265\353"
  760      E5D6ECC8 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 23
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 23
 
 
  760      6FDBBC33 
@@ -1341,7 +1341,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  764 039b 91FD0F58 		.ascii	"\221\375\017X\236V{"
  764      9E567B
  765              		.text
- 766              		.section	.gnu.lto_.symbol_nodes.bfad2831,"e",%progbits
+ 766              		.section	.gnu.lto_.symbol_nodes.c045c373,"e",%progbits
  767 0000 789C4B61 		.ascii	"x\234Ka\000\002\246mL\365\034\015@\300\3028\341\034"
  767      0002A66D 
  767      4CF51C0D 
@@ -1366,19 +1366,19 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  771      005F5820 
  771      0C
  772              		.text
- 773              		.section	.gnu.lto_.refs.bfad2831,"e",%progbits
+ 773              		.section	.gnu.lto_.refs.c045c373,"e",%progbits
  774 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
  774      00020000 
  774      0A0002
  775              		.text
- 776              		.section	.gnu.lto_.decls.bfad2831,"e",%progbits
+ 776              		.section	.gnu.lto_.decls.c045c373,"e",%progbits
  777 0000 789C9555 		.ascii	"x\234\225UmLSW\030>\347\366Z\016\002\243\370\2614\233"
  777      6D4C5357 
  777      183EE7F6 
  777      5A0E02A3 
  777      F8B1349B 
  778 0014 3FC8B264 		.ascii	"?\310\262d\015\013`\3338\267\375\002\012*\231\037\344"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 24
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 24
 
 
  778      0D0B60DB 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  790 00e2 4D120987 		.ascii	"M\022\011\207\224\032\314\212\214\207\021\221(\264\200"
  790      941ACC8A 
  790      8C871191 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 25
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 25
 
 
  790      28B480
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  802      496F91E9 
  802      EF232287 
  803 01bf 9C27E4EA 		.ascii	"\234'\344\352OD4'\304>\220\331\223\341\275\001e\"r\260"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 26
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 26
 
 
  803      4F443427 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  814      A6B532FB 
  814      48668722 
  814      9CC31E
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 27
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 27
 
 
  815 029c A13FF0EF 		.ascii	"\241?\360\357\260p\037Z\374\000\337\303\267\361\035"
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  827      BF53F405 
  827      6882E875 
  827      389B7D0E 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 28
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 28
 
 
  827      27A6DE
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  839      5F9A1A0E 
  839      D3C097
  840 0448 CF913D4C 		.ascii	"\317\221=L\264k\260\266'\352\305\363.:\322rs\004/\251"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 29
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 29
 
 
  840      B46BB0B6 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  851      5E61CCD7 
  851      6953B4DA 
  851      147D5E7A 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 30
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 30
 
 
  852 0531 5E4E99F5 		.ascii	"^N\231\365\035\223\315\232'\344&KY\315\327'/K\317Y\232"
@@ -1798,10 +1798,10 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  863      FE0294B5 
  863      8A99
  864              		.text
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 31
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 31
 
 
- 865              		.section	.gnu.lto_.symtab.bfad2831,"e",%progbits
+ 865              		.section	.gnu.lto_.symtab.c045c373,"e",%progbits
  866 0000 68616C5F 		.ascii	"hal_lld_init\000"
  866      6C6C645F 
  866      696E6974 
@@ -1842,7 +1842,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  888      00000000 
  889 006e 0B010000 		.ascii	"\013\001\000\000"
  890              		.text
- 891              		.section	.gnu.lto_.ext_symtab.bfad2831,"e",%progbits
+ 891              		.section	.gnu.lto_.ext_symtab.c045c373,"e",%progbits
  892 0000 01       		.ascii	"\001"
  893 0001 01       		.ascii	"\001"
  894 0002 00       		.ascii	"\000"
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  903      6F2D6F70 
  903      656E6D70 
  903      2720272D 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 32
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 32
 
 
  903      666E6F2D 
@@ -1892,12 +1892,12 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 1
  910              		.text
  911              		.comm	__gnu_lto_slim,1,1
  912              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s 			page 33
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s 			page 33
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hal_lld.c
-C:\Users\arthu\AppData\Local\Temp\ccfLzN0F.s:24     .gnu.debuglto_.debug_info:00000000 hal_lld.c.85bdb19c
+C:\Users\arthu\AppData\Local\Temp\ccPHLpkk.s:24     .gnu.debuglto_.debug_info:00000000 hal_lld.c.85bdb19c
                             *COM*:00000001 __gnu_lto_slim
 
 NO UNDEFINED SYMBOLS

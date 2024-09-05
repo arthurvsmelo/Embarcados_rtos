@@ -520,11 +520,13 @@ int main(void) {
     palSetPadCallback(IOPORT2, BTN_LOW_WATERMARK, lowWatermarkButtonCallback, NULL);
     palSetPadCallback(IOPORT2, BTN_OPEN_LID, openLidButtonCallback, NULL);
     /* inicializa os virtual timers */
+    /*
     chVTObjectInit(&vt_motor);
     chVTObjectInit(&vt_soak);
     chVTObjectInit(&vt_wash);
     chVTObjectInit(&vt_rinse);
     chVTObjectInit(&vt_centrifuge);
+    */
     /* inicializa os event sources */
     chEvtObjectInit(&evt_src);
 
