@@ -1,0 +1,5374 @@
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"chdynamic.c"
+  14              		.file 1 "D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/lib/gcc/arm-none-eabi/13.3.1/include/stddef.
+  15              		.file 2 "D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/arm-none-eabi/include/machine/_default_types
+  16              		.file 3 "D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/arm-none-eabi/include/sys/_stdint.h"
+  17              		.file 4 "../../../os/common/ports/ARM-common/chtypes.h"
+  18              		.file 5 "../../../os/rt/include/chearly.h"
+  19              		.file 6 "../../../os/rt/include/chobjects.h"
+  20              		.file 7 "../../../os/rt/include/chrfcu.h"
+  21              		.file 8 "../../../os/rt/include/chdebug.h"
+  22              		.file 9 "../../../os/rt/include/chtime.h"
+  23              		.file 10 "../../../os/rt/include/chlists.h"
+  24              		.file 11 "../../../os/common/ports/ARMv7-M/chcore.h"
+  25              		.file 12 "../../../os/rt/include/chsem.h"
+  26              		.file 13 "../../../os/rt/include/chmtx.h"
+  27              		.file 14 "../../../os/rt/include/chthreads.h"
+  28              		.file 15 "../../../os/oslib/include/chmemcore.h"
+  29              		.file 16 "../../../os/oslib/include/chmemheaps.h"
+  30              		.file 17 "../../../os/oslib/include/chmempools.h"
+  31              		.file 18 "../../../os/rt/include/chschd.h"
+  32              		.file 19 "../../../os/rt/src/chdynamic.c"
+  33              		.file 20 "../../../os/rt/include/chsys.h"
+  34              		.file 21 "../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h"
+  35              		.section	.gnu.debuglto_.debug_info,"e",%progbits
+  36              	.Ldebug_info0:
+  37              		.hidden	chdynamic.c.8322f52e
+  38              		.weak	chdynamic.c.8322f52e
+  39              	chdynamic.c.8322f52e:
+  40 0000 040B0000 		.4byte	0xb04
+  41 0004 0500     		.2byte	0x5
+  42 0006 01       		.byte	0x1
+  43 0007 04       		.byte	0x4
+  44 0008 00000000 		.4byte	.Ldebug_abbrev0
+  45 000c 1D       		.uleb128 0x1d
+  46 000d 53060000 		.4byte	.LASF144
+  47 0011 1D       		.byte	0x1d
+  48 0012 02060000 		.4byte	.LASF145
+  49 0016 99040000 		.4byte	.LASF146
+  50 001a 00000000 		.4byte	.Ldebug_line0
+  51 001e 1E       		.uleb128 0x1e
+  52 001f 04       		.byte	0x4
+  53 0020 05       		.byte	0x5
+  54 0021 696E7400 		.ascii	"int\000"
+  55 0025 01       		.uleb128 0x1
+  56 0026 1A000000 		.4byte	.LASF4
+  57 002a 01       		.byte	0x1
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 2
+
+
+  58 002b D6       		.byte	0xd6
+  59 002c 17       		.byte	0x17
+  60 002d 31000000 		.4byte	0x31
+  61 0031 07       		.uleb128 0x7
+  62 0032 04       		.byte	0x4
+  63 0033 07       		.byte	0x7
+  64 0034 44020000 		.4byte	.LASF0
+  65 0038 07       		.uleb128 0x7
+  66 0039 08       		.byte	0x8
+  67 003a 05       		.byte	0x5
+  68 003b 23010000 		.4byte	.LASF1
+  69 003f 07       		.uleb128 0x7
+  70 0040 08       		.byte	0x8
+  71 0041 04       		.byte	0x4
+  72 0042 69030000 		.4byte	.LASF2
+  73 0046 07       		.uleb128 0x7
+  74 0047 01       		.byte	0x1
+  75 0048 06       		.byte	0x6
+  76 0049 31010000 		.4byte	.LASF3
+  77 004d 01       		.uleb128 0x1
+  78 004e 42000000 		.4byte	.LASF5
+  79 0052 02       		.byte	0x2
+  80 0053 2B       		.byte	0x2b
+  81 0054 18       		.byte	0x18
+  82 0055 59000000 		.4byte	0x59
+  83 0059 07       		.uleb128 0x7
+  84 005a 01       		.byte	0x1
+  85 005b 08       		.byte	0x8
+  86 005c 16040000 		.4byte	.LASF6
+  87 0060 07       		.uleb128 0x7
+  88 0061 02       		.byte	0x2
+  89 0062 05       		.byte	0x5
+  90 0063 37040000 		.4byte	.LASF7
+  91 0067 01       		.uleb128 0x1
+  92 0068 FA040000 		.4byte	.LASF8
+  93 006c 02       		.byte	0x2
+  94 006d 39       		.byte	0x39
+  95 006e 19       		.byte	0x19
+  96 006f 73000000 		.4byte	0x73
+  97 0073 07       		.uleb128 0x7
+  98 0074 02       		.byte	0x2
+  99 0075 07       		.byte	0x7
+ 100 0076 98020000 		.4byte	.LASF9
+ 101 007a 01       		.uleb128 0x1
+ 102 007b FB020000 		.4byte	.LASF10
+ 103 007f 02       		.byte	0x2
+ 104 0080 4D       		.byte	0x4d
+ 105 0081 18       		.byte	0x18
+ 106 0082 86000000 		.4byte	0x86
+ 107 0086 07       		.uleb128 0x7
+ 108 0087 04       		.byte	0x4
+ 109 0088 05       		.byte	0x5
+ 110 0089 8B010000 		.4byte	.LASF11
+ 111 008d 01       		.uleb128 0x1
+ 112 008e FA010000 		.4byte	.LASF12
+ 113 0092 02       		.byte	0x2
+ 114 0093 4F       		.byte	0x4f
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 3
+
+
+ 115 0094 19       		.byte	0x19
+ 116 0095 99000000 		.4byte	0x99
+ 117 0099 07       		.uleb128 0x7
+ 118 009a 04       		.byte	0x4
+ 119 009b 07       		.byte	0x7
+ 120 009c D5040000 		.4byte	.LASF13
+ 121 00a0 01       		.uleb128 0x1
+ 122 00a1 CE030000 		.4byte	.LASF14
+ 123 00a5 02       		.byte	0x2
+ 124 00a6 69       		.byte	0x69
+ 125 00a7 19       		.byte	0x19
+ 126 00a8 AC000000 		.4byte	0xac
+ 127 00ac 07       		.uleb128 0x7
+ 128 00ad 08       		.byte	0x8
+ 129 00ae 07       		.byte	0x7
+ 130 00af CA000000 		.4byte	.LASF15
+ 131 00b3 01       		.uleb128 0x1
+ 132 00b4 D5050000 		.4byte	.LASF16
+ 133 00b8 03       		.byte	0x3
+ 134 00b9 18       		.byte	0x18
+ 135 00ba 13       		.byte	0x13
+ 136 00bb 4D000000 		.4byte	0x4d
+ 137 00bf 01       		.uleb128 0x1
+ 138 00c0 51020000 		.4byte	.LASF17
+ 139 00c4 03       		.byte	0x3
+ 140 00c5 24       		.byte	0x24
+ 141 00c6 14       		.byte	0x14
+ 142 00c7 67000000 		.4byte	0x67
+ 143 00cb 01       		.uleb128 0x1
+ 144 00cc 0E040000 		.4byte	.LASF18
+ 145 00d0 03       		.byte	0x3
+ 146 00d1 2C       		.byte	0x2c
+ 147 00d2 13       		.byte	0x13
+ 148 00d3 7A000000 		.4byte	0x7a
+ 149 00d7 01       		.uleb128 0x1
+ 150 00d8 73040000 		.4byte	.LASF19
+ 151 00dc 03       		.byte	0x3
+ 152 00dd 30       		.byte	0x30
+ 153 00de 14       		.byte	0x14
+ 154 00df 8D000000 		.4byte	0x8d
+ 155 00e3 01       		.uleb128 0x1
+ 156 00e4 39000000 		.4byte	.LASF20
+ 157 00e8 03       		.byte	0x3
+ 158 00e9 3C       		.byte	0x3c
+ 159 00ea 14       		.byte	0x14
+ 160 00eb A0000000 		.4byte	0xa0
+ 161 00ef 13       		.uleb128 0x13
+ 162 00f0 E3000000 		.4byte	0xe3
+ 163 00f4 01       		.uleb128 0x1
+ 164 00f5 83040000 		.4byte	.LASF21
+ 165 00f9 04       		.byte	0x4
+ 166 00fa 48       		.byte	0x48
+ 167 00fb 1D       		.byte	0x1d
+ 168 00fc E3000000 		.4byte	0xe3
+ 169 0100 01       		.uleb128 0x1
+ 170 0101 05030000 		.4byte	.LASF22
+ 171 0105 05       		.byte	0x5
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 4
+
+
+ 172 0106 50       		.byte	0x50
+ 173 0107 19       		.byte	0x19
+ 174 0108 F4000000 		.4byte	0xf4
+ 175 010c 01       		.uleb128 0x1
+ 176 010d C9020000 		.4byte	.LASF23
+ 177 0111 05       		.byte	0x5
+ 178 0112 53       		.byte	0x53
+ 179 0113 19       		.byte	0x19
+ 180 0114 B3000000 		.4byte	0xb3
+ 181 0118 01       		.uleb128 0x1
+ 182 0119 A8010000 		.4byte	.LASF24
+ 183 011d 05       		.byte	0x5
+ 184 011e 54       		.byte	0x54
+ 185 011f 19       		.byte	0x19
+ 186 0120 B3000000 		.4byte	0xb3
+ 187 0124 01       		.uleb128 0x1
+ 188 0125 E8030000 		.4byte	.LASF25
+ 189 0129 05       		.byte	0x5
+ 190 012a 55       		.byte	0x55
+ 191 012b 19       		.byte	0x19
+ 192 012c B3000000 		.4byte	0xb3
+ 193 0130 01       		.uleb128 0x1
+ 194 0131 F0030000 		.4byte	.LASF26
+ 195 0135 05       		.byte	0x5
+ 196 0136 57       		.byte	0x57
+ 197 0137 19       		.byte	0x19
+ 198 0138 D7000000 		.4byte	0xd7
+ 199 013c 01       		.uleb128 0x1
+ 200 013d BA020000 		.4byte	.LASF27
+ 201 0141 05       		.byte	0x5
+ 202 0142 58       		.byte	0x58
+ 203 0143 19       		.byte	0x19
+ 204 0144 CB000000 		.4byte	0xcb
+ 205 0148 01       		.uleb128 0x1
+ 206 0149 EF020000 		.4byte	.LASF28
+ 207 014d 05       		.byte	0x5
+ 208 014e 5A       		.byte	0x5a
+ 209 014f 19       		.byte	0x19
+ 210 0150 D7000000 		.4byte	0xd7
+ 211 0154 01       		.uleb128 0x1
+ 212 0155 3E020000 		.4byte	.LASF29
+ 213 0159 05       		.byte	0x5
+ 214 015a 5C       		.byte	0x5c
+ 215 015b 19       		.byte	0x19
+ 216 015c CB000000 		.4byte	0xcb
+ 217 0160 01       		.uleb128 0x1
+ 218 0161 DE030000 		.4byte	.LASF30
+ 219 0165 05       		.byte	0x5
+ 220 0166 80       		.byte	0x80
+ 221 0167 12       		.byte	0x12
+ 222 0168 31000000 		.4byte	0x31
+ 223 016c 01       		.uleb128 0x1
+ 224 016d 05050000 		.4byte	.LASF31
+ 225 0171 05       		.byte	0x5
+ 226 0172 85       		.byte	0x85
+ 227 0173 1A       		.byte	0x1a
+ 228 0174 78010000 		.4byte	0x178
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 5
+
+
+ 229 0178 05       		.uleb128 0x5
+ 230 0179 AB020000 		.4byte	.LASF46
+ 231 017d 48       		.byte	0x48
+ 232 017e 06       		.byte	0x6
+ 233 017f 9C       		.byte	0x9c
+ 234 0180 08       		.byte	0x8
+ 235 0181 55020000 		.4byte	0x255
+ 236 0185 0C       		.uleb128 0xc
+ 237 0186 68647200 		.ascii	"hdr\000"
+ 238 018a 06       		.byte	0x6
+ 239 018b AD       		.byte	0xad
+ 240 018c 05       		.byte	0x5
+ 241 018d 79050000 		.4byte	0x579
+ 242 0191 00       		.byte	0
+ 243 0192 0C       		.uleb128 0xc
+ 244 0193 63747800 		.ascii	"ctx\000"
+ 245 0197 06       		.byte	0x6
+ 246 0198 B1       		.byte	0xb1
+ 247 0199 21       		.byte	0x21
+ 248 019a DD040000 		.4byte	0x4dd
+ 249 019e 0C       		.byte	0xc
+ 250 019f 02       		.uleb128 0x2
+ 251 01a0 67020000 		.4byte	.LASF32
+ 252 01a4 06       		.byte	0x6
+ 253 01a5 B6       		.byte	0xb6
+ 254 01a6 21       		.byte	0x21
+ 255 01a7 92030000 		.4byte	0x392
+ 256 01ab 10       		.byte	0x10
+ 257 01ac 02       		.uleb128 0x2
+ 258 01ad 93040000 		.4byte	.LASF33
+ 259 01b1 06       		.byte	0x6
+ 260 01b2 BB       		.byte	0xbb
+ 261 01b3 22       		.byte	0x22
+ 262 01b4 79060000 		.4byte	0x679
+ 263 01b8 18       		.byte	0x18
+ 264 01b9 02       		.uleb128 0x2
+ 265 01ba B5020000 		.4byte	.LASF34
+ 266 01be 06       		.byte	0x6
+ 267 01bf C0       		.byte	0xc0
+ 268 01c0 22       		.byte	0x22
+ 269 01c1 27030000 		.4byte	0x327
+ 270 01c5 1C       		.byte	0x1c
+ 271 01c6 02       		.uleb128 0x2
+ 272 01c7 E7040000 		.4byte	.LASF35
+ 273 01cb 06       		.byte	0x6
+ 274 01cc C9       		.byte	0xc9
+ 275 01cd 22       		.byte	0x22
+ 276 01ce 7E060000 		.4byte	0x67e
+ 277 01d2 20       		.byte	0x20
+ 278 01d3 02       		.uleb128 0x2
+ 279 01d4 85010000 		.4byte	.LASF36
+ 280 01d8 06       		.byte	0x6
+ 281 01d9 CE       		.byte	0xce
+ 282 01da 21       		.byte	0x21
+ 283 01db 18010000 		.4byte	0x118
+ 284 01df 24       		.byte	0x24
+ 285 01e0 02       		.uleb128 0x2
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 6
+
+
+ 286 01e1 E9050000 		.4byte	.LASF37
+ 287 01e5 06       		.byte	0x6
+ 288 01e6 D2       		.byte	0xd2
+ 289 01e7 21       		.byte	0x21
+ 290 01e8 0C010000 		.4byte	0x10c
+ 291 01ec 25       		.byte	0x25
+ 292 01ed 02       		.uleb128 0x2
+ 293 01ee 1E010000 		.4byte	.LASF38
+ 294 01f2 06       		.byte	0x6
+ 295 01f3 D7       		.byte	0xd7
+ 296 01f4 21       		.byte	0x21
+ 297 01f5 24010000 		.4byte	0x124
+ 298 01f9 26       		.byte	0x26
+ 299 01fa 08       		.uleb128 0x8
+ 300 01fb 7500     		.ascii	"u\000"
+ 301 01fd 06       		.byte	0x6
+ 302 01fe 2801     		.2byte	0x128
+ 303 0200 21       		.byte	0x21
+ 304 0201 A5050000 		.4byte	0x5a5
+ 305 0205 28       		.byte	0x28
+ 306 0206 04       		.uleb128 0x4
+ 307 0207 0A020000 		.4byte	.LASF39
+ 308 020b 2D01     		.2byte	0x12d
+ 309 020d 21       		.byte	0x21
+ 310 020e 66030000 		.4byte	0x366
+ 311 0212 2C       		.byte	0x2c
+ 312 0213 04       		.uleb128 0x4
+ 313 0214 7C010000 		.4byte	.LASF40
+ 314 0218 3301     		.2byte	0x133
+ 315 021a 21       		.byte	0x21
+ 316 021b 92030000 		.4byte	0x392
+ 317 021f 30       		.byte	0x30
+ 318 0220 04       		.uleb128 0x4
+ 319 0221 C0020000 		.4byte	.LASF41
+ 320 0225 3901     		.2byte	0x139
+ 321 0227 21       		.byte	0x21
+ 322 0228 48010000 		.4byte	0x148
+ 323 022c 38       		.byte	0x38
+ 324 022d 04       		.uleb128 0x4
+ 325 022e 4B060000 		.4byte	.LASF42
+ 326 0232 4001     		.2byte	0x140
+ 327 0234 22       		.byte	0x22
+ 328 0235 74060000 		.4byte	0x674
+ 329 0239 3C       		.byte	0x3c
+ 330 023a 04       		.uleb128 0x4
+ 331 023b 2A030000 		.4byte	.LASF43
+ 332 023f 4401     		.2byte	0x144
+ 333 0241 21       		.byte	0x21
+ 334 0242 30010000 		.4byte	0x130
+ 335 0246 40       		.byte	0x40
+ 336 0247 04       		.uleb128 0x4
+ 337 0248 8D020000 		.4byte	.LASF44
+ 338 024c 4B01     		.2byte	0x14b
+ 339 024e 22       		.byte	0x22
+ 340 024f FE040000 		.4byte	0x4fe
+ 341 0253 44       		.byte	0x44
+ 342 0254 00       		.byte	0
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 7
+
+
+ 343 0255 01       		.uleb128 0x1
+ 344 0256 5A050000 		.4byte	.LASF45
+ 345 025a 05       		.byte	0x5
+ 346 025b 8A       		.byte	0x8a
+ 347 025c 1F       		.byte	0x1f
+ 348 025d 61020000 		.4byte	0x261
+ 349 0261 0D       		.uleb128 0xd
+ 350 0262 4B050000 		.4byte	.LASF47
+ 351 0266 88       		.byte	0x88
+ 352 0267 06       		.byte	0x6
+ 353 0268 8A01     		.2byte	0x18a
+ 354 026a 08       		.byte	0x8
+ 355 026b D9020000 		.4byte	0x2d9
+ 356 026f 04       		.uleb128 0x4
+ 357 0270 CF050000 		.4byte	.LASF48
+ 358 0274 8E01     		.2byte	0x18e
+ 359 0276 21       		.byte	0x21
+ 360 0277 AC060000 		.4byte	0x6ac
+ 361 027b 00       		.byte	0
+ 362 027c 04       		.uleb128 0x4
+ 363 027d 69010000 		.4byte	.LASF49
+ 364 0281 9201     		.2byte	0x192
+ 365 0283 21       		.byte	0x21
+ 366 0284 35050000 		.4byte	0x535
+ 367 0288 10       		.byte	0x10
+ 368 0289 04       		.uleb128 0x4
+ 369 028a 68050000 		.4byte	.LASF50
+ 370 028e 9901     		.2byte	0x199
+ 371 0290 21       		.byte	0x21
+ 372 0291 5C050000 		.4byte	0x55c
+ 373 0295 28       		.byte	0x28
+ 374 0296 04       		.uleb128 0x4
+ 375 0297 7B000000 		.4byte	.LASF51
+ 376 029b 9E01     		.2byte	0x19e
+ 377 029d 21       		.byte	0x21
+ 378 029e 60010000 		.4byte	0x160
+ 379 02a2 30       		.byte	0x30
+ 380 02a3 04       		.uleb128 0x4
+ 381 02a4 15000000 		.4byte	.LASF52
+ 382 02a8 A401     		.2byte	0x1a4
+ 383 02aa 21       		.byte	0x21
+ 384 02ab 00030000 		.4byte	0x300
+ 385 02af 34       		.byte	0x34
+ 386 02b0 04       		.uleb128 0x4
+ 387 02b1 F3040000 		.4byte	.LASF53
+ 388 02b5 A901     		.2byte	0x1a9
+ 389 02b7 22       		.byte	0x22
+ 390 02b8 17070000 		.4byte	0x717
+ 391 02bc 38       		.byte	0x38
+ 392 02bd 04       		.uleb128 0x4
+ 393 02be EA000000 		.4byte	.LASF54
+ 394 02c2 AD01     		.2byte	0x1ad
+ 395 02c4 21       		.byte	0x21
+ 396 02c5 6C010000 		.4byte	0x16c
+ 397 02c9 3C       		.byte	0x3c
+ 398 02ca 08       		.uleb128 0x8
+ 399 02cb 64626700 		.ascii	"dbg\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 8
+
+
+ 400 02cf 06       		.byte	0x6
+ 401 02d0 B101     		.2byte	0x1b1
+ 402 02d2 21       		.byte	0x21
+ 403 02d3 3D030000 		.4byte	0x33d
+ 404 02d7 84       		.byte	0x84
+ 405 02d8 00       		.byte	0
+ 406 02d9 01       		.uleb128 0x1
+ 407 02da 33030000 		.4byte	.LASF55
+ 408 02de 07       		.byte	0x7
+ 409 02df 3F       		.byte	0x3f
+ 410 02e0 12       		.byte	0x12
+ 411 02e1 D7000000 		.4byte	0xd7
+ 412 02e5 05       		.uleb128 0x5
+ 413 02e6 B1010000 		.4byte	.LASF56
+ 414 02ea 04       		.byte	0x4
+ 415 02eb 07       		.byte	0x7
+ 416 02ec 44       		.byte	0x44
+ 417 02ed 10       		.byte	0x10
+ 418 02ee 00030000 		.4byte	0x300
+ 419 02f2 02       		.uleb128 0x2
+ 420 02f3 05020000 		.4byte	.LASF57
+ 421 02f7 07       		.byte	0x7
+ 422 02f8 48       		.byte	0x48
+ 423 02f9 21       		.byte	0x21
+ 424 02fa D9020000 		.4byte	0x2d9
+ 425 02fe 00       		.byte	0
+ 426 02ff 00       		.byte	0
+ 427 0300 01       		.uleb128 0x1
+ 428 0301 30040000 		.4byte	.LASF58
+ 429 0305 07       		.byte	0x7
+ 430 0306 49       		.byte	0x49
+ 431 0307 03       		.byte	0x3
+ 432 0308 E5020000 		.4byte	0x2e5
+ 433 030c 05       		.uleb128 0x5
+ 434 030d F8030000 		.4byte	.LASF59
+ 435 0311 04       		.byte	0x4
+ 436 0312 08       		.byte	0x8
+ 437 0313 3E       		.byte	0x3e
+ 438 0314 10       		.byte	0x10
+ 439 0315 27030000 		.4byte	0x327
+ 440 0319 02       		.uleb128 0x2
+ 441 031a 3A050000 		.4byte	.LASF60
+ 442 031e 08       		.byte	0x8
+ 443 031f 46       		.byte	0x46
+ 444 0320 24       		.byte	0x24
+ 445 0321 2C030000 		.4byte	0x32c
+ 446 0325 00       		.byte	0
+ 447 0326 00       		.byte	0
+ 448 0327 03       		.uleb128 0x3
+ 449 0328 38030000 		.4byte	0x338
+ 450 032c 13       		.uleb128 0x13
+ 451 032d 27030000 		.4byte	0x327
+ 452 0331 07       		.uleb128 0x7
+ 453 0332 01       		.byte	0x1
+ 454 0333 08       		.byte	0x8
+ 455 0334 EE040000 		.4byte	.LASF61
+ 456 0338 0E       		.uleb128 0xe
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 9
+
+
+ 457 0339 31030000 		.4byte	0x331
+ 458 033d 01       		.uleb128 0x1
+ 459 033e 63000000 		.4byte	.LASF62
+ 460 0342 08       		.byte	0x8
+ 461 0343 51       		.byte	0x51
+ 462 0344 03       		.byte	0x3
+ 463 0345 0C030000 		.4byte	0x30c
+ 464 0349 01       		.uleb128 0x1
+ 465 034a 14050000 		.4byte	.LASF63
+ 466 034e 09       		.byte	0x9
+ 467 034f 6F       		.byte	0x6f
+ 468 0350 12       		.byte	0x12
+ 469 0351 BF000000 		.4byte	0xbf
+ 470 0355 13       		.uleb128 0x13
+ 471 0356 49030000 		.4byte	0x349
+ 472 035a 01       		.uleb128 0x1
+ 473 035b 30020000 		.4byte	.LASF64
+ 474 035f 09       		.byte	0x9
+ 475 0360 79       		.byte	0x79
+ 476 0361 12       		.byte	0x12
+ 477 0362 D7000000 		.4byte	0xd7
+ 478 0366 01       		.uleb128 0x1
+ 479 0367 75030000 		.4byte	.LASF65
+ 480 036b 0A       		.byte	0xa
+ 481 036c 32       		.byte	0x32
+ 482 036d 18       		.byte	0x18
+ 483 036e 72030000 		.4byte	0x372
+ 484 0372 05       		.uleb128 0x5
+ 485 0373 D9020000 		.4byte	.LASF66
+ 486 0377 04       		.byte	0x4
+ 487 0378 0A       		.byte	0xa
+ 488 0379 38       		.byte	0x38
+ 489 037a 08       		.byte	0x8
+ 490 037b 8D030000 		.4byte	0x38d
+ 491 037f 02       		.uleb128 0x2
+ 492 0380 21000000 		.4byte	.LASF67
+ 493 0384 0A       		.byte	0xa
+ 494 0385 39       		.byte	0x39
+ 495 0386 1A       		.byte	0x1a
+ 496 0387 8D030000 		.4byte	0x38d
+ 497 038b 00       		.byte	0
+ 498 038c 00       		.byte	0
+ 499 038d 03       		.uleb128 0x3
+ 500 038e 66030000 		.4byte	0x366
+ 501 0392 01       		.uleb128 0x1
+ 502 0393 6E020000 		.4byte	.LASF68
+ 503 0397 0A       		.byte	0xa
+ 504 0398 3F       		.byte	0x3f
+ 505 0399 19       		.byte	0x19
+ 506 039a 9E030000 		.4byte	0x39e
+ 507 039e 05       		.uleb128 0x5
+ 508 039f C7010000 		.4byte	.LASF69
+ 509 03a3 08       		.byte	0x8
+ 510 03a4 0A       		.byte	0xa
+ 511 03a5 45       		.byte	0x45
+ 512 03a6 08       		.byte	0x8
+ 513 03a7 C6030000 		.4byte	0x3c6
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 10
+
+
+ 514 03ab 02       		.uleb128 0x2
+ 515 03ac 21000000 		.4byte	.LASF67
+ 516 03b0 0A       		.byte	0xa
+ 517 03b1 46       		.byte	0x46
+ 518 03b2 1A       		.byte	0x1a
+ 519 03b3 C6030000 		.4byte	0x3c6
+ 520 03b7 00       		.byte	0
+ 521 03b8 02       		.uleb128 0x2
+ 522 03b9 4C000000 		.4byte	.LASF70
+ 523 03bd 0A       		.byte	0xa
+ 524 03be 47       		.byte	0x47
+ 525 03bf 1A       		.byte	0x1a
+ 526 03c0 C6030000 		.4byte	0x3c6
+ 527 03c4 04       		.byte	0x4
+ 528 03c5 00       		.byte	0
+ 529 03c6 03       		.uleb128 0x3
+ 530 03c7 92030000 		.4byte	0x392
+ 531 03cb 01       		.uleb128 0x1
+ 532 03cc 97000000 		.4byte	.LASF71
+ 533 03d0 0A       		.byte	0xa
+ 534 03d1 4E       		.byte	0x4e
+ 535 03d2 22       		.byte	0x22
+ 536 03d3 D7030000 		.4byte	0x3d7
+ 537 03d7 05       		.uleb128 0x5
+ 538 03d8 70050000 		.4byte	.LASF72
+ 539 03dc 0C       		.byte	0xc
+ 540 03dd 0A       		.byte	0xa
+ 541 03de 55       		.byte	0x55
+ 542 03df 08       		.byte	0x8
+ 543 03e0 0C040000 		.4byte	0x40c
+ 544 03e4 02       		.uleb128 0x2
+ 545 03e5 21000000 		.4byte	.LASF67
+ 546 03e9 0A       		.byte	0xa
+ 547 03ea 56       		.byte	0x56
+ 548 03eb 1A       		.byte	0x1a
+ 549 03ec 0C040000 		.4byte	0x40c
+ 550 03f0 00       		.byte	0
+ 551 03f1 02       		.uleb128 0x2
+ 552 03f2 4C000000 		.4byte	.LASF70
+ 553 03f6 0A       		.byte	0xa
+ 554 03f7 57       		.byte	0x57
+ 555 03f8 1A       		.byte	0x1a
+ 556 03f9 0C040000 		.4byte	0x40c
+ 557 03fd 04       		.byte	0x4
+ 558 03fe 02       		.uleb128 0x2
+ 559 03ff C1030000 		.4byte	.LASF73
+ 560 0403 0A       		.byte	0xa
+ 561 0404 58       		.byte	0x58
+ 562 0405 19       		.byte	0x19
+ 563 0406 30010000 		.4byte	0x130
+ 564 040a 08       		.byte	0x8
+ 565 040b 00       		.byte	0
+ 566 040c 03       		.uleb128 0x3
+ 567 040d CB030000 		.4byte	0x3cb
+ 568 0411 01       		.uleb128 0x1
+ 569 0412 DE010000 		.4byte	.LASF74
+ 570 0416 0A       		.byte	0xa
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 11
+
+
+ 571 0417 5F       		.byte	0x5f
+ 572 0418 1E       		.byte	0x1e
+ 573 0419 1D040000 		.4byte	0x41d
+ 574 041d 05       		.uleb128 0x5
+ 575 041e 3D010000 		.4byte	.LASF75
+ 576 0422 0C       		.byte	0xc
+ 577 0423 0A       		.byte	0xa
+ 578 0424 64       		.byte	0x64
+ 579 0425 08       		.byte	0x8
+ 580 0426 52040000 		.4byte	0x452
+ 581 042a 02       		.uleb128 0x2
+ 582 042b 21000000 		.4byte	.LASF67
+ 583 042f 0A       		.byte	0xa
+ 584 0430 65       		.byte	0x65
+ 585 0431 1A       		.byte	0x1a
+ 586 0432 52040000 		.4byte	0x452
+ 587 0436 00       		.byte	0
+ 588 0437 02       		.uleb128 0x2
+ 589 0438 4C000000 		.4byte	.LASF70
+ 590 043c 0A       		.byte	0xa
+ 591 043d 66       		.byte	0x66
+ 592 043e 1A       		.byte	0x1a
+ 593 043f 52040000 		.4byte	0x452
+ 594 0443 04       		.byte	0x4
+ 595 0444 02       		.uleb128 0x2
+ 596 0445 26000000 		.4byte	.LASF76
+ 597 0449 0A       		.byte	0xa
+ 598 044a 67       		.byte	0x67
+ 599 044b 19       		.byte	0x19
+ 600 044c 5A030000 		.4byte	0x35a
+ 601 0450 08       		.byte	0x8
+ 602 0451 00       		.byte	0
+ 603 0452 03       		.uleb128 0x3
+ 604 0453 11040000 		.4byte	0x411
+ 605 0457 0D       		.uleb128 0xd
+ 606 0458 51000000 		.4byte	.LASF77
+ 607 045c 24       		.byte	0x24
+ 608 045d 0B       		.byte	0xb
+ 609 045e E001     		.2byte	0x1e0
+ 610 0460 08       		.byte	0x8
+ 611 0461 DD040000 		.4byte	0x4dd
+ 612 0465 08       		.uleb128 0x8
+ 613 0466 723400   		.ascii	"r4\000"
+ 614 0469 0B       		.byte	0xb
+ 615 046a F901     		.2byte	0x1f9
+ 616 046c 11       		.byte	0x11
+ 617 046d D7000000 		.4byte	0xd7
+ 618 0471 00       		.byte	0
+ 619 0472 08       		.uleb128 0x8
+ 620 0473 723500   		.ascii	"r5\000"
+ 621 0476 0B       		.byte	0xb
+ 622 0477 FA01     		.2byte	0x1fa
+ 623 0479 11       		.byte	0x11
+ 624 047a D7000000 		.4byte	0xd7
+ 625 047e 04       		.byte	0x4
+ 626 047f 08       		.uleb128 0x8
+ 627 0480 723600   		.ascii	"r6\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 12
+
+
+ 628 0483 0B       		.byte	0xb
+ 629 0484 FB01     		.2byte	0x1fb
+ 630 0486 11       		.byte	0x11
+ 631 0487 D7000000 		.4byte	0xd7
+ 632 048b 08       		.byte	0x8
+ 633 048c 08       		.uleb128 0x8
+ 634 048d 723700   		.ascii	"r7\000"
+ 635 0490 0B       		.byte	0xb
+ 636 0491 FC01     		.2byte	0x1fc
+ 637 0493 11       		.byte	0x11
+ 638 0494 D7000000 		.4byte	0xd7
+ 639 0498 0C       		.byte	0xc
+ 640 0499 08       		.uleb128 0x8
+ 641 049a 723800   		.ascii	"r8\000"
+ 642 049d 0B       		.byte	0xb
+ 643 049e FD01     		.2byte	0x1fd
+ 644 04a0 11       		.byte	0x11
+ 645 04a1 D7000000 		.4byte	0xd7
+ 646 04a5 10       		.byte	0x10
+ 647 04a6 08       		.uleb128 0x8
+ 648 04a7 723900   		.ascii	"r9\000"
+ 649 04aa 0B       		.byte	0xb
+ 650 04ab FE01     		.2byte	0x1fe
+ 651 04ad 11       		.byte	0x11
+ 652 04ae D7000000 		.4byte	0xd7
+ 653 04b2 14       		.byte	0x14
+ 654 04b3 08       		.uleb128 0x8
+ 655 04b4 72313000 		.ascii	"r10\000"
+ 656 04b8 0B       		.byte	0xb
+ 657 04b9 FF01     		.2byte	0x1ff
+ 658 04bb 11       		.byte	0x11
+ 659 04bc D7000000 		.4byte	0xd7
+ 660 04c0 18       		.byte	0x18
+ 661 04c1 08       		.uleb128 0x8
+ 662 04c2 72313100 		.ascii	"r11\000"
+ 663 04c6 0B       		.byte	0xb
+ 664 04c7 0002     		.2byte	0x200
+ 665 04c9 11       		.byte	0x11
+ 666 04ca D7000000 		.4byte	0xd7
+ 667 04ce 1C       		.byte	0x1c
+ 668 04cf 08       		.uleb128 0x8
+ 669 04d0 6C7200   		.ascii	"lr\000"
+ 670 04d3 0B       		.byte	0xb
+ 671 04d4 0102     		.2byte	0x201
+ 672 04d6 11       		.byte	0x11
+ 673 04d7 D7000000 		.4byte	0xd7
+ 674 04db 20       		.byte	0x20
+ 675 04dc 00       		.byte	0
+ 676 04dd 0D       		.uleb128 0xd
+ 677 04de AB000000 		.4byte	.LASF78
+ 678 04e2 04       		.byte	0x4
+ 679 04e3 0B       		.byte	0xb
+ 680 04e4 0A02     		.2byte	0x20a
+ 681 04e6 08       		.byte	0x8
+ 682 04e7 F9040000 		.4byte	0x4f9
+ 683 04eb 08       		.uleb128 0x8
+ 684 04ec 737000   		.ascii	"sp\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 13
+
+
+ 685 04ef 0B       		.byte	0xb
+ 686 04f0 0B02     		.2byte	0x20b
+ 687 04f2 1A       		.byte	0x1a
+ 688 04f3 F9040000 		.4byte	0x4f9
+ 689 04f7 00       		.byte	0
+ 690 04f8 00       		.byte	0
+ 691 04f9 03       		.uleb128 0x3
+ 692 04fa 57040000 		.4byte	0x457
+ 693 04fe 1F       		.uleb128 0x1f
+ 694 04ff 04       		.byte	0x4
+ 695 0500 05       		.uleb128 0x5
+ 696 0501 52030000 		.4byte	.LASF79
+ 697 0505 18       		.byte	0x18
+ 698 0506 06       		.byte	0x6
+ 699 0507 64       		.byte	0x64
+ 700 0508 10       		.byte	0x10
+ 701 0509 35050000 		.4byte	0x535
+ 702 050d 02       		.uleb128 0x2
+ 703 050e 0E050000 		.4byte	.LASF80
+ 704 0512 06       		.byte	0x6
+ 705 0513 68       		.byte	0x68
+ 706 0514 21       		.byte	0x21
+ 707 0515 11040000 		.4byte	0x411
+ 708 0519 00       		.byte	0
+ 709 051a 02       		.uleb128 0x2
+ 710 051b D1020000 		.4byte	.LASF81
+ 711 051f 06       		.byte	0x6
+ 712 0520 6D       		.byte	0x6d
+ 713 0521 21       		.byte	0x21
+ 714 0522 55030000 		.4byte	0x355
+ 715 0526 0C       		.byte	0xc
+ 716 0527 02       		.uleb128 0x2
+ 717 0528 20030000 		.4byte	.LASF82
+ 718 052c 06       		.byte	0x6
+ 719 052d 79       		.byte	0x79
+ 720 052e 21       		.byte	0x21
+ 721 052f EF000000 		.4byte	0xef
+ 722 0533 10       		.byte	0x10
+ 723 0534 00       		.byte	0
+ 724 0535 01       		.uleb128 0x1
+ 725 0536 FD000000 		.4byte	.LASF83
+ 726 053a 06       		.byte	0x6
+ 727 053b 7B       		.byte	0x7b
+ 728 053c 03       		.byte	0x3
+ 729 053d 00050000 		.4byte	0x500
+ 730 0541 05       		.uleb128 0x5
+ 731 0542 EE010000 		.4byte	.LASF84
+ 732 0546 08       		.byte	0x8
+ 733 0547 06       		.byte	0x6
+ 734 0548 80       		.byte	0x80
+ 735 0549 10       		.byte	0x10
+ 736 054a 5C050000 		.4byte	0x55c
+ 737 054e 02       		.uleb128 0x2
+ 738 054f 87020000 		.4byte	.LASF85
+ 739 0553 06       		.byte	0x6
+ 740 0554 84       		.byte	0x84
+ 741 0555 21       		.byte	0x21
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 14
+
+
+ 742 0556 92030000 		.4byte	0x392
+ 743 055a 00       		.byte	0
+ 744 055b 00       		.byte	0
+ 745 055c 01       		.uleb128 0x1
+ 746 055d 68040000 		.4byte	.LASF86
+ 747 0561 06       		.byte	0x6
+ 748 0562 85       		.byte	0x85
+ 749 0563 03       		.byte	0x3
+ 750 0564 41050000 		.4byte	0x541
+ 751 0568 01       		.uleb128 0x1
+ 752 0569 3F030000 		.4byte	.LASF87
+ 753 056d 06       		.byte	0x6
+ 754 056e 8A       		.byte	0x8a
+ 755 056f 14       		.byte	0x14
+ 756 0570 74050000 		.4byte	0x574
+ 757 0574 03       		.uleb128 0x3
+ 758 0575 6C010000 		.4byte	0x16c
+ 759 0579 15       		.uleb128 0x15
+ 760 057a 0C       		.byte	0xc
+ 761 057b A0       		.byte	0xa0
+ 762 057c A5050000 		.4byte	0x5a5
+ 763 0580 09       		.uleb128 0x9
+ 764 0581 2D060000 		.4byte	.LASF88
+ 765 0585 06       		.byte	0x6
+ 766 0586 A4       		.byte	0xa4
+ 767 0587 21       		.byte	0x21
+ 768 0588 66030000 		.4byte	0x366
+ 769 058c 09       		.uleb128 0x9
+ 770 058d 87020000 		.4byte	.LASF85
+ 771 0591 06       		.byte	0x6
+ 772 0592 A8       		.byte	0xa8
+ 773 0593 21       		.byte	0x21
+ 774 0594 92030000 		.4byte	0x392
+ 775 0598 09       		.uleb128 0x9
+ 776 0599 44050000 		.4byte	.LASF89
+ 777 059d 06       		.byte	0x6
+ 778 059e AC       		.byte	0xac
+ 779 059f 21       		.byte	0x21
+ 780 05a0 CB030000 		.4byte	0x3cb
+ 781 05a4 00       		.byte	0
+ 782 05a5 15       		.uleb128 0x15
+ 783 05a6 04       		.byte	0x4
+ 784 05a7 EB       		.byte	0xeb
+ 785 05a8 0D060000 		.4byte	0x60d
+ 786 05ac 09       		.uleb128 0x9
+ 787 05ad 2C000000 		.4byte	.LASF90
+ 788 05b1 06       		.byte	0x6
+ 789 05b2 F2       		.byte	0xf2
+ 790 05b3 21       		.byte	0x21
+ 791 05b4 3C010000 		.4byte	0x13c
+ 792 05b8 09       		.uleb128 0x9
+ 793 05b9 E1000000 		.4byte	.LASF91
+ 794 05bd 06       		.byte	0x6
+ 795 05be F9       		.byte	0xf9
+ 796 05bf 21       		.byte	0x21
+ 797 05c0 3C010000 		.4byte	0x13c
+ 798 05c4 0A       		.uleb128 0xa
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 15
+
+
+ 799 05c5 EF050000 		.4byte	.LASF92
+ 800 05c9 0001     		.2byte	0x100
+ 801 05cb 22       		.byte	0x22
+ 802 05cc FE040000 		.4byte	0x4fe
+ 803 05d0 0A       		.uleb128 0xa
+ 804 05d1 61020000 		.4byte	.LASF93
+ 805 05d5 0701     		.2byte	0x107
+ 806 05d7 22       		.byte	0x22
+ 807 05d8 0D060000 		.4byte	0x60d
+ 808 05dc 0A       		.uleb128 0xa
+ 809 05dd F5000000 		.4byte	.LASF94
+ 810 05e1 0C01     		.2byte	0x10c
+ 811 05e3 21       		.byte	0x21
+ 812 05e4 3C010000 		.4byte	0x13c
+ 813 05e8 0A       		.uleb128 0xa
+ 814 05e9 5A020000 		.4byte	.LASF95
+ 815 05ed 1501     		.2byte	0x115
+ 816 05ef 22       		.byte	0x22
+ 817 05f0 3A060000 		.4byte	0x63a
+ 818 05f4 0A       		.uleb128 0xa
+ 819 05f5 7C040000 		.4byte	.LASF96
+ 820 05f9 1E01     		.2byte	0x11e
+ 821 05fb 22       		.byte	0x22
+ 822 05fc 74060000 		.4byte	0x674
+ 823 0600 0A       		.uleb128 0xa
+ 824 0601 41040000 		.4byte	.LASF97
+ 825 0605 2601     		.2byte	0x126
+ 826 0607 21       		.byte	0x21
+ 827 0608 48010000 		.4byte	0x148
+ 828 060c 00       		.byte	0
+ 829 060d 03       		.uleb128 0x3
+ 830 060e 68050000 		.4byte	0x568
+ 831 0612 05       		.uleb128 0x5
+ 832 0613 5B040000 		.4byte	.LASF98
+ 833 0617 0C       		.byte	0xc
+ 834 0618 0C       		.byte	0xc
+ 835 0619 34       		.byte	0x34
+ 836 061a 10       		.byte	0x10
+ 837 061b 3A060000 		.4byte	0x63a
+ 838 061f 02       		.uleb128 0x2
+ 839 0620 87020000 		.4byte	.LASF85
+ 840 0624 0C       		.byte	0xc
+ 841 0625 35       		.byte	0x35
+ 842 0626 19       		.byte	0x19
+ 843 0627 92030000 		.4byte	0x392
+ 844 062b 00       		.byte	0
+ 845 062c 0C       		.uleb128 0xc
+ 846 062d 636E7400 		.ascii	"cnt\000"
+ 847 0631 0C       		.byte	0xc
+ 848 0632 37       		.byte	0x37
+ 849 0633 19       		.byte	0x19
+ 850 0634 54010000 		.4byte	0x154
+ 851 0638 08       		.byte	0x8
+ 852 0639 00       		.byte	0
+ 853 063a 03       		.uleb128 0x3
+ 854 063b 12060000 		.4byte	0x612
+ 855 063f 05       		.uleb128 0x5
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 16
+
+
+ 856 0640 C6050000 		.4byte	.LASF99
+ 857 0644 10       		.byte	0x10
+ 858 0645 0D       		.byte	0xd
+ 859 0646 39       		.byte	0x39
+ 860 0647 08       		.byte	0x8
+ 861 0648 74060000 		.4byte	0x674
+ 862 064c 02       		.uleb128 0x2
+ 863 064d 87020000 		.4byte	.LASF85
+ 864 0651 0D       		.byte	0xd
+ 865 0652 3A       		.byte	0x3a
+ 866 0653 19       		.byte	0x19
+ 867 0654 92030000 		.4byte	0x392
+ 868 0658 00       		.byte	0
+ 869 0659 02       		.uleb128 0x2
+ 870 065a 93040000 		.4byte	.LASF33
+ 871 065e 0D       		.byte	0xd
+ 872 065f 3C       		.byte	0x3c
+ 873 0660 1A       		.byte	0x1a
+ 874 0661 74050000 		.4byte	0x574
+ 875 0665 08       		.byte	0x8
+ 876 0666 02       		.uleb128 0x2
+ 877 0667 21000000 		.4byte	.LASF67
+ 878 066b 0D       		.byte	0xd
+ 879 066c 3E       		.byte	0x3e
+ 880 066d 1A       		.byte	0x1a
+ 881 066e AD070000 		.4byte	0x7ad
+ 882 0672 0C       		.byte	0xc
+ 883 0673 00       		.byte	0
+ 884 0674 03       		.uleb128 0x3
+ 885 0675 3F060000 		.4byte	0x63f
+ 886 0679 03       		.uleb128 0x3
+ 887 067a 55020000 		.4byte	0x255
+ 888 067e 03       		.uleb128 0x3
+ 889 067f 00010000 		.4byte	0x100
+ 890 0683 0D       		.uleb128 0xd
+ 891 0684 E1020000 		.4byte	.LASF100
+ 892 0688 10       		.byte	0x10
+ 893 0689 06       		.byte	0x6
+ 894 068a 5C01     		.2byte	0x15c
+ 895 068c 10       		.byte	0x10
+ 896 068d AC060000 		.4byte	0x6ac
+ 897 0691 04       		.uleb128 0x4
+ 898 0692 44050000 		.4byte	.LASF89
+ 899 0696 6101     		.2byte	0x161
+ 900 0698 21       		.byte	0x21
+ 901 0699 CB030000 		.4byte	0x3cb
+ 902 069d 00       		.byte	0
+ 903 069e 04       		.uleb128 0x4
+ 904 069f C6030000 		.4byte	.LASF101
+ 905 06a3 6501     		.2byte	0x165
+ 906 06a5 22       		.byte	0x22
+ 907 06a6 74050000 		.4byte	0x574
+ 908 06aa 0C       		.byte	0xc
+ 909 06ab 00       		.byte	0
+ 910 06ac 16       		.uleb128 0x16
+ 911 06ad 08000000 		.4byte	.LASF102
+ 912 06b1 6601     		.2byte	0x166
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 17
+
+
+ 913 06b3 83060000 		.4byte	0x683
+ 914 06b7 0D       		.uleb128 0xd
+ 915 06b8 99030000 		.4byte	.LASF103
+ 916 06bc 14       		.byte	0x14
+ 917 06bd 06       		.byte	0x6
+ 918 06be 6B01     		.2byte	0x16b
+ 919 06c0 10       		.byte	0x10
+ 920 06c1 07070000 		.4byte	0x707
+ 921 06c5 04       		.uleb128 0x4
+ 922 06c6 B5020000 		.4byte	.LASF34
+ 923 06ca 6F01     		.2byte	0x16f
+ 924 06cc 22       		.byte	0x22
+ 925 06cd 27030000 		.4byte	0x327
+ 926 06d1 00       		.byte	0
+ 927 06d2 04       		.uleb128 0x4
+ 928 06d3 12020000 		.4byte	.LASF104
+ 929 06d7 7501     		.2byte	0x175
+ 930 06d9 22       		.byte	0x22
+ 931 06da 7E060000 		.4byte	0x67e
+ 932 06de 04       		.byte	0x4
+ 933 06df 04       		.uleb128 0x4
+ 934 06e0 95050000 		.4byte	.LASF105
+ 935 06e4 7901     		.2byte	0x179
+ 936 06e6 22       		.byte	0x22
+ 937 06e7 7E060000 		.4byte	0x67e
+ 938 06eb 08       		.byte	0x8
+ 939 06ec 04       		.uleb128 0x4
+ 940 06ed 10030000 		.4byte	.LASF106
+ 941 06f1 7F01     		.2byte	0x17f
+ 942 06f3 22       		.byte	0x22
+ 943 06f4 7E060000 		.4byte	0x67e
+ 944 06f8 0C       		.byte	0xc
+ 945 06f9 04       		.uleb128 0x4
+ 946 06fa 3C060000 		.4byte	.LASF107
+ 947 06fe 8301     		.2byte	0x183
+ 948 0700 22       		.byte	0x22
+ 949 0701 7E060000 		.4byte	0x67e
+ 950 0705 10       		.byte	0x10
+ 951 0706 00       		.byte	0
+ 952 0707 16       		.uleb128 0x16
+ 953 0708 B1050000 		.4byte	.LASF108
+ 954 070c 8501     		.2byte	0x185
+ 955 070e B7060000 		.4byte	0x6b7
+ 956 0712 0E       		.uleb128 0xe
+ 957 0713 07070000 		.4byte	0x707
+ 958 0717 03       		.uleb128 0x3
+ 959 0718 12070000 		.4byte	0x712
+ 960 071c 01       		.uleb128 0x1
+ 961 071d 00000000 		.4byte	.LASF109
+ 962 0721 0E       		.byte	0xe
+ 963 0722 34       		.byte	0x34
+ 964 0723 10       		.byte	0x10
+ 965 0724 28070000 		.4byte	0x728
+ 966 0728 03       		.uleb128 0x3
+ 967 0729 2D070000 		.4byte	0x72d
+ 968 072d 20       		.uleb128 0x20
+ 969 072e 38070000 		.4byte	0x738
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 18
+
+
+ 970 0732 06       		.uleb128 0x6
+ 971 0733 FE040000 		.4byte	0x4fe
+ 972 0737 00       		.byte	0
+ 973 0738 10       		.uleb128 0x10
+ 974 0739 18       		.byte	0x18
+ 975 073a 0E       		.byte	0xe
+ 976 073b 39       		.byte	0x39
+ 977 073c 09       		.byte	0x9
+ 978 073d 90070000 		.4byte	0x790
+ 979 0741 02       		.uleb128 0x2
+ 980 0742 B5020000 		.4byte	.LASF34
+ 981 0746 0E       		.byte	0xe
+ 982 0747 3D       		.byte	0x3d
+ 983 0748 16       		.byte	0x16
+ 984 0749 27030000 		.4byte	0x327
+ 985 074d 00       		.byte	0
+ 986 074e 02       		.uleb128 0x2
+ 987 074f AF030000 		.4byte	.LASF110
+ 988 0753 0E       		.byte	0xe
+ 989 0754 41       		.byte	0x41
+ 990 0755 16       		.byte	0x16
+ 991 0756 7E060000 		.4byte	0x67e
+ 992 075a 04       		.byte	0x4
+ 993 075b 02       		.uleb128 0x2
+ 994 075c C5000000 		.4byte	.LASF111
+ 995 0760 0E       		.byte	0xe
+ 996 0761 45       		.byte	0x45
+ 997 0762 16       		.byte	0x16
+ 998 0763 7E060000 		.4byte	0x67e
+ 999 0767 08       		.byte	0x8
+ 1000 0768 02       		.uleb128 0x2
+ 1001 0769 C1030000 		.4byte	.LASF73
+ 1002 076d 0E       		.byte	0xe
+ 1003 076e 49       		.byte	0x49
+ 1004 076f 15       		.byte	0x15
+ 1005 0770 30010000 		.4byte	0x130
+ 1006 0774 0C       		.byte	0xc
+ 1007 0775 02       		.uleb128 0x2
+ 1008 0776 33000000 		.4byte	.LASF112
+ 1009 077a 0E       		.byte	0xe
+ 1010 077b 4D       		.byte	0x4d
+ 1011 077c 15       		.byte	0x15
+ 1012 077d 1C070000 		.4byte	0x71c
+ 1013 0781 10       		.byte	0x10
+ 1014 0782 0C       		.uleb128 0xc
+ 1015 0783 61726700 		.ascii	"arg\000"
+ 1016 0787 0E       		.byte	0xe
+ 1017 0788 51       		.byte	0x51
+ 1018 0789 16       		.byte	0x16
+ 1019 078a FE040000 		.4byte	0x4fe
+ 1020 078e 14       		.byte	0x14
+ 1021 078f 00       		.byte	0
+ 1022 0790 01       		.uleb128 0x1
+ 1023 0791 83000000 		.4byte	.LASF113
+ 1024 0795 0E       		.byte	0xe
+ 1025 0796 58       		.byte	0x58
+ 1026 0797 03       		.byte	0x3
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 19
+
+
+ 1027 0798 38070000 		.4byte	0x738
+ 1028 079c 0E       		.uleb128 0xe
+ 1029 079d 90070000 		.4byte	0x790
+ 1030 07a1 01       		.uleb128 0x1
+ 1031 07a2 22020000 		.4byte	.LASF114
+ 1032 07a6 0D       		.byte	0xd
+ 1033 07a7 34       		.byte	0x34
+ 1034 07a8 19       		.byte	0x19
+ 1035 07a9 3F060000 		.4byte	0x63f
+ 1036 07ad 03       		.uleb128 0x3
+ 1037 07ae A1070000 		.4byte	0x7a1
+ 1038 07b2 07       		.uleb128 0x7
+ 1039 07b3 01       		.byte	0x1
+ 1040 07b4 02       		.byte	0x2
+ 1041 07b5 08040000 		.4byte	.LASF115
+ 1042 07b9 01       		.uleb128 0x1
+ 1043 07ba B8000000 		.4byte	.LASF116
+ 1044 07be 0F       		.byte	0xf
+ 1045 07bf 47       		.byte	0x47
+ 1046 07c0 11       		.byte	0x11
+ 1047 07c1 C5070000 		.4byte	0x7c5
+ 1048 07c5 03       		.uleb128 0x3
+ 1049 07c6 CA070000 		.4byte	0x7ca
+ 1050 07ca 17       		.uleb128 0x17
+ 1051 07cb FE040000 		.4byte	0x4fe
+ 1052 07cf DE070000 		.4byte	0x7de
+ 1053 07d3 06       		.uleb128 0x6
+ 1054 07d4 25000000 		.4byte	0x25
+ 1055 07d8 06       		.uleb128 0x6
+ 1056 07d9 31000000 		.4byte	0x31
+ 1057 07dd 00       		.byte	0
+ 1058 07de 01       		.uleb128 0x1
+ 1059 07df D0010000 		.4byte	.LASF117
+ 1060 07e3 0F       		.byte	0xf
+ 1061 07e4 4C       		.byte	0x4c
+ 1062 07e5 11       		.byte	0x11
+ 1063 07e6 EA070000 		.4byte	0x7ea
+ 1064 07ea 03       		.uleb128 0x3
+ 1065 07eb EF070000 		.4byte	0x7ef
+ 1066 07ef 17       		.uleb128 0x17
+ 1067 07f0 FE040000 		.4byte	0x4fe
+ 1068 07f4 08080000 		.4byte	0x808
+ 1069 07f8 06       		.uleb128 0x6
+ 1070 07f9 25000000 		.4byte	0x25
+ 1071 07fd 06       		.uleb128 0x6
+ 1072 07fe 31000000 		.4byte	0x31
+ 1073 0802 06       		.uleb128 0x6
+ 1074 0803 25000000 		.4byte	0x25
+ 1075 0807 00       		.byte	0
+ 1076 0808 01       		.uleb128 0x1
+ 1077 0809 B9010000 		.4byte	.LASF118
+ 1078 080d 10       		.byte	0x10
+ 1079 080e 48       		.byte	0x48
+ 1080 080f 1C       		.byte	0x1c
+ 1081 0810 14080000 		.4byte	0x814
+ 1082 0814 05       		.uleb128 0x5
+ 1083 0815 14070000 		.4byte	.LASF119
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 20
+
+
+ 1084 0819 1C       		.byte	0x1c
+ 1085 081a 10       		.byte	0x10
+ 1086 081b 60       		.byte	0x60
+ 1087 081c 08       		.byte	0x8
+ 1088 081d 49080000 		.4byte	0x849
+ 1089 0821 02       		.uleb128 0x2
+ 1090 0822 72000000 		.4byte	.LASF120
+ 1091 0826 10       		.byte	0x10
+ 1092 0827 61       		.byte	0x61
+ 1093 0828 19       		.byte	0x19
+ 1094 0829 DE070000 		.4byte	0x7de
+ 1095 082d 00       		.byte	0
+ 1096 082e 02       		.uleb128 0x2
+ 1097 082f 0D070000 		.4byte	.LASF121
+ 1098 0833 10       		.byte	0x10
+ 1099 0834 63       		.byte	0x63
+ 1100 0835 19       		.byte	0x19
+ 1101 0836 49080000 		.4byte	0x849
+ 1102 083a 04       		.byte	0x4
+ 1103 083b 0C       		.uleb128 0xc
+ 1104 083c 6D747800 		.ascii	"mtx\000"
+ 1105 0840 10       		.byte	0x10
+ 1106 0841 65       		.byte	0x65
+ 1107 0842 19       		.byte	0x19
+ 1108 0843 A1070000 		.4byte	0x7a1
+ 1109 0847 0C       		.byte	0xc
+ 1110 0848 00       		.byte	0
+ 1111 0849 01       		.uleb128 0x1
+ 1112 084a 1E050000 		.4byte	.LASF122
+ 1113 084e 10       		.byte	0x10
+ 1114 084f 4D       		.byte	0x4d
+ 1115 0850 1B       		.byte	0x1b
+ 1116 0851 55080000 		.4byte	0x855
+ 1117 0855 21       		.uleb128 0x21
+ 1118 0856 24040000 		.4byte	.LASF147
+ 1119 085a 08       		.byte	0x8
+ 1120 085b 10       		.byte	0x10
+ 1121 085c 52       		.byte	0x52
+ 1122 085d 07       		.byte	0x7
+ 1123 085e 7B080000 		.4byte	0x87b
+ 1124 0862 09       		.uleb128 0x9
+ 1125 0863 19010000 		.4byte	.LASF123
+ 1126 0867 10       		.byte	0x10
+ 1127 0868 56       		.byte	0x56
+ 1128 0869 05       		.byte	0x5
+ 1129 086a 7B080000 		.4byte	0x87b
+ 1130 086e 09       		.uleb128 0x9
+ 1131 086f D9030000 		.4byte	.LASF124
+ 1132 0873 10       		.byte	0x10
+ 1133 0874 5A       		.byte	0x5a
+ 1134 0875 05       		.byte	0x5
+ 1135 0876 A4080000 		.4byte	0x8a4
+ 1136 087a 00       		.byte	0
+ 1137 087b 10       		.uleb128 0x10
+ 1138 087c 08       		.byte	0x8
+ 1139 087d 10       		.byte	0x10
+ 1140 087e 53       		.byte	0x53
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 21
+
+
+ 1141 087f 03       		.byte	0x3
+ 1142 0880 9F080000 		.4byte	0x89f
+ 1143 0884 02       		.uleb128 0x2
+ 1144 0885 21000000 		.4byte	.LASF67
+ 1145 0889 10       		.byte	0x10
+ 1146 088a 54       		.byte	0x54
+ 1147 088b 1A       		.byte	0x1a
+ 1148 088c 9F080000 		.4byte	0x89f
+ 1149 0890 00       		.byte	0
+ 1150 0891 02       		.uleb128 0x2
+ 1151 0892 5D000000 		.4byte	.LASF125
+ 1152 0896 10       		.byte	0x10
+ 1153 0897 55       		.byte	0x55
+ 1154 0898 19       		.byte	0x19
+ 1155 0899 25000000 		.4byte	0x25
+ 1156 089d 04       		.byte	0x4
+ 1157 089e 00       		.byte	0
+ 1158 089f 03       		.uleb128 0x3
+ 1159 08a0 49080000 		.4byte	0x849
+ 1160 08a4 10       		.uleb128 0x10
+ 1161 08a5 08       		.byte	0x8
+ 1162 08a6 10       		.byte	0x10
+ 1163 08a7 57       		.byte	0x57
+ 1164 08a8 03       		.byte	0x3
+ 1165 08a9 C8080000 		.4byte	0x8c8
+ 1166 08ad 02       		.uleb128 0x2
+ 1167 08ae D0040000 		.4byte	.LASF126
+ 1168 08b2 10       		.byte	0x10
+ 1169 08b3 58       		.byte	0x58
+ 1170 08b4 1A       		.byte	0x1a
+ 1171 08b5 C8080000 		.4byte	0x8c8
+ 1172 08b9 00       		.byte	0
+ 1173 08ba 02       		.uleb128 0x2
+ 1174 08bb 93020000 		.4byte	.LASF127
+ 1175 08bf 10       		.byte	0x10
+ 1176 08c0 59       		.byte	0x59
+ 1177 08c1 19       		.byte	0x19
+ 1178 08c2 25000000 		.4byte	0x25
+ 1179 08c6 04       		.byte	0x4
+ 1180 08c7 00       		.byte	0
+ 1181 08c8 03       		.uleb128 0x3
+ 1182 08c9 08080000 		.4byte	0x808
+ 1183 08cd 05       		.uleb128 0x5
+ 1184 08ce F6050000 		.4byte	.LASF128
+ 1185 08d2 04       		.byte	0x4
+ 1186 08d3 11       		.byte	0x11
+ 1187 08d4 38       		.byte	0x38
+ 1188 08d5 08       		.byte	0x8
+ 1189 08d6 E8080000 		.4byte	0x8e8
+ 1190 08da 02       		.uleb128 0x2
+ 1191 08db 21000000 		.4byte	.LASF67
+ 1192 08df 11       		.byte	0x11
+ 1193 08e0 39       		.byte	0x39
+ 1194 08e1 1A       		.byte	0x1a
+ 1195 08e2 E8080000 		.4byte	0x8e8
+ 1196 08e6 00       		.byte	0
+ 1197 08e7 00       		.byte	0
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 22
+
+
+ 1198 08e8 03       		.uleb128 0x3
+ 1199 08e9 CD080000 		.4byte	0x8cd
+ 1200 08ed 10       		.uleb128 0x10
+ 1201 08ee 10       		.byte	0x10
+ 1202 08ef 11       		.byte	0x11
+ 1203 08f0 40       		.byte	0x40
+ 1204 08f1 09       		.byte	0x9
+ 1205 08f2 2B090000 		.4byte	0x92b
+ 1206 08f6 02       		.uleb128 0x2
+ 1207 08f7 21000000 		.4byte	.LASF67
+ 1208 08fb 11       		.byte	0x11
+ 1209 08fc 41       		.byte	0x41
+ 1210 08fd 1A       		.byte	0x1a
+ 1211 08fe E8080000 		.4byte	0x8e8
+ 1212 0902 00       		.byte	0
+ 1213 0903 02       		.uleb128 0x2
+ 1214 0904 B5030000 		.4byte	.LASF129
+ 1215 0908 11       		.byte	0x11
+ 1216 0909 42       		.byte	0x42
+ 1217 090a 19       		.byte	0x19
+ 1218 090b 25000000 		.4byte	0x25
+ 1219 090f 04       		.byte	0x4
+ 1220 0910 02       		.uleb128 0x2
+ 1221 0911 2A020000 		.4byte	.LASF130
+ 1222 0915 11       		.byte	0x11
+ 1223 0916 44       		.byte	0x44
+ 1224 0917 19       		.byte	0x19
+ 1225 0918 31000000 		.4byte	0x31
+ 1226 091c 08       		.byte	0x8
+ 1227 091d 02       		.uleb128 0x2
+ 1228 091e 72000000 		.4byte	.LASF120
+ 1229 0922 11       		.byte	0x11
+ 1230 0923 45       		.byte	0x45
+ 1231 0924 19       		.byte	0x19
+ 1232 0925 B9070000 		.4byte	0x7b9
+ 1233 0929 0C       		.byte	0xc
+ 1234 092a 00       		.byte	0
+ 1235 092b 01       		.uleb128 0x1
+ 1236 092c 79020000 		.4byte	.LASF131
+ 1237 0930 11       		.byte	0x11
+ 1238 0931 47       		.byte	0x47
+ 1239 0932 03       		.byte	0x3
+ 1240 0933 ED080000 		.4byte	0x8ed
+ 1241 0937 18       		.uleb128 0x18
+ 1242 0938 DD050000 		.4byte	.LASF132
+ 1243 093c 11       		.byte	0x11
+ 1244 093d 9A       		.byte	0x9a
+ 1245 093e FE040000 		.4byte	0x4fe
+ 1246 0942 4C090000 		.4byte	0x94c
+ 1247 0946 06       		.uleb128 0x6
+ 1248 0947 4C090000 		.4byte	0x94c
+ 1249 094b 00       		.byte	0
+ 1250 094c 03       		.uleb128 0x3
+ 1251 094d 2B090000 		.4byte	0x92b
+ 1252 0951 22       		.uleb128 0x22
+ 1253 0952 A4050000 		.4byte	.LASF135
+ 1254 0956 12       		.byte	0x12
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 23
+
+
+ 1255 0957 9A       		.byte	0x9a
+ 1256 0958 08       		.byte	0x8
+ 1257 0959 68090000 		.4byte	0x968
+ 1258 095d 06       		.uleb128 0x6
+ 1259 095e 74050000 		.4byte	0x574
+ 1260 0962 06       		.uleb128 0x6
+ 1261 0963 3C010000 		.4byte	0x13c
+ 1262 0967 00       		.byte	0
+ 1263 0968 23       		.uleb128 0x23
+ 1264 0969 4B010000 		.4byte	.LASF133
+ 1265 096d 0E       		.byte	0xe
+ 1266 096e 2801     		.2byte	0x128
+ 1267 0970 0D       		.byte	0xd
+ 1268 0971 74050000 		.4byte	0x574
+ 1269 0975 7F090000 		.4byte	0x97f
+ 1270 0979 06       		.uleb128 0x6
+ 1271 097a 7F090000 		.4byte	0x97f
+ 1272 097e 00       		.byte	0
+ 1273 097f 03       		.uleb128 0x3
+ 1274 0980 9C070000 		.4byte	0x79c
+ 1275 0984 18       		.uleb128 0x18
+ 1276 0985 82050000 		.4byte	.LASF134
+ 1277 0989 10       		.byte	0x10
+ 1278 098a 7F       		.byte	0x7f
+ 1279 098b FE040000 		.4byte	0x4fe
+ 1280 098f A3090000 		.4byte	0x9a3
+ 1281 0993 06       		.uleb128 0x6
+ 1282 0994 C8080000 		.4byte	0x8c8
+ 1283 0998 06       		.uleb128 0x6
+ 1284 0999 25000000 		.4byte	0x25
+ 1285 099d 06       		.uleb128 0x6
+ 1286 099e 31000000 		.4byte	0x31
+ 1287 09a2 00       		.byte	0
+ 1288 09a3 19       		.uleb128 0x19
+ 1289 09a4 7F030000 		.4byte	.LASF136
+ 1290 09a8 89       		.byte	0x89
+ 1291 09a9 74050000 		.4byte	0x574
+ 1292 09ad 1A0A0000 		.4byte	0xa1a
+ 1293 09b1 0F       		.uleb128 0xf
+ 1294 09b2 6D7000   		.ascii	"mp\000"
+ 1295 09b5 89       		.byte	0x89
+ 1296 09b6 34       		.byte	0x34
+ 1297 09b7 4C090000 		.4byte	0x94c
+ 1298 09bb 0B       		.uleb128 0xb
+ 1299 09bc B5020000 		.4byte	.LASF34
+ 1300 09c0 89       		.byte	0x89
+ 1301 09c1 44       		.byte	0x44
+ 1302 09c2 27030000 		.4byte	0x327
+ 1303 09c6 0B       		.uleb128 0xb
+ 1304 09c7 C1030000 		.4byte	.LASF73
+ 1305 09cb 8A       		.byte	0x8a
+ 1306 09cc 2D       		.byte	0x2d
+ 1307 09cd 30010000 		.4byte	0x130
+ 1308 09d1 0F       		.uleb128 0xf
+ 1309 09d2 706600   		.ascii	"pf\000"
+ 1310 09d5 8A       		.byte	0x8a
+ 1311 09d6 3B       		.byte	0x3b
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 24
+
+
+ 1312 09d7 1C070000 		.4byte	0x71c
+ 1313 09db 0F       		.uleb128 0xf
+ 1314 09dc 61726700 		.ascii	"arg\000"
+ 1315 09e0 8A       		.byte	0x8a
+ 1316 09e1 45       		.byte	0x45
+ 1317 09e2 FE040000 		.4byte	0x4fe
+ 1318 09e6 11       		.uleb128 0x11
+ 1319 09e7 747000   		.ascii	"tp\000"
+ 1320 09ea 8B       		.byte	0x8b
+ 1321 09eb 0D       		.byte	0xd
+ 1322 09ec 74050000 		.4byte	0x574
+ 1323 09f0 12       		.uleb128 0x12
+ 1324 09f1 AF030000 		.4byte	.LASF110
+ 1325 09f5 8C       		.byte	0x8c
+ 1326 09f6 09       		.byte	0x9
+ 1327 09f7 FE040000 		.4byte	0x4fe
+ 1328 09fb 12       		.uleb128 0x12
+ 1329 09fc C5000000 		.4byte	.LASF111
+ 1330 0a00 8C       		.byte	0x8c
+ 1331 0a01 11       		.byte	0x11
+ 1332 0a02 FE040000 		.4byte	0x4fe
+ 1333 0a06 1A       		.uleb128 0x1a
+ 1334 0a07 48040000 		.4byte	.LASF139
+ 1335 0a0b 2A0A0000 		.4byte	0xa2a
+ 1336 0a0f 11       		.uleb128 0x11
+ 1337 0a10 746400   		.ascii	"td\000"
+ 1338 0a13 96       		.byte	0x96
+ 1339 0a14 17       		.byte	0x17
+ 1340 0a15 90070000 		.4byte	0x790
+ 1341 0a19 00       		.byte	0
+ 1342 0a1a 1B       		.uleb128 0x1b
+ 1343 0a1b 38030000 		.4byte	0x338
+ 1344 0a1f 2A0A0000 		.4byte	0xa2a
+ 1345 0a23 1C       		.uleb128 0x1c
+ 1346 0a24 31000000 		.4byte	0x31
+ 1347 0a28 19       		.byte	0x19
+ 1348 0a29 00       		.byte	0
+ 1349 0a2a 0E       		.uleb128 0xe
+ 1350 0a2b 1A0A0000 		.4byte	0xa1a
+ 1351 0a2f 19       		.uleb128 0x19
+ 1352 0a30 94010000 		.4byte	.LASF137
+ 1353 0a34 52       		.byte	0x52
+ 1354 0a35 74050000 		.4byte	0x574
+ 1355 0a39 A90A0000 		.4byte	0xaa9
+ 1356 0a3d 0B       		.uleb128 0xb
+ 1357 0a3e 13010000 		.4byte	.LASF138
+ 1358 0a42 52       		.byte	0x52
+ 1359 0a43 2E       		.byte	0x2e
+ 1360 0a44 C8080000 		.4byte	0x8c8
+ 1361 0a48 0B       		.uleb128 0xb
+ 1362 0a49 93020000 		.4byte	.LASF127
+ 1363 0a4d 52       		.byte	0x52
+ 1364 0a4e 3C       		.byte	0x3c
+ 1365 0a4f 25000000 		.4byte	0x25
+ 1366 0a53 0B       		.uleb128 0xb
+ 1367 0a54 B5020000 		.4byte	.LASF34
+ 1368 0a58 53       		.byte	0x53
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 25
+
+
+ 1369 0a59 2B       		.byte	0x2b
+ 1370 0a5a 27030000 		.4byte	0x327
+ 1371 0a5e 0B       		.uleb128 0xb
+ 1372 0a5f C1030000 		.4byte	.LASF73
+ 1373 0a63 53       		.byte	0x53
+ 1374 0a64 39       		.byte	0x39
+ 1375 0a65 30010000 		.4byte	0x130
+ 1376 0a69 0F       		.uleb128 0xf
+ 1377 0a6a 706600   		.ascii	"pf\000"
+ 1378 0a6d 54       		.byte	0x54
+ 1379 0a6e 27       		.byte	0x27
+ 1380 0a6f 1C070000 		.4byte	0x71c
+ 1381 0a73 0F       		.uleb128 0xf
+ 1382 0a74 61726700 		.ascii	"arg\000"
+ 1383 0a78 54       		.byte	0x54
+ 1384 0a79 31       		.byte	0x31
+ 1385 0a7a FE040000 		.4byte	0x4fe
+ 1386 0a7e 11       		.uleb128 0x11
+ 1387 0a7f 747000   		.ascii	"tp\000"
+ 1388 0a82 55       		.byte	0x55
+ 1389 0a83 0D       		.byte	0xd
+ 1390 0a84 74050000 		.4byte	0x574
+ 1391 0a88 12       		.uleb128 0x12
+ 1392 0a89 AF030000 		.4byte	.LASF110
+ 1393 0a8d 56       		.byte	0x56
+ 1394 0a8e 09       		.byte	0x9
+ 1395 0a8f FE040000 		.4byte	0x4fe
+ 1396 0a93 12       		.uleb128 0x12
+ 1397 0a94 C5000000 		.4byte	.LASF111
+ 1398 0a98 56       		.byte	0x56
+ 1399 0a99 11       		.byte	0x11
+ 1400 0a9a FE040000 		.4byte	0x4fe
+ 1401 0a9e 11       		.uleb128 0x11
+ 1402 0a9f 746400   		.ascii	"td\000"
+ 1403 0aa2 5E       		.byte	0x5e
+ 1404 0aa3 17       		.byte	0x17
+ 1405 0aa4 90070000 		.4byte	0x790
+ 1406 0aa8 00       		.byte	0
+ 1407 0aa9 24       		.uleb128 0x24
+ 1408 0aaa 21060000 		.4byte	.LASF148
+ 1409 0aae 14       		.byte	0x14
+ 1410 0aaf A501     		.2byte	0x1a5
+ 1411 0ab1 14       		.byte	0x14
+ 1412 0ab2 C00A0000 		.4byte	0xac0
+ 1413 0ab6 1A       		.uleb128 0x1a
+ 1414 0ab7 48040000 		.4byte	.LASF139
+ 1415 0abb D00A0000 		.4byte	0xad0
+ 1416 0abf 00       		.byte	0
+ 1417 0ac0 1B       		.uleb128 0x1b
+ 1418 0ac1 38030000 		.4byte	0x338
+ 1419 0ac5 D00A0000 		.4byte	0xad0
+ 1420 0ac9 1C       		.uleb128 0x1c
+ 1421 0aca 31000000 		.4byte	0x31
+ 1422 0ace 0B       		.byte	0xb
+ 1423 0acf 00       		.byte	0
+ 1424 0ad0 0E       		.uleb128 0xe
+ 1425 0ad1 C00A0000 		.4byte	0xac0
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 26
+
+
+ 1426 0ad5 14       		.uleb128 0x14
+ 1427 0ad6 51040000 		.4byte	.LASF140
+ 1428 0ada 14       		.byte	0x14
+ 1429 0adb 9701     		.2byte	0x197
+ 1430 0add 14       		.byte	0x14
+ 1431 0ade 14       		.uleb128 0x14
+ 1432 0adf 70010000 		.4byte	.LASF141
+ 1433 0ae3 0B       		.byte	0xb
+ 1434 0ae4 3E03     		.2byte	0x33e
+ 1435 0ae6 1B       		.byte	0x1b
+ 1436 0ae7 14       		.uleb128 0x14
+ 1437 0ae8 32060000 		.4byte	.LASF142
+ 1438 0aec 0B       		.byte	0xb
+ 1439 0aed 2603     		.2byte	0x326
+ 1440 0aef 1B       		.byte	0x1b
+ 1441 0af0 25       		.uleb128 0x25
+ 1442 0af1 2C050000 		.4byte	.LASF149
+ 1443 0af5 15       		.byte	0x15
+ 1444 0af6 EB01     		.2byte	0x1eb
+ 1445 0af8 1B       		.byte	0x1b
+ 1446 0af9 26       		.uleb128 0x26
+ 1447 0afa 61010000 		.4byte	.LASF143
+ 1448 0afe 15       		.byte	0x15
+ 1449 0aff EB01     		.2byte	0x1eb
+ 1450 0b01 32       		.byte	0x32
+ 1451 0b02 D7000000 		.4byte	0xd7
+ 1452 0b06 00       		.byte	0
+ 1453 0b07 00       		.byte	0
+ 1454              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
+ 1455              	.Ldebug_abbrev0:
+ 1456 0000 01       		.uleb128 0x1
+ 1457 0001 16       		.uleb128 0x16
+ 1458 0002 00       		.byte	0
+ 1459 0003 03       		.uleb128 0x3
+ 1460 0004 0E       		.uleb128 0xe
+ 1461 0005 3A       		.uleb128 0x3a
+ 1462 0006 0B       		.uleb128 0xb
+ 1463 0007 3B       		.uleb128 0x3b
+ 1464 0008 0B       		.uleb128 0xb
+ 1465 0009 39       		.uleb128 0x39
+ 1466 000a 0B       		.uleb128 0xb
+ 1467 000b 49       		.uleb128 0x49
+ 1468 000c 13       		.uleb128 0x13
+ 1469 000d 00       		.byte	0
+ 1470 000e 00       		.byte	0
+ 1471 000f 02       		.uleb128 0x2
+ 1472 0010 0D       		.uleb128 0xd
+ 1473 0011 00       		.byte	0
+ 1474 0012 03       		.uleb128 0x3
+ 1475 0013 0E       		.uleb128 0xe
+ 1476 0014 3A       		.uleb128 0x3a
+ 1477 0015 0B       		.uleb128 0xb
+ 1478 0016 3B       		.uleb128 0x3b
+ 1479 0017 0B       		.uleb128 0xb
+ 1480 0018 39       		.uleb128 0x39
+ 1481 0019 0B       		.uleb128 0xb
+ 1482 001a 49       		.uleb128 0x49
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 27
+
+
+ 1483 001b 13       		.uleb128 0x13
+ 1484 001c 38       		.uleb128 0x38
+ 1485 001d 0B       		.uleb128 0xb
+ 1486 001e 00       		.byte	0
+ 1487 001f 00       		.byte	0
+ 1488 0020 03       		.uleb128 0x3
+ 1489 0021 0F       		.uleb128 0xf
+ 1490 0022 00       		.byte	0
+ 1491 0023 0B       		.uleb128 0xb
+ 1492 0024 21       		.uleb128 0x21
+ 1493 0025 04       		.sleb128 4
+ 1494 0026 49       		.uleb128 0x49
+ 1495 0027 13       		.uleb128 0x13
+ 1496 0028 00       		.byte	0
+ 1497 0029 00       		.byte	0
+ 1498 002a 04       		.uleb128 0x4
+ 1499 002b 0D       		.uleb128 0xd
+ 1500 002c 00       		.byte	0
+ 1501 002d 03       		.uleb128 0x3
+ 1502 002e 0E       		.uleb128 0xe
+ 1503 002f 3A       		.uleb128 0x3a
+ 1504 0030 21       		.uleb128 0x21
+ 1505 0031 06       		.sleb128 6
+ 1506 0032 3B       		.uleb128 0x3b
+ 1507 0033 05       		.uleb128 0x5
+ 1508 0034 39       		.uleb128 0x39
+ 1509 0035 0B       		.uleb128 0xb
+ 1510 0036 49       		.uleb128 0x49
+ 1511 0037 13       		.uleb128 0x13
+ 1512 0038 38       		.uleb128 0x38
+ 1513 0039 0B       		.uleb128 0xb
+ 1514 003a 00       		.byte	0
+ 1515 003b 00       		.byte	0
+ 1516 003c 05       		.uleb128 0x5
+ 1517 003d 13       		.uleb128 0x13
+ 1518 003e 01       		.byte	0x1
+ 1519 003f 03       		.uleb128 0x3
+ 1520 0040 0E       		.uleb128 0xe
+ 1521 0041 0B       		.uleb128 0xb
+ 1522 0042 0B       		.uleb128 0xb
+ 1523 0043 3A       		.uleb128 0x3a
+ 1524 0044 0B       		.uleb128 0xb
+ 1525 0045 3B       		.uleb128 0x3b
+ 1526 0046 0B       		.uleb128 0xb
+ 1527 0047 39       		.uleb128 0x39
+ 1528 0048 0B       		.uleb128 0xb
+ 1529 0049 01       		.uleb128 0x1
+ 1530 004a 13       		.uleb128 0x13
+ 1531 004b 00       		.byte	0
+ 1532 004c 00       		.byte	0
+ 1533 004d 06       		.uleb128 0x6
+ 1534 004e 05       		.uleb128 0x5
+ 1535 004f 00       		.byte	0
+ 1536 0050 49       		.uleb128 0x49
+ 1537 0051 13       		.uleb128 0x13
+ 1538 0052 00       		.byte	0
+ 1539 0053 00       		.byte	0
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 28
+
+
+ 1540 0054 07       		.uleb128 0x7
+ 1541 0055 24       		.uleb128 0x24
+ 1542 0056 00       		.byte	0
+ 1543 0057 0B       		.uleb128 0xb
+ 1544 0058 0B       		.uleb128 0xb
+ 1545 0059 3E       		.uleb128 0x3e
+ 1546 005a 0B       		.uleb128 0xb
+ 1547 005b 03       		.uleb128 0x3
+ 1548 005c 0E       		.uleb128 0xe
+ 1549 005d 00       		.byte	0
+ 1550 005e 00       		.byte	0
+ 1551 005f 08       		.uleb128 0x8
+ 1552 0060 0D       		.uleb128 0xd
+ 1553 0061 00       		.byte	0
+ 1554 0062 03       		.uleb128 0x3
+ 1555 0063 08       		.uleb128 0x8
+ 1556 0064 3A       		.uleb128 0x3a
+ 1557 0065 0B       		.uleb128 0xb
+ 1558 0066 3B       		.uleb128 0x3b
+ 1559 0067 05       		.uleb128 0x5
+ 1560 0068 39       		.uleb128 0x39
+ 1561 0069 0B       		.uleb128 0xb
+ 1562 006a 49       		.uleb128 0x49
+ 1563 006b 13       		.uleb128 0x13
+ 1564 006c 38       		.uleb128 0x38
+ 1565 006d 0B       		.uleb128 0xb
+ 1566 006e 00       		.byte	0
+ 1567 006f 00       		.byte	0
+ 1568 0070 09       		.uleb128 0x9
+ 1569 0071 0D       		.uleb128 0xd
+ 1570 0072 00       		.byte	0
+ 1571 0073 03       		.uleb128 0x3
+ 1572 0074 0E       		.uleb128 0xe
+ 1573 0075 3A       		.uleb128 0x3a
+ 1574 0076 0B       		.uleb128 0xb
+ 1575 0077 3B       		.uleb128 0x3b
+ 1576 0078 0B       		.uleb128 0xb
+ 1577 0079 39       		.uleb128 0x39
+ 1578 007a 0B       		.uleb128 0xb
+ 1579 007b 49       		.uleb128 0x49
+ 1580 007c 13       		.uleb128 0x13
+ 1581 007d 00       		.byte	0
+ 1582 007e 00       		.byte	0
+ 1583 007f 0A       		.uleb128 0xa
+ 1584 0080 0D       		.uleb128 0xd
+ 1585 0081 00       		.byte	0
+ 1586 0082 03       		.uleb128 0x3
+ 1587 0083 0E       		.uleb128 0xe
+ 1588 0084 3A       		.uleb128 0x3a
+ 1589 0085 21       		.uleb128 0x21
+ 1590 0086 06       		.sleb128 6
+ 1591 0087 3B       		.uleb128 0x3b
+ 1592 0088 05       		.uleb128 0x5
+ 1593 0089 39       		.uleb128 0x39
+ 1594 008a 0B       		.uleb128 0xb
+ 1595 008b 49       		.uleb128 0x49
+ 1596 008c 13       		.uleb128 0x13
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 29
+
+
+ 1597 008d 00       		.byte	0
+ 1598 008e 00       		.byte	0
+ 1599 008f 0B       		.uleb128 0xb
+ 1600 0090 05       		.uleb128 0x5
+ 1601 0091 00       		.byte	0
+ 1602 0092 03       		.uleb128 0x3
+ 1603 0093 0E       		.uleb128 0xe
+ 1604 0094 3A       		.uleb128 0x3a
+ 1605 0095 21       		.uleb128 0x21
+ 1606 0096 13       		.sleb128 19
+ 1607 0097 3B       		.uleb128 0x3b
+ 1608 0098 0B       		.uleb128 0xb
+ 1609 0099 39       		.uleb128 0x39
+ 1610 009a 0B       		.uleb128 0xb
+ 1611 009b 49       		.uleb128 0x49
+ 1612 009c 13       		.uleb128 0x13
+ 1613 009d 00       		.byte	0
+ 1614 009e 00       		.byte	0
+ 1615 009f 0C       		.uleb128 0xc
+ 1616 00a0 0D       		.uleb128 0xd
+ 1617 00a1 00       		.byte	0
+ 1618 00a2 03       		.uleb128 0x3
+ 1619 00a3 08       		.uleb128 0x8
+ 1620 00a4 3A       		.uleb128 0x3a
+ 1621 00a5 0B       		.uleb128 0xb
+ 1622 00a6 3B       		.uleb128 0x3b
+ 1623 00a7 0B       		.uleb128 0xb
+ 1624 00a8 39       		.uleb128 0x39
+ 1625 00a9 0B       		.uleb128 0xb
+ 1626 00aa 49       		.uleb128 0x49
+ 1627 00ab 13       		.uleb128 0x13
+ 1628 00ac 38       		.uleb128 0x38
+ 1629 00ad 0B       		.uleb128 0xb
+ 1630 00ae 00       		.byte	0
+ 1631 00af 00       		.byte	0
+ 1632 00b0 0D       		.uleb128 0xd
+ 1633 00b1 13       		.uleb128 0x13
+ 1634 00b2 01       		.byte	0x1
+ 1635 00b3 03       		.uleb128 0x3
+ 1636 00b4 0E       		.uleb128 0xe
+ 1637 00b5 0B       		.uleb128 0xb
+ 1638 00b6 0B       		.uleb128 0xb
+ 1639 00b7 3A       		.uleb128 0x3a
+ 1640 00b8 0B       		.uleb128 0xb
+ 1641 00b9 3B       		.uleb128 0x3b
+ 1642 00ba 05       		.uleb128 0x5
+ 1643 00bb 39       		.uleb128 0x39
+ 1644 00bc 0B       		.uleb128 0xb
+ 1645 00bd 01       		.uleb128 0x1
+ 1646 00be 13       		.uleb128 0x13
+ 1647 00bf 00       		.byte	0
+ 1648 00c0 00       		.byte	0
+ 1649 00c1 0E       		.uleb128 0xe
+ 1650 00c2 26       		.uleb128 0x26
+ 1651 00c3 00       		.byte	0
+ 1652 00c4 49       		.uleb128 0x49
+ 1653 00c5 13       		.uleb128 0x13
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 30
+
+
+ 1654 00c6 00       		.byte	0
+ 1655 00c7 00       		.byte	0
+ 1656 00c8 0F       		.uleb128 0xf
+ 1657 00c9 05       		.uleb128 0x5
+ 1658 00ca 00       		.byte	0
+ 1659 00cb 03       		.uleb128 0x3
+ 1660 00cc 08       		.uleb128 0x8
+ 1661 00cd 3A       		.uleb128 0x3a
+ 1662 00ce 21       		.uleb128 0x21
+ 1663 00cf 13       		.sleb128 19
+ 1664 00d0 3B       		.uleb128 0x3b
+ 1665 00d1 0B       		.uleb128 0xb
+ 1666 00d2 39       		.uleb128 0x39
+ 1667 00d3 0B       		.uleb128 0xb
+ 1668 00d4 49       		.uleb128 0x49
+ 1669 00d5 13       		.uleb128 0x13
+ 1670 00d6 00       		.byte	0
+ 1671 00d7 00       		.byte	0
+ 1672 00d8 10       		.uleb128 0x10
+ 1673 00d9 13       		.uleb128 0x13
+ 1674 00da 01       		.byte	0x1
+ 1675 00db 0B       		.uleb128 0xb
+ 1676 00dc 0B       		.uleb128 0xb
+ 1677 00dd 3A       		.uleb128 0x3a
+ 1678 00de 0B       		.uleb128 0xb
+ 1679 00df 3B       		.uleb128 0x3b
+ 1680 00e0 0B       		.uleb128 0xb
+ 1681 00e1 39       		.uleb128 0x39
+ 1682 00e2 0B       		.uleb128 0xb
+ 1683 00e3 01       		.uleb128 0x1
+ 1684 00e4 13       		.uleb128 0x13
+ 1685 00e5 00       		.byte	0
+ 1686 00e6 00       		.byte	0
+ 1687 00e7 11       		.uleb128 0x11
+ 1688 00e8 34       		.uleb128 0x34
+ 1689 00e9 00       		.byte	0
+ 1690 00ea 03       		.uleb128 0x3
+ 1691 00eb 08       		.uleb128 0x8
+ 1692 00ec 3A       		.uleb128 0x3a
+ 1693 00ed 21       		.uleb128 0x21
+ 1694 00ee 13       		.sleb128 19
+ 1695 00ef 3B       		.uleb128 0x3b
+ 1696 00f0 0B       		.uleb128 0xb
+ 1697 00f1 39       		.uleb128 0x39
+ 1698 00f2 0B       		.uleb128 0xb
+ 1699 00f3 49       		.uleb128 0x49
+ 1700 00f4 13       		.uleb128 0x13
+ 1701 00f5 00       		.byte	0
+ 1702 00f6 00       		.byte	0
+ 1703 00f7 12       		.uleb128 0x12
+ 1704 00f8 34       		.uleb128 0x34
+ 1705 00f9 00       		.byte	0
+ 1706 00fa 03       		.uleb128 0x3
+ 1707 00fb 0E       		.uleb128 0xe
+ 1708 00fc 3A       		.uleb128 0x3a
+ 1709 00fd 21       		.uleb128 0x21
+ 1710 00fe 13       		.sleb128 19
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 31
+
+
+ 1711 00ff 3B       		.uleb128 0x3b
+ 1712 0100 0B       		.uleb128 0xb
+ 1713 0101 39       		.uleb128 0x39
+ 1714 0102 0B       		.uleb128 0xb
+ 1715 0103 49       		.uleb128 0x49
+ 1716 0104 13       		.uleb128 0x13
+ 1717 0105 00       		.byte	0
+ 1718 0106 00       		.byte	0
+ 1719 0107 13       		.uleb128 0x13
+ 1720 0108 35       		.uleb128 0x35
+ 1721 0109 00       		.byte	0
+ 1722 010a 49       		.uleb128 0x49
+ 1723 010b 13       		.uleb128 0x13
+ 1724 010c 00       		.byte	0
+ 1725 010d 00       		.byte	0
+ 1726 010e 14       		.uleb128 0x14
+ 1727 010f 2E       		.uleb128 0x2e
+ 1728 0110 00       		.byte	0
+ 1729 0111 03       		.uleb128 0x3
+ 1730 0112 0E       		.uleb128 0xe
+ 1731 0113 3A       		.uleb128 0x3a
+ 1732 0114 0B       		.uleb128 0xb
+ 1733 0115 3B       		.uleb128 0x3b
+ 1734 0116 05       		.uleb128 0x5
+ 1735 0117 39       		.uleb128 0x39
+ 1736 0118 0B       		.uleb128 0xb
+ 1737 0119 27       		.uleb128 0x27
+ 1738 011a 19       		.uleb128 0x19
+ 1739 011b 00       		.byte	0
+ 1740 011c 00       		.byte	0
+ 1741 011d 15       		.uleb128 0x15
+ 1742 011e 17       		.uleb128 0x17
+ 1743 011f 01       		.byte	0x1
+ 1744 0120 0B       		.uleb128 0xb
+ 1745 0121 0B       		.uleb128 0xb
+ 1746 0122 3A       		.uleb128 0x3a
+ 1747 0123 21       		.uleb128 0x21
+ 1748 0124 06       		.sleb128 6
+ 1749 0125 3B       		.uleb128 0x3b
+ 1750 0126 0B       		.uleb128 0xb
+ 1751 0127 39       		.uleb128 0x39
+ 1752 0128 21       		.uleb128 0x21
+ 1753 0129 03       		.sleb128 3
+ 1754 012a 01       		.uleb128 0x1
+ 1755 012b 13       		.uleb128 0x13
+ 1756 012c 00       		.byte	0
+ 1757 012d 00       		.byte	0
+ 1758 012e 16       		.uleb128 0x16
+ 1759 012f 16       		.uleb128 0x16
+ 1760 0130 00       		.byte	0
+ 1761 0131 03       		.uleb128 0x3
+ 1762 0132 0E       		.uleb128 0xe
+ 1763 0133 3A       		.uleb128 0x3a
+ 1764 0134 21       		.uleb128 0x21
+ 1765 0135 06       		.sleb128 6
+ 1766 0136 3B       		.uleb128 0x3b
+ 1767 0137 05       		.uleb128 0x5
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 32
+
+
+ 1768 0138 39       		.uleb128 0x39
+ 1769 0139 21       		.uleb128 0x21
+ 1770 013a 03       		.sleb128 3
+ 1771 013b 49       		.uleb128 0x49
+ 1772 013c 13       		.uleb128 0x13
+ 1773 013d 00       		.byte	0
+ 1774 013e 00       		.byte	0
+ 1775 013f 17       		.uleb128 0x17
+ 1776 0140 15       		.uleb128 0x15
+ 1777 0141 01       		.byte	0x1
+ 1778 0142 27       		.uleb128 0x27
+ 1779 0143 19       		.uleb128 0x19
+ 1780 0144 49       		.uleb128 0x49
+ 1781 0145 13       		.uleb128 0x13
+ 1782 0146 01       		.uleb128 0x1
+ 1783 0147 13       		.uleb128 0x13
+ 1784 0148 00       		.byte	0
+ 1785 0149 00       		.byte	0
+ 1786 014a 18       		.uleb128 0x18
+ 1787 014b 2E       		.uleb128 0x2e
+ 1788 014c 01       		.byte	0x1
+ 1789 014d 3F       		.uleb128 0x3f
+ 1790 014e 19       		.uleb128 0x19
+ 1791 014f 03       		.uleb128 0x3
+ 1792 0150 0E       		.uleb128 0xe
+ 1793 0151 3A       		.uleb128 0x3a
+ 1794 0152 0B       		.uleb128 0xb
+ 1795 0153 3B       		.uleb128 0x3b
+ 1796 0154 0B       		.uleb128 0xb
+ 1797 0155 39       		.uleb128 0x39
+ 1798 0156 21       		.uleb128 0x21
+ 1799 0157 09       		.sleb128 9
+ 1800 0158 27       		.uleb128 0x27
+ 1801 0159 19       		.uleb128 0x19
+ 1802 015a 49       		.uleb128 0x49
+ 1803 015b 13       		.uleb128 0x13
+ 1804 015c 3C       		.uleb128 0x3c
+ 1805 015d 19       		.uleb128 0x19
+ 1806 015e 01       		.uleb128 0x1
+ 1807 015f 13       		.uleb128 0x13
+ 1808 0160 00       		.byte	0
+ 1809 0161 00       		.byte	0
+ 1810 0162 19       		.uleb128 0x19
+ 1811 0163 2E       		.uleb128 0x2e
+ 1812 0164 01       		.byte	0x1
+ 1813 0165 3F       		.uleb128 0x3f
+ 1814 0166 19       		.uleb128 0x19
+ 1815 0167 03       		.uleb128 0x3
+ 1816 0168 0E       		.uleb128 0xe
+ 1817 0169 3A       		.uleb128 0x3a
+ 1818 016a 21       		.uleb128 0x21
+ 1819 016b 13       		.sleb128 19
+ 1820 016c 3B       		.uleb128 0x3b
+ 1821 016d 0B       		.uleb128 0xb
+ 1822 016e 39       		.uleb128 0x39
+ 1823 016f 21       		.uleb128 0x21
+ 1824 0170 0B       		.sleb128 11
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 33
+
+
+ 1825 0171 27       		.uleb128 0x27
+ 1826 0172 19       		.uleb128 0x19
+ 1827 0173 49       		.uleb128 0x49
+ 1828 0174 13       		.uleb128 0x13
+ 1829 0175 01       		.uleb128 0x1
+ 1830 0176 13       		.uleb128 0x13
+ 1831 0177 00       		.byte	0
+ 1832 0178 00       		.byte	0
+ 1833 0179 1A       		.uleb128 0x1a
+ 1834 017a 34       		.uleb128 0x34
+ 1835 017b 00       		.byte	0
+ 1836 017c 03       		.uleb128 0x3
+ 1837 017d 0E       		.uleb128 0xe
+ 1838 017e 49       		.uleb128 0x49
+ 1839 017f 13       		.uleb128 0x13
+ 1840 0180 34       		.uleb128 0x34
+ 1841 0181 19       		.uleb128 0x19
+ 1842 0182 00       		.byte	0
+ 1843 0183 00       		.byte	0
+ 1844 0184 1B       		.uleb128 0x1b
+ 1845 0185 01       		.uleb128 0x1
+ 1846 0186 01       		.byte	0x1
+ 1847 0187 49       		.uleb128 0x49
+ 1848 0188 13       		.uleb128 0x13
+ 1849 0189 01       		.uleb128 0x1
+ 1850 018a 13       		.uleb128 0x13
+ 1851 018b 00       		.byte	0
+ 1852 018c 00       		.byte	0
+ 1853 018d 1C       		.uleb128 0x1c
+ 1854 018e 21       		.uleb128 0x21
+ 1855 018f 00       		.byte	0
+ 1856 0190 49       		.uleb128 0x49
+ 1857 0191 13       		.uleb128 0x13
+ 1858 0192 2F       		.uleb128 0x2f
+ 1859 0193 0B       		.uleb128 0xb
+ 1860 0194 00       		.byte	0
+ 1861 0195 00       		.byte	0
+ 1862 0196 1D       		.uleb128 0x1d
+ 1863 0197 11       		.uleb128 0x11
+ 1864 0198 01       		.byte	0x1
+ 1865 0199 25       		.uleb128 0x25
+ 1866 019a 0E       		.uleb128 0xe
+ 1867 019b 13       		.uleb128 0x13
+ 1868 019c 0B       		.uleb128 0xb
+ 1869 019d 03       		.uleb128 0x3
+ 1870 019e 0E       		.uleb128 0xe
+ 1871 019f 1B       		.uleb128 0x1b
+ 1872 01a0 0E       		.uleb128 0xe
+ 1873 01a1 10       		.uleb128 0x10
+ 1874 01a2 17       		.uleb128 0x17
+ 1875 01a3 00       		.byte	0
+ 1876 01a4 00       		.byte	0
+ 1877 01a5 1E       		.uleb128 0x1e
+ 1878 01a6 24       		.uleb128 0x24
+ 1879 01a7 00       		.byte	0
+ 1880 01a8 0B       		.uleb128 0xb
+ 1881 01a9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 34
+
+
+ 1882 01aa 3E       		.uleb128 0x3e
+ 1883 01ab 0B       		.uleb128 0xb
+ 1884 01ac 03       		.uleb128 0x3
+ 1885 01ad 08       		.uleb128 0x8
+ 1886 01ae 00       		.byte	0
+ 1887 01af 00       		.byte	0
+ 1888 01b0 1F       		.uleb128 0x1f
+ 1889 01b1 0F       		.uleb128 0xf
+ 1890 01b2 00       		.byte	0
+ 1891 01b3 0B       		.uleb128 0xb
+ 1892 01b4 0B       		.uleb128 0xb
+ 1893 01b5 00       		.byte	0
+ 1894 01b6 00       		.byte	0
+ 1895 01b7 20       		.uleb128 0x20
+ 1896 01b8 15       		.uleb128 0x15
+ 1897 01b9 01       		.byte	0x1
+ 1898 01ba 27       		.uleb128 0x27
+ 1899 01bb 19       		.uleb128 0x19
+ 1900 01bc 01       		.uleb128 0x1
+ 1901 01bd 13       		.uleb128 0x13
+ 1902 01be 00       		.byte	0
+ 1903 01bf 00       		.byte	0
+ 1904 01c0 21       		.uleb128 0x21
+ 1905 01c1 17       		.uleb128 0x17
+ 1906 01c2 01       		.byte	0x1
+ 1907 01c3 03       		.uleb128 0x3
+ 1908 01c4 0E       		.uleb128 0xe
+ 1909 01c5 0B       		.uleb128 0xb
+ 1910 01c6 0B       		.uleb128 0xb
+ 1911 01c7 3A       		.uleb128 0x3a
+ 1912 01c8 0B       		.uleb128 0xb
+ 1913 01c9 3B       		.uleb128 0x3b
+ 1914 01ca 0B       		.uleb128 0xb
+ 1915 01cb 39       		.uleb128 0x39
+ 1916 01cc 0B       		.uleb128 0xb
+ 1917 01cd 01       		.uleb128 0x1
+ 1918 01ce 13       		.uleb128 0x13
+ 1919 01cf 00       		.byte	0
+ 1920 01d0 00       		.byte	0
+ 1921 01d1 22       		.uleb128 0x22
+ 1922 01d2 2E       		.uleb128 0x2e
+ 1923 01d3 01       		.byte	0x1
+ 1924 01d4 3F       		.uleb128 0x3f
+ 1925 01d5 19       		.uleb128 0x19
+ 1926 01d6 03       		.uleb128 0x3
+ 1927 01d7 0E       		.uleb128 0xe
+ 1928 01d8 3A       		.uleb128 0x3a
+ 1929 01d9 0B       		.uleb128 0xb
+ 1930 01da 3B       		.uleb128 0x3b
+ 1931 01db 0B       		.uleb128 0xb
+ 1932 01dc 39       		.uleb128 0x39
+ 1933 01dd 0B       		.uleb128 0xb
+ 1934 01de 27       		.uleb128 0x27
+ 1935 01df 19       		.uleb128 0x19
+ 1936 01e0 3C       		.uleb128 0x3c
+ 1937 01e1 19       		.uleb128 0x19
+ 1938 01e2 01       		.uleb128 0x1
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 35
+
+
+ 1939 01e3 13       		.uleb128 0x13
+ 1940 01e4 00       		.byte	0
+ 1941 01e5 00       		.byte	0
+ 1942 01e6 23       		.uleb128 0x23
+ 1943 01e7 2E       		.uleb128 0x2e
+ 1944 01e8 01       		.byte	0x1
+ 1945 01e9 3F       		.uleb128 0x3f
+ 1946 01ea 19       		.uleb128 0x19
+ 1947 01eb 03       		.uleb128 0x3
+ 1948 01ec 0E       		.uleb128 0xe
+ 1949 01ed 3A       		.uleb128 0x3a
+ 1950 01ee 0B       		.uleb128 0xb
+ 1951 01ef 3B       		.uleb128 0x3b
+ 1952 01f0 05       		.uleb128 0x5
+ 1953 01f1 39       		.uleb128 0x39
+ 1954 01f2 0B       		.uleb128 0xb
+ 1955 01f3 27       		.uleb128 0x27
+ 1956 01f4 19       		.uleb128 0x19
+ 1957 01f5 49       		.uleb128 0x49
+ 1958 01f6 13       		.uleb128 0x13
+ 1959 01f7 3C       		.uleb128 0x3c
+ 1960 01f8 19       		.uleb128 0x19
+ 1961 01f9 01       		.uleb128 0x1
+ 1962 01fa 13       		.uleb128 0x13
+ 1963 01fb 00       		.byte	0
+ 1964 01fc 00       		.byte	0
+ 1965 01fd 24       		.uleb128 0x24
+ 1966 01fe 2E       		.uleb128 0x2e
+ 1967 01ff 01       		.byte	0x1
+ 1968 0200 03       		.uleb128 0x3
+ 1969 0201 0E       		.uleb128 0xe
+ 1970 0202 3A       		.uleb128 0x3a
+ 1971 0203 0B       		.uleb128 0xb
+ 1972 0204 3B       		.uleb128 0x3b
+ 1973 0205 05       		.uleb128 0x5
+ 1974 0206 39       		.uleb128 0x39
+ 1975 0207 0B       		.uleb128 0xb
+ 1976 0208 27       		.uleb128 0x27
+ 1977 0209 19       		.uleb128 0x19
+ 1978 020a 01       		.uleb128 0x1
+ 1979 020b 13       		.uleb128 0x13
+ 1980 020c 00       		.byte	0
+ 1981 020d 00       		.byte	0
+ 1982 020e 25       		.uleb128 0x25
+ 1983 020f 2E       		.uleb128 0x2e
+ 1984 0210 01       		.byte	0x1
+ 1985 0211 03       		.uleb128 0x3
+ 1986 0212 0E       		.uleb128 0xe
+ 1987 0213 3A       		.uleb128 0x3a
+ 1988 0214 0B       		.uleb128 0xb
+ 1989 0215 3B       		.uleb128 0x3b
+ 1990 0216 05       		.uleb128 0x5
+ 1991 0217 39       		.uleb128 0x39
+ 1992 0218 0B       		.uleb128 0xb
+ 1993 0219 27       		.uleb128 0x27
+ 1994 021a 19       		.uleb128 0x19
+ 1995 021b 00       		.byte	0
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 36
+
+
+ 1996 021c 00       		.byte	0
+ 1997 021d 26       		.uleb128 0x26
+ 1998 021e 05       		.uleb128 0x5
+ 1999 021f 00       		.byte	0
+ 2000 0220 03       		.uleb128 0x3
+ 2001 0221 0E       		.uleb128 0xe
+ 2002 0222 3A       		.uleb128 0x3a
+ 2003 0223 0B       		.uleb128 0xb
+ 2004 0224 3B       		.uleb128 0x3b
+ 2005 0225 05       		.uleb128 0x5
+ 2006 0226 39       		.uleb128 0x39
+ 2007 0227 0B       		.uleb128 0xb
+ 2008 0228 49       		.uleb128 0x49
+ 2009 0229 13       		.uleb128 0x13
+ 2010 022a 00       		.byte	0
+ 2011 022b 00       		.byte	0
+ 2012 022c 00       		.byte	0
+ 2013              		.section	.gnu.debuglto_.debug_line,"e",%progbits
+ 2014              	.Ldebug_line0:
+ 2015 0000 BA000000 		.4byte	.LELT0-.LSLT0
+ 2016              	.LSLT0:
+ 2017 0004 0500     		.2byte	0x5
+ 2018 0006 04       		.byte	0x4
+ 2019 0007 00       		.byte	0
+ 2020 0008 B2000000 		.4byte	.LELTP0-.LASLTP0
+ 2021              	.LASLTP0:
+ 2022 000c 01       		.byte	0x1
+ 2023 000d 01       		.byte	0x1
+ 2024 000e 01       		.byte	0x1
+ 2025 000f F6       		.byte	0xf6
+ 2026 0010 F2       		.byte	0xf2
+ 2027 0011 0D       		.byte	0xd
+ 2028 0012 00       		.byte	0
+ 2029 0013 01       		.byte	0x1
+ 2030 0014 01       		.byte	0x1
+ 2031 0015 01       		.byte	0x1
+ 2032 0016 01       		.byte	0x1
+ 2033 0017 00       		.byte	0
+ 2034 0018 00       		.byte	0
+ 2035 0019 00       		.byte	0
+ 2036 001a 01       		.byte	0x1
+ 2037 001b 00       		.byte	0
+ 2038 001c 00       		.byte	0
+ 2039 001d 01       		.byte	0x1
+ 2040 001e 01       		.byte	0x1
+ 2041 001f 01       		.uleb128 0x1
+ 2042 0020 1F       		.uleb128 0x1f
+ 2043 0021 0A       		.uleb128 0xa
+ 2044 0022 A8000000 		.4byte	.LASF150
+ 2045 0026 00000000 		.4byte	.LASF151
+ 2046 002a FE000000 		.4byte	.LASF152
+ 2047 002e B8010000 		.4byte	.LASF153
+ 2048 0032 52010000 		.4byte	.LASF154
+ 2049 0036 2B020000 		.4byte	.LASF155
+ 2050 003a DF000000 		.4byte	.LASF156
+ 2051 003e 2E000000 		.4byte	.LASF157
+ 2052 0042 5A020000 		.4byte	.LASF158
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 37
+
+
+ 2053 0046 D9010000 		.4byte	.LASF159
+ 2054 004a 02       		.byte	0x2
+ 2055 004b 01       		.uleb128 0x1
+ 2056 004c 1F       		.uleb128 0x1f
+ 2057 004d 02       		.uleb128 0x2
+ 2058 004e 0B       		.uleb128 0xb
+ 2059 004f 16       		.uleb128 0x16
+ 2060 0050 2A010000 		.4byte	.LASF160
+ 2061 0054 00       		.byte	0
+ 2062 0055 9E010000 		.4byte	.LASF161
+ 2063 0059 09       		.byte	0x9
+ 2064 005a 85000000 		.4byte	.LASF162
+ 2065 005e 07       		.byte	0x7
+ 2066 005f 76010000 		.4byte	.LASF163
+ 2067 0063 08       		.byte	0x8
+ 2068 0064 6C010000 		.4byte	.LASF164
+ 2069 0068 02       		.byte	0x2
+ 2070 0069 A1020000 		.4byte	.LASF165
+ 2071 006d 05       		.byte	0x5
+ 2072 006e 92010000 		.4byte	.LASF166
+ 2073 0072 05       		.byte	0x5
+ 2074 0073 A7010000 		.4byte	.LASF167
+ 2075 0077 05       		.byte	0x5
+ 2076 0078 B8020000 		.4byte	.LASF168
+ 2077 007c 05       		.byte	0x5
+ 2078 007d 49010000 		.4byte	.LASF169
+ 2079 0081 05       		.byte	0x5
+ 2080 0082 88010000 		.4byte	.LASF170
+ 2081 0086 05       		.byte	0x5
+ 2082 0087 9F000000 		.4byte	.LASF171
+ 2083 008b 03       		.byte	0x3
+ 2084 008c B0010000 		.4byte	.LASF172
+ 2085 0090 05       		.byte	0x5
+ 2086 0091 22010000 		.4byte	.LASF173
+ 2087 0095 05       		.byte	0x5
+ 2088 0096 F2000000 		.4byte	.LASF174
+ 2089 009a 05       		.byte	0x5
+ 2090 009b 79000000 		.4byte	.LASF175
+ 2091 009f 04       		.byte	0x4
+ 2092 00a0 C2020000 		.4byte	.LASF176
+ 2093 00a4 04       		.byte	0x4
+ 2094 00a5 AB020000 		.4byte	.LASF177
+ 2095 00a9 04       		.byte	0x4
+ 2096 00aa 96000000 		.4byte	.LASF178
+ 2097 00ae 05       		.byte	0x5
+ 2098 00af 42020000 		.4byte	.LASF179
+ 2099 00b3 06       		.byte	0x6
+ 2100 00b4 80010000 		.4byte	.LASF180
+ 2101 00b8 05       		.byte	0x5
+ 2102 00b9 4E020000 		.4byte	.LASF181
+ 2103 00bd 01       		.byte	0x1
+ 2104              	.LELTP0:
+ 2105              	.LELT0:
+ 2106              		.section	.gnu.debuglto_.debug_str,"eMS",%progbits,1
+ 2107              	.LASF109:
+ 2108 0000 7466756E 		.ascii	"tfunc_t\000"
+ 2108      635F7400 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 38
+
+
+ 2109              	.LASF102:
+ 2110 0008 72656164 		.ascii	"ready_list_t\000"
+ 2110      795F6C69 
+ 2110      73745F74 
+ 2110      00
+ 2111              	.LASF52:
+ 2112 0015 72666375 		.ascii	"rfcu\000"
+ 2112      00
+ 2113              	.LASF4:
+ 2114 001a 73697A65 		.ascii	"size_t\000"
+ 2114      5F7400
+ 2115              	.LASF67:
+ 2116 0021 6E657874 		.ascii	"next\000"
+ 2116      00
+ 2117              	.LASF76:
+ 2118 0026 64656C74 		.ascii	"delta\000"
+ 2118      6100
+ 2119              	.LASF90:
+ 2120 002c 7264796D 		.ascii	"rdymsg\000"
+ 2120      736700
+ 2121              	.LASF112:
+ 2122 0033 66756E63 		.ascii	"funcp\000"
+ 2122      7000
+ 2123              	.LASF20:
+ 2124 0039 75696E74 		.ascii	"uint64_t\000"
+ 2124      36345F74 
+ 2124      00
+ 2125              	.LASF5:
+ 2126 0042 5F5F7569 		.ascii	"__uint8_t\000"
+ 2126      6E74385F 
+ 2126      7400
+ 2127              	.LASF70:
+ 2128 004c 70726576 		.ascii	"prev\000"
+ 2128      00
+ 2129              	.LASF77:
+ 2130 0051 706F7274 		.ascii	"port_intctx\000"
+ 2130      5F696E74 
+ 2130      63747800 
+ 2131              	.LASF125:
+ 2132 005d 70616765 		.ascii	"pages\000"
+ 2132      7300
+ 2133              	.LASF62:
+ 2134 0063 73797374 		.ascii	"system_debug_t\000"
+ 2134      656D5F64 
+ 2134      65627567 
+ 2134      5F7400
+ 2135              	.LASF120:
+ 2136 0072 70726F76 		.ascii	"provider\000"
+ 2136      69646572 
+ 2136      00
+ 2137              	.LASF51:
+ 2138 007b 636F7265 		.ascii	"core_id\000"
+ 2138      5F696400 
+ 2139              	.LASF113:
+ 2140 0083 74687265 		.ascii	"thread_descriptor_t\000"
+ 2140      61645F64 
+ 2140      65736372 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 39
+
+
+ 2140      6970746F 
+ 2140      725F7400 
+ 2141              	.LASF71:
+ 2142 0097 63685F70 		.ascii	"ch_priority_queue_t\000"
+ 2142      72696F72 
+ 2142      6974795F 
+ 2142      71756575 
+ 2142      655F7400 
+ 2143              	.LASF78:
+ 2144 00ab 706F7274 		.ascii	"port_context\000"
+ 2144      5F636F6E 
+ 2144      74657874 
+ 2144      00
+ 2145              	.LASF116:
+ 2146 00b8 6D656D67 		.ascii	"memgetfunc_t\000"
+ 2146      65746675 
+ 2146      6E635F74 
+ 2146      00
+ 2147              	.LASF111:
+ 2148 00c5 77656E64 		.ascii	"wend\000"
+ 2148      00
+ 2149              	.LASF15:
+ 2150 00ca 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2150      206C6F6E 
+ 2150      6720756E 
+ 2150      7369676E 
+ 2150      65642069 
+ 2151              	.LASF91:
+ 2152 00e1 65786974 		.ascii	"exitcode\000"
+ 2152      636F6465 
+ 2152      00
+ 2153              	.LASF54:
+ 2154 00ea 6D61696E 		.ascii	"mainthread\000"
+ 2154      74687265 
+ 2154      616400
+ 2155              	.LASF94:
+ 2156 00f5 73656E74 		.ascii	"sentmsg\000"
+ 2156      6D736700 
+ 2157              	.LASF83:
+ 2158 00fd 76697274 		.ascii	"virtual_timers_list_t\000"
+ 2158      75616C5F 
+ 2158      74696D65 
+ 2158      72735F6C 
+ 2158      6973745F 
+ 2159              	.LASF138:
+ 2160 0113 68656170 		.ascii	"heapp\000"
+ 2160      7000
+ 2161              	.LASF123:
+ 2162 0119 66726565 		.ascii	"free\000"
+ 2162      00
+ 2163              	.LASF38:
+ 2164 011e 72656673 		.ascii	"refs\000"
+ 2164      00
+ 2165              	.LASF1:
+ 2166 0123 6C6F6E67 		.ascii	"long long int\000"
+ 2166      206C6F6E 
+ 2166      6720696E 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 40
+
+
+ 2166      7400
+ 2167              	.LASF3:
+ 2168 0131 7369676E 		.ascii	"signed char\000"
+ 2168      65642063 
+ 2168      68617200 
+ 2169              	.LASF75:
+ 2170 013d 63685F64 		.ascii	"ch_delta_list\000"
+ 2170      656C7461 
+ 2170      5F6C6973 
+ 2170      7400
+ 2171              	.LASF133:
+ 2172 014b 63685468 		.ascii	"chThdCreateSuspendedI\000"
+ 2172      64437265 
+ 2172      61746553 
+ 2172      75737065 
+ 2172      6E646564 
+ 2173              	.LASF143:
+ 2174 0161 62617365 		.ascii	"basePri\000"
+ 2174      50726900 
+ 2175              	.LASF49:
+ 2176 0169 76746C69 		.ascii	"vtlist\000"
+ 2176      737400
+ 2177              	.LASF141:
+ 2178 0170 706F7274 		.ascii	"port_unlock\000"
+ 2178      5F756E6C 
+ 2178      6F636B00 
+ 2179              	.LASF40:
+ 2180 017c 6D736771 		.ascii	"msgqueue\000"
+ 2180      75657565 
+ 2180      00
+ 2181              	.LASF36:
+ 2182 0185 73746174 		.ascii	"state\000"
+ 2182      6500
+ 2183              	.LASF11:
+ 2184 018b 6C6F6E67 		.ascii	"long int\000"
+ 2184      20696E74 
+ 2184      00
+ 2185              	.LASF137:
+ 2186 0194 63685468 		.ascii	"chThdCreateFromHeap\000"
+ 2186      64437265 
+ 2186      61746546 
+ 2186      726F6D48 
+ 2186      65617000 
+ 2187              	.LASF24:
+ 2188 01a8 74737461 		.ascii	"tstate_t\000"
+ 2188      74655F74 
+ 2188      00
+ 2189              	.LASF56:
+ 2190 01b1 63685F72 		.ascii	"ch_rfcu\000"
+ 2190      66637500 
+ 2191              	.LASF118:
+ 2192 01b9 6D656D6F 		.ascii	"memory_heap_t\000"
+ 2192      72795F68 
+ 2192      6561705F 
+ 2192      7400
+ 2193              	.LASF69:
+ 2194 01c7 63685F71 		.ascii	"ch_queue\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 41
+
+
+ 2194      75657565 
+ 2194      00
+ 2195              	.LASF117:
+ 2196 01d0 6D656D67 		.ascii	"memgetfunc2_t\000"
+ 2196      65746675 
+ 2196      6E63325F 
+ 2196      7400
+ 2197              	.LASF74:
+ 2198 01de 63685F64 		.ascii	"ch_delta_list_t\000"
+ 2198      656C7461 
+ 2198      5F6C6973 
+ 2198      745F7400 
+ 2199              	.LASF84:
+ 2200 01ee 63685F72 		.ascii	"ch_registry\000"
+ 2200      65676973 
+ 2200      74727900 
+ 2201              	.LASF12:
+ 2202 01fa 5F5F7569 		.ascii	"__uint32_t\000"
+ 2202      6E743332 
+ 2202      5F7400
+ 2203              	.LASF57:
+ 2204 0205 6D61736B 		.ascii	"mask\000"
+ 2204      00
+ 2205              	.LASF39:
+ 2206 020a 77616974 		.ascii	"waiting\000"
+ 2206      696E6700 
+ 2207              	.LASF104:
+ 2208 0212 6D61696E 		.ascii	"mainthread_base\000"
+ 2208      74687265 
+ 2208      61645F62 
+ 2208      61736500 
+ 2209              	.LASF114:
+ 2210 0222 6D757465 		.ascii	"mutex_t\000"
+ 2210      785F7400 
+ 2211              	.LASF130:
+ 2212 022a 616C6967 		.ascii	"align\000"
+ 2212      6E00
+ 2213              	.LASF64:
+ 2214 0230 73797369 		.ascii	"sysinterval_t\000"
+ 2214      6E746572 
+ 2214      76616C5F 
+ 2214      7400
+ 2215              	.LASF29:
+ 2216 023e 636E745F 		.ascii	"cnt_t\000"
+ 2216      7400
+ 2217              	.LASF0:
+ 2218 0244 756E7369 		.ascii	"unsigned int\000"
+ 2218      676E6564 
+ 2218      20696E74 
+ 2218      00
+ 2219              	.LASF17:
+ 2220 0251 75696E74 		.ascii	"uint16_t\000"
+ 2220      31365F74 
+ 2220      00
+ 2221              	.LASF95:
+ 2222 025a 77747365 		.ascii	"wtsemp\000"
+ 2222      6D7000
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 42
+
+
+ 2223              	.LASF93:
+ 2224 0261 77747472 		.ascii	"wttrp\000"
+ 2224      7000
+ 2225              	.LASF32:
+ 2226 0267 72717565 		.ascii	"rqueue\000"
+ 2226      756500
+ 2227              	.LASF68:
+ 2228 026e 63685F71 		.ascii	"ch_queue_t\000"
+ 2228      75657565 
+ 2228      5F7400
+ 2229              	.LASF131:
+ 2230 0279 6D656D6F 		.ascii	"memory_pool_t\000"
+ 2230      72795F70 
+ 2230      6F6F6C5F 
+ 2230      7400
+ 2231              	.LASF85:
+ 2232 0287 71756575 		.ascii	"queue\000"
+ 2232      6500
+ 2233              	.LASF44:
+ 2234 028d 6D706F6F 		.ascii	"mpool\000"
+ 2234      6C00
+ 2235              	.LASF127:
+ 2236 0293 73697A65 		.ascii	"size\000"
+ 2236      00
+ 2237              	.LASF9:
+ 2238 0298 73686F72 		.ascii	"short unsigned int\000"
+ 2238      7420756E 
+ 2238      7369676E 
+ 2238      65642069 
+ 2238      6E7400
+ 2239              	.LASF46:
+ 2240 02ab 63685F74 		.ascii	"ch_thread\000"
+ 2240      68726561 
+ 2240      6400
+ 2241              	.LASF34:
+ 2242 02b5 6E616D65 		.ascii	"name\000"
+ 2242      00
+ 2243              	.LASF27:
+ 2244 02ba 6D73675F 		.ascii	"msg_t\000"
+ 2244      7400
+ 2245              	.LASF41:
+ 2246 02c0 6570656E 		.ascii	"epending\000"
+ 2246      64696E67 
+ 2246      00
+ 2247              	.LASF23:
+ 2248 02c9 746D6F64 		.ascii	"tmode_t\000"
+ 2248      655F7400 
+ 2249              	.LASF81:
+ 2250 02d1 73797374 		.ascii	"systime\000"
+ 2250      696D6500 
+ 2251              	.LASF66:
+ 2252 02d9 63685F6C 		.ascii	"ch_list\000"
+ 2252      69737400 
+ 2253              	.LASF100:
+ 2254 02e1 63685F72 		.ascii	"ch_ready_list\000"
+ 2254      65616479 
+ 2254      5F6C6973 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 43
+
+
+ 2254      7400
+ 2255              	.LASF28:
+ 2256 02ef 6576656E 		.ascii	"eventmask_t\000"
+ 2256      746D6173 
+ 2256      6B5F7400 
+ 2257              	.LASF10:
+ 2258 02fb 5F5F696E 		.ascii	"__int32_t\000"
+ 2258      7433325F 
+ 2258      7400
+ 2259              	.LASF22:
+ 2260 0305 73746B61 		.ascii	"stkalign_t\000"
+ 2260      6C69676E 
+ 2260      5F7400
+ 2261              	.LASF106:
+ 2262 0310 69646C65 		.ascii	"idlethread_base\000"
+ 2262      74687265 
+ 2262      61645F62 
+ 2262      61736500 
+ 2263              	.LASF82:
+ 2264 0320 6C617374 		.ascii	"laststamp\000"
+ 2264      7374616D 
+ 2264      7000
+ 2265              	.LASF43:
+ 2266 032a 7265616C 		.ascii	"realprio\000"
+ 2266      7072696F 
+ 2266      00
+ 2267              	.LASF55:
+ 2268 0333 72666375 		.ascii	"rfcu_mask_t\000"
+ 2268      5F6D6173 
+ 2268      6B5F7400 
+ 2269              	.LASF87:
+ 2270 033f 74687265 		.ascii	"thread_reference_t\000"
+ 2270      61645F72 
+ 2270      65666572 
+ 2270      656E6365 
+ 2270      5F7400
+ 2271              	.LASF79:
+ 2272 0352 63685F76 		.ascii	"ch_virtual_timers_list\000"
+ 2272      69727475 
+ 2272      616C5F74 
+ 2272      696D6572 
+ 2272      735F6C69 
+ 2273              	.LASF2:
+ 2274 0369 6C6F6E67 		.ascii	"long double\000"
+ 2274      20646F75 
+ 2274      626C6500 
+ 2275              	.LASF65:
+ 2276 0375 63685F6C 		.ascii	"ch_list_t\000"
+ 2276      6973745F 
+ 2276      7400
+ 2277              	.LASF136:
+ 2278 037f 63685468 		.ascii	"chThdCreateFromMemoryPool\000"
+ 2278      64437265 
+ 2278      61746546 
+ 2278      726F6D4D 
+ 2278      656D6F72 
+ 2279              	.LASF103:
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 44
+
+
+ 2280 0399 63685F6F 		.ascii	"ch_os_instance_config\000"
+ 2280      735F696E 
+ 2280      7374616E 
+ 2280      63655F63 
+ 2280      6F6E6669 
+ 2281              	.LASF110:
+ 2282 03af 77626173 		.ascii	"wbase\000"
+ 2282      6500
+ 2283              	.LASF129:
+ 2284 03b5 6F626A65 		.ascii	"object_size\000"
+ 2284      63745F73 
+ 2284      697A6500 
+ 2285              	.LASF73:
+ 2286 03c1 7072696F 		.ascii	"prio\000"
+ 2286      00
+ 2287              	.LASF101:
+ 2288 03c6 63757272 		.ascii	"current\000"
+ 2288      656E7400 
+ 2289              	.LASF14:
+ 2290 03ce 5F5F7569 		.ascii	"__uint64_t\000"
+ 2290      6E743634 
+ 2290      5F7400
+ 2291              	.LASF124:
+ 2292 03d9 75736564 		.ascii	"used\000"
+ 2292      00
+ 2293              	.LASF30:
+ 2294 03de 636F7265 		.ascii	"core_id_t\000"
+ 2294      5F69645F 
+ 2294      7400
+ 2295              	.LASF25:
+ 2296 03e8 74726566 		.ascii	"trefs_t\000"
+ 2296      735F7400 
+ 2297              	.LASF26:
+ 2298 03f0 74707269 		.ascii	"tprio_t\000"
+ 2298      6F5F7400 
+ 2299              	.LASF59:
+ 2300 03f8 63685F73 		.ascii	"ch_system_debug\000"
+ 2300      79737465 
+ 2300      6D5F6465 
+ 2300      62756700 
+ 2301              	.LASF115:
+ 2302 0408 5F426F6F 		.ascii	"_Bool\000"
+ 2302      6C00
+ 2303              	.LASF18:
+ 2304 040e 696E7433 		.ascii	"int32_t\000"
+ 2304      325F7400 
+ 2305              	.LASF6:
+ 2306 0416 756E7369 		.ascii	"unsigned char\000"
+ 2306      676E6564 
+ 2306      20636861 
+ 2306      7200
+ 2307              	.LASF147:
+ 2308 0424 68656170 		.ascii	"heap_header\000"
+ 2308      5F686561 
+ 2308      64657200 
+ 2309              	.LASF58:
+ 2310 0430 72666375 		.ascii	"rfcu_t\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 45
+
+
+ 2310      5F7400
+ 2311              	.LASF7:
+ 2312 0437 73686F72 		.ascii	"short int\000"
+ 2312      7420696E 
+ 2312      7400
+ 2313              	.LASF97:
+ 2314 0441 65776D61 		.ascii	"ewmask\000"
+ 2314      736B00
+ 2315              	.LASF139:
+ 2316 0448 5F5F6675 		.ascii	"__func__\000"
+ 2316      6E635F5F 
+ 2316      00
+ 2317              	.LASF140:
+ 2318 0451 63685379 		.ascii	"chSysLock\000"
+ 2318      734C6F63 
+ 2318      6B00
+ 2319              	.LASF98:
+ 2320 045b 63685F73 		.ascii	"ch_semaphore\000"
+ 2320      656D6170 
+ 2320      686F7265 
+ 2320      00
+ 2321              	.LASF86:
+ 2322 0468 72656769 		.ascii	"registry_t\000"
+ 2322      73747279 
+ 2322      5F7400
+ 2323              	.LASF19:
+ 2324 0473 75696E74 		.ascii	"uint32_t\000"
+ 2324      33325F74 
+ 2324      00
+ 2325              	.LASF96:
+ 2326 047c 77746D74 		.ascii	"wtmtxp\000"
+ 2326      787000
+ 2327              	.LASF21:
+ 2328 0483 706F7274 		.ascii	"port_stkalign_t\000"
+ 2328      5F73746B 
+ 2328      616C6967 
+ 2328      6E5F7400 
+ 2329              	.LASF33:
+ 2330 0493 6F776E65 		.ascii	"owner\000"
+ 2330      7200
+ 2331              	.LASF146:
+ 2332 0499 443A5C43 		.ascii	"D:\\ChibiOS_21.11.3\\Apps\\Projeto\\RT-STM32F103-MA"
+ 2332      68696269 
+ 2332      4F535F32 
+ 2332      312E3131 
+ 2332      2E335C41 
+ 2333 04c8 504C454D 		.ascii	"PLEMINI\000"
+ 2333      494E4900 
+ 2334              	.LASF126:
+ 2335 04d0 68656170 		.ascii	"heap\000"
+ 2335      00
+ 2336              	.LASF13:
+ 2337 04d5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2337      20756E73 
+ 2337      69676E65 
+ 2337      6420696E 
+ 2337      7400
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 46
+
+
+ 2338              	.LASF35:
+ 2339 04e7 77616261 		.ascii	"wabase\000"
+ 2339      736500
+ 2340              	.LASF61:
+ 2341 04ee 63686172 		.ascii	"char\000"
+ 2341      00
+ 2342              	.LASF53:
+ 2343 04f3 636F6E66 		.ascii	"config\000"
+ 2343      696700
+ 2344              	.LASF8:
+ 2345 04fa 5F5F7569 		.ascii	"__uint16_t\000"
+ 2345      6E743136 
+ 2345      5F7400
+ 2346              	.LASF31:
+ 2347 0505 74687265 		.ascii	"thread_t\000"
+ 2347      61645F74 
+ 2347      00
+ 2348              	.LASF80:
+ 2349 050e 646C6973 		.ascii	"dlist\000"
+ 2349      7400
+ 2350              	.LASF63:
+ 2351 0514 73797374 		.ascii	"systime_t\000"
+ 2351      696D655F 
+ 2351      7400
+ 2352              	.LASF122:
+ 2353 051e 68656170 		.ascii	"heap_header_t\000"
+ 2353      5F686561 
+ 2353      6465725F 
+ 2353      7400
+ 2354              	.LASF149:
+ 2355 052c 5F5F7365 		.ascii	"__set_BASEPRI\000"
+ 2355      745F4241 
+ 2355      53455052 
+ 2355      4900
+ 2356              	.LASF60:
+ 2357 053a 70616E69 		.ascii	"panic_msg\000"
+ 2357      635F6D73 
+ 2357      6700
+ 2358              	.LASF89:
+ 2359 0544 70717565 		.ascii	"pqueue\000"
+ 2359      756500
+ 2360              	.LASF47:
+ 2361 054b 63685F6F 		.ascii	"ch_os_instance\000"
+ 2361      735F696E 
+ 2361      7374616E 
+ 2361      636500
+ 2362              	.LASF45:
+ 2363 055a 6F735F69 		.ascii	"os_instance_t\000"
+ 2363      6E737461 
+ 2363      6E63655F 
+ 2363      7400
+ 2364              	.LASF50:
+ 2365 0568 7265676C 		.ascii	"reglist\000"
+ 2365      69737400 
+ 2366              	.LASF72:
+ 2367 0570 63685F70 		.ascii	"ch_priority_queue\000"
+ 2367      72696F72 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 47
+
+
+ 2367      6974795F 
+ 2367      71756575 
+ 2367      6500
+ 2368              	.LASF134:
+ 2369 0582 63684865 		.ascii	"chHeapAllocAligned\000"
+ 2369      6170416C 
+ 2369      6C6F6341 
+ 2369      6C69676E 
+ 2369      656400
+ 2370              	.LASF105:
+ 2371 0595 6D61696E 		.ascii	"mainthread_end\000"
+ 2371      74687265 
+ 2371      61645F65 
+ 2371      6E6400
+ 2372              	.LASF135:
+ 2373 05a4 63685363 		.ascii	"chSchWakeupS\000"
+ 2373      6857616B 
+ 2373      65757053 
+ 2373      00
+ 2374              	.LASF108:
+ 2375 05b1 6F735F69 		.ascii	"os_instance_config_t\000"
+ 2375      6E737461 
+ 2375      6E63655F 
+ 2375      636F6E66 
+ 2375      69675F74 
+ 2376              	.LASF99:
+ 2377 05c6 63685F6D 		.ascii	"ch_mutex\000"
+ 2377      75746578 
+ 2377      00
+ 2378              	.LASF48:
+ 2379 05cf 726C6973 		.ascii	"rlist\000"
+ 2379      7400
+ 2380              	.LASF16:
+ 2381 05d5 75696E74 		.ascii	"uint8_t\000"
+ 2381      385F7400 
+ 2382              	.LASF132:
+ 2383 05dd 6368506F 		.ascii	"chPoolAlloc\000"
+ 2383      6F6C416C 
+ 2383      6C6F6300 
+ 2384              	.LASF37:
+ 2385 05e9 666C6167 		.ascii	"flags\000"
+ 2385      7300
+ 2386              	.LASF92:
+ 2387 05ef 77746F62 		.ascii	"wtobjp\000"
+ 2387      6A7000
+ 2388              	.LASF128:
+ 2389 05f6 706F6F6C 		.ascii	"pool_header\000"
+ 2389      5F686561 
+ 2389      64657200 
+ 2390              	.LASF145:
+ 2391 0602 2E2E2F2E 		.ascii	"../../../os/rt/src/chdynamic.c\000"
+ 2391      2E2F2E2E 
+ 2391      2F6F732F 
+ 2391      72742F73 
+ 2391      72632F63 
+ 2392              	.LASF148:
+ 2393 0621 63685379 		.ascii	"chSysUnlock\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 48
+
+
+ 2393      73556E6C 
+ 2393      6F636B00 
+ 2394              	.LASF88:
+ 2395 062d 6C697374 		.ascii	"list\000"
+ 2395      00
+ 2396              	.LASF142:
+ 2397 0632 706F7274 		.ascii	"port_lock\000"
+ 2397      5F6C6F63 
+ 2397      6B00
+ 2398              	.LASF107:
+ 2399 063c 69646C65 		.ascii	"idlethread_end\000"
+ 2399      74687265 
+ 2399      61645F65 
+ 2399      6E6400
+ 2400              	.LASF42:
+ 2401 064b 6D74786C 		.ascii	"mtxlist\000"
+ 2401      69737400 
+ 2402              	.LASF144:
+ 2403 0653 474E5520 		.ascii	"GNU C17 13.3.1 20240614 -mcpu=cortex-m3 -mthumb -mf"
+ 2403      43313720 
+ 2403      31332E33 
+ 2403      2E312032 
+ 2403      30323430 
+ 2404 0686 6C6F6174 		.ascii	"loat-abi=soft -march=armv7-m -ggdb -O2 -fomit-frame"
+ 2404      2D616269 
+ 2404      3D736F66 
+ 2404      74202D6D 
+ 2404      61726368 
+ 2405 06b9 2D706F69 		.ascii	"-pointer -falign-functions=16 -ffunction-sections -"
+ 2405      6E746572 
+ 2405      202D6661 
+ 2405      6C69676E 
+ 2405      2D66756E 
+ 2406 06ec 66646174 		.ascii	"fdata-sections -fno-common -flto\000"
+ 2406      612D7365 
+ 2406      6374696F 
+ 2406      6E73202D 
+ 2406      666E6F2D 
+ 2407              	.LASF121:
+ 2408 070d 68656164 		.ascii	"header\000"
+ 2408      657200
+ 2409              	.LASF119:
+ 2410 0714 6D656D6F 		.ascii	"memory_heap\000"
+ 2410      72795F68 
+ 2410      65617000 
+ 2411              		.section	.gnu.debuglto_.debug_line_str,"eMS",%progbits,1
+ 2412              	.LASF151:
+ 2413 0000 2E2E2F2E 		.ascii	"../../../os/common/ext/ARM/CMSIS/Core/Include\000"
+ 2413      2E2F2E2E 
+ 2413      2F6F732F 
+ 2413      636F6D6D 
+ 2413      6F6E2F65 
+ 2414              	.LASF157:
+ 2415 002e 443A2F41 		.ascii	"D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/arm-no"
+ 2415      726D2047 
+ 2415      4E552054 
+ 2415      6F6F6C63 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 49
+
+
+ 2415      6861696E 
+ 2416 0061 6E652D65 		.ascii	"ne-eabi/include/machine\000"
+ 2416      6162692F 
+ 2416      696E636C 
+ 2416      7564652F 
+ 2416      6D616368 
+ 2417              	.LASF175:
+ 2418 0079 63686D65 		.ascii	"chmemcore.h\000"
+ 2418      6D636F72 
+ 2418      652E6800 
+ 2419              	.LASF162:
+ 2420 0085 5F646566 		.ascii	"_default_types.h\000"
+ 2420      61756C74 
+ 2420      5F747970 
+ 2420      65732E68 
+ 2420      00
+ 2421              	.LASF178:
+ 2422 0096 63687363 		.ascii	"chschd.h\000"
+ 2422      68642E68 
+ 2422      00
+ 2423              	.LASF171:
+ 2424 009f 6368636F 		.ascii	"chcore.h\000"
+ 2424      72652E68 
+ 2424      00
+ 2425              	.LASF150:
+ 2426 00a8 443A5C43 		.ascii	"D:\\ChibiOS_21.11.3\\Apps\\Projeto\\RT-STM32F103-MA"
+ 2426      68696269 
+ 2426      4F535F32 
+ 2426      312E3131 
+ 2426      2E335C41 
+ 2427 00d7 504C454D 		.ascii	"PLEMINI\000"
+ 2427      494E4900 
+ 2428              	.LASF156:
+ 2429 00df 2E2E2F2E 		.ascii	"../../../os/rt/src\000"
+ 2429      2E2F2E2E 
+ 2429      2F6F732F 
+ 2429      72742F73 
+ 2429      726300
+ 2430              	.LASF174:
+ 2431 00f2 63687468 		.ascii	"chthreads.h\000"
+ 2431      72656164 
+ 2431      732E6800 
+ 2432              	.LASF152:
+ 2433 00fe 2E2E2F2E 		.ascii	"../../../os/common/ports/ARM-common\000"
+ 2433      2E2F2E2E 
+ 2433      2F6F732F 
+ 2433      636F6D6D 
+ 2433      6F6E2F70 
+ 2434              	.LASF173:
+ 2435 0122 63686D74 		.ascii	"chmtx.h\000"
+ 2435      782E6800 
+ 2436              	.LASF160:
+ 2437 012a 2E2E2F2E 		.ascii	"../../../os/rt/src/chdynamic.c\000"
+ 2437      2E2F2E2E 
+ 2437      2F6F732F 
+ 2437      72742F73 
+ 2437      72632F63 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 50
+
+
+ 2438              	.LASF169:
+ 2439 0149 63687469 		.ascii	"chtime.h\000"
+ 2439      6D652E68 
+ 2439      00
+ 2440              	.LASF154:
+ 2441 0152 2E2E2F2E 		.ascii	"../../../os/oslib/include\000"
+ 2441      2E2F2E2E 
+ 2441      2F6F732F 
+ 2441      6F736C69 
+ 2441      622F696E 
+ 2442              	.LASF164:
+ 2443 016c 63687479 		.ascii	"chtypes.h\000"
+ 2443      7065732E 
+ 2443      6800
+ 2444              	.LASF163:
+ 2445 0176 5F737464 		.ascii	"_stdint.h\000"
+ 2445      696E742E 
+ 2445      6800
+ 2446              	.LASF180:
+ 2447 0180 63687379 		.ascii	"chsys.h\000"
+ 2447      732E6800 
+ 2448              	.LASF170:
+ 2449 0188 63686C69 		.ascii	"chlists.h\000"
+ 2449      7374732E 
+ 2449      6800
+ 2450              	.LASF166:
+ 2451 0192 63686F62 		.ascii	"chobjects.h\000"
+ 2451      6A656374 
+ 2451      732E6800 
+ 2452              	.LASF161:
+ 2453 019e 73746464 		.ascii	"stddef.h\000"
+ 2453      65662E68 
+ 2453      00
+ 2454              	.LASF167:
+ 2455 01a7 63687266 		.ascii	"chrfcu.h\000"
+ 2455      63752E68 
+ 2455      00
+ 2456              	.LASF172:
+ 2457 01b0 63687365 		.ascii	"chsem.h\000"
+ 2457      6D2E6800 
+ 2458              	.LASF153:
+ 2459 01b8 2E2E2F2E 		.ascii	"../../../os/common/ports/ARMv7-M\000"
+ 2459      2E2F2E2E 
+ 2459      2F6F732F 
+ 2459      636F6D6D 
+ 2459      6F6E2F70 
+ 2460              	.LASF159:
+ 2461 01d9 443A2F41 		.ascii	"D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/lib/gc"
+ 2461      726D2047 
+ 2461      4E552054 
+ 2461      6F6F6C63 
+ 2461      6861696E 
+ 2462 020c 632F6172 		.ascii	"c/arm-none-eabi/13.3.1/include\000"
+ 2462      6D2D6E6F 
+ 2462      6E652D65 
+ 2462      6162692F 
+ 2462      31332E33 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 51
+
+
+ 2463              	.LASF155:
+ 2464 022b 2E2E2F2E 		.ascii	"../../../os/rt/include\000"
+ 2464      2E2F2E2E 
+ 2464      2F6F732F 
+ 2464      72742F69 
+ 2464      6E636C75 
+ 2465              	.LASF179:
+ 2466 0242 63686479 		.ascii	"chdynamic.c\000"
+ 2466      6E616D69 
+ 2466      632E6300 
+ 2467              	.LASF181:
+ 2468 024e 636D7369 		.ascii	"cmsis_gcc.h\000"
+ 2468      735F6763 
+ 2468      632E6800 
+ 2469              	.LASF158:
+ 2470 025a 443A2F41 		.ascii	"D:/Arm GNU Toolchain arm-none-eabi/13.3 rel1/arm-no"
+ 2470      726D2047 
+ 2470      4E552054 
+ 2470      6F6F6C63 
+ 2470      6861696E 
+ 2471 028d 6E652D65 		.ascii	"ne-eabi/include/sys\000"
+ 2471      6162692F 
+ 2471      696E636C 
+ 2471      7564652F 
+ 2471      73797300 
+ 2472              	.LASF165:
+ 2473 02a1 63686561 		.ascii	"chearly.h\000"
+ 2473      726C792E 
+ 2473      6800
+ 2474              	.LASF177:
+ 2475 02ab 63686D65 		.ascii	"chmempools.h\000"
+ 2475      6D706F6F 
+ 2475      6C732E68 
+ 2475      00
+ 2476              	.LASF168:
+ 2477 02b8 63686465 		.ascii	"chdebug.h\000"
+ 2477      6275672E 
+ 2477      6800
+ 2478              	.LASF176:
+ 2479 02c2 63686D65 		.ascii	"chmemheaps.h\000"
+ 2479      6D686561 
+ 2479      70732E68 
+ 2479      00
+ 2480              		.text
+ 2481              		.section	.gnu.lto_.profile.bfad147d,"e",%progbits
+ 2482 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
+ 2482      00010000 
+ 2482      120003
+ 2483              		.text
+ 2484              		.section	.gnu.lto_.icf.bfad147d,"e",%progbits
+ 2485 0000 789C8B60 		.ascii	"x\234\213`@\000&\206\343\253\017\236\346\025`b`bdb\202"
+ 2485      40002686 
+ 2485      E3AB0F9E 
+ 2485      E6156062 
+ 2485      60626462 
+ 2486 0015 62662066 		.ascii	"bf f\001bV fcb\007\222\214\214\033v\357\335\303+\302"
+ 2486      01625620 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 52
+
+
+ 2486      66636207 
+ 2486      928C8C1B 
+ 2486      76EFDDC3 
+ 2487 002b C4C1C489 		.ascii	"\304\301\304\211W)+D9\003\000\314\\\007+"
+ 2487      57292B44 
+ 2487      390300CC 
+ 2487      5C072B
+ 2488              		.text
+ 2489              		.section	.gnu.lto_.ipa_sra.bfad147d,"e",%progbits
+ 2490 0000 789C8B65 		.ascii	"x\234\213e@\000&\0066\006\016\006v(\217\005\211faf\202"
+ 2490      40002606 
+ 2490      36060E06 
+ 2490      76288F05 
+ 2490      89666166 
+ 2491 0015 29626404 		.ascii	")bd\004\252\221``fl\340A\350\344`d\205\251D\321\005"
+ 2491      AA916060 
+ 2491      666CE041 
+ 2491      E8E46064 
+ 2491      85A944D1 
+ 2492 002a 530D0400 		.ascii	"S\015\004\000X\237\001{"
+ 2492      589F017B 
+ 2493              		.text
+ 2494              		.section	.gnu.lto_.inline.bfad147d,"e",%progbits
+ 2495 0000 789C6B67 		.ascii	"x\234kg@\000&\006\011\251\375\277\277~e\312`\004r$v"
+ 2495      40002606 
+ 2495      09A9FDBF 
+ 2495      BF7E65CA 
+ 2495      60047224 
+ 2496 0015 EDDB7F8E 		.ascii	"\355\333\177\216)\215\201\201\255\001\010\230R\230\200"
+ 2496      298D8181 
+ 2496      AD010898 
+ 2496      529880
+ 2497 0024 F240C0CC 		.ascii	"\362@\300\314\003R9\301\217\201\201\021\314dd`d\345"
+ 2497      035239C1 
+ 2497      8F818111 
+ 2497      CC646460 
+ 2497      64E5
+ 2498 0036 03890385 		.ascii	"\003\211\003\205@\242\014\214\022R/&\356\374\0141Dz"
+ 2498      40A20C8C 
+ 2498      12522F26 
+ 2498      EEFC0C31 
+ 2498      447A
+ 2499 0048 7B63E777 		.ascii	"{c\347w\220!\354Ko\366l\303g\010\204\006\011\001\000"
+ 2499      9021EC4B 
+ 2499      6FF66CC3 
+ 2499      67088406 
+ 2499      090100
+ 2500 005b 192B19B5 		.ascii	"\031+\031\265"
+ 2501              		.text
+ 2502              		.section	.gnu.lto_.jmpfuncs.bfad147d,"e",%progbits
+ 2503 0000 789C7D8E 		.ascii	"x\234}\216\313\015\302@\020C\375\254e\023\276)\201\322"
+ 2503      CB0DC240 
+ 2503      1043FDAC 
+ 2503      6513BE29 
+ 2503      81D2
+ 2504 0012 2865DA02 		.ascii	"(e\332\002N4B!H\210\260\231\003\221\000\305\222\017"
+ 2504      4E344221 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 53
+
+
+ 2504      4888B099 
+ 2504      039100C5 
+ 2504      920F
+ 2505 0024 6379ACF7 		.ascii	"cy\254\367\320,\253\222z\035\361&\274\015\357\302\373"
+ 2505      D02CAB92 
+ 2505      7A1DF126 
+ 2505      BC0DEFC2 
+ 2505      FB
+ 2506 0035 F0213C14 		.ascii	"\360!<\024\211[A\315c\323 \327\2169\233\276?\307s*\340"
+ 2506      895B41CD 
+ 2506      63D320D7 
+ 2506      8E399BBE 
+ 2506      3FC7732A 
+ 2507 004a 7A82E6AC 		.ascii	"z\202\346\254\327\022\342k\241\004\277\243w\321g\330"
+ 2507      D712E26B 
+ 2507      A104BFA3 
+ 2507      77D167D8 
+ 2508 005a E72AAB24 		.ascii	"\347*\253$\032\273\360z\031\2073\2134\\\340\212\377"
+ 2508      1ABBF07A 
+ 2508      1987338B 
+ 2508      345CE08A 
+ 2508      FF
+ 2509 006b 70E80D2F 		.ascii	"p\350\015/1>9"
+ 2509      313E39
+ 2510              		.text
+ 2511              		.section	.gnu.lto_.pureconst.bfad147d,"e",%progbits
+ 2512 0000 789C6367 		.ascii	"x\234cg```b\330\305\312\270\213\025\000\005\230\001"
+ 2512      60606062 
+ 2512      D8C5CAB8 
+ 2512      8B150005 
+ 2512      9801
+ 2513 0012 89       		.ascii	"\211"
+ 2514              		.text
+ 2515              		.section	.gnu.lto_.ipa_modref.bfad147d,"e",%progbits
+ 2516 0000 789C6362 		.ascii	"x\234cb@\006\000\000*\000\003"
+ 2516      40060000 
+ 2516      2A0003
+ 2517              		.text
+ 2518              		.section	.gnu.lto_.lto.bfad147d,"e",%progbits
+ 2519 0000 0D000100 		.ascii	"\015\000\001\000\001\000\000\000"
+ 2519      01000000 
+ 2520              		.text
+ 2521              		.section	.gnu.lto_chThdCreateFromHeap.265.bfad147d,"e",%progbits
+ 2522 0000 789C7D54 		.ascii	"x\234}T\015lSU\024>\347\335\327\265\013\024\230t\211"
+ 2522      0D6C5355 
+ 2522      143EE7DD 
+ 2522      D7B50B14 
+ 2522      987489
+ 2523 0013 31612E44 		.ascii	"1a.DC\242\256\217ma\030\022\225\005A\247V\220\341\377"
+ 2523      43A2AE8F 
+ 2523      6D611812 
+ 2523      950541A7 
+ 2523      5690E1FF 
+ 2524 0027 125ABAB2 		.ascii	"\022Z\272\262U\355\332\264\2039\311\322\347\272\"\216"
+ 2524      55EDDAB4 
+ 2524      8339C9D2 
+ 2524      E7BA228E 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 54
+
+
+ 2525 0037 3FA72412 		.ascii	"?\247$\022]`! \014f\024\303\346\346~(?\251\223\3169"
+ 2525      5D602120 
+ 2525      0C6614C3 
+ 2525      E6E67E28 
+ 2525      3FA993CE 
+ 2526 004c 06F2CF32 		.ascii	"\006\362\31725 cS\007C\322\021\002\236{_\367h\2141i"
+ 2526      35206353 
+ 2526      0743D211 
+ 2526      029E7B5F 
+ 2526      F7688C31 
+ 2527 0061 DF7BE77C 		.ascii	"\337{\347|\337w\316\275\337\271\357\3352\000,B\372\003"
+ 2527      DF77CEBD 
+ 2527      DFB9EFDD 
+ 2527      32002C42 
+ 2527      FA03
+ 2528 0073 001A003F 		.ascii	"\000\032\000?\256\253\225@U\325\371FI\252\251[/\341"
+ 2528      AEAB9540 
+ 2528      55D5F946 
+ 2528      49AAA95B 
+ 2528      2FE1
+ 2529 0085 713CFFC5 		.ascii	"q<\377\305X\252\034\252\233\262\353\354\206<\231\341"
+ 2529      58AA1CAA 
+ 2529      9BB2EBEC 
+ 2529      863C99E1 
+ 2530 0095 96BADADD 		.ascii	"\226\272\332\335\355\245\202\"\343\373:\035!(1\031\203"
+ 2530      EDA58222 
+ 2530      E3FB3A1D 
+ 2530      21283119 
+ 2530      83
+ 2531 00a6 D8C40C98 		.ascii	"\330\304\014\2302\035e\272\246c\246\022Q\325\370\372"
+ 2531      321D65BA 
+ 2531      A663A612 
+ 2531      51D5F8FA 
+ 2532 00b6 CE9351F3 		.ascii	"\316\223Q\363`(\374l\020\252\276\3036j\007`@\323\033"
+ 2532      6028FC6C 
+ 2532      10AABEC3 
+ 2532      366A0760 
+ 2532      40D31B
+ 2533 00c9 9045685F 		.ascii	"\220Eh_\307\270\252\336\007k:0\201I\222\275\323B\360"
+ 2533      C7B8AADE 
+ 2533      076B3A30 
+ 2533      814992BD 
+ 2533      D342F0
+ 2534 00dc 6A0D8E0B 		.ascii	"j\015\216\013\270\262K\207\231\275\233\303k\004<z*\372"
+ 2534      B8B24B87 
+ 2534      99BD9BC3 
+ 2534      6B043C7A 
+ 2534      2AFA
+ 2535 00ee 65468354 		.ascii	"eF\203T\021\321a\331~\202\303*j\362\353B\276\352\260"
+ 2535      11D161D9 
+ 2535      7E82C32A 
+ 2535      6AF2EB42 
+ 2535      BEEAB0
+ 2536 0101 8E1BEC03 		.ascii	"\216\033\354\003\034\017k\370\350\231\350n\322\007\216"
+ 2536      1C0F6BF8 
+ 2536      E899E86E 
+ 2536      D2078E
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 55
+
+
+ 2537 0110 EA788A7D 		.ascii	"\352x\212}\210\343\353\022\372~\241\037\206\250N0\332"
+ 2537      88E3EB12 
+ 2537      FA7EA11F 
+ 2537      86A84E30 
+ 2537      DA
+ 2538 0121 C72C7CFD 		.ascii	"\307,|\375\264\311\373\305&#H\374\015H\251G?\242\212"
+ 2538      B4C9FBC5 
+ 2538      262348FC 
+ 2538      0D48A947 
+ 2538      3FA28A
+ 2539 0134 B7A39F62 		.ascii	"\267\243\237bC\3654\3571\254\372\001\273\305f\355\333"
+ 2539      43F534EF 
+ 2539      31ACFA01 
+ 2539      BBC566ED 
+ 2539      DB
+ 2540 0145 D289B259 		.ascii	"\322\211\262YPx\323\013\321-\031D\031\206\036\324\015"
+ 2540      5078D30B 
+ 2540      D12D1944 
+ 2540      19861ED4 
+ 2540      0D
+ 2541 0156 B17FC239 		.ascii	"\261\177\3029[&8}\337\304\251\361\374a\350M\242\254"
+ 2541      5B26387D 
+ 2541      DFC4A9F1 
+ 2541      FC61E84D 
+ 2541      A2AC
+ 2542 0168 E394CFF4 		.ascii	"\343\224\317\3642\347\242\233x\231`_\022\345\216e\022"
+ 2542      32E7A29B 
+ 2542      7899605F 
+ 2542      12E58E65 
+ 2542      12
+ 2543 0179 1CC79FF0 		.ascii	"\034\307\237\360G\214!T\361\375\342$\000\317\011.\232"
+ 2543      478C2154 
+ 2543      F1FDE224 
+ 2543      00CF092E 
+ 2543      9A
+ 2544 018a 44936AED 		.ascii	"D\223j\355qB?\276\235\210\352o\325\266\231\341$\272"
+ 2544      71423FBE 
+ 2544      9D88EA6F 
+ 2544      D5B699E1 
+ 2544      24BA
+ 2545 019c F93C3A39 		.ascii	"\371<:9\207o:~\240\276e\373\234mjD.9\205\036Q\3724J"
+ 2545      876F3A7E 
+ 2545      A0BE65FB 
+ 2545      9C6D6A44 
+ 2545      2E39851E 
+ 2546 01b4 93EDE3E9 		.ascii	"\223\355\343\351Z\343x\303\316\372\261\327~\013\251"
+ 2546      5AE378C3 
+ 2546      CEFAB1D7 
+ 2546      7E0BA9
+ 2547 01c3 DD2A6754 		.ascii	"\335*gT%\030b\252\242\307@\333\3443\010?\243\007\250"
+ 2547      251862AA 
+ 2547      A2C740DB 
+ 2547      E433083F 
+ 2547      A307A8
+ 2548 01d6 F759D49B 		.ascii	"\367Y\324\233\327\33784\203\272\273\356u\277j\206\363"
+ 2548      D7DF3834 
+ 2548      83BABBEE 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 56
+
+
+ 2548      75BF6A86 
+ 2548      F3
+ 2549 01e7 E804BDEE 		.ascii	"\350\004\275\356\355\377\255\373a\373\344\213\010\027"
+ 2549      EDFFADFB 
+ 2549      61FBE48B 
+ 2549      0817
+ 2550 01f5 B4BA03BC 		.ascii	"\264\272\003\274.\2012\366!\366\"\366 \036\303\257\372"
+ 2550      2E8132F6 
+ 2550      21F622F6 
+ 2550      201EC3AF 
+ 2550      FA
+ 2551 0206 0D836AFC 		.ascii	"\015\203j\374\356vU\335\374D\323\221\317\277m\227\037"
+ 2551      EE7655DD 
+ 2551      FC44D391 
+ 2551      CFBF6D97 
+ 2551      1F
+ 2552 0217 40908883 		.ascii	"@\220\210\203\0354%\354B#\020\327\004\304NE\232\234"
+ 2552      1D3425EC 
+ 2552      422310D7 
+ 2552      04C44E45 
+ 2552      9A9C
+ 2553 0229 19F1304E 		.ascii	"\031\3610NE<\212i\210Q\264\000\025\003hd\374P\2532\302"
+ 2553      453C8A69 
+ 2553      8851B400 
+ 2553      15036864 
+ 2553      FC50AB32 
+ 2554 023e 5E26694F 		.ascii	"^&iO\241\010\334\225\324_\2337N\247WB<\266\232\305m"
+ 2554      A108DC95 
+ 2554      D45F9B37 
+ 2554      4EA75742 
+ 2554      3CB69AC5 
+ 2555 0253 D00C61B6 		.ascii	"\320\014a\266\266\301\303\214\265(9\226\0030\231\031"
+ 2555      B6C1C38C 
+ 2555      B5283996 
+ 2555      03309919 
+ 2556 0263 522E029A 		.ascii	"R.\002\232\2444\"TgR?f\024\324K\033\031\334\221j\206"
+ 2556      A4342254 
+ 2556      67523F66 
+ 2556      14D44B1B 
+ 2556      19DC916A 
+ 2557 0278 8EE43023 		.ascii	"\216\3440#*|\\T\2375\036\273\3645\233\250\177\215(!"
+ 2557      2A7C5C54 
+ 2557      9F351EBB 
+ 2557      F4359BA8 
+ 2557      7F8D2821 
+ 2558 028c 163AB036 		.ascii	"\026:\2606\314\230\211\031\231A+\321\203\314$\360q\201"
+ 2558      CC988919 
+ 2558      99412BD1 
+ 2558      83CC24F0 
+ 2558      7181
+ 2559 029e 57D7372A 		.ascii	"W\3277*yP\021\3037\251]*OlM\315\203\327c\370*\305\306"
+ 2559      795011C3 
+ 2559      37A95D2A 
+ 2559      4F6C4DCD 
+ 2559      83D763F8 
+ 2560 02b5 A4F8658A 		.ascii	"\244\370e\212MB@\361\252\030\026Rl\236\210\0031|\211"
+ 2560      4D4240F1 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 57
+
+
+ 2560      AA181652 
+ 2560      6C9E8803 
+ 2560      317C89
+ 2561 02c8 E2A913F1 		.ascii	"\342\251\023\3610\304p1%\322D\247\375\233\030\277\217"
+ 2561      30C47031 
+ 2561      25D244A7 
+ 2561      FD9B18BF 
+ 2561      8F
+ 2562 02d9 0DEDEB68 		.ascii	"\015\355\353hn\222\270\327b\013\315Z\366Pw\353\345\375"
+ 2562      6E92B8D7 
+ 2562      620BCD5A 
+ 2562      F65077EB 
+ 2562      E5FD
+ 2563 02eb B3F0A496 		.ascii	"\263\360\244\226\035\277\234\315\327\331 \003\236\306"
+ 2563      1DBF9CCD 
+ 2563      D7D92003 
+ 2563      9EC6
+ 2564 02f9 94129CAD 		.ascii	"\224\022\234\255)[G\272\332%<\243q\376\356\232\216g"
+ 2564      295B47BA 
+ 2564      DA253CA3 
+ 2564      71FEEE9A 
+ 2564      8E67
+ 2565 030b 116A58F5 		.ascii	"\021jX\365L>\266}t0guHkM6\003\246\222\021C\010t\273"
+ 2565      4C3EB67D 
+ 2565      74306775 
+ 2565      486B4D36 
+ 2565      03A69211 
+ 2566 0323 8A57F859 		.ascii	"\212W\370Y\231u\220\200\347yz\204\246A\225G#\335\361"
+ 2566      99759080 
+ 2566      E7797A84 
+ 2566      A6419547 
+ 2566      23DDF1
+ 2567 0336 CB69BC3A 		.ascii	"\313i\274:\017\325\353C\373\2564\307\364E\375\321\234"
+ 2567      0FD5EB43 
+ 2567      FBAE34C7 
+ 2567      F445FDD1 
+ 2567      9C
+ 2568 0347 25B2C777 		.ascii	"%\262\307w\217mE>\2360\253ip0\013\015\244\340\031\200"
+ 2568      8F6D453E 
+ 2568      9E30AB69 
+ 2568      70300B0D 
+ 2568      A4E01980 
+ 2569 035b 5AA409EE 		.ascii	"Z\244\011\356yra\014\373Q\312\020\013u\320\230\231E"
+ 2569      7972610C 
+ 2569      FB51CA10 
+ 2569      0B75D098 
+ 2569      9945
+ 2570 036d 88DB3609 		.ascii	"\210\3336\011Go\354\231A/s\220wo\022|C\376+\243\010"
+ 2570      476FEC99 
+ 2570      412F7390 
+ 2570      776F127C 
+ 2570      43FE2BA3 
+ 2571 0382 79F4683A 		.ascii	"y\364h:\030\274\206\235A\200\224\031\2505\354$M\230"
+ 2571      18BC869D 
+ 2571      41809419 
+ 2571      A835EC24 
+ 2571      4D98
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 58
+
+
+ 2572 0394 8533A9B4 		.ascii	"\2053\251\264\324\036l#\210YR\350\023(=\244\035\211"
+ 2572      D41E6C23 
+ 2572      885952E8 
+ 2572      13283DA4 
+ 2572      1D89
+ 2573 03a6 2909E70E 		.ascii	")\011\347\016\264\220s\347\022\232\026E\334\177iyN\363"
+ 2573      B49073E7 
+ 2573      129A1645 
+ 2573      DC7F6979 
+ 2573      4EF3
+ 2574 03b8 AC453839 		.ascii	"\254E89\223_vd\210\324\336\271\011o\343\277\223\267"
+ 2574      935F7664 
+ 2574      88D4DEB9 
+ 2574      096FE3BF 
+ 2574      93B7
+ 2575 03ca E735DDAE 		.ascii	"\3475\335\256\021\335\333\013\334[H\366\366\342=o\007"
+ 2575      11DDDB0B 
+ 2575      DC5B48F6 
+ 2575      F6E23D6F 
+ 2575      07
+ 2576 03db 92BD1556 		.ascii	"\222\275\025V\336\024\226&Y\270s$\215\027\321,\354\373"
+ 2576      DE149626 
+ 2576      59B87324 
+ 2576      8D17D12C 
+ 2576      ECFB
+ 2577 03ed FEA6897B 		.ascii	"\376\246\211{\305\317\240\254\237\361\020;<\312\337"
+ 2577      C5CFA0AC 
+ 2577      9FF1103B 
+ 2577      3CCADF
+ 2578 03fc A3A77650 		.ascii	"\243\247vP\302\013\037\260\352\371\3008i3C\374\013\245"
+ 2578      C20B1FB0 
+ 2578      EAF9C038 
+ 2578      693343FC 
+ 2578      0BA5
+ 2579 040e DE3F07D3 		.ascii	"\336?\007\323H\305,\254\367&\275)\215\0145iu\2048s\237"
+ 2579      48C52CAC 
+ 2579      F726BD29 
+ 2579      8D0C3569 
+ 2579      75843873 
+ 2580 0423 9E57B4A0 		.ascii	"\236W\264\240\324\275\302\275\270pyN\2665;\333\232["
+ 2580      D4BDC2BD 
+ 2580      B870794E 
+ 2580      B6353BDB 
+ 2580      9A5B
+ 2581 0435 94EFF305 		.ascii	"\224\357\363\005\212\226\370\275o\271\312\275EK\227"
+ 2581      8A96F8BD 
+ 2581      6FB9CABD 
+ 2581      454B97
+ 2582 0444 65152EB3 		.ascii	"e\025.\263\345\346,\312\236\235\233e\313_\362\302B["
+ 2582      E5E62CCA 
+ 2582      9E9D9B65 
+ 2582      CB5FF2C2 
+ 2582      425B
+ 2583 0456 C18B05F0 		.ascii	"\301\213\005\360\240\325\252h?o@\361\227+\001\277Sq"
+ 2583      A0D5AA68 
+ 2583      3F6F40F1 
+ 2583      972B01BF 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 59
+
+
+ 2583      5371
+ 2584 0468 96165796 		.ascii	"\226\026W\2269<n\247\225\276\016\245.\207\317\227\236"
+ 2584      393C6EA7 
+ 2584      95BE0EA5 
+ 2584      2E87CF97 
+ 2584      9E
+ 2585 0479 94B23E9E 		.ascii	"\224\262>\236\233\223\263rN\216\013\344\200\373=\227"
+ 2585      9B93B372 
+ 2585      4E8E0BE4 
+ 2585      80FB3D97 
+ 2586 0489 4C6997EC 		.ascii	"Li\227\354\363\273\275\222o%s\370K\244\362b\271\302"
+ 2586      F3BBBD92 
+ 2586      6F2573F8 
+ 2586      4BA4F262 
+ 2586      B9C2
+ 2587 049b 55566CA8 		.ascii	"UVl\250X\341\010\270\244r\337\277[\270\313\234\357\254"
+ 2587      58E108B8 
+ 2587      A472DFBF 
+ 2587      5BB8CB9C 
+ 2587      EFAC
+ 2588 04ad 2A76519B 		.ascii	"*vQ\233@e\300Z\012F\316[\342w\317K\3469\275\036\217"
+ 2588      4065C05A 
+ 2588      0A46CE5B 
+ 2588      E277CF4B 
+ 2588      E639BD1E 
+ 2589 04c2 B74C71BD 		.ascii	"\267Lq\275[\256\344/\265)\013l\205\005\205\312\002\257"
+ 2589      5BAEE42F 
+ 2589      B5290B6C 
+ 2589      850585CA 
+ 2589      02AF
+ 2590 04d4 DFA5144C 		.ascii	"\337\245\024L\310=\001w`y\211\323I%\036\371\017\251"
+ 2590      C83D0177 
+ 2590      607989D3 
+ 2590      49251EF9 
+ 2590      0FA9
+ 2591 04e6 CFEB2F0F 		.ascii	"\317\353/\017p\361\352\271Y6j\346$1Q\247\331\012\227"
+ 2591      70F1EAB9 
+ 2591      59366AE6 
+ 2591      243151A7 
+ 2591      D90A97
+ 2592 04f9 66F28EB4 		.ascii	"f\362\216\264\344\3072\037\236\015\222\037\214\036\227"
+ 2592      E4C7321F 
+ 2592      9E0D921F 
+ 2592      8C1E97
+ 2593 0508 C7EBAF84 		.ascii	"\307\353\257\204\177\000\036\243x\203"
+ 2593      7F001EA3 
+ 2593      7883
+ 2594              		.text
+ 2595              		.section	.gnu.lto_chThdCreateFromMemoryPool.266.bfad147d,"e",%progbits
+ 2596 0000 789C7D54 		.ascii	"x\234}T\017L\224e\030\177\236\367\375\216;\206\250\004"
+ 2596      0F4C9465 
+ 2596      187F9EF7 
+ 2596      FD8E3B86 
+ 2596      A804
+ 2597 0012 B8B6A691 		.ascii	"\270\266\246\221[\263\225\334\011L,\267LFZd\227&VV\334"
+ 2597      5BB395DC 
+ 2597      094C2CB7 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 60
+
+
+ 2597      4C465A64 
+ 2597      97265656 
+ 2598 0027 1C1EA75C 		.ascii	"\034\036\247\\u\334yw\206\314\261\373\342@\027\272\010"
+ 2598      75DC7977 
+ 2598      86CCB1FB 
+ 2598      E24017BA 
+ 2598      08
+ 2599 0038 A7698E25 		.ascii	"\247i\216%\231\2260\227A\200\022\210\227\231y\247)Z"
+ 2599      99963097 
+ 2599      41801288 
+ 2599      979979A7 
+ 2599      295A
+ 2600 004a FE415C61 		.ascii	"\376A\\aM\024\301:\223\332\261\376\330\363\276\037\234"
+ 2600      4D14C13A 
+ 2600      93DAB1FE 
+ 2600      D8F3BE1F 
+ 2600      9C
+ 2601 005b B7E6DA6E 		.ascii	"\267\346\332n\337\373=\317\363{~\317\237\337\373\335"
+ 2601      DFFB3DCF 
+ 2601      F37B7ECF 
+ 2601      9FDFFBDD 
+ 2602 006b 63710073 		.ascii	"cq\000s\020`>\000\240\016pSm5\003UU\347\352\031\253"
+ 2602      10603E00 
+ 2602      A00E7053 
+ 2602      6D350355 
+ 2602      55E7EA19 
+ 2603 0080 ACDDC0F0 		.ascii	"\254\335\300\360\024\366~|+^\361\327\216\337\335\263"
+ 2603      14F67E7C 
+ 2603      2B5EF1D7 
+ 2603      8EDFDDB3 
+ 2604 0090 315BE1B8 		.ascii	"1[\341\270\271\266z\177O\261\204(\370V\024\216\340c"
+ 2604      B9B67A7F 
+ 2604      4FB18428 
+ 2604      F856148E 
+ 2604      E063
+ 2605 00a2 5C411FEE 		.ascii	"\\A\037\356\345:\214KF\205\236\251\230f\012\250jd\303"
+ 2605      E53A8C4B 
+ 2605      46859EA9 
+ 2605      98660AA8 
+ 2605      6A64C3
+ 2606 00b5 C1E65062 		.ascii	"\301\346Pb\237\277\352i\037\224\177\201\355T\016@\207"
+ 2606      9FBFEA69 
+ 2606      1F947F81 
+ 2606      ED540E40 
+ 2606      87
+ 2607 00c6 8657209D 		.ascii	"\206W \235\242\335\027FT\365\036X\333\211\2431\306,"
+ 2607      A2DD1746 
+ 2607      54F51E58 
+ 2607      DB89A331 
+ 2607      C62C
+ 2608 00d8 4DC914F6 		.ascii	"M\311\024\366h\341m\353j\3244\245\254+\032\346\226\016"
+ 2608      68E16DEB 
+ 2608      6AD434A5 
+ 2608      AC2B1AE6 
+ 2608      960E
+ 2609 00ea 115E23C3 		.ascii	"\021^#\303\341\226\320\247S\352Yi \032V,GE\270\\\313"
+ 2609      E196D0A7 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 61
+
+
+ 2609      53EA5969 
+ 2609      201A562C 
+ 2609      4745B85C 
+ 2610 00ff FE4392AF 		.ascii	"\376C\222\257>\034\015\353,\247EXE-\276]\262\017\302"
+ 2610      3E1C0DEB 
+ 2610      2CA74558 
+ 2610      452DBE5D 
+ 2610      B20FC2
+ 2611 0112 912820CE 		.ascii	"\221( \316\322\233,\332\243\031\356\2253\004\220\360"
+ 2611      D29B2CDA 
+ 2611      A319EE95 
+ 2611      330490F0 
+ 2612 0122 9548AE47 		.ascii	"\225H\256G\336\245\202\227B[\261\276b\342\252cX\376"
+ 2612      DEA58297 
+ 2612      425BB1BE 
+ 2612      62E2AA63 
+ 2612      58FE
+ 2613 0134 0D1E95B3 		.ascii	"\015\036\225\263XjR\010\262^BDO\007B\233\247\020d\020"
+ 2613      586A5208 
+ 2613      B25E4244 
+ 2613      4F07429B 
+ 2613      A7106410 
+ 2614 0148 42189DD7 		.ascii	"B\030\235\327\362\247(\273q\014\323\335\034\241\306"
+ 2614      F2A728BB 
+ 2614      710CD3DD 
+ 2614      1CA1C6
+ 2615 0157 E60EC289 		.ascii	"\346\016\302\211\030HX@6Ei\332B\357\010\032\337\311"
+ 2615      18485840 
+ 2615      364569DA 
+ 2615      42EF081A 
+ 2615      DFC9
+ 2616 0169 18487F72 		.ascii	"\030H\177r\002\234\302o\3618\006\021\312\305<\230\000"
+ 2616      029CC26F 
+ 2616      F1380611 
+ 2616      CAC53C98 
+ 2616      00
+ 2617 017a E03C2D92 		.ascii	"\340<-\222\022H\210\003\2356\350F\307\250Uw\261\272"
+ 2617      12488803 
+ 2617      9D36E846 
+ 2617      C7A85577 
+ 2617      B1BA
+ 2618 018c 3D11CEE0 		.ascii	"=\021\316\340\353b\335\255\002#\206\216\014om\3331\363"
+ 2618      EB62DDAD 
+ 2618      0223868E 
+ 2618      0C6F6DDB 
+ 2618      31F3
+ 2619 019e 0335A0D8 		.ascii	"\0035\240\330\277G\247\244>\213,\3012\222\252\025\216"
+ 2619      BF47A7A4 
+ 2619      3E8B2CC1 
+ 2619      3292AA15 
+ 2619      8E
+ 2620 01af F4EDA8BB 		.ascii	"\364\355\250\273\265\364g\277zL\025\210\362Q\204\024"
+ 2620      B5F467BF 
+ 2620      7A4C1588 
+ 2620      F2518414 
+ 2621 01bf 4DD6F8A1 		.ascii	"M\326\370\241}\3349\204\357\320\011T\373<F\213\327\015"
+ 2621      7DDC3984 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 62
+
+
+ 2621      EFD00954 
+ 2621      FB3C468B 
+ 2621      D70D
+ 2622 01d1 07A753F5 		.ascii	"\007\247S\365\225w\252_O\204\036\264A\224\367\257\377"
+ 2622      9577AA5F 
+ 2622      4F841EB4 
+ 2622      4194F7AF 
+ 2622      FF
+ 2623 01e2 E57DBB63 		.ascii	"\345}\273c\\/\302E\215\367\222\340\245\240\202'\021"
+ 2623      5C2FC245 
+ 2623      8DF792E0 
+ 2623      A5A08227 
+ 2623      11
+ 2624 01f3 4F208610 		.ascii	"O \206\020\217\341\2763\272>5r{\207\252\326<\276\375"
+ 2624      8FE1BE33 
+ 2624      BA3E3572 
+ 2624      7B87AAD6 
+ 2624      3CBEFD
+ 2625 0206 EBFEF0B6 		.ascii	"\353\376\360\266\005\367!0P\200\215\327!v\242\036\010"
+ 2625      05F72130 
+ 2625      50808DD7 
+ 2625      2176A21E 
+ 2625      08
+ 2626 0217 6A0002C7 		.ascii	"j\000\002\307#va\"\222z\023\020\017c\022\342\021L\001"
+ 2626      23766122 
+ 2626      927A1310 
+ 2626      0F6312E2 
+ 2626      114C01
+ 2627 022a E20268E0 		.ascii	"\342\002h\340\342\312\252\012B#g\332\233?\000\267\231"
+ 2627      E2CAAA0A 
+ 2627      422367DA 
+ 2627      9B3F00B7 
+ 2627      99
+ 2628 023b FAD38DCD 		.ascii	"\372\323\215\315\311t\341\345k8E\036\021yL\025\217\235"
+ 2628      C974E1E5 
+ 2628      6B38451E 
+ 2628      11794C15 
+ 2628      8F9D
+ 2629 024d 93A46767 		.ascii	"\223\244gg*T\361\312z\007\327W#+\\\006\300u,\211\"\025"
+ 2629      2A54F1CA 
+ 2629      7A07D757 
+ 2629      232B5C06 
+ 2629      C0752C89 
+ 2630 0263 69549AEB 		.ascii	"iT\232\353%f\367\026\016\377\260\312\201\2572\271\036"
+ 2630      2566F716 
+ 2630      0EFFB0CA 
+ 2630      81AF32B9 
+ 2630      1E
+ 2631 0274 4D42382A 		.ascii	"MB8*\305\033BW>\343c\245\232\010\342\347\025]\015K\271"
+ 2631      C51B4257 
+ 2631      3EE363A5 
+ 2631      9A08E2E7 
+ 2631      155D0D4B 
+ 2632 0289 F854D68A 		.ascii	"\370T\326\212\035\356Ej\306\360\252\367G\204l\361\366"
+ 2632      1DEE456A 
+ 2632      C6F0AAF7 
+ 2632      47846CF1 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 63
+
+
+ 2632      F6
+ 2633 029a 721FBE44 		.ascii	"r\037\276D\251~\356oYW\305\271\201\353\271\242U\012"
+ 2633      A97EEE6F 
+ 2633      5957C5B9 
+ 2633      81EBB9A2 
+ 2633      550A
+ 2634 02ac 2137489A 		.ascii	"!7H\232v\215\246\256\301\224\015eA|\201\332\211\027"
+ 2634      768DA6AE 
+ 2634      C1940D65 
+ 2634      417C81DA 
+ 2634      8917
+ 2635 02be 8E6DF1D9 		.ascii	"\216m\361\331\220\037\304\347\311\326\307\330\013\311"
+ 2635      901FC4E7 
+ 2635      C9D6C7D8 
+ 2635      0BC9
+ 2636 02cc 36C804B2 		.ascii	"6\310\004\262K\203h&;q\314^\035\304\005dO\030\263\007"
+ 2636      4B836826 
+ 2636      3B71CC5E 
+ 2636      1DC40564 
+ 2636      4F18B307 
+ 2637 02e0 218879E4 		.ascii	"!\210y\344H\222\225nR%:o\0154v\266\356eB\034\341\275"
+ 2637      4892956E 
+ 2637      52253A6F 
+ 2637      0D3476B6 
+ 2637      EE65421C 
+ 2638 02f6 D2AA79BF 		.ascii	"\322\252y\277<t\240\277i\032\236\321\274#\375\031\242"
+ 2638      3C74A0BF 
+ 2638      691A9ED1 
+ 2638      BC23FD19 
+ 2638      A2
+ 2639 0307 CF7A05F0 		.ascii	"\317z\005\360,\306\331q\206\226\271o\250\253\203\341"
+ 2639      2CC6D971 
+ 2639      8696B96F 
+ 2639      A8AB83E1 
+ 2640 0317 390DF37B 		.ascii	"9\015\363{W2\236G\250\344\025S\205\316\037\321M\236"
+ 2640      57329E47 
+ 2640      A8E41553 
+ 2640      85CE1FD1 
+ 2640      4D9E
+ 2641 0329 D6C2D619 		.ascii	"\326\302\326\031\236\322a<\015=\200@\307u\274&\0263"
+ 2641      9ED2613C 
+ 2641      0D3D8040 
+ 2641      C775BC26 
+ 2641      1633
+ 2642 033b 6D3F05E6 		.ascii	"m?\005\346\011\367\020\351G\314\341\300\241H\177\222"
+ 2642      09F710E9 
+ 2642      47CCE1C0 
+ 2642      A1487F92 
+ 2643 034b 6017A6FA 		.ascii	"`\027\246\372\333@\343\265\326\343\321\246n\264\246"
+ 2643      DB40E3B5 
+ 2643      D6E3D1A6 
+ 2643      6EB4A6
+ 2644 035a 4BEFE94F 		.ascii	"K\357\351O\366\275\217BP!X!O!\301rs\000\252\305\232"
+ 2644      F6BD8F42 
+ 2644      50215821 
+ 2644      4F21C172 
+ 2644      7300AAC5 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 64
+
+
+ 2645 036f F7CC39E4 		.ascii	"\367\3149\344\013b7\262\007d\247\205t3\270&\371\210"
+ 2645      0B6237B2 
+ 2645      0764A785 
+ 2645      7433B826 
+ 2645      F988
+ 2646 0381 B6D2E13D 		.ascii	"\266\322\341=\223I\027_T\227=\272\016\337\213\341Qe"
+ 2646      9349175F 
+ 2646      54973DBA 
+ 2646      0EDF8BE1 
+ 2646      5165
+ 2647 0393 DA7D3771 		.ascii	"\332}7q\277\017 n22\231\364\367\230\016\223\357\006"
+ 2647      BF0F206E 
+ 2647      323299F4 
+ 2647      F7980E93 
+ 2647      EF06
+ 2648 03a5 1F84616C 		.ascii	"\037\204al\365\211\253\"\301\037\276\307\251\245\252"
+ 2648      F589AB22 
+ 2648      C11FBEC7 
+ 2648      A9A5AA
+ 2649 03b4 34EA847D 		.ascii	"4\352\204}\356k\022\201\2248\372\007e\017\311\360\256"
+ 2649      EE6B1281 
+ 2649      9438FA07 
+ 2649      650FC9F0 
+ 2649      AE
+ 2650 03c5 49A38B6E 		.ascii	"I\243\213ni\243E_\320f:\330f\222\347\345\266g\264.\333"
+ 2650      69A3455F 
+ 2650      D0663AD8 
+ 2650      6692E7E5 
+ 2650      B667B42E 
+ 2651 03da F89D9B39 		.ascii	"\370\235\2339E\272\032g\215J\021\271JR\364hy\273\207"
+ 2651      45BA1A67 
+ 2651      8D4A11B9 
+ 2651      4A52F468 
+ 2651      79BB87
+ 2652 03ed A2525C14 		.ascii	"\242R\\\024R@\254\024\275w\244\270\024+\205\334|D*\020"
+ 2652      5240AC14 
+ 2652      BD77A4B8 
+ 2652      142B85DC 
+ 2652      7C442A10 
+ 2653 0401 B3F15D43 		.ascii	"\263\361]CI\202D\333x\367\325\346x\261Zq\263\225\350"
+ 2653      498244DB 
+ 2653      78F7D5E6 
+ 2653      78B15A71 
+ 2653      B395E8
+ 2654 0414 47E4E787 		.ascii	"G\344\347\207\303\342;}b'9V\301z^1\027\270\000\325p"
+ 2654      C3E23B7D 
+ 2654      62273956 
+ 2654      C17A5E31 
+ 2654      17B800D5 
+ 2655 0429 C45F919D 		.ascii	"\304_\221\235l\274\234DY<\205\377\322Lb5p\324R+\002"
+ 2655      6CBC9C44 
+ 2655      593C85FF 
+ 2655      D24C6235 
+ 2655      70D4522B 
+ 2656 043e 8499F5E4 		.ascii	"\204\231\365\344\354\202\334b\373r\373\302\374e\231"
+ 2656      EC82DC62 
+ 2656      FB72FBC2 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 65
+
+
+ 2656      FC6599
+ 2657 044d 19C68C0C 		.ascii	"\031\306\214\014cVA\216\313\345)X\344v\276f\363:\013"
+ 2657      6356418E 
+ 2657      CBE52958 
+ 2657      E476BE66 
+ 2657      F33A0B
+ 2658 0460 162F49CF 		.ascii	"\026/I\317_b\316\312\234\2371#+\335\234\263\350\331"
+ 2658      5F62CECA 
+ 2658      9C9F3123 
+ 2658      2BDD9CB3 
+ 2658      E8D9
+ 2659 0472 79E6BCE7 		.ascii	"y\346\274\347\362\340~\243\321\244\375\234\036\223\333"
+ 2659      F2E07EA3 
+ 2659      D1A4FD9C 
+ 2659      1E93DB
+ 2660 0481 6BF2B8AD 		.ascii	"k\362\270\255&kqQYI\241\303n5Z\2019\\\2511\266\361\321"
+ 2660      266B7151 
+ 2660      5949A1C3 
+ 2660      6E355A81 
+ 2660      395CA931 
+ 2661 0498 ACCCCC15 		.ascii	"\254\314\314\02533m\240\220\307\246\270\334v's\255\340"
+ 2661      33336DA0 
+ 2661      90C7A6B8 
+ 2661      DC762773 
+ 2661      ADE0
+ 2662 04aa 85EE95CC 		.ascii	"\205\356\225\314[\244\224\332J\212t\245\313\013=6\346"
+ 2662      5BA494DA 
+ 2662      4A8A74A5 
+ 2662      CB0B3D36 
+ 2662      E6
+ 2663 04bb 75FD97DA 		.ascii	"u\375\227\332^b}cu\221\215\350=e\036c1\350\005n\221"
+ 2663      5E627D63 
+ 2663      75918DE8 
+ 2663      3D651E63 
+ 2663      31E8056E 
+ 2664 04d0 DB3E3B16 		.ascii	"\333>;\026gu:\034\316\022\223m\215\327\224\263\330l"
+ 2664      67753A1C 
+ 2664      CE12936D 
+ 2664      8DD794B3 
+ 2664      D86C
+ 2665 04e2 CA35E7E7 		.ascii	"\3125\347\347\345\233r\235n\233)o,\335\341\261{\226"
+ 2665      E59B729D 
+ 2665      6E9B296F 
+ 2665      2CDDE1B1 
+ 2665      7B96
+ 2666 04f4 ADB45A89 		.ascii	"\255\264Z\211\342\341\273\244\272\234n\257G$\2779+\335"
+ 2666      E2E1BBA4 
+ 2666      BA9C6EAF 
+ 2666      4724BF39 
+ 2666      2BDD
+ 2667 0506 4CC5AC94 		.ascii	"L\305\254\224L\320\211\346\374\305i\242\"\265<=\355"
+ 2667      4CD089E6 
+ 2667      FCC569A2 
+ 2667      22B53C3D 
+ 2667      ED
+ 2668 0517 C119C0DC 		.ascii	"\301\031\300\334\240w\330\034Nw\031\374\013\331t\212"
+ 2668      A077D81C 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 66
+
+
+ 2668      4E7719FC 
+ 2668      0BD9748A 
+ 2669 0527 09       		.ascii	"\011"
+ 2670              		.text
+ 2671              		.section	.gnu.lto_.symbol_nodes.bfad147d,"e",%progbits
+ 2672 0000 789C75CE 		.ascii	"x\234u\3161\016\202@\020\205\3417o\2606\200\322r\324"
+ 2672      310E8240 
+ 2672      1085E137 
+ 2672      6FB03680 
+ 2672      D272D4
+ 2673 0013 D9101A51 		.ascii	"\331\020\032Q\343^\203\216\332\232\212\302S\254^C\221"
+ 2673      E35E838E 
+ 2673      DA9A8AC2 
+ 2673      53AC5E43 
+ 2673      91
+ 2674 0024 858EFDAB 		.ascii	"\205\216\375\253I\276W\314\007s\274\320r7\227\211\177"
+ 2674      49BE57CC 
+ 2674      0773BCD0 
+ 2674      72379789 
+ 2674      7F
+ 2675 0035 01063C7D 		.ascii	"\001\006<}\303?t\264b\017\344N+\277k\365\202\200\363"
+ 2675      C33F74B4 
+ 2675      620FE44E 
+ 2675      2BBF6BF5 
+ 2675      8280F3
+ 2676 0048 6EB11BED 		.ascii	"n\261\033\355\224\262+\355\234\262\007\255J\230\"\213"
+ 2676      94B22BED 
+ 2676      9CB207AD 
+ 2676      4A98228B 
+ 2677 0058 6FB4A2D0 		.ascii	"o\264\242\320~z\017*\341\250`<\333R\345\020\007AT\266"
+ 2677      7E7A0F2A 
+ 2677      E1A8603C 
+ 2677      DB52E510 
+ 2677      074154B6 
+ 2678 006c 41A1B20E 		.ascii	"A\241\262\016\306\012?\177\375TV"
+ 2678      C60A3F7F 
+ 2678      FD5456
+ 2679              		.text
+ 2680              		.section	.gnu.lto_.refs.bfad147d,"e",%progbits
+ 2681 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
+ 2681      00020000 
+ 2681      0A0002
+ 2682              		.text
+ 2683              		.section	.gnu.lto_.decls.bfad147d,"e",%progbits
+ 2684 0000 789CAD59 		.ascii	"x\234\255Y}PTW\226\177\367\336G\363\370R\243c\015\316"
+ 2684      7D505457 
+ 2684      967FF7DE 
+ 2684      47F3F852 
+ 2684      A3630DCE 
+ 2685 0014 2633CEEE 		.ascii	"&3\316\356l\215\261*\032\265\262I\346\257u\263\223\215"
+ 2685      6C8DB12A 
+ 2685      1AB5B249 
+ 2685      E6AF75B3 
+ 2685      938D
+ 2686 0026 55E34C2A 		.ascii	"U\343L*fj\266j\254\"\244\351\010\011\320lw\023u\366"
+ 2686      666AB66A 
+ 2686      AC22A4E9 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 67
+
+
+ 2686      0809D06C 
+ 2686      771375F6 
+ 2687 003a 8F7DDD20 		.ascii	"\217}\335 \037\012\322\200\002\"\" ~$\022m?AAi>\004"
+ 2687      1F0AD280 
+ 2687      02222220 
+ 2687      7E24126D 
+ 2687      3F414169 
+ 2688 0050 E54B05FC 		.ascii	"\345K\005\374\340S\021A\344C@P\021A\366\334\373n\177"
+ 2688      E0531141 
+ 2688      E4434050 
+ 2688      1141F6DC 
+ 2688      FB6E7F
+ 2689 0063 BC366677 		.ascii	"\2746fw\253\266\313\303{\367\235s\317\371\235s\3179"
+ 2689      ABB6CBC3 
+ 2689      7BF79D73 
+ 2689      CFF99D73 
+ 2689      CF39
+ 2690 0075 F7BEE717 		.ascii	"\367\276\347\027\177'\010\271^\202`C\2020\007?\"\010"
+ 2690      7F2708B9 
+ 2690      5E826043 
+ 2690      8230073F 
+ 2690      2208
+ 2691 0087 C22DA09F 		.ascii	"\302-\240\237\003\331\201\372\200\372\201\036\000\015"
+ 2691      03D981FA 
+ 2691      80FA811E 
+ 2691      000D
+ 2692 0095 003D041A 		.ascii	"\000=\004\032\0042\201|4\320N ;\320\177\002\225\303"
+ 2692      0432817C 
+ 2692      34D04E20 
+ 2692      3BD07F02 
+ 2692      95C3
+ 2693 00a7 F366A006 		.ascii	"\363f\240\006\240\257\201\252\340Y\023P\033P7P\037\320"
+ 2693      A0AF81AA 
+ 2693      E0591350 
+ 2693      1B503750 
+ 2693      1FD0
+ 2694 00b9 10D028D0 		.ascii	"\020\320(\320>0\364\217\\O\323O\350\250\204g\317\200"
+ 2694      3E30F48F 
+ 2694      5C4FD34F 
+ 2694      E8A88467 
+ 2694      CF80
+ 2695 00cb A6816681 		.ascii	"\246\201f\201&)N \214\005\201`E\337 P/\310\266\001\335"
+ 2695      26294E20 
+ 2695      8C058160 
+ 2695      45DF2050 
+ 2695      2FC8B601 
+ 2696 00e0 07EA06EA 		.ascii	"\007\352\006\352\001\272\007t\007\310\013\344|\201\374"
+ 2696      01BA0774 
+ 2696      07C80BE4 
+ 2696      7C81FC
+ 2697 00ef B08281E2 		.ascii	"\260\202\201\342\272\017d\004z\037(\004\310\037+\030"
+ 2697      BA0F6404 
+ 2697      7A1F2804 
+ 2697      C81F2B18 
+ 2698 00ff BB804E01 		.ascii	"\273\200N\001\266\2679\2666\356\343\377\005\327F\340"
+ 2698      B6B739B6 
+ 2698      36EEE3FF 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 68
+
+
+ 2698      05D746E0 
+ 2699 010f 0760C5CF 		.ascii	"\007`\305\317G@\311\334\267\370\377\007\234Z\017\254"
+ 2699      4740C9DC 
+ 2699      B7F8FF07 
+ 2699      9C5A0FAC 
+ 2700 011f 9A4548D4 		.ascii	"\232EH\324,FK%,\210\232\364QK\235\377\374_#\004\377"
+ 2700      2C464B25 
+ 2700      2C889AF4 
+ 2700      514B9DFF 
+ 2700      FC5F2304 
+ 2701 0134 ECB23C26 		.ascii	"\354\262<&[b4\302{\253\205RT\206\204\213\350\002\262"
+ 2701      5B6234C2 
+ 2701      7BAB8552 
+ 2701      5486848B 
+ 2701      E802B2
+ 2702 0147 C8F2CCAF 		.ascii	"\310\362\314\257\312\020.C\"NO\276\364\004\317\247b"
+ 2702      CA102E43 
+ 2702      224E4FBE 
+ 2702      F404CFA7 
+ 2702      62
+ 2703 0158 764F3111 		.ascii	"vO1\0217\367\355\274\205\336\000\346\224l\217\365)G"
+ 2703      37F7EDBC 
+ 2703      85DE00E6 
+ 2703      946C8FF5 
+ 2703      2947
+ 2704 016a E7D139BE 		.ascii	"\347\3219\276H\"N\255\330\323\341\343\344\3319\257B"
+ 2704      48224EAD 
+ 2704      D8D3E1E3 
+ 2704      E4D939AF 
+ 2704      42
+ 2705 017b 01B340F2 		.ascii	"\001\263@\362\026$?AzCxOf?\313/\204K\300\202\337\207"
+ 2705      16243F41 
+ 2705      7A43784F 
+ 2705      663FCB2F 
+ 2705      844BC082 
+ 2706 0191 FE226E3C 		.ascii	"\376\"n<\223w\027\373\300`H\230\240\342\030\260/\020"
+ 2706      937717FB 
+ 2706      C0604898 
+ 2706      A0E218B0 
+ 2706      2F10
+ 2707 01a3 F199B663 		.ascii	"\361\231\266c\331\2327AzR\226\227\015\013W\320e\230"
+ 2707      D99A3741 
+ 2707      7A529697 
+ 2707      0D0B57D0 
+ 2707      6598
+ 2708 01b5 5287845A 		.ascii	"R\207\204Zf\360f\322\321B/\247\301:n\260\036\325 A\372"
+ 2708      66F066D2 
+ 2708      D1422FA7 
+ 2708      C13A6EB0 
+ 2708      1ED52041 
+ 2709 01ca 13F0AD19 		.ascii	"\023\360\255\031W\017\373z\362\033\020\023\000\033\222"
+ 2709      570FFB7A 
+ 2709      F21B1013 
+ 2709      001B92
+ 2710 01d9 F41741B3 		.ascii	"\364\027A\263\014\321\354\236\017WA\332\010s\036\325"
+ 2710      0CD1EC9E 
+ 2710      0F5741DA 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 69
+
+
+ 2710      08731ED5 
+ 2711 01e9 ED4E67DE 		.ascii	"\355Ng\336O\311r\342B\201MiF\313j\320ut\015I!\202\346"
+ 2711      4FC972E2 
+ 2711      42814D69 
+ 2711      46CB6AD0 
+ 2711      75740D49 
+ 2712 0200 6DF45F40 		.ascii	"m\364_@\202\024&\000D;\314x2w\262\310\213\316\230\221"
+ 2712      82142600 
+ 2712      443BCC78 
+ 2712      3277B2C8 
+ 2712      8BCE9891 
+ 2713 0214 E51379FE 		.ascii	"\345\023y\376\302m\004y{\013\275]\203n\242\033\020\262"
+ 2713      C26D0479 
+ 2713      7B0BBD5D 
+ 2713      836EA21B 
+ 2713      10B2
+ 2714 0226 EA8E6B05 		.ascii	"\352\216k\005\336N\024m\034e;\220d\022\244\277Q$\201"
+ 2714      DE4E146D 
+ 2714      1C653B90 
+ 2714      6412A4BF 
+ 2714      512481
+ 2715 0239 541512E7 		.ascii	"T\025\022\347\305w\274H!\313\227\007.\207\037\2350\227"
+ 2715      C577BC48 
+ 2715      21CB9707 
+ 2715      2E871F9D 
+ 2715      3097
+ 2716 024b 327AE9E3 		.ascii	"2z\351\343\236m\000%\315\266\240\035\265\242\036>\233"
+ 2716      9E6D0025 
+ 2716      CDB6A01D 
+ 2716      B5A21E3E 
+ 2716      9B
+ 2717 025c 56C61A01 		.ascii	"V\306\032\001Dl\315q)\362\322\330$q\010\262\302\301"
+ 2717      446CCD71 
+ 2717      29F2D2D8 
+ 2717      247108B2 
+ 2717      C2C1
+ 2718 026e A539781E 		.ascii	"\2459x\036\011\020\266X \037\310\011\232\021=\340\366"
+ 2718      0910B658 
+ 2718      201FC809 
+ 2718      9A113DE0 
+ 2718      F6
+ 2719 027f 7DD487EE 		.ascii	"}\324\207\356\240{\250\027\335\245\261\247\213|\262"
+ 2719      A07BA817 
+ 2719      DDA5B1A7 
+ 2719      8B7CB2
+ 2720 028e 26E39779 		.ascii	"&\343\227y\2268\334\202\256\252\324\203\002\252\377"
+ 2720      9638DC82 
+ 2720      AEAAD483 
+ 2720      02AAFF
+ 2721 029d 3CD7DF88 		.ascii	"<\327\337\210\252U\372\231\365\261\351s\343\350\262"
+ 2721      AA55FA99 
+ 2721      F5B1E973 
+ 2721      E3E8B2
+ 2722 02ac 7DAD1D75 		.ascii	"}\255\035u:\231\253\034\310\322\370\314v\324\341\316"
+ 2722      3A99AB1C 
+ 2722      C8D2F8CC 
+ 2722      76D4E1CE 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 70
+
+
+ 2723 02bc 04BD22AE 		.ascii	"\004\275\"\256\312\313\033\363w\306\304\301\355g\253"
+ 2723      CACB1BF3 
+ 2723      77C6C4C1 
+ 2723      ED67AB
+ 2724 02cb 7AEC7259 		.ascii	"z\354rY%q\362\3329\357\001\343Y\314]\263\256\364[\246"
+ 2724      2571F2DA 
+ 2724      39EF01E3 
+ 2724      59CC5DB3 
+ 2724      AEF45BA6 
+ 2725 02df B006182B 		.ascii	"\260\006\030+e_\321u\311\311\252\347\323\0362^Gvi\213"
+ 2725      655FD175 
+ 2725      C9C9AAE7 
+ 2725      D31E325E 
+ 2725      4776698B 
+ 2726 02f3 E8E40D29 		.ascii	"\350\344\015)\253\312\332\203\210\013\037\226\272%\311"
+ 2726      ABCADA83 
+ 2726      880B1F96 
+ 2726      BA25C9
+ 2727 0302 5B0A6B48 		.ascii	"[\012kHIZ\273 u\260T\371@\202z\223\206)\364\373\023"
+ 2727      495ABB20 
+ 2727      75B054F9 
+ 2727      40827A93 
+ 2727      8629F4FB 
+ 2728 0317 4593F303 		.ascii	"E\223\363\003\225\034\226iW\024\306\3208\315(\252\314"
+ 2728      951C9669 
+ 2728      5714C6D0 
+ 2728      38CD28AA 
+ 2728      CC
+ 2729 0328 BC7FA808 		.ascii	"\274\177\250\010;\225\215s\020\217\351Z?\001\005/\251"
+ 2729      3B958D73 
+ 2729      108FE95A 
+ 2729      3F01052F 
+ 2729      A9
+ 2730 0339 82ACC6B2 		.ascii	"\202\254\306\262&\037\217\014\233td\030\330zW\332\216"
+ 2730      261F8F0C 
+ 2730      9B746418 
+ 2730      D87A57DA 
+ 2730      8E
+ 2731 034a 05291D28 		.ascii	"\005)\035(\013j\027\337\233\374\3410V\331{\216\246\025"
+ 2731      0B6A17DF 
+ 2731      9BFCE130 
+ 2731      56D97B8E 
+ 2731      A615
+ 2732 035c 7B523E15 		.ascii	"{R>\025H\257K\034\362U\011\274p\010\000\240\222\241"
+ 2732      48AF4B1C 
+ 2732      F25509BC 
+ 2732      700800A0 
+ 2732      92A1
+ 2733 036e 1157C066 		.ascii	"\021W\300f8 \332\230\244\"\332\031\312\313\312\253|"
+ 2733      3820DA98 
+ 2733      A422DA19 
+ 2733      CACBCAAB 
+ 2733      7C
+ 2734 037f 20E3A844 		.ascii	" \343\250D\341\341\234\270\267rA.I\234ES\310\214=\026"
+ 2734      E1E19CB8 
+ 2734      B772412E 
+ 2734      499C4553 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 71
+
+
+ 2734      C88C3D16 
+ 2735 0393 34972FE8 		.ascii	"4\227/\350,z\351\316t\3174\226\373\317\201[\203\346"
+ 2735      2C7AE9CE 
+ 2735      74CF3496 
+ 2735      FBCF815B 
+ 2735      83E6
+ 2736 03a5 908C1984 		.ascii	"\220\214\031\204c\351\003s\232@\265\310\013w\021\360"
+ 2736      63E90373 
+ 2736      9A40B5C8 
+ 2736      0B7711F0 
+ 2737 03b5 7999D402 		.ascii	"y\231\324\002\376vPw\252\013\247\006\211\312\235m8\016"
+ 2737      FE765077 
+ 2737      AA0BA706 
+ 2737      89CA9D6D 
+ 2737      380E
+ 2738 03c7 2BFEF652 		.ascii	"+\376\366R\201\357l\223\351\336*\201x\207\200\210\037"
+ 2738      81EF6C93 
+ 2738      E9DE2A81 
+ 2738      78878088 
+ 2738      1F
+ 2739 03d8 EC493BE6 		.ascii	"\354I;\346\312\202\004\2162\021\314\210\342\331\341"
+ 2739      CA82048E 
+ 2739      3211CC88 
+ 2739      E2D9E1
+ 2740 03e7 5BD7BC02 		.ascii	"[\327\274\002\227\313,\362\200\204\361\266\341\3550"
+ 2740      97CB2CF2 
+ 2740      8084F1B6 
+ 2740      E1ED30
+ 2741 03f6 770756AA 		.ascii	"w\007V\252\301\366\370\271,/\314\222\022\361\024\332"
+ 2741      C1F6F8B9 
+ 2741      2C2FCC92 
+ 2741      12F114DA 
+ 2742 0406 EEEEBF88 		.ascii	"\356\356\277\210\367\367\3467\370\005\252'\307\273&"
+ 2742      F7F7E637 
+ 2742      F805AA27 
+ 2742      C7BB26
+ 2743 0415 4B23E0C0 		.ascii	"K#\340\300(\320S\240Y\240XB\235\351k\261z\251\260\246"
+ 2743      28D053A0 
+ 2743      59A05842 
+ 2743      9DE96BB1 
+ 2743      7AA9B0A6 
+ 2744 0429 E23407D6 		.ascii	"\3424\007\326\366\230\252\321\371N\254i\334\034,\274"
+ 2744      F698AAD1 
+ 2744      F94EAC69 
+ 2744      DC1C2CBC 
+ 2745 0439 20A51241 		.ascii	" \245\022A\343\315:\2237\\\351\344-\322\036\252\360"
+ 2745      E3CD3A93 
+ 2745      375CE9E4 
+ 2745      2DD21EAA 
+ 2745      F0
+ 2746 044a D9CBDA6D 		.ascii	"\331\313\332m\342|Y\225<\231\330\273\006e\340\335X\332"
+ 2746      E27C5995 
+ 2746      3C99D8BB 
+ 2746      0665E0DD 
+ 2746      58DA
+ 2747 045c 4F04E920 		.ascii	"O\004\351 \025\213\215\337sE\2354\331x/\017\342q&\360"
+ 2747      158B8DDF 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 72
+
+
+ 2747      73459D34 
+ 2747      D9782F0F 
+ 2747      E27126F0 
+ 2748 0470 64FF5335 		.ascii	"d\377S5\260\034\207\200\210\237?-,\014p\002\333\307"
+ 2748      B01C8780 
+ 2748      889F3F2D 
+ 2748      2C0C7002 
+ 2748      DBC7
+ 2749 0482 81E55260 		.ascii	"\201\345R`%tr\325\221\212I\215'\177?\246\002\"\256\333"
+ 2749      257472D5 
+ 2749      918A498D 
+ 2749      277F3FA6 
+ 2749      0222AEDB 
+ 2750 0496 B6EFA26B 		.ascii	"\266\357\242k\005\362\370\344|:\271\036\3405\003u\200"
+ 2750      05F2F8E4 
+ 2750      7C3AB91E 
+ 2750      E0350375 
+ 2750      80
+ 2751 04a7 9285D3E9 		.ascii	"\222\205\323\351wo\315[\276d\271\362\243\036\035\271"
+ 2751      776FCD5B 
+ 2751      BE64B9F2 
+ 2751      A31E1DB9 
+ 2752 04b7 F8F8EA6F 		.ascii	"\370\370\352o\224\374\313\302\007\360!\367\370\253\343"
+ 2752      94FCCBC2 
+ 2752      07F021F7 
+ 2752      F8ABE3
+ 2753 04c6 2E1C02A8 		.ascii	".\034\002\250\337\341\203\270\010\377\200\217\340\243"
+ 2753      DFE183B8 
+ 2753      08FF808F 
+ 2753      E0A3
+ 2754 04d4 F87B7CD8 		.ascii	"\370{|\330\261\2029\351J\226>A;_Qa+IS\230Yx\327\253"
+ 2754      B18239E9 
+ 2754      4A963E41 
+ 2754      3B5F5161 
+ 2754      2B495398 
+ 2755 04ec CCD61407 		.ascii	"\314\326\024\007\263P\315\244\235n&\355 k\223\217Q\312"
+ 2755      B350CDA4 
+ 2755      9D6E26ED 
+ 2755      206B938F 
+ 2755      51CA
+ 2756 04fe 2B4C5B3B 		.ascii	"+L[;W\233\216\255\2572\255i\216\016]\360*3\2273\363"
+ 2756      579B8EAD 
+ 2756      AF32AD69 
+ 2756      8E0E5DF0 
+ 2756      2A339733 
+ 2757 0513 F11E3513 		.ascii	"\361\0365\023v\204w\2410\226Jq\242\240y\013J\005\376"
+ 2757      768477A1 
+ 2757      30964A71 
+ 2757      A2A0790B 
+ 2757      4A05FE
+ 2758 0526 08D20E11 		.ascii	"\010\322\016\021\"\374\370\314\354\224\357|\367}\374"
+ 2758      22FCF8CC 
+ 2758      EC94EF7C 
+ 2758      F77DFC
+ 2759 0535 147EAB06 		.ascii	"\024~\253\006\235\304'\350\256\271LJ\027\005i\017\025"
+ 2759      9DC427E8 
+ 2759      AEB94C4A 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 73
+
+
+ 2759      1705690F 
+ 2759      15
+ 2760 0546 6CEE2F4D 		.ascii	"l\356/M\362Q\011\026;\004\245|\020:L\205\366\037\036"
+ 2760      F2510916 
+ 2760      3B04A57C 
+ 2760      103A4C85 
+ 2760      F61F1E
+ 2761 0559 3828AA84 		.ascii	"8(\252\204\316;\205l T\014t\201\012\026\235M*\024U)"
+ 2761      CE3B856C 
+ 2761      20540C74 
+ 2761      810A169D 
+ 2761      4D2A1455 
+ 2762 056e 731197F3 		.ascii	"s\021\227\363\234j\240\002yU\245M\352\312\265;\004D"
+ 2762      9C6AA002 
+ 2762      7955A54D 
+ 2762      EACAB53B 
+ 2762      0444
+ 2763 0580 DCB9A3A1 		.ascii	"\334\271\243\241\305\325\210*\270\253\2254-\332\301"
+ 2763      C5D5882A 
+ 2763      B8AB9534 
+ 2763      2DDAC1
+ 2764 058f 420F501F 		.ascii	"B\017P\037\320\000U\2248:\364\013\225\236\032\\\353"
+ 2764      D0005594 
+ 2764      383AF40B 
+ 2764      959E1A5C 
+ 2764      EB
+ 2765 05a0 D0F334E6 		.ascii	"\320\3634\346v\247\253]\327r=\227\251\236I\230+6\326"
+ 2765      76A7AB5D 
+ 2765      D7723D97 
+ 2765      A99E4998 
+ 2765      2B36D6
+ 2766 05b3 FEB0D7CF 		.ascii	"\376\260\327\317\263\310\257\340:\230_\317Sd\252\260"
+ 2766      B3C8AFE0 
+ 2766      3A985FCF 
+ 2766      5364AAB0 
+ 2767 05c3 B5E790FF 		.ascii	"\265\347\220\377\3712\250\240,\3512\276\004L\367\300"
+ 2767      F932A8A0 
+ 2767      2CE932BE 
+ 2767      044CF7C0 
+ 2768 05d3 2F42FE10 		.ascii	"/B\376\020\306\273\320 \275\004\311\006T\354\005v\367"
+ 2768      C6BBD020 
+ 2768      BD04C906 
+ 2768      54EC0576 
+ 2768      F7
+ 2769 05e4 5E1896D5 		.ascii	"^\030\226\325]\347\032\276\316\275\277B\005\372\277"
+ 2769      5DE71ABE 
+ 2769      CEBDBF42 
+ 2769      05FABF
+ 2770 05f3 AF19462A 		.ascii	"\257\031F*\201f\207\000\364\254\316\213\023\256\242"
+ 2770      81668700 
+ 2770      F4ACCE8B 
+ 2770      13AEA2
+ 2771 0602 68E1F65A 		.ascii	"h\341\366Zi\301Hi\365\307m\363\002\225\032PZd#n\300"
+ 2771      69C14869 
+ 2771      F5C76DF3 
+ 2771      02951A50 
+ 2771      5A64236E 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 74
+
+
+ 2772 0617 A0FE06CC 		.ascii	"\240\376\006\314\276\205o\342\333\034wI\341\341\356"
+ 2772      BE856FE2 
+ 2772      DB1C7749 
+ 2772      E1E1EE
+ 2773 0626 B8F9B2D5 		.ascii	"\270\371\262\325\034\203Z\361KtC\325\202i2u\362\006"
+ 2773      1C835AF1 
+ 2773      4B7443D5 
+ 2773      82693275 
+ 2773      F206
+ 2774 0638 DD0ADDEB 		.ascii	"\335\012\335\353\206g\002\217\325\3448\367y\007S9F@"
+ 2774      8667028F 
+ 2774      D5E438F7 
+ 2774      79075339 
+ 2774      4640
+ 2775 064a 5739D0D6 		.ascii	"W9\320\326#\005\252\3557\253\355K]\020\211^pTJ\230\262"
+ 2775      2305AAED 
+ 2775      37ABED4B 
+ 2775      5D10895E 
+ 2775      70544A98 
+ 2776 065f 266080BB 		.ascii	"&`\200\273D\251\331\222\372\337\230Y\315\266\341\253"
+ 2776      44A9D992 
+ 2776      FADF9859 
+ 2776      CDB6E1AB 
+ 2777 066f F80E6673 		.ascii	"\370\016fs]5\225\265C\201\224\204;\200\351Qp\266z\231"
+ 2777      5D3595B5 
+ 2777      43819484 
+ 2777      3B80E951 
+ 2777      70B67A99 
+ 2778 0683 312DB81D 		.ascii	"1-\270\035\230lcp2\335\220\010w\000H\027\356\306\235"
+ 2778      986C6370 
+ 2778      32DD9008 
+ 2778      77004817 
+ 2778      EEC69D
+ 2779 0696 7CB7B8CC 		.ascii	"|\267\270\314\216^\2424\000p\376~[\\\316%\177\336E\002"
+ 2779      8E5EA234 
+ 2779      0070FE7E 
+ 2779      5B5CCE25 
+ 2779      7FDE4502 
+ 2780 06aa 973B7ED4 		.ascii	"\227;~\324ck\206\243dG\321 \267\375\310u\2629\233\341"
+ 2780      636B86A3 
+ 2780      6447D120 
+ 2780      B7FDC875 
+ 2780      B2399BE1 
+ 2781 06be A8CB7BD8 		.ascii	"\250\313{\330\301\036v\262\307Z\233\012\337\274+\307"
+ 2781      C11E76B2 
+ 2781      C75A9B0A 
+ 2781      DFBC2BC7 
+ 2782 06ce E1127C16 		.ascii	"\341\022|\026\330P\026\302q0\177\006+\333\204\263\311"
+ 2782      D85016C2 
+ 2782      71307F06 
+ 2782      2BDB84B3 
+ 2782      C9
+ 2783 06df 4CA8542B 		.ascii	"L\250T+~\235Ow8\035\353\324\034\203\235\206\313v\356"
+ 2783      7E9D4F77 
+ 2783      381DEBD4 
+ 2783      1C839D86 
+ 2783      CB76EE
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 75
+
+
+ 2784 06f2 94979A93 		.ascii	"\224\227\232\223\304R|\316M\263\262\215\332n\2668b\362"
+ 2784      C4527CCE 
+ 2784      4DB3B28D 
+ 2784      DA6EB638 
+ 2784      62F2
+ 2785 0704 0C342B31 		.ascii	"\0144+1y\212TA\351\301w1\364\363A\210\312(\036\306C"
+ 2785      798A5441 
+ 2785      E9C17731 
+ 2785      F4F34188 
+ 2785      CA281EC6 
+ 2786 0719 781C8FE0 		.ascii	"x\034\217\340\307x\000\367\3411\374\010?\300\017q?\356"
+ 2786      C77800F7 
+ 2786      E131FC08 
+ 2786      3FC00F71 
+ 2786      3FEE
+ 2787 072b C513F83E 		.ascii	"\305\023\370>\215\027U\332\351\014t\025v(\255t\302m"
+ 2787      8D1755DA 
+ 2787      E90C7415 
+ 2787      7628AD74 
+ 2787      C26D
+ 2788 073d E66B5487 		.ascii	"\346kT\207\253\235p]'\3001\353N%\214\364\220\347`w9"
+ 2788      AB9D705D 
+ 2788      27C031EB 
+ 2788      4E258CF4 
+ 2788      90E76077 
+ 2789 0752 4F9863B6 		.ascii	"O\230c\266\226B\306>\204\223U\3162\335c\347\353}\341"
+ 2789      9642C63E 
+ 2789      849355CE 
+ 2789      32DD63E7 
+ 2789      EB7DE1
+ 2790 0765 7C780737 		.ascii	"|x\0077\001\317-5\250\336n\036\340\323\330\346\026\206"
+ 2790      01CF2D35 
+ 2790      A8DE6E1E 
+ 2790      E0D3D8E6 
+ 2790      1686
+ 2791 0777 632CC063 		.ascii	"c,\300cOw(F+\361\005\354nT\351\232'w:\216\226eN\356"
+ 2791      4F772846 
+ 2791      2BF105EC 
+ 2791      6E54E99A 
+ 2791      27773A8E 
+ 2792 078f 71EC509C 		.ascii	"q\354P\234u\263\220g\372\010r_X\232\351\273\272N\356"
+ 2792      75B39067 
+ 2792      FA08725F 
+ 2792      589AE9BB 
+ 2792      BA4EEE
+ 2793 07a2 C681EA50 		.ascii	"\306\201\352P\346\374oC)\342\230}u\256\243\374$\327"
+ 2793      E6FC6F43 
+ 2793      29E2987D 
+ 2793      75AEA3FC 
+ 2793      24D7
+ 2794 07b4 FD845639 		.ascii	"\375\204V9\024QmC\237\353L\333\305w\252\247\2643=\202"
+ 2794      14516D43 
+ 2794      9FEB4CDB 
+ 2794      C577AAA7 
+ 2794      B4333D82 
+ 2795 07c8 DA99F412 		.ascii	"\332\231\364\0224]\002\177"
+ 2795      345D027F 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 76
+
+
+ 2796 07d0 DB801B41 		.ascii	"\333\200\033A\22250\253\270,\366\246\347\373\306\013"
+ 2796      923530AB 
+ 2796      B82CF6A6 
+ 2796      E7FBC60B 
+ 2797 07e0 DC25D4A0 		.ascii	"\334%\324\240i\374\034K\361T\346\356\211\013y\032Uk"
+ 2797      69FC1C4B 
+ 2797      F154E6EE 
+ 2797      890B791A 
+ 2797      556B
+ 2798 07f2 99C52F1D 		.ascii	"\231\305/\035\255%ytPvm\306/9\24690\013E\"#)\235j(\211"
+ 2798      AD257974 
+ 2798      50766DC6 
+ 2798      2F39A639 
+ 2798      300B4522 
+ 2799 080c A909A36F 		.ascii	"\251\011\243oW]\360v%\342\343\367\316\357\323\320\341"
+ 2799      575DF076 
+ 2799      25E2E3F7 
+ 2799      CEEFD3D0 
+ 2799      E1
+ 2800 081d 0CB61070 		.ascii	"\014\266\020pj\302\376\314\371\2225\304_\262\340\370"
+ 2800      6AC2FECC 
+ 2800      F99235C4 
+ 2800      5FB2E0F8 
+ 2801 082d 1243A87E 		.ascii	"\022C\250~\353\311\3566\227[\261D\321\277\215\320\227"
+ 2801      EBC9EE36 
+ 2801      975BB144 
+ 2801      D1BF8DD0 
+ 2801      97
+ 2802 083e AC1CA6DB 		.ascii	"\254\034\246\333\\R6\337S \2160\011\321\267\334:\375"
+ 2802      5C5236DF 
+ 2802      53208E30 
+ 2802      09D1B7DC 
+ 2802      3AFD
+ 2803 0850 C29BD526 		.ascii	"\302\233\325&\225\270\337_q\357\223\336\030\031rb\006"
+ 2803      95B8DF5F 
+ 2803      71EF93DE 
+ 2803      18197262 
+ 2803      06
+ 2804 0861 4FE124E2 		.ascii	"O\341$\342\331\302\262y\013\213'f\342\340\272\345bZ"
+ 2804      D9C2B279 
+ 2804      0B8B2766 
+ 2804      E2E0BAE5 
+ 2804      625A
+ 2805 0873 DC3EB6B4 		.ascii	"\334>\266\264s\320\341\334&\363u\347\035\256Kx\206\335"
+ 2805      73D0E1DC 
+ 2805      26F375E7 
+ 2805      1DAE4B78 
+ 2805      86DD
+ 2806 0885 E7BA958E 		.ascii	"\347\272\225\216Lh\332'\001\264\355$\201\354 \2114\232"
+ 2806      4C68DA27 
+ 2806      01B4ED24 
+ 2806      81EC2089 
+ 2806      349A
+ 2807 0897 D275EA46 		.ascii	"\322u\352F\177\362\303\325\201j\301d\342!)\342S\227"
+ 2807      7FF2C3D5 
+ 2807      816AC164 
+ 2807      E22129E2 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 77
+
+
+ 2807      5397
+ 2808 08a9 CE96BA5E 		.ascii	"\316\226\272^Nvr+)\300\224\356h\004\251\037h\010h\234"
+ 2808      4E76722B 
+ 2808      29C094EE 
+ 2808      6804A91F 
+ 2808      6808689C 
+ 2809 08bd 6ABC39DE 		.ascii	"j\2749\336p\226,q_\266t\262\213([\306,\025\270z\376"
+ 2809      70962C71 
+ 2809      5FB674B2 
+ 2809      8B285BC6 
+ 2809      2C15B87A 
+ 2810 08d2 4A87B74A 		.ascii	"J\207\267J`\267C\000\026\251o\304\342\33203\270\245"
+ 2810      60B74300 
+ 2810      16A96FC4 
+ 2810      E2DA3033 
+ 2810      B8A5
+ 2811 08e4 4CBA269A 		.ascii	"L\272&\232g\305\017\333\020\017\351\360\244y\350S%\244"
+ 2811      67C50FDB 
+ 2811      100FE9F0 
+ 2811      A479E853 
+ 2811      25A4
+ 2812 08f6 99640A65 		.ascii	"\231d\012e{F\245\235Ge\006\247\221lU\274e\325\221\\"
+ 2812      7B46A59D 
+ 2812      476506A7 
+ 2812      916C55BC 
+ 2812      65D5915C 
+ 2813 090a C806CB59 		.ascii	"\310\006\313Yd\017\213\310)xY/\001\272\000T\351\015"
+ 2813      640F8BC8 
+ 2813      2978592F 
+ 2813      01BA0054 
+ 2813      E90D
+ 2814 091c 68F24726 		.ascii	"h\362G&\033\325\273[.\331\317}i\242\002\361\333\213"
+ 2814      1BD5BB5B 
+ 2814      2ED9CF7D 
+ 2814      69A202F1 
+ 2814      DB8B
+ 2815 092e DBD59B7F 		.ascii	"\333\325\233\177\236C\000\016\224\307\263\247]\276\344"
+ 2815      9E43000E 
+ 2815      94C7B3A7 
+ 2815      5DBEE4
+ 2816 093d 731405CC 		.ascii	"s\024\005\314\227\346\372\336]X\361el\214/o\001\331"
+ 2816      97E6FADE 
+ 2816      5D58F165 
+ 2816      6C8C2F6F 
+ 2816      01D9
+ 2817 094f 470E7A3A 		.ascii	"G\016z:\362\330\351H\216;\363UG\016\202\331\003\244"
+ 2817      F2D8E948 
+ 2817      8E3BF355 
+ 2817      470E82D9 
+ 2817      03A4
+ 2818 0961 902D98E6 		.ascii	"\220-\230\346D\345\025\213\337\022\267\315\225\311\244"
+ 2818      44E5158B 
+ 2818      DF12B7CD 
+ 2818      95C9A4
+ 2819 0970 93432074 		.ascii	"\223C t\204\034&J\207\034\233\254\241}\352 \331\013"
+ 2819      841C264A 
+ 2819      871C9BAC 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 78
+
+
+ 2819      A17DEA20 
+ 2819      D90B
+ 2820 0982 0CF54664 		.ascii	"\014\365Fd\353\254Q\232g6IU3E\234i\035\017^\242\326"
+ 2820      EBAC519A 
+ 2820      67364955 
+ 2820      33459C69 
+ 2820      1D0F5EA2 
+ 2821 0997 BCDB5D33 		.ascii	"\274\333]3\234\361'\346\372\347+\245F+o\207=\363s\245"
+ 2821      9CF127E6 
+ 2821      FAE72BA5 
+ 2821      462B6F87 
+ 2821      3DF373A5 
+ 2822 09ab 0EBF87C2 		.ascii	"\016\277\207\302;SQ\261\313Oa\036\205\341\305\333O\026"
+ 2822      3B5351B1 
+ 2822      CB4F611E 
+ 2822      85E1C5DB 
+ 2822      4F16
+ 2823 09bd 7B96E10F 		.ascii	"{\226\341\017D(bexu\2660\315Ue?p\377\217\2612\354\244"
+ 2823      44286265 
+ 2823      7875B630 
+ 2823      CD55653F 
+ 2823      70FF8FB1 
+ 2824 09d4 0B30B867 		.ascii	"\0130\270g\3275oO\201\343\204I\300\236\371&=\323 i\020"
+ 2824      D7356F4F 
+ 2824      81E38449 
+ 2824      C09EF926 
+ 2824      3DD32069 
+ 2825 09e9 16F41115 		.ascii	"\026\364\021\025\2578\335wl\236j\275N\023\347k\354\334"
+ 2825      AF38DD77 
+ 2825      6C9E6ABD 
+ 2825      4E13E76B 
+ 2825      ECDC
+ 2826 09fb 9EEC2257 		.ascii	"\236\354\"W\315\237\341\306\316R \322\271\244:9@u\\"
+ 2826      CD9FE1C6 
+ 2826      CE5220D2 
+ 2826      B9A43A39 
+ 2826      40755C
+ 2827 0a0e 61B53286 		.ascii	"a\2652\206\212\301R\0119G\316\363\230N\225\314Ut\277"
+ 2827      8AC15209 
+ 2827      3947CEF3 
+ 2827      984E95CC 
+ 2827      5574BF
+ 2828 0a21 A99C0DE8 		.ascii	"\251\234\015\350\016_\354\036;\272\240S\017\331\307"
+ 2828      0E5FEC1E 
+ 2828      3BBAA053 
+ 2828      0FD9C7
+ 2829 0a30 835C68F1 		.ascii	"\203\\h\361\305\252r\245\215`Fy\021;\013)]\254\356\003"
+ 2829      C5AA72A5 
+ 2829      8D604679 
+ 2829      113B0B29 
+ 2829      5DACEE03 
+ 2830 0a44 224EBD73 		.ascii	"\"N\275s\351E\200G\255\236&*\373\242T}0QZ\356\254\221"
+ 2830      E9458047 
+ 2830      AD9E262A 
+ 2830      FBA2547D 
+ 2830      30515AEE 
+ 2831 0a5a FCC7BCED 		.ascii	"\374\307\274\355\330\240\261\224\273\247\026]\342\214"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 79
+
+
+ 2831      D8A0B194 
+ 2831      BBA7165D 
+ 2831      E28C
+ 2832 0a68 5A6589BF 		.ascii	"Ze\211\277#V`:a\362-9\233sK\311)\340*-\244\311\343\023"
+ 2832      2356603A 
+ 2832      61F22D39 
+ 2832      9B734BC9 
+ 2832      29E02A2D 
+ 2833 0a80 CB497282 		.ascii	"\313Ir\202@I\224\003\2062r\201\\TV?\363\350\231r\257"
+ 2833      40499403 
+ 2833      86327281 
+ 2833      5C54563F 
+ 2833      F3E89972 
+ 2834 0a95 40B5509E 		.ascii	"@\265P\236\247\320\245\214\3211?\327g3\216\255\202\266"
+ 2834      A7D0A58C 
+ 2834      D1313FD7 
+ 2834      67338EAD 
+ 2834      82B6
+ 2835 0aa7 940C09F8 		.ascii	"\224\014\011\370\333\353\272\373\335\016g\354cN%\371"
+ 2835      DBEBBAFB 
+ 2835      DD0E67EC 
+ 2835      634E25F9 
+ 2836 0ab7 91AF3920 		.ascii	"\221\2579 z\363H\233\253\316\252\270\252j\226@\273S"
+ 2836      7AF3489B 
+ 2836      ABCEAAB8 
+ 2836      AA6A9640 
+ 2836      BB53
+ 2837 0ac9 1A2FCC9B 		.ascii	"\032/\314\233\240\357\222\011\262\335\\-\311\005\261"
+ 2837      A0EF9209 
+ 2837      B2DD5C2D 
+ 2837      C905B1
+ 2838 0ad8 C9729C5C 		.ascii	"\311r\234\\mFYr\211\234w:)\231d\027T'\230A \260 \246"
+ 2838      6D465972 
+ 2838      899C773A 
+ 2838      29996417 
+ 2838      54279841 
+ 2839 0af0 44CEB67D 		.ascii	"D\316\266}\221\235-'U\346'\310y\210~ \204Y\232l\270"
+ 2839      919D2D27 
+ 2839      55E627C8 
+ 2839      79887E20 
+ 2839      84599A6C 
+ 2840 0b05 804452A0 		.ascii	"\200DR\240\234C\363&.)\017\231y\016\005\310\247e9\006"
+ 2840      9C43F326 
+ 2840      2E290F99 
+ 2840      790E05C8 
+ 2840      A7653906 
+ 2841 0b19 686976AC 		.ascii	"hiv\254\315n\006\264\327P\336\2018\340|\001d5\367\233"
+ 2841      CD6E06B4 
+ 2841      D750DE81 
+ 2841      38E07C01 
+ 2841      6435F79B 
+ 2842 0b2d E303C6CC 		.ascii	"\343\003\306\314\003r\246e\300\2724F\246\206\342d\224"
+ 2842      0372A665 
+ 2842      C0BA3446 
+ 2842      A686E264 
+ 2842      94
+ 2843 0b3e 950712F6 		.ascii	"\225\007\022\366890+6\301\234d\251\226\243\262s\022"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 80
+
+
+ 2843      3839302B 
+ 2843      36C19C64 
+ 2843      A996A3B2 
+ 2843      7312
+ 2844 0b50 12F2F7D6 		.ascii	"\022\362\367\326\311\310l\221\023R\363\252\023\026\244"
+ 2844      C9C86C91 
+ 2844      1352F3AA 
+ 2844      1316A4
+ 2845 0b5f CAD5F278 		.ascii	"\312\325\362xA\265\374\006\204 \321\012\212\027\310"
+ 2845      41B5FC06 
+ 2845      8420D10A 
+ 2845      8A17C8
+ 2846 0b6e 304AA54F 		.ascii	"0J\245OR-\325\011\251\005\261\011KAP\246\030\027\230"
+ 2846      522DD509 
+ 2846      A905B109 
+ 2846      4B4150A6 
+ 2846      181798
+ 2847 0b81 F362E5FC 		.ascii	"\363b\345\374\274X\311j\351\244\220\023\340\201\035"
+ 2847      BC58C96A 
+ 2847      E9A49013 
+ 2847      E0811D
+ 2848 0b90 44AA25AB 		.ascii	"D\252%\253\\\235\240<\260\330e+H-\2049V+\030x\003\330"
+ 2848      5C9DA03C 
+ 2848      B0D8652B 
+ 2848      482D8439 
+ 2848      562B1878 
+ 2849 0ba6 0963A00E 		.ascii	"\011c\240\016\321\033P'Q\177R\363\354\230}\236`\311"
+ 2849      D11B5027 
+ 2849      517F52F3 
+ 2849      EC987D9E 
+ 2849      60C9
+ 2850 0bb8 0C3F895F 		.ascii	"\014?\211_\227\212x\342p\203E\232\244\261\234\252\261"
+ 2850      978A78E2 
+ 2850      7083459A 
+ 2850      A4B19CAA 
+ 2850      B1
+ 2851 0bc9 741FA0C1 		.ascii	"t\037\240\301\207\015}\261\365\237\005$\377l\201TI\227"
+ 2851      870D7DB1 
+ 2851      F59F0524 
+ 2851      FF6C8154 
+ 2851      4997
+ 2852 0bdb 4DF54553 		.ascii	"M\365ES\304\271\265\217\266\263ZoD\227\241\326\023\212"
+ 2852      C4B9B58F 
+ 2852      B6B35A6F 
+ 2852      4497A1D6 
+ 2852      138A
+ 2853 0bed 8A33BDE9 		.ascii	"\2123\275\351\260\005]\201a\232\355\362\021\211\016"
+ 2853      B0055D81 
+ 2853      619AEDF2 
+ 2853      11890E
+ 2854 0bfc EDA80E86 		.ascii	"\355\250\016\206\266\344\007\317}\224\306P\017\303\227"
+ 2854      B6E407CF 
+ 2854      7D94C650 
+ 2854      0FC397
+ 2855 0c0b 13071BD9 		.ascii	"\023\007\033\331\260\2004\300\260\351t\3610q4\212\\"
+ 2855      B08034C0 
+ 2855      B0E974F1 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 81
+
+
+ 2855      3071348A 
+ 2855      5C
+ 2856 0c1c AC348A26 		.ascii	"\2544\212&\"4\262u.+ji\364]\226\225\005\365\327X9\370"
+ 2856      2234B275 
+ 2856      2E2B6A69 
+ 2856      F45D9695 
+ 2856      05F5D758 
+ 2857 0c32 EF3D31F2 		.ascii	"\357=1\362\021\212\0325\221Z\245\035\013\265D\250!\227"
+ 2857      118A1A35 
+ 2857      915AA51D 
+ 2857      0BB544A8 
+ 2857      2197
+ 2858 0c44 C887C77F 		.ascii	"\310\207\307\177&=\375i\244\327\325H\233\325H[`\330"
+ 2858      263DFD69 
+ 2858      A4D7D548 
+ 2858      9BD5485B 
+ 2858      60D8
+ 2859 0c56 B1EDC44E 		.ascii	"\261\355\304N\365\276 \334pt\375\276\241\332t?\025/"
+ 2859      F5BE20DC 
+ 2859      7074FDBE 
+ 2859      A1DA743F 
+ 2859      152F
+ 2860 0c68 9938992D 		.ascii	"\2318\231-U\315\217]Y\177\223\247\352-\346B\312LU\""
+ 2860      55CD8F5D 
+ 2860      597F93A7 
+ 2860      EA2DE642 
+ 2860      CA4C5522 
+ 2861 0c7c 33798BB4 		.ascii	"3y\213\264\202\215+\231}\337yy\372\333F\204\333Jc<t"
+ 2861      828D2B99 
+ 2861      7DDF7979 
+ 2861      FADB4684 
+ 2861      DB4A633C 
+ 2862 0c91 F4851FF5 		.ascii	"\364\205\037\365\327vr;\234\035h\022Hm\344\032\367\365"
+ 2862      D776723B 
+ 2862      9C1D6812 
+ 2862      486DE41A 
+ 2862      F7F5
+ 2863 0ca3 1AF7F5C0 		.ascii	"\032\367\365\300\"\311\352C+\262\365\371\240?U\235\305"
+ 2863      22C9EA43 
+ 2863      2BB2F5F9 
+ 2863      A03F559D 
+ 2863      C5
+ 2864 0cb4 FAF1A517 		.ascii	"\372\361\245\027\207\257\007\320a.\356\244\221\315<"
+ 2864      87AF07D0 
+ 2864      612EEEA4 
+ 2864      91CD3C
+ 2865 0cc3 39FACAE7 		.ascii	"9\372\312\347\346n\"t1K\226\341\304^\257eY\000y\362"
+ 2865      E66E2274 
+ 2865      314B96E1 
+ 2865      C45EAF65 
+ 2865      590079F2 
+ 2866 0cd7 46E5B1B5 		.ascii	"F\345\261\265=1y\313\272I\0077\324A\035\374\360\372"
+ 2866      3D3179CB 
+ 2866      BA490737 
+ 2866      D4411DFC 
+ 2866      F0FA
+ 2867 0ce9 42E92235 		.ascii	"B\351\"5\363#a\351qx^^\022\333\243|@\264s\036T\263\203"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 82
+
+
+ 2867      F32361E9 
+ 2867      71785E5E 
+ 2867      12DBA37C 
+ 2867      40B4731E 
+ 2868 0d00 99DE597A 		.ascii	"\231\336Yz\324\365z{\217\207\245\227\331\277\3309\035"
+ 2868      D4F57A7B 
+ 2868      8F87A597 
+ 2868      D9BFD839 
+ 2868      1D
+ 2869 0d11 4CB1F612 		.ascii	"L\261\366\022\012\375r\372\221~o\317\250\364\021\341"
+ 2869      0AFD72FA 
+ 2869      917E6FCF 
+ 2869      A8F411E1 
+ 2870 0d21 3E934D78 		.ascii	">\223Mx\326rK\301Z\226ik\231\227+W\342>r\227c\275\313"
+ 2870      D6724BC1 
+ 2870      5A96696B 
+ 2870      99972B57 
+ 2870      E23E7297 
+ 2871 0d38 B00E2C94 		.ascii	"\260\016,\224Z}~\352l8\000\0211\037\031\313\360UR\357"
+ 2871      5A7D7EEA 
+ 2871      6C380011 
+ 2871      311F19CB 
+ 2871      F05552EF 
+ 2872 0d4c 210C4FE7 		.ascii	"!\014O\347Lv\211\236{\324\020\021\006\231\321\222\\"
+ 2872      4C76899E 
+ 2872      7BD41011 
+ 2872      0699D192 
+ 2872      5C
+ 2873 0d5d CB9C2F33 		.ascii	"\313\234/3:<\3313\367\011\015\320\020y\300\215>`Fc\027"
+ 2873      3A3CD933 
+ 2873      F7090DD0 
+ 2873      1079C08D 
+ 2873      3E604663 
+ 2874 0d72 490FA8D1 		.ascii	"I\017\250\321}mqiHYbj\365\\\343\336Y\354\251w\224\010"
+ 2874      7D6D7169 
+ 2874      4859626A 
+ 2874      F55CE3DE 
+ 2874      59ECA977 
+ 2875 0d88 8F98DEB4 		.ascii	"\217\230\336\264\332m\2271\325[\002\347\307c\210:3J"
+ 2875      DA6D9731 
+ 2875      D55B02E7 
+ 2875      C763883A 
+ 2875      334A
+ 2876 0d9a 46B8DE11 		.ascii	"F\270\336\021\246\267x\2414\341#Hf_\272\311VV\345P\027"
+ 2876      A6B778A1 
+ 2876      34E12348 
+ 2876      665FBAC9 
+ 2876      5656E550 
+ 2877 0daf 1ED3169A 		.ascii	"\036\323\026\232B\237\014\2676\314\370y~r%\374\223\253"
+ 2877      429F0CB7 
+ 2877      36CCF879 
+ 2877      7E7225FC 
+ 2877      93AB
+ 2878 0dc1 88F7D4D5 		.ascii	"\210\367\324\325\027\021\012\346\211\022\331\351\221"
+ 2878      17110AE6 
+ 2878      8912D9E9 
+ 2878      91
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 83
+
+
+ 2879 0dce 0C5FCF2C 		.ascii	"\014_\317,xF\204\247\240o\231\025\012\353n\337\275\247"
+ 2879      784684A7 
+ 2879      A06F9915 
+ 2879      0AEB6EDF 
+ 2879      BDA7
+ 2880 0de0 7FED6585 		.ascii	"\177\355e\205e\265z=#\343\014\312\004\231\202;%\335"
+ 2880      65B57A3D 
+ 2880      23E30CCA 
+ 2880      0499823B 
+ 2880      25DD
+ 2881 0df2 C6164B2D 		.ascii	"\306\026K-\324\360\355\214\233\247\220\247\252i\002"
+ 2881      D4F0ED8C 
+ 2881      9BA790A7 
+ 2881      AA6902
+ 2882 0e01 91E6AA26 		.ascii	"\221\346\252&G\356\035\325\336\343\252\3204y\256x\365"
+ 2882      47EE1DD5 
+ 2882      DEE3AAD0 
+ 2882      3479AE78 
+ 2882      F5
+ 2883 0e12 026E144D 		.ascii	"\002n\024M7\026K\263\236N\261\231\205\255\025\247\346"
+ 2883      37164BB3 
+ 2883      9E4EB199 
+ 2883      85AD15A7 
+ 2883      E6
+ 2884 0e23 9596C9F2 		.ascii	"\225\226\311\3626Y\266|\006Jg\330\324Y\362\022\356\224"
+ 2884      3659B67C 
+ 2884      064A67D8 
+ 2884      D459F212 
+ 2884      EE94
+ 2885 0e35 B90F164B 		.ascii	"\271\017\026K\361~\016;\005\247\334\355\314)vdq\216"
+ 2885      F17E0E3B 
+ 2885      05A7DCED 
+ 2885      CC297664 
+ 2885      718E
+ 2886 0e47 CB7EB758 		.ascii	"\313~\267XJ\367{\215\235r\225\035\263H\247Z\304\030"
+ 2886      4AF77B8D 
+ 2886      9D72951D 
+ 2886      B348A75A 
+ 2886      C418
+ 2887 0e59 D12C2A73 		.ascii	"\321,*s\273\027\213\370`y\312i\327\371d\210'n\254\310"
+ 2887      BB178BF8 
+ 2887      6079CA69 
+ 2887      D7F96488 
+ 2887      276EACC8 
+ 2888 0e6d B6A5ED27 		.ascii	"\266\245\355'\362\275\234\037-\027\3617\010QX\265Z\304"
+ 2888      F2BD9C1F 
+ 2888      2D17F137 
+ 2888      085158B5 
+ 2888      5AC4
+ 2889 0e7f CD1D8DE3 		.ascii	"\315\035\215\343>?Wv7;*CJ\210\342D\312\247\347\026\015"
+ 2889      3E3F5776 
+ 2889      373B2A43 
+ 2889      4A88E244 
+ 2889      CAA7E716 
+ 2890 0e94 AC4746FE 		.ascii	"\254GF\376\321y\236\323\023`z\274\010\002\336p\260\371"
+ 2890      D1799ED3 
+ 2890      13607ABC 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 84
+
+
+ 2890      0802DE70 
+ 2890      B0F9
+ 2891 0ea6 00DADE81 		.ascii	"\000\332\336\201\366\361\0007=\333\305DP\260C\244\202"
+ 2891      F6F10037 
+ 2891      3DDBC544 
+ 2891      50B043A4 
+ 2891      82
+ 2892 0eb7 F4BB7069 		.ascii	"\364\273piZ\207\353\177\000\3728\274$\306;p\321jp\262"
+ 2892      5A87EB7F 
+ 2892      00FA38BC 
+ 2892      24C63B70 
+ 2892      D16A70B2 
+ 2893 0ecb BA392B99 		.ascii	"\2729+\231\261\012\262KG\\^\215r\336N\221\326\25264"
+ 2893      B10AB24B 
+ 2893      475C5E8D 
+ 2893      72DE4E91 
+ 2893      D6AA3634 
+ 2894 0edf D840820D 		.ascii	"\330@\202\015\233\274\276\212\216\324F\375r\305\212"
+ 2894      9BBCBE8A 
+ 2894      8ED446FD 
+ 2894      72C58A
+ 2895 0eee 95CA3FBD 		.ascii	"\225\312?\275q\245\301\264\322h\320\256\324\206\206"
+ 2895      71A5C1B4 
+ 2895      D268D0AE 
+ 2895      D48686
+ 2896 0efd 6C8D0C8E 		.ascii	"l\215\014\216\010\323\256\320J\377\366\307?/\375h\325"
+ 2896      08D3AED0 
+ 2896      4AFFF6C7 
+ 2896      3F2FFD68 
+ 2896      D5
+ 2897 0f0e FBC262B7 		.ascii	"\373\302b\267\207+>X\263z\365W\357\255\326\011\336&"
+ 2897      872B3E58 
+ 2897      B37AF557 
+ 2897      EFADD609 
+ 2897      DE26
+ 2898 0f20 AA24C824 		.ascii	"\252$\310$F\031\302\364\336&\372\027\006\233u\221!\276"
+ 2898      4619C2F4 
+ 2898      DE26FA17 
+ 2898      069B7591 
+ 2898      21BE
+ 2899 0f32 46D337C1 		.ascii	"F\3237\301\341a\233\"\203L^\233\277\0146\352D\230\254"
+ 2899      E1619B22 
+ 2899      834C5E9B 
+ 2899      BF0C36EA 
+ 2899      4498AC
+ 2900 0f45 7BFF5F7F 		.ascii	"{\377_\177\267\361\243\320\260/\303\376\264!h\365\252"
+ 2900      B7F1A3D0 
+ 2900      B02FC3FE 
+ 2900      B42168F5 
+ 2900      AA
+ 2901 0f56 15AB56AD 		.ascii	"\025\253V\255X\263qmT\224q\343\247\006\375\327:\223"
+ 2901      58B3716D 
+ 2901      549471E3 
+ 2901      A706FDD7 
+ 2901      3A93
+ 2902 0f68 7EE3679F 		.ascii	"~\343g\237\277\263\341\363\365kV\177\274\352\3355\357"
+ 2902      BFB3E1F3 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 85
+
+
+ 2902      F56B567F 
+ 2902      BCEADD35 
+ 2902      EF
+ 2903 0f79 AC5FFBE9 		.ascii	"\254_\373\351\037~\277~\335\037\327\011\377\340\201"
+ 2903      1F7EBF7E 
+ 2903      DD1FD709 
+ 2903      FFE081
+ 2904 0f88 322C521B 		.ascii	"2,R\033\036\035\242\003\244\246P\203.8\304\270\"T\220"
+ 2904      1E1DA203 
+ 2904      A4A65083 
+ 2904      2E38C4B8 
+ 2904      225490
+ 2905 0f9b E0269CE1 		.ascii	"\340&\234\341\210"
+ 2905      88
+ 2906 0fa0 306D090F 		.ascii	"0m\011\0173\232$mhPD\264I\267E\322E\001\242\260\310"
+ 2906      339A246D 
+ 2906      685044B4 
+ 2906      49B745D2 
+ 2906      4501A2B0 
+ 2907 0fb5 4D7EBA6F 		.ascii	"M~\272ou\221\246\210`\3437A&)\302\270\351?\242u\321"
+ 2907      7591A688 
+ 2907      60E33741 
+ 2907      2629C2B8 
+ 2907      E93FA275 
+ 2908 0fca 004CB785 		.ascii	"\000L\267\205\311\262\221\257\343\2069\245\373\366\327"
+ 2908      C9B291AF 
+ 2908      E38639A5 
+ 2908      FBF6D7
+ 2909 0fd9 AFB54C4D 		.ascii	"\257\265LMP\273\336\233\203\303L\240\334\033f\322g>"
+ 2909      50BBDE9B 
+ 2909      83C34CA0 
+ 2909      DC1B66D2 
+ 2909      673E
+ 2910 0feb FC1A6442 		.ascii	"\374\032dB\321\032\335fjM\263\331\004\230\242\340b\324"
+ 2910      D11ADD66 
+ 2910      6A4DB3D9 
+ 2910      0498A2E0 
+ 2910      62D4
+ 2911 0ffd 4544F9   		.ascii	"ED\371"
+ 2912 1000 83005C83 		.ascii	"\203\000\\\203\243B\365\006\235\267\221\"2n\362\002"
+ 2912      A342F506 
+ 2912      9DB79122 
+ 2912      326EF202 
+ 2913 1010 A2A13299 		.ascii	"\242\2412\231\014QT\203\342\227\244\\\202L\013\371\215"
+ 2913      0C515483 
+ 2913      E297A45C 
+ 2913      824C0BF9 
+ 2913      8D
+ 2914 1021 41F795CE 		.ascii	"A\367\225\316\240\213\324\002<\320\246\377\362\353("
+ 2914      A08BD402 
+ 2914      3CD0A6FF 
+ 2914      F2EB28
+ 2915 1030 49B725CC 		.ascii	"I\267%\314\244\325\207\3504\206\220\255\240\344\365"
+ 2915      A4D587E8 
+ 2915      348690AD 
+ 2915      A0E4F5
+ 2916 103f A102699D 		.ascii	"\241\002i\235\226A\026A\215\321\333D\377\202\315\257"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 86
+
+
+ 2916      96411641 
+ 2916      8DD1DB44 
+ 2916      FF82CDAF 
+ 2917 104f C28337C1 		.ascii	"\302\2037\301(\002t\300\310h\0126\351$\023\273P#\301"
+ 2917      280274C0 
+ 2917      C8680A36 
+ 2917      E92413BB 
+ 2917      5023C1
+ 2918 1062 74F1BCF4 		.ascii	"t\361\274\364\233#u\206y\200Ko\014\012\213\004&@\010"
+ 2918      9B237586 
+ 2918      79804B6F 
+ 2918      0C0A8B04 
+ 2918      264008
+ 2919 1075 70BB0749 		.ascii	"p\273\007I\003\013\033\321\232\266`c\224_\224\336`\002"
+ 2919      030B1BD1 
+ 2919      9AB66063 
+ 2919      945F94DE 
+ 2919      6002
+ 2920 1087 AE0986FE 		.ascii	"\256\011\206\376\354^\253\217\204\2450-w\207\247\325"
+ 2920      EC5EAB8F 
+ 2920      84A5302D 
+ 2920      7787A7D5 
+ 2921 1097 4744E823 		.ascii	"GD\350#WR\276q\345\332\317\326\177\373\376;\353\001"
+ 2921      5752BE71 
+ 2921      E5DACFD6 
+ 2921      7FFBFE3B 
+ 2921      EB01
+ 2922 10a9 A816E202 		.ascii	"\250\026\342\002(Ih\210A\023\305\264\276\001\226\351"
+ 2922      28496888 
+ 2922      4113C5B4 
+ 2922      BE0196E9 
+ 2923 10b9 D21AC24C 		.ascii	"\322\032\302L[\225\345Y\364\312\023\300\256\254'\015"
+ 2923      5B95E559 
+ 2923      F4CA13C0 
+ 2923      AEAC270D 
+ 2924 10c9 BE574494 		.ascii	"\276WD\224^\037\356\3052\320Oq<\310\030\3667\235\206"
+ 2924      5E1FEEC5 
+ 2924      32D04F71 
+ 2924      3CC818F6 
+ 2924      379D86
+ 2925 10dc FE0932F9 		.ascii	"\376\0112\371QnP(DTg\220\242\014\372o\303\340\306?B"
+ 2925      516E5028 
+ 2925      44546790 
+ 2925      A20CFA6F 
+ 2925      C3E0C63F 
+ 2926 10f1 17B149C7 		.ascii	"\027\261I\3073\372\267\3568\365\306\360\260/\335\"\011"
+ 2926      33FAB7EE 
+ 2926      38F5C6F0 
+ 2926      B02FDD22 
+ 2926      09
+ 2927 1102 8254010D 		.ascii	"\202T\001\015e\000\334\353\015[\203\230B\223FQ)~e\320"
+ 2927      6500DCEB 
+ 2927      0D5B8398 
+ 2927      42934651 
+ 2927      297E65D0 
+ 2928 1116 E9BCA282 		.ascii	"\351\274\242\2027\351\214~\360$\212[\012p\273\377\237"
+ 2928      37E98C7E 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 87
+
+
+ 2928      F0248A5B 
+ 2928      0A70BBFF 
+ 2928      9F
+ 2929 1127 2D5061B6 		.ascii	"-Pa\266X\321F]\210Hq\213\364\221\0377H\357\003\334\356"
+ 2929      58D1465D 
+ 2929      8848718B 
+ 2929      F4911F37 
+ 2929      48EF03DC 
+ 2930 113c 834C012E 		.ascii	"\203L\001.\374\253\203L\0042\316\233\245\177\220\351"
+ 2930      FCAB834C 
+ 2930      0432CE9B 
+ 2930      A57F90E9 
+ 2931 114c 57AFCD09 		.ascii	"W\257\315\011\020\002\023\213xv\205\350\214ZCX\224I"
+ 2931      1002138B 
+ 2931      787685E8 
+ 2931      8C5A4358 
+ 2931      9449
+ 2932 115e 0FF0C8AA 		.ascii	"\017\360\310\252\177\022\244`C\004\254I\204\340\013"
+ 2932      7F12A460 
+ 2932      4304AC49 
+ 2932      84E00B
+ 2933 116d 4B029ADE 		.ascii	"K\002\232\336\211X#@\340?\017\015\371\010\344M\272\217"
+ 2933      89582340 
+ 2933      E03F0F0D 
+ 2933      F908E44D 
+ 2933      BA8F
+ 2934 117f 0DFA884F 		.ascii	"\015\372\210O\300\266\247~\217&\",\361\230\263\236\301"
+ 2934      C0B6A77E 
+ 2934      8F26222C 
+ 2934      F198B39E 
+ 2934      C1
+ 2935 1190 FE144206 		.ascii	"\376\024B\006\265\260A\033\372\227\340ot\321Q\033\226"
+ 2935      B5B0411B 
+ 2935      FA97E06F 
+ 2935      74D1511B 
+ 2935      96
+ 2936 11a1 BE16A611 		.ascii	"\276\026\246\021\264\001\316\305nz6D\033iU\353B\326"
+ 2936      B401CEC5 
+ 2936      6E7A3644 
+ 2936      1B6955EB 
+ 2936      42D6
+ 2937 11b3 2DD48652 		.ascii	"-\324\206R\020k\303\303\365\332\265t\301u!~\332P\252"
+ 2937      106BC3C3 
+ 2937      F5DAB574 
+ 2937      C175217E 
+ 2937      DA50AA
+ 2938 11c6 9D3D0A08 		.ascii	"\235=\012\010\202j3\005\375\313\332\015\277\377\364"
+ 2938      826A3305 
+ 2938      FDCBDA0D 
+ 2938      BFFFF4
+ 2939 11d5 B37501C1 		.ascii	"\263u\001\301\341\233\203\267\322\304\015\017\213\324"
+ 2939      E19B83B7 
+ 2939      D2C40D0F 
+ 2939      8BD4
+ 2940 11e3 49D190A2 		.ascii	"I\321\220\242k Z\277\373\221\264\204l\245I\271\362\243"
+ 2940      6B205ABF 
+ 2940      FB91B484 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 88
+
+
+ 2940      6CA549B9 
+ 2940      F2A3
+ 2941 11f5 F51BD66D 		.ascii	"\365\033\326mX\371\021$\345\312u\016D\021\3060c\320"
+ 2941      58F91124 
+ 2941      E5CA750E 
+ 2941      4411C630 
+ 2941      63D0
+ 2942 1207 26AD1640 		.ascii	"&\255\026@A\265n\330j\374\203^\373\315\353\303l\334"
+ 2942      41B56ED8 
+ 2942      6AFC835E 
+ 2942      FBCDEBC3 
+ 2942      6CDC
+ 2943 1219 4A57D287 		.ascii	"JW\322\207\025\002@\372\306\217\315\371s$\273gO\243"
+ 2943      150240FA 
+ 2943      C68FCDF9 
+ 2943      7324BB67 
+ 2943      4FA3
+ 2944 122b D9FD7F03 		.ascii	"\331\375\177\003\304]\357\005"
+ 2944      C45DEF05 
+ 2945              		.text
+ 2946              		.section	.gnu.lto_.symtab.bfad147d,"e",%progbits
+ 2947 0000 63685468 		.ascii	"chThdCreateFromHeap\000"
+ 2947      64437265 
+ 2947      61746546 
+ 2947      726F6D48 
+ 2947      65617000 
+ 2948 0014 00       		.ascii	"\000"
+ 2949 0015 00       		.ascii	"\000"
+ 2950 0016 00       		.ascii	"\000"
+ 2951 0017 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2951      00000000 
+ 2952 001f CE010000 		.ascii	"\316\001\000\000"
+ 2953 0023 63685468 		.ascii	"chThdCreateFromMemoryPool\000"
+ 2953      64437265 
+ 2953      61746546 
+ 2953      726F6D4D 
+ 2953      656D6F72 
+ 2954 003d 00       		.ascii	"\000"
+ 2955 003e 00       		.ascii	"\000"
+ 2956 003f 00       		.ascii	"\000"
+ 2957 0040 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2957      00000000 
+ 2958 0048 D9010000 		.ascii	"\331\001\000\000"
+ 2959 004c 63685363 		.ascii	"chSchWakeupS\000"
+ 2959      6857616B 
+ 2959      65757053 
+ 2959      00
+ 2960 0059 00       		.ascii	"\000"
+ 2961 005a 02       		.ascii	"\002"
+ 2962 005b 00       		.ascii	"\000"
+ 2963 005c 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2963      00000000 
+ 2964 0064 DE010000 		.ascii	"\336\001\000\000"
+ 2965 0068 63685468 		.ascii	"chThdCreateSuspendedI\000"
+ 2965      64437265 
+ 2965      61746553 
+ 2965      75737065 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 89
+
+
+ 2965      6E646564 
+ 2966 007e 00       		.ascii	"\000"
+ 2967 007f 02       		.ascii	"\002"
+ 2968 0080 00       		.ascii	"\000"
+ 2969 0081 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2969      00000000 
+ 2970 0089 E5010000 		.ascii	"\345\001\000\000"
+ 2971 008d 63684865 		.ascii	"chHeapAllocAligned\000"
+ 2971      6170416C 
+ 2971      6C6F6341 
+ 2971      6C69676E 
+ 2971      656400
+ 2972 00a0 00       		.ascii	"\000"
+ 2973 00a1 02       		.ascii	"\002"
+ 2974 00a2 00       		.ascii	"\000"
+ 2975 00a3 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2975      00000000 
+ 2976 00ab EB010000 		.ascii	"\353\001\000\000"
+ 2977 00af 6368506F 		.ascii	"chPoolAlloc\000"
+ 2977      6F6C416C 
+ 2977      6C6F6300 
+ 2978 00bb 00       		.ascii	"\000"
+ 2979 00bc 02       		.ascii	"\002"
+ 2980 00bd 00       		.ascii	"\000"
+ 2981 00be 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 2981      00000000 
+ 2982 00c6 EF010000 		.ascii	"\357\001\000\000"
+ 2983              		.text
+ 2984              		.section	.gnu.lto_.ext_symtab.bfad147d,"e",%progbits
+ 2985 0000 01       		.ascii	"\001"
+ 2986 0001 01       		.ascii	"\001"
+ 2987 0002 00       		.ascii	"\000"
+ 2988 0003 01       		.ascii	"\001"
+ 2989 0004 00       		.ascii	"\000"
+ 2990 0005 01       		.ascii	"\001"
+ 2991 0006 00       		.ascii	"\000"
+ 2992 0007 01       		.ascii	"\001"
+ 2993 0008 00       		.ascii	"\000"
+ 2994 0009 01       		.ascii	"\001"
+ 2995 000a 00       		.ascii	"\000"
+ 2996 000b 01       		.ascii	"\001"
+ 2997 000c 00       		.ascii	"\000"
+ 2998              		.text
+ 2999              		.section	.gnu.lto_.opts,"e",%progbits
+ 3000 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-prote"
+ 3000      6F2D6F70 
+ 3000      656E6D70 
+ 3000      2720272D 
+ 3000      666E6F2D 
+ 3001 0033 6374696F 		.ascii	"ction=none' '-g' '-mcpu=cortex-m3' '-mthumb' '-mflo"
+ 3001      6E3D6E6F 
+ 3001      6E652720 
+ 3001      272D6727 
+ 3001      20272D6D 
+ 3002 0066 61742D61 		.ascii	"at-abi=soft' '-mlibarch=armv7-m' '-march=armv7-m' '"
+ 3002      62693D73 
+ 3002      6F667427 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 90
+
+
+ 3002      20272D6D 
+ 3002      6C696261 
+ 3003 0099 2D4F3227 		.ascii	"-O2' '-fomit-frame-pointer' '-falign-functions=16' "
+ 3003      20272D66 
+ 3003      6F6D6974 
+ 3003      2D667261 
+ 3003      6D652D70 
+ 3004 00cc 272D6666 		.ascii	"'-ffunction-sections' '-fdata-sections' '-fno-commo"
+ 3004      756E6374 
+ 3004      696F6E2D 
+ 3004      73656374 
+ 3004      696F6E73 
+ 3005 00ff 6E272027 		.ascii	"n' '-flto' '-Xassembler' '-alms=./build/lst/chdynam"
+ 3005      2D666C74 
+ 3005      6F272027 
+ 3005      2D586173 
+ 3005      73656D62 
+ 3006 0132 69632E6C 		.ascii	"ic.lst'\000"
+ 3006      73742700 
+ 3007              		.text
+ 3008              		.comm	__gnu_lto_slim,1,1
+ 3009              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s 			page 91
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 chdynamic.c
+C:\Users\arthu\AppData\Local\Temp\ccegJGJr.s:39     .gnu.debuglto_.debug_info:00000000 chdynamic.c.8322f52e
+                            *COM*:00000001 __gnu_lto_slim
+
+NO UNDEFINED SYMBOLS

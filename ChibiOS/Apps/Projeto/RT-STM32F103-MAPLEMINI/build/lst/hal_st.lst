@@ -1,0 +1,780 @@
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"hal_st.c"
+  14              		.file 1 "../../../os/hal/ports/STM32/LLD/SYSTICKv1/hal_st_lld.h"
+  15              		.file 2 "../../../os/hal/src/hal_st.c"
+  16              		.section	.gnu.debuglto_.debug_info,"e",%progbits
+  17              	.Ldebug_info0:
+  18              		.hidden	hal_st.c.b165159a
+  19              		.weak	hal_st.c.b165159a
+  20              	hal_st.c.b165159a:
+  21 0000 87000000 		.4byte	0x87
+  22 0004 0500     		.2byte	0x5
+  23 0006 01       		.byte	0x1
+  24 0007 04       		.byte	0x4
+  25 0008 00000000 		.4byte	.Ldebug_abbrev0
+  26 000c 02       		.uleb128 0x2
+  27 000d 82000000 		.4byte	.LASF12
+  28 0011 1D       		.byte	0x1d
+  29 0012 27000000 		.4byte	.LASF13
+  30 0016 44000000 		.4byte	.LASF14
+  31 001a 00000000 		.4byte	.Ldebug_line0
+  32 001e 03       		.uleb128 0x3
+  33 001f 04       		.byte	0x4
+  34 0020 05       		.byte	0x5
+  35 0021 696E7400 		.ascii	"int\000"
+  36 0025 01       		.uleb128 0x1
+  37 0026 04       		.byte	0x4
+  38 0027 07       		.byte	0x7
+  39 0028 0E000000 		.4byte	.LASF0
+  40 002c 01       		.uleb128 0x1
+  41 002d 08       		.byte	0x8
+  42 002e 05       		.byte	0x5
+  43 002f 00000000 		.4byte	.LASF1
+  44 0033 01       		.uleb128 0x1
+  45 0034 08       		.byte	0x8
+  46 0035 04       		.byte	0x4
+  47 0036 A6010000 		.4byte	.LASF2
+  48 003a 01       		.uleb128 0x1
+  49 003b 01       		.byte	0x1
+  50 003c 06       		.byte	0x6
+  51 003d 9A010000 		.4byte	.LASF3
+  52 0041 01       		.uleb128 0x1
+  53 0042 01       		.byte	0x1
+  54 0043 08       		.byte	0x8
+  55 0044 65010000 		.4byte	.LASF4
+  56 0048 01       		.uleb128 0x1
+  57 0049 02       		.byte	0x2
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 2
+
+
+  58 004a 05       		.byte	0x5
+  59 004b B2010000 		.4byte	.LASF5
+  60 004f 01       		.uleb128 0x1
+  61 0050 02       		.byte	0x2
+  62 0051 07       		.byte	0x7
+  63 0052 87010000 		.4byte	.LASF6
+  64 0056 01       		.uleb128 0x1
+  65 0057 04       		.byte	0x4
+  66 0058 05       		.byte	0x5
+  67 0059 78010000 		.4byte	.LASF7
+  68 005d 01       		.uleb128 0x1
+  69 005e 04       		.byte	0x4
+  70 005f 07       		.byte	0x7
+  71 0060 3C010000 		.4byte	.LASF8
+  72 0064 01       		.uleb128 0x1
+  73 0065 08       		.byte	0x8
+  74 0066 07       		.byte	0x7
+  75 0067 4E010000 		.4byte	.LASF9
+  76 006b 01       		.uleb128 0x1
+  77 006c 01       		.byte	0x1
+  78 006d 08       		.byte	0x8
+  79 006e 73010000 		.4byte	.LASF10
+  80 0072 01       		.uleb128 0x1
+  81 0073 01       		.byte	0x1
+  82 0074 02       		.byte	0x2
+  83 0075 81010000 		.4byte	.LASF11
+  84 0079 04       		.uleb128 0x4
+  85 007a 1B000000 		.4byte	.LASF15
+  86 007e 01       		.byte	0x1
+  87 007f A502     		.2byte	0x2a5
+  88 0081 08       		.byte	0x8
+  89 0082 05       		.uleb128 0x5
+  90 0083 7B000000 		.4byte	.LASF16
+  91 0087 02       		.byte	0x2
+  92 0088 45       		.byte	0x45
+  93 0089 06       		.byte	0x6
+  94 008a 00       		.byte	0
+  95              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
+  96              	.Ldebug_abbrev0:
+  97 0000 01       		.uleb128 0x1
+  98 0001 24       		.uleb128 0x24
+  99 0002 00       		.byte	0
+ 100 0003 0B       		.uleb128 0xb
+ 101 0004 0B       		.uleb128 0xb
+ 102 0005 3E       		.uleb128 0x3e
+ 103 0006 0B       		.uleb128 0xb
+ 104 0007 03       		.uleb128 0x3
+ 105 0008 0E       		.uleb128 0xe
+ 106 0009 00       		.byte	0
+ 107 000a 00       		.byte	0
+ 108 000b 02       		.uleb128 0x2
+ 109 000c 11       		.uleb128 0x11
+ 110 000d 01       		.byte	0x1
+ 111 000e 25       		.uleb128 0x25
+ 112 000f 0E       		.uleb128 0xe
+ 113 0010 13       		.uleb128 0x13
+ 114 0011 0B       		.uleb128 0xb
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 3
+
+
+ 115 0012 03       		.uleb128 0x3
+ 116 0013 0E       		.uleb128 0xe
+ 117 0014 1B       		.uleb128 0x1b
+ 118 0015 0E       		.uleb128 0xe
+ 119 0016 10       		.uleb128 0x10
+ 120 0017 17       		.uleb128 0x17
+ 121 0018 00       		.byte	0
+ 122 0019 00       		.byte	0
+ 123 001a 03       		.uleb128 0x3
+ 124 001b 24       		.uleb128 0x24
+ 125 001c 00       		.byte	0
+ 126 001d 0B       		.uleb128 0xb
+ 127 001e 0B       		.uleb128 0xb
+ 128 001f 3E       		.uleb128 0x3e
+ 129 0020 0B       		.uleb128 0xb
+ 130 0021 03       		.uleb128 0x3
+ 131 0022 08       		.uleb128 0x8
+ 132 0023 00       		.byte	0
+ 133 0024 00       		.byte	0
+ 134 0025 04       		.uleb128 0x4
+ 135 0026 2E       		.uleb128 0x2e
+ 136 0027 00       		.byte	0
+ 137 0028 3F       		.uleb128 0x3f
+ 138 0029 19       		.uleb128 0x19
+ 139 002a 03       		.uleb128 0x3
+ 140 002b 0E       		.uleb128 0xe
+ 141 002c 3A       		.uleb128 0x3a
+ 142 002d 0B       		.uleb128 0xb
+ 143 002e 3B       		.uleb128 0x3b
+ 144 002f 05       		.uleb128 0x5
+ 145 0030 39       		.uleb128 0x39
+ 146 0031 0B       		.uleb128 0xb
+ 147 0032 27       		.uleb128 0x27
+ 148 0033 19       		.uleb128 0x19
+ 149 0034 3C       		.uleb128 0x3c
+ 150 0035 19       		.uleb128 0x19
+ 151 0036 00       		.byte	0
+ 152 0037 00       		.byte	0
+ 153 0038 05       		.uleb128 0x5
+ 154 0039 2E       		.uleb128 0x2e
+ 155 003a 00       		.byte	0
+ 156 003b 3F       		.uleb128 0x3f
+ 157 003c 19       		.uleb128 0x19
+ 158 003d 03       		.uleb128 0x3
+ 159 003e 0E       		.uleb128 0xe
+ 160 003f 3A       		.uleb128 0x3a
+ 161 0040 0B       		.uleb128 0xb
+ 162 0041 3B       		.uleb128 0x3b
+ 163 0042 0B       		.uleb128 0xb
+ 164 0043 39       		.uleb128 0x39
+ 165 0044 0B       		.uleb128 0xb
+ 166 0045 27       		.uleb128 0x27
+ 167 0046 19       		.uleb128 0x19
+ 168 0047 00       		.byte	0
+ 169 0048 00       		.byte	0
+ 170 0049 00       		.byte	0
+ 171              		.section	.gnu.debuglto_.debug_line,"e",%progbits
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 4
+
+
+ 172              	.Ldebug_line0:
+ 173 0000 3F000000 		.4byte	.LELT0-.LSLT0
+ 174              	.LSLT0:
+ 175 0004 0500     		.2byte	0x5
+ 176 0006 04       		.byte	0x4
+ 177 0007 00       		.byte	0
+ 178 0008 37000000 		.4byte	.LELTP0-.LASLTP0
+ 179              	.LASLTP0:
+ 180 000c 01       		.byte	0x1
+ 181 000d 01       		.byte	0x1
+ 182 000e 01       		.byte	0x1
+ 183 000f F6       		.byte	0xf6
+ 184 0010 F2       		.byte	0xf2
+ 185 0011 0D       		.byte	0xd
+ 186 0012 00       		.byte	0
+ 187 0013 01       		.byte	0x1
+ 188 0014 01       		.byte	0x1
+ 189 0015 01       		.byte	0x1
+ 190 0016 01       		.byte	0x1
+ 191 0017 00       		.byte	0
+ 192 0018 00       		.byte	0
+ 193 0019 00       		.byte	0
+ 194 001a 01       		.byte	0x1
+ 195 001b 00       		.byte	0
+ 196 001c 00       		.byte	0
+ 197 001d 01       		.byte	0x1
+ 198 001e 01       		.byte	0x1
+ 199 001f 01       		.uleb128 0x1
+ 200 0020 1F       		.uleb128 0x1f
+ 201 0021 03       		.uleb128 0x3
+ 202 0022 14000000 		.4byte	.LASF17
+ 203 0026 58000000 		.4byte	.LASF18
+ 204 002a 00000000 		.4byte	.LASF19
+ 205 002e 02       		.byte	0x2
+ 206 002f 01       		.uleb128 0x1
+ 207 0030 1F       		.uleb128 0x1f
+ 208 0031 02       		.uleb128 0x2
+ 209 0032 0B       		.uleb128 0xb
+ 210 0033 03       		.uleb128 0x3
+ 211 0034 82000000 		.4byte	.LASF20
+ 212 0038 00       		.byte	0
+ 213 0039 4B000000 		.4byte	.LASF21
+ 214 003d 01       		.byte	0x1
+ 215 003e 9F000000 		.4byte	.LASF22
+ 216 0042 02       		.byte	0x2
+ 217              	.LELTP0:
+ 218              	.LELT0:
+ 219              		.section	.gnu.debuglto_.debug_str,"eMS",%progbits,1
+ 220              	.LASF1:
+ 221 0000 6C6F6E67 		.ascii	"long long int\000"
+ 221      206C6F6E 
+ 221      6720696E 
+ 221      7400
+ 222              	.LASF0:
+ 223 000e 756E7369 		.ascii	"unsigned int\000"
+ 223      676E6564 
+ 223      20696E74 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 5
+
+
+ 223      00
+ 224              	.LASF15:
+ 225 001b 73745F6C 		.ascii	"st_lld_init\000"
+ 225      6C645F69 
+ 225      6E697400 
+ 226              	.LASF13:
+ 227 0027 2E2E2F2E 		.ascii	"../../../os/hal/src/hal_st.c\000"
+ 227      2E2F2E2E 
+ 227      2F6F732F 
+ 227      68616C2F 
+ 227      7372632F 
+ 228              	.LASF14:
+ 229 0044 443A5C43 		.ascii	"D:\\ChibiOS_21.11.3\\Apps\\Projeto\\RT-STM32F103-MA"
+ 229      68696269 
+ 229      4F535F32 
+ 229      312E3131 
+ 229      2E335C41 
+ 230 0073 504C454D 		.ascii	"PLEMINI\000"
+ 230      494E4900 
+ 231              	.LASF16:
+ 232 007b 7374496E 		.ascii	"stInit\000"
+ 232      697400
+ 233              	.LASF12:
+ 234 0082 474E5520 		.ascii	"GNU C17 13.3.1 20240614 -mcpu=cortex-m3 -mthumb -mf"
+ 234      43313720 
+ 234      31332E33 
+ 234      2E312032 
+ 234      30323430 
+ 235 00b5 6C6F6174 		.ascii	"loat-abi=soft -march=armv7-m -ggdb -O2 -fomit-frame"
+ 235      2D616269 
+ 235      3D736F66 
+ 235      74202D6D 
+ 235      61726368 
+ 236 00e8 2D706F69 		.ascii	"-pointer -falign-functions=16 -ffunction-sections -"
+ 236      6E746572 
+ 236      202D6661 
+ 236      6C69676E 
+ 236      2D66756E 
+ 237 011b 66646174 		.ascii	"fdata-sections -fno-common -flto\000"
+ 237      612D7365 
+ 237      6374696F 
+ 237      6E73202D 
+ 237      666E6F2D 
+ 238              	.LASF8:
+ 239 013c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 239      20756E73 
+ 239      69676E65 
+ 239      6420696E 
+ 239      7400
+ 240              	.LASF9:
+ 241 014e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 241      206C6F6E 
+ 241      6720756E 
+ 241      7369676E 
+ 241      65642069 
+ 242              	.LASF4:
+ 243 0165 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 6
+
+
+ 243      676E6564 
+ 243      20636861 
+ 243      7200
+ 244              	.LASF10:
+ 245 0173 63686172 		.ascii	"char\000"
+ 245      00
+ 246              	.LASF7:
+ 247 0178 6C6F6E67 		.ascii	"long int\000"
+ 247      20696E74 
+ 247      00
+ 248              	.LASF11:
+ 249 0181 5F426F6F 		.ascii	"_Bool\000"
+ 249      6C00
+ 250              	.LASF6:
+ 251 0187 73686F72 		.ascii	"short unsigned int\000"
+ 251      7420756E 
+ 251      7369676E 
+ 251      65642069 
+ 251      6E7400
+ 252              	.LASF3:
+ 253 019a 7369676E 		.ascii	"signed char\000"
+ 253      65642063 
+ 253      68617200 
+ 254              	.LASF2:
+ 255 01a6 6C6F6E67 		.ascii	"long double\000"
+ 255      20646F75 
+ 255      626C6500 
+ 256              	.LASF5:
+ 257 01b2 73686F72 		.ascii	"short int\000"
+ 257      7420696E 
+ 257      7400
+ 258              		.section	.gnu.debuglto_.debug_line_str,"eMS",%progbits,1
+ 259              	.LASF19:
+ 260 0000 2E2E2F2E 		.ascii	"../../../os/hal/src\000"
+ 260      2E2F2E2E 
+ 260      2F6F732F 
+ 260      68616C2F 
+ 260      73726300 
+ 261              	.LASF17:
+ 262 0014 443A5C43 		.ascii	"D:\\ChibiOS_21.11.3\\Apps\\Projeto\\RT-STM32F103-MA"
+ 262      68696269 
+ 262      4F535F32 
+ 262      312E3131 
+ 262      2E335C41 
+ 263 0043 504C454D 		.ascii	"PLEMINI\000"
+ 263      494E4900 
+ 264              	.LASF21:
+ 265 004b 68616C5F 		.ascii	"hal_st_lld.h\000"
+ 265      73745F6C 
+ 265      6C642E68 
+ 265      00
+ 266              	.LASF18:
+ 267 0058 2E2E2F2E 		.ascii	"../../../os/hal/ports/STM32/LLD/SYSTICKv1\000"
+ 267      2E2F2E2E 
+ 267      2F6F732F 
+ 267      68616C2F 
+ 267      706F7274 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 7
+
+
+ 268              	.LASF20:
+ 269 0082 2E2E2F2E 		.ascii	"../../../os/hal/src/hal_st.c\000"
+ 269      2E2F2E2E 
+ 269      2F6F732F 
+ 269      68616C2F 
+ 269      7372632F 
+ 270              	.LASF22:
+ 271 009f 68616C5F 		.ascii	"hal_st.c\000"
+ 271      73742E63 
+ 271      00
+ 272              		.text
+ 273              		.section	.gnu.lto_.profile.bfad2cf0,"e",%progbits
+ 274 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
+ 274      00010000 
+ 274      120003
+ 275              		.text
+ 276              		.section	.gnu.lto_.icf.bfad2cf0,"e",%progbits
+ 277 0000 789CE364 		.ascii	"x\234\343d@\000F\206\306\273o?\36230\000\000\022\"\003"
+ 277      40004686 
+ 277      C6BB6F3F 
+ 277      F2333000 
+ 277      00122203 
+ 278 0014 56       		.ascii	"V"
+ 279              		.text
+ 280              		.section	.gnu.lto_.ipa_sra.bfad2cf0,"e",%progbits
+ 281 0000 789C6367 		.ascii	"x\234cg@\000F\020bd\000\000\000\245\000\013"
+ 281      40004610 
+ 281      62640000 
+ 281      00A5000B 
+ 282              		.text
+ 283              		.section	.gnu.lto_.inline.bfad2cf0,"e",%progbits
+ 284 0000 789CD361 		.ascii	"x\234\323a@\000F\006\006\226\006 `N\003\262\230\030"
+ 284      40004606 
+ 284      06960620 
+ 284      604E03B2 
+ 284      9818
+ 285 0012 181A81EC 		.ascii	"\030\032\201\354:\006\0066\220\030S\012\023H\010\250"
+ 285      3A060636 
+ 285      9018530A 
+ 285      134808A8 
+ 286 0022 880BAC16 		.ascii	"\210\013\254\026\000\323C\007\230"
+ 286      00D34307 
+ 286      98
+ 287              		.text
+ 288              		.section	.gnu.lto_.jmpfuncs.bfad2cf0,"e",%progbits
+ 289 0000 789C6363 		.ascii	"x\234cc@\000F0\011\000\000\204\000\010"
+ 289      40004630 
+ 289      09000084 
+ 289      0008
+ 290              		.text
+ 291              		.section	.gnu.lto_.pureconst.bfad2cf0,"e",%progbits
+ 292 0000 789C6361 		.ascii	"x\234ca```d\230\301\002\000\001`\000\242"
+ 292      60606064 
+ 292      98C10200 
+ 292      016000A2 
+ 293              		.text
+ 294              		.section	.gnu.lto_.ipa_modref.bfad2cf0,"e",%progbits
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 8
+
+
+ 295 0000 789CE361 		.ascii	"x\234\343a@\000F$6\000\001D\000\016"
+ 295      40004624 
+ 295      36000144 
+ 295      000E
+ 296              		.text
+ 297              		.section	.gnu.lto_.lto.bfad2cf0,"e",%progbits
+ 298 0000 0D000100 		.ascii	"\015\000\001\000\001\000\000\000"
+ 298      01000000 
+ 299              		.text
+ 300              		.section	.gnu.lto_stInit.308.bfad2cf0,"e",%progbits
+ 301 0000 789CAB67 		.ascii	"x\234\253g``\010\007be fdf`\2344\261\213\211\241\241"
+ 301      60600807 
+ 301      62652066 
+ 301      6466609C 
+ 301      34B18B89 
+ 302 0016 A1C1819D 		.ascii	"\241\301\201\235\211\261qb\227 \343NF0\217\221\241\236"
+ 302      89B17162 
+ 302      9720E34E 
+ 302      46308F91 
+ 302      A19E
+ 303 0028 89B19E71 		.ascii	"\211\261\236q\015\263>\220\373\243{\357,\267\206\025"
+ 303      0DB33E90 
+ 303      FBA37BEF 
+ 303      2CB78615 
+ 304 0038 0718DF30 		.ascii	"\007\030\33700\3243@\0017\204\315\010\304\353/\261>"
+ 304      30D43340 
+ 304      013784CD 
+ 304      08C4EB2F 
+ 304      B13E
+ 305 004a 68F8F17F 		.ascii	"h\370\361\177~C\303\253.\306\3173\231\230\031\030V2"
+ 305      7E43C3AB 
+ 305      2EC6CF33 
+ 305      99981918 
+ 305      5632
+ 306 005c 834C6D60 		.ascii	"\203Lm`adX\305\314\004a5\036`\370\317\324\360\350k\017"
+ 306      616458C5 
+ 306      CC046135 
+ 306      1E60F8CF 
+ 306      D4F0E86B 
+ 307 0071 33432B73 		.ascii	"3C+s\263\002C\027#Sm5\003\003Pu;s\323\203\237=\214`"
+ 307      B3024317 
+ 307      23536D35 
+ 307      03035075 
+ 307      3B73D383 
+ 308 0089 63573233 		.ascii	"cW23B\2247\034\000\362\314]\254b\23432\2232\375\203"
+ 308      4294371C 
+ 308      00F2CC5D 
+ 308      AC629C33 
+ 308      329332FD 
+ 309 009e E38D0CF5 		.ascii	"\343\215\014\365\014\015\365\214c\034\013\012\212c\002"
+ 309      0C0DF58C 
+ 309      631C0B0A 
+ 309      8A6302
+ 310 00ad 8AF2B352 		.ascii	"\212\362\263RK\362c\202Bt\203C|\215\215\334\014\015"
+ 310      4BF26382 
+ 310      42748343 
+ 310      7C8D8DDC 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 9
+
+
+ 310      0C0D
+ 311 00bf 8C757D1D 		.ascii	"\214u}\035\003|\\}=\375<\031d\365\364\364!(\277X?#1"
+ 311      037C5C7D 
+ 311      3DFD3C19 
+ 311      64F5F4F4 
+ 311      2128BF58 
+ 312 00d6 47BFB828 		.ascii	"G\277\270(\031D\307\027\227\350%3\000\000\001sJ\204"
+ 312      1944C717 
+ 312      97E82533 
+ 312      00000173 
+ 312      4A84
+ 313              		.text
+ 314              		.section	.gnu.lto_.symbol_nodes.bfad2cf0,"e",%progbits
+ 315 0000 789C7364 		.ascii	"x\234sd\000\002\246-L\365\014\015@\300\3028\341\034"
+ 315      0002A62D 
+ 315      4CF50C0D 
+ 315      40C0C238 
+ 315      E11C
+ 316 0012 03433D03 		.ascii	"\003C=\003\303\256\011ML@\011\306\255L\365\214\377\241"
+ 316      C3AE094D 
+ 316      4C4009C6 
+ 316      AD4CF58C 
+ 316      FFA1
+ 317 0024 401E2CC9 		.ascii	"@\036,\311\300\3200\241\001$\307\314\300\010\321\342"
+ 317      C0D030A1 
+ 317      0124C7CC 
+ 317      C008D1E2 
+ 318 0034 C20000EE 		.ascii	"\302\000\000\356\364\025\266"
+ 318      F415B6
+ 319              		.text
+ 320              		.section	.gnu.lto_.refs.bfad2cf0,"e",%progbits
+ 321 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
+ 321      00020000 
+ 321      0A0002
+ 322              		.text
+ 323              		.section	.gnu.lto_.decls.bfad2cf0,"e",%progbits
+ 324 0000 789C7D91 		.ascii	"x\234}\221Mh\023Q\020\307\337\244!\254\037\225D-\024"
+ 324      4D681351 
+ 324      10C7DFA4 
+ 324      21AC1F95 
+ 324      442D14
+ 325 0013 A9186F39 		.ascii	"\251\030o9\230\304mh\203\236ZZ\033\202m-\246\036\204"
+ 325      98C46D68 
+ 325      839E5A5A 
+ 325      1B826D2D 
+ 325      A61E84
+ 326 0026 40FA61A1 		.ascii	"@\372a\241\221\326\204$\024\275\315n\226t\325\024\263"
+ 326      91D68424 
+ 326      14BDCD6E 
+ 326      9674D514 
+ 326      B3
+ 327 0037 87DAB0F4 		.ascii	"\207\332\260\364\260\215\202\340\251`\017\325Z\373\014"
+ 327      B08D82E0 
+ 327      A9600FD5 
+ 327      5AFB0C
+ 328 0046 5BF5A052 		.ascii	"[\365\240R\020T\360T\017R\254\207B{\350M\347\245\361"
+ 328      1054F054 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 10
+
+
+ 328      0F52AC87 
+ 328      427BE84D 
+ 328      E7A5F1
+ 329 0059 E2C1C7FE 		.ascii	"\342\301\307\376w\336\233\371\315\307\276mq0\266\313"
+ 329      77DE9BF9 
+ 329      CDC7BE6D 
+ 329      7130B6CB 
+ 330 0069 183B47FA 		.ascii	"\030;G\372M\213\216\354\013IXN\252\222\024`\314Y?\257"
+ 330      4D8B8EEC 
+ 330      0B49584E 
+ 330      AA921460 
+ 330      CC593FAF 
+ 331 007d D77D6B24 		.ascii	"\327}k$\247c\366\301\207\325c\273\200\210:r\305\226"
+ 331      A763F6C1 
+ 331      87D563BB 
+ 331      80883A72 
+ 331      C596
+ 332 008f B0A2CD60 		.ascii	"\260\242\315`\001m\005\312\270\214\326Rq\246\301\254"
+ 332      016D05CA 
+ 332      B88CD652 
+ 332      71A6C1AC 
+ 333 009f D8BA4240 		.ascii	"\330\272B@s%\277\214\346\342\220ib\261\272\240\243\005"
+ 333      7325BF8C 
+ 333      E6E29069 
+ 333      62B1BAA0 
+ 333      A305
+ 334 00b1 A0929B2B 		.ascii	"\240\222\233+.\223\014\021\305f\234\247\035\026\212"
+ 334      2E930C11 
+ 334      C5669CA7 
+ 334      1D168A
+ 335 00c0 168804B1 		.ascii	"\026\210\004\261\032q\0111O\362\232\332\"WP\303\015"
+ 335      1A710931 
+ 335      4FF29ADA 
+ 335      225750C3 
+ 335      0D
+ 336 00d1 B01E1528 		.ascii	"\260\036\025(2D*)?\224\351\306\035e\013\347\324\255"
+ 336      32442A29 
+ 336      3F94E9C6 
+ 336      1D650BE7 
+ 336      D4AD
+ 337 00e3 92378FA2 		.ascii	"\2227\217\242Q\001\241l\021\301\013\330\\\326t\245\250"
+ 337      5101A16C 
+ 337      11C10BD8 
+ 337      5CD674A5 
+ 337      A8
+ 338 00f4 DA9836E7 		.ascii	"\332\2306\347u}A\325t7Z6\032\025\256CI\265\357\033j"
+ 338      757D41D5 
+ 338      74375A36 
+ 338      1A15AE43 
+ 338      49B5EF1B 
+ 339 0109 77E931C7 		.ascii	"w\3511\307\022rt\033\252\255\013yJ4\257a\341]0T]\314"
+ 339      1272741B 
+ 339      AAAD0B79 
+ 339      4A34AF61 
+ 339      E15D3054 
+ 340 011f 2719A829 		.ascii	"'\031\250)\344@\317\216\230\267\302%E\020\025D(Uj\016"
+ 340      E440CF8E 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 11
+
+
+ 340      98B7C225 
+ 340      45101544 
+ 340      28556A0E 
+ 341 0133 AAAA7234 		.ascii	"\252\252r4\360\235\016F\2256\024\366P\017*\257\211\015"
+ 341      F09D0E46 
+ 341      953614F6 
+ 341      500F2AAF 
+ 341      890D
+ 342 0145 C15E441B 		.ascii	"\301^D\033\225{\210n&\326\301\267Iu\353u:v\237\274W"
+ 342      957B886E 
+ 342      26D6C1B7 
+ 342      4975EB75 
+ 342      3A769FBC 
+ 343 015a A53D718D 		.ascii	"\245=q\215\345}\020\004\260\246R\007\003<\351\226N1"
+ 343      E57D1004 
+ 343      B0A65207 
+ 343      033CE996 
+ 343      4E31
+ 344 016c E92C6B3B 		.ascii	"\351,k;@\253g\330\313Z\234E\216\272N\200\303\325\004"
+ 344      40AB67D8 
+ 344      CB5A9C45 
+ 344      8EBA4E80 
+ 344      C3D504
+ 345 017f 6EA7E3EB 		.ascii	"n\247\343\353\303\317\317\240\205\302{\210\276_l\015"
+ 345      C3CFCFA0 
+ 345      85C27B88 
+ 345      BE5F6C0D 
+ 346 018f 5E11C3A1 		.ascii	"^\021\303\241\366[\235\016}\366\365\317F_\271\214\373"
+ 346      F65B9D0E 
+ 346      7DF6F5CF 
+ 346      465FB98C 
+ 346      FB
+ 347 01a0 DB334FD7 		.ascii	"\3333O\327{6\3714\016\000\207\025X\255UZ\001\366\002"
+ 347      7B36F934 
+ 347      0E008715 
+ 347      58AD555A 
+ 347      01F602
+ 348 01b3 9E434405 		.ascii	"\236CD\005i\021\010\377\270\361m\316\341+#\356\357\314"
+ 348      691108FF 
+ 348      B8F16DCE 
+ 348      E12B23EE 
+ 348      EFCC
+ 349 01c5 99DB1D9B 		.ascii	"\231\333\035\233y\313\307\241Z\207\253\342\035\271C"
+ 349      79CBC7A1 
+ 349      5A87ABE2 
+ 349      1DB943
+ 350 01d4 AD9DD49A 		.ascii	"\255\235\324\232\006\377\376\351\255\351\364p\242\221"
+ 350      06FFFEE9 
+ 350      ADE9F470 
+ 350      A291
+ 351 01e2 6B8738AC 		.ascii	"k\2078\254\203M\310\033\2015\310\355L\032\316LN\205"
+ 351      834DC81B 
+ 351      8135C8ED 
+ 351      4C1ACE4C 
+ 351      4E85
+ 352 01f4 FD93ECF0 		.ascii	"\375\223\354\360h*\223\033\273\355\237\0141W6\027\275"
+ 352      682A931B 
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 12
+
+
+ 352      BBED9F0C 
+ 352      31573617 
+ 352      BD
+ 353 0205 95CCB504 		.ascii	"\225\314\265\004\002\301\203'\225\015\216\017O\004\263"
+ 353      02C18327 
+ 353      950D8E0F 
+ 353      4F04B3
+ 354 0214 99516113 		.ascii	"\231Qa\023\331\\`T\212\364_\363v\311av\374\257'0\"\267"
+ 354      D95C6054 
+ 354      8AF45FF3 
+ 354      76C96176 
+ 354      FCAF2730 
+ 355 022a B7C96D17 		.ascii	"\267\311m\027\206Y\270\373b\274k<9\222\274\022K\264"
+ 355      8659B8FB 
+ 355      62BC6B3C 
+ 355      3992BC12 
+ 355      4BB4
+ 356 023c CA01590E 		.ascii	"\312\001Y\016\204\342\235\351t6>\220I\335\034\313\245"
+ 356      84E29DE9 
+ 356      74363E90 
+ 356      49DD1CCB 
+ 356      A5
+ 357 024d E25707FD 		.ascii	"\342W\007\375\261\301\276Pk\217|>\344\357\353\034\350"
+ 357      B1C1BE50 
+ 357      6B8F7C3E 
+ 357      E4EFEB1C 
+ 357      E8
+ 358 025e BDD417ED 		.ascii	"\275\324\027\355\217\262\323\377k\310\216ds\211\211"
+ 358      8FB2D3FF 
+ 358      6BC88E64 
+ 358      738989
+ 359 026d 891B8924 		.ascii	"\211\033\211$\215\026\376\227L\323\360\331`\255h\260"
+ 359      8D16FE97 
+ 359      4CD3F0D9 
+ 359      60AD68B0 
+ 360 027d B7B73B18 		.ascii	"\267\267;\030\273\036\033\214v]\236\222\353\371\"30"
+ 360      BB1E1B8C 
+ 360      765D9E92 
+ 360      EBF92233 
+ 360      30
+ 361 028e CEFE00B4 		.ascii	"\316\376\000\264\373:\364"
+ 361      FB3AF4
+ 362              		.text
+ 363              		.section	.gnu.lto_.symtab.bfad2cf0,"e",%progbits
+ 364 0000 7374496E 		.ascii	"stInit\000"
+ 364      697400
+ 365 0007 00       		.ascii	"\000"
+ 366 0008 00       		.ascii	"\000"
+ 367 0009 00       		.ascii	"\000"
+ 368 000a 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 368      00000000 
+ 369 0012 C0000000 		.ascii	"\300\000\000\000"
+ 370 0016 73745F6C 		.ascii	"st_lld_init\000"
+ 370      6C645F69 
+ 370      6E697400 
+ 371 0022 00       		.ascii	"\000"
+ 372 0023 02       		.ascii	"\002"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 13
+
+
+ 373 0024 00       		.ascii	"\000"
+ 374 0025 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 374      00000000 
+ 375 002d C2000000 		.ascii	"\302\000\000\000"
+ 376              		.text
+ 377              		.section	.gnu.lto_.ext_symtab.bfad2cf0,"e",%progbits
+ 378 0000 01       		.ascii	"\001"
+ 379 0001 01       		.ascii	"\001"
+ 380 0002 00       		.ascii	"\000"
+ 381 0003 01       		.ascii	"\001"
+ 382 0004 00       		.ascii	"\000"
+ 383              		.text
+ 384              		.section	.gnu.lto_.opts,"e",%progbits
+ 385 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-prote"
+ 385      6F2D6F70 
+ 385      656E6D70 
+ 385      2720272D 
+ 385      666E6F2D 
+ 386 0033 6374696F 		.ascii	"ction=none' '-g' '-mcpu=cortex-m3' '-mthumb' '-mflo"
+ 386      6E3D6E6F 
+ 386      6E652720 
+ 386      272D6727 
+ 386      20272D6D 
+ 387 0066 61742D61 		.ascii	"at-abi=soft' '-mlibarch=armv7-m' '-march=armv7-m' '"
+ 387      62693D73 
+ 387      6F667427 
+ 387      20272D6D 
+ 387      6C696261 
+ 388 0099 2D4F3227 		.ascii	"-O2' '-fomit-frame-pointer' '-falign-functions=16' "
+ 388      20272D66 
+ 388      6F6D6974 
+ 388      2D667261 
+ 388      6D652D70 
+ 389 00cc 272D6666 		.ascii	"'-ffunction-sections' '-fdata-sections' '-fno-commo"
+ 389      756E6374 
+ 389      696F6E2D 
+ 389      73656374 
+ 389      696F6E73 
+ 390 00ff 6E272027 		.ascii	"n' '-flto' '-Xassembler' '-alms=./build/lst/hal_st."
+ 390      2D666C74 
+ 390      6F272027 
+ 390      2D586173 
+ 390      73656D62 
+ 391 0132 6C737427 		.ascii	"lst'\000"
+ 391      00
+ 392              		.text
+ 393              		.comm	__gnu_lto_slim,1,1
+ 394              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hal_st.c
+C:\Users\arthu\AppData\Local\Temp\cc98FuLD.s:20     .gnu.debuglto_.debug_info:00000000 hal_st.c.b165159a
+                            *COM*:00000001 __gnu_lto_slim
+
+NO UNDEFINED SYMBOLS
