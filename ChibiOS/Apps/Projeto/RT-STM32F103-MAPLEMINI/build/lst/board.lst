@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
   55 0041 01       		.uleb128 0x1
   56 0042 01       		.byte	0x1
   57 0043 08       		.byte	0x8
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 2
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 2
 
 
   58 0044 32000000 		.4byte	.LASF4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  112 00ad 04       		.byte	0x4
  113 00ae 04       		.uleb128 0x4
  114 00af 63726800 		.ascii	"crh\000"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 3
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 3
 
 
  115 00b3 6E       		.byte	0x6e
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  169 0123 0B       		.uleb128 0xb
  170 0124 16010000 		.4byte	0x116
  171 0128 04       		.byte	0x4
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 4
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 4
 
 
  172 0129 19       		.byte	0x19
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  226 0026 0B       		.uleb128 0xb
  227 0027 39       		.uleb128 0x39
  228 0028 0B       		.uleb128 0xb
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 5
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 5
 
 
  229 0029 49       		.uleb128 0x49
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  283 005f 06       		.sleb128 6
  284 0060 27       		.uleb128 0x27
  285 0061 19       		.uleb128 0x19
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 6
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 6
 
 
  286 0062 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  340 0098 0B       		.uleb128 0xb
  341 0099 34       		.uleb128 0x34
  342 009a 00       		.byte	0
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 7
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 7
 
 
  343 009b 47       		.uleb128 0x47
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  397 001b 00       		.byte	0
  398 001c 00       		.byte	0
  399 001d 01       		.byte	0x1
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 8
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 8
 
 
  400 001e 01       		.byte	0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  442 0040 73746D33 		.ascii	"stm32_gpio_setup_t\000"
  442      325F6770 
  442      696F5F73 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 9
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 9
 
 
  442      65747570 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  465 00ff 504C454D 		.ascii	"PLEMINI\000"
  465      494E4900 
  466              	.LASF22:
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 10
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 10
 
 
  467 0107 5F5F6561 		.ascii	"__early_init\000"
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  489      6C69676E 
  489      2D66756E 
  490 022d 66646174 		.ascii	"fdata-sections -fno-common -flto\000"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 11
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 11
 
 
  490      612D7365 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  509              	.LASF29:
  510 0112 2E2E2F2E 		.ascii	"../../../os/hal/boards/STM32F103C8_MINIMAL\000"
  510      2E2F2E2E 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 12
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 12
 
 
  510      2F6F732F 
@@ -686,12 +686,12 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  518      68616C2F 
  518      706F7274 
  519              		.text
- 520              		.section	.gnu.lto_.profile.c045ceb5,"e",%progbits
+ 520              		.section	.gnu.lto_.profile.d969b4a4,"e",%progbits
  521 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
  521      00010000 
  521      120003
  522              		.text
- 523              		.section	.gnu.lto_.icf.c045ceb5,"e",%progbits
+ 523              		.section	.gnu.lto_.icf.d969b4a4,"e",%progbits
  524 0000 789C1363 		.ascii	"x\234\023c@\000f\206\306\273o?\36230~>sn77\003\323\227"
  524      40006686 
  524      C6BB6F3F 
@@ -701,7 +701,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  525      19007585 
  525      0A27
  526              		.text
- 527              		.section	.gnu.lto_.ipa_sra.c045ceb5,"e",%progbits
+ 527              		.section	.gnu.lto_.ipa_sra.d969b4a4,"e",%progbits
  528 0000 789CE362 		.ascii	"x\234\343b@\000&\006\006F\006F b\000\000\001\030\000"
  528      40002606 
  528      06460646 
@@ -709,7 +709,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  528      011800
  529 0013 11       		.ascii	"\021"
  530              		.text
- 531              		.section	.gnu.lto_.inline.c045ceb5,"e",%progbits
+ 531              		.section	.gnu.lto_.inline.d969b4a4,"e",%progbits
  532 0000 789C0B60 		.ascii	"x\234\013`@\000&\006\006\226\006 `Nc\004s\032\201\354"
  532      40002606 
  532      06960620 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  533 0014 3A060636 		.ascii	":\006\0066\220\030S\012\023H\210\201\201\221\013L20"
  533      9018530A 
  533      13488881 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 13
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 13
 
 
  533      81910B4C 
@@ -727,30 +727,30 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  534      6400008E 
  534      6D0F19
  535              		.text
- 536              		.section	.gnu.lto_.jmpfuncs.c045ceb5,"e",%progbits
+ 536              		.section	.gnu.lto_.jmpfuncs.d969b4a4,"e",%progbits
  537 0000 789CE364 		.ascii	"x\234\343d@\000&\020\301\010\304\000\000\350\000\015"
  537      40002610 
  537      C108C400 
  537      00E8000D 
  538              		.text
- 539              		.section	.gnu.lto_.pureconst.c045ceb5,"e",%progbits
+ 539              		.section	.gnu.lto_.pureconst.d969b4a4,"e",%progbits
  540 0000 789C6367 		.ascii	"x\234cg```b\230\301\302\330\300\002\000\004u\001+"
  540      60606062 
  540      98C1C2D8 
  540      C0020004 
  540      75012B
  541              		.text
- 542              		.section	.gnu.lto_.ipa_modref.c045ceb5,"e",%progbits
+ 542              		.section	.gnu.lto_.ipa_modref.d969b4a4,"e",%progbits
  543 0000 789CE361 		.ascii	"x\234\343a@\000F$6\000\001D\000\016"
  543      40004624 
  543      36000144 
  543      000E
  544              		.text
- 545              		.section	.gnu.lto_.lto.c045ceb5,"e",%progbits
+ 545              		.section	.gnu.lto_.lto.d969b4a4,"e",%progbits
  546 0000 0D000100 		.ascii	"\015\000\001\000\001\000\000\000"
  546      01000000 
  547              		.text
- 548              		.section	.gnu.lto_pal_default_config.308.c045ceb5,"e",%progbits
+ 548              		.section	.gnu.lto_pal_default_config.308.d969b4a4,"e",%progbits
  549 0000 789C9BC4 		.ascii	"x\234\233\304\300\300\300\310\000\001\254\214l\032\214"
  549      C0C0C0C8 
  549      0001AC8C 
@@ -777,8 +777,8 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  554 0056 CDC80000 		.ascii	"\315\310\000\000\314\2754\000"
  554      CCBD3400 
  555              		.text
- 556              		.section	.gnu.lto___early_init.309.c045ceb5,"e",%progbits
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 14
+ 556              		.section	.gnu.lto___early_init.309.d969b4a4,"e",%progbits
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 14
 
 
  557 0000 789CAB61 		.ascii	"x\234\253a``\310\005be fdf`\2344\261\213\211\241\241"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  568      FA10945F 
  568      AC9F9198 
  569 00d4 A39F949F 		.ascii	"\243\237\224\237X\224R\254\017W\353l\021\017R\350\353"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 15
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 15
 
 
  569      589452AC 
@@ -849,7 +849,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  570      4B660000 
  570      FC0A4E9B 
  571              		.text
- 572              		.section	.gnu.lto_boardInit.310.c045ceb5,"e",%progbits
+ 572              		.section	.gnu.lto_boardInit.310.d969b4a4,"e",%progbits
  573 0000 789CCB64 		.ascii	"x\234\313d``\310\005be fdf`\2344\261\213\211\241\241"
  573      6060C805 
  573      62652066 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  582      F4F36430 
  582      D6D3D387 
  582      A0FC62FD 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 16
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 16
 
 
  583 00be 8CC41CFD 		.ascii	"\214\304\034\375\244\374\304\242\224b}\270Zg\213x\220"
@@ -911,7 +911,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  584      0300F208 
  584      4886
  585              		.text
- 586              		.section	.gnu.lto_.symbol_nodes.c045ceb5,"e",%progbits
+ 586              		.section	.gnu.lto_.symbol_nodes.d969b4a4,"e",%progbits
  587 0000 789C4B61 		.ascii	"x\234Ka\000\002\246\255L\365\014\015@\300\3028\341\034"
  587      0002A6AD 
  587      4CF50C0D 
@@ -933,12 +933,12 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  590      000C1C
  591 0048 1ECD     		.ascii	"\036\315"
  592              		.text
- 593              		.section	.gnu.lto_.refs.c045ceb5,"e",%progbits
+ 593              		.section	.gnu.lto_.refs.d969b4a4,"e",%progbits
  594 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
  594      00020000 
  594      0A0002
  595              		.text
- 596              		.section	.gnu.lto_.decls.c045ceb5,"e",%progbits
+ 596              		.section	.gnu.lto_.decls.d969b4a4,"e",%progbits
  597 0000 789C9553 		.ascii	"x\234\225SoL[U\024\277\347\265i\036\010\362\307-i\214"
  597      6F4C5B55 
  597      14BFE7B5 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  600      49936160 
  600      1BB897A6 
  600      AE
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 17
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 17
 
 
  601 004a 3899B27F 		.ascii	"8\231\262\177\2141Q`\014\010#\006\005\015&\304y\356"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  612      2A9EF6AD 
  612      8675BDC8 
  612      1B0510
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 18
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 18
 
 
  613 0117 A27152C8 		.ascii	"\242qR\310\001\324F\375A)\344K\243;6\024\014\236\365"
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  624      B808F68B 
  624      82B80094 
  625 01f1 B2397C75 		.ascii	"\2629|uK\243\037\212br\352w\304B\256\226!\225\023\247"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 19
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 19
 
 
  625      4BA31F8A 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  636      766608E2 
  637 02c6 BE80701F 		.ascii	"\276\200p\037~\200%\310\266\343\036\310\"\321\311\235"
  637      7E8025C8 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 20
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 20
 
 
  637      B6E31EC8 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  649      8D475D36 
  649      4F6B97F1 
  649      D0E16673 
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 21
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 21
 
 
  649      F51BA62A 
@@ -1258,14 +1258,14 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  661      FD1D65CB 
  661      ABFEAB7F 
  662 0482 6EC53D3D 		.ascii	"n\305==J\373l\353?\001@\311ea"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 22
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 22
 
 
  662      4AFB6CEB 
  662      3F0140C9 
  662      6561
  663              		.text
- 664              		.section	.gnu.lto_.symtab.c045ceb5,"e",%progbits
+ 664              		.section	.gnu.lto_.symtab.d969b4a4,"e",%progbits
  665 0000 5F5F6561 		.ascii	"__early_init\000"
  665      726C795F 
  665      696E6974 
@@ -1308,7 +1308,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  687      00000000 
  688 0073 EA000000 		.ascii	"\352\000\000\000"
  689              		.text
- 690              		.section	.gnu.lto_.ext_symtab.c045ceb5,"e",%progbits
+ 690              		.section	.gnu.lto_.ext_symtab.d969b4a4,"e",%progbits
  691 0000 01       		.ascii	"\001"
  692 0001 01       		.ascii	"\001"
  693 0002 00       		.ascii	"\000"
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  697 0006 00       		.ascii	"\000"
  698 0007 01       		.ascii	"\001"
  699 0008 00       		.ascii	"\000"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 23
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 23
 
 
  700              		.text
@@ -1357,12 +1357,12 @@ ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 1
  709              		.text
  710              		.comm	__gnu_lto_slim,1,1
  711              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
-ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s 			page 24
+ARM GAS  C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 board.c
-C:\Users\arthu\AppData\Local\Temp\ccbilC0c.s:23     .gnu.debuglto_.debug_info:00000000 board.c.c0a512c2
+C:\Users\arthu\AppData\Local\Temp\ccwFHhPn.s:23     .gnu.debuglto_.debug_info:00000000 board.c.c0a512c2
                             *COM*:00000001 __gnu_lto_slim
 
 NO UNDEFINED SYMBOLS
