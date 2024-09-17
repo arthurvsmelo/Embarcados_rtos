@@ -1,27 +1,31 @@
 #include "hal.h"
 #include "ch.h"
 
-#define LED_ACTIVE                 0
-#define LED_SOAK                   1
-#define LED_WASH                   2
-#define LED_RINSE                  3
-#define LED_CENTRIFUGE             4
-#define LED_WATER_IN               5
-#define LED_WATER_OUT              6
-#define LED_MOTOR_1                7
-#define LED_MOTOR_2                8
 #define BTN_START                 12
 #define BTN_HIGH_WATERMARK        13
 #define BTN_LOW_WATERMARK         14
 #define BTN_OPEN_LID              15
 #define TIMEOUT_MOTOR_CYCLE      500
-#define TIMEOUT_SOAK           10000
-#define TIMEOUT_WASH           12000
-#define TIMEOUT_RINSE          15000
-#define TIMEOUT_CENTRIFUGE     20000
+#define TIMEOUT_SOAK            5000
+#define TIMEOUT_WASH            6000
+#define TIMEOUT_RINSE           8000
+#define TIMEOUT_CENTRIFUGE     10000
 #define GPIO_INPUT_MASK       0xF000
 #define GPIO_OUTPUT_MASK      0x01FF
 #define QUEUE_SIZE                10
+#define IDLE_MASK             0x0000
+#define SOAK_WATERIN_MASK     0x0023
+#define SOAK_TURNCW_MASK      0x0083
+#define SOAK_TURNACW_MASK     0x0103
+#define WASH_WATEROUT_MASK    0x0045
+#define WASH_TURNCW_MASK      0x0085
+#define WASH_TURNACW_MASK     0x0105
+#define RINSE_WATERIN_MASK    0x0029
+#define RINSE_WATEROUT_MASK   0x0049
+#define RINSE_TURNCW_MASK     0x0089
+#define RINSE_TURNACW_MASK    0x0109
+#define CENTRIFUGE_MASK       0x0091
+#define OPEN_LID_MASK         0x0001
 
 typedef enum {
     IDLE = 0,
@@ -60,7 +64,7 @@ typedef enum {
     CENTRIFUGE_TIMER = 5
 }timer_t;
 
-static event_t queue[QUEUE_SIZE], *rd_ptr, *wr_ptr;
+static msg_t queue[QUEUE_SIZE], *rd_ptr, *wr_ptr;
 static size_t qsize;
 States current_state = IDLE, 
        previous_state = IDLE;
@@ -101,7 +105,7 @@ static void queueInit(void) {
     qsize = 0;
 }
 
-void queueWriteFromISR(event_t evt) {
+void queueWriteFromISR(msg_t evt) {
     chSysLockFromISR();
  
     if(qsize < QUEUE_SIZE) {
@@ -115,8 +119,8 @@ void queueWriteFromISR(event_t evt) {
     chSysUnlockFromISR();
 }
 
-event_t queueRead(void) {
-    event_t evt;
+msg_t queueRead(void) {
+    msg_t evt;
 
     chSysLock();
     chMtxLockS(&mtx);
@@ -138,50 +142,42 @@ event_t queueRead(void) {
 
 static void motorTimerCallback(void *arg) {
     (void)arg;
-    event_t evt = TIMEOUT_MOTOR_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(TIMEOUT_MOTOR_EV);
 }
 
 static void soakTimerCallback(void *arg) {
     (void)arg;
-    event_t evt = TIMEOUT_SOAK_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(TIMEOUT_SOAK_EV);
 }
 
 static void washTimerCallback(void *arg) {
     (void)arg;
-    event_t evt = TIMEOUT_WASH_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(TIMEOUT_WASH_EV);
 }
 
 static void rinseTimerCallback(void *arg) {
     (void)arg;
-    event_t evt = TIMEOUT_RINSE_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(TIMEOUT_RINSE_EV);
 }
 
 static void centrifugeTimerCallback(void *arg) {
     (void)arg;
-    event_t evt = TIMEOUT_CENTRIFUGE_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(TIMEOUT_CENTRIFUGE_EV);
 }
 
 static void startButtonCallback(void *arg) {
     (void)arg;
-    event_t evt = START_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(START_EV);
 }
 
 static void highWatermarkButtonCallback(void *arg) {
     (void)arg;
-    event_t evt = HIGH_WATERMARK_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(HIGH_WATERMARK_EV);
 }
 
 static void lowWatermarkButtonCallback(void *arg) {
     (void)arg;
-    event_t evt = LOW_WATERMARK_EV;
-    queueWriteFromISR(evt);
+    queueWriteFromISR(LOW_WATERMARK_EV);
 }
 
 static void openLidButtonCallback(void *arg) {
@@ -200,19 +196,19 @@ static void openLidButtonCallback(void *arg) {
 static void startTimer(timer_t vt, sysinterval_t time) {
     switch(vt){
         case MOTOR_TIMER:
-            chVTSet(&vt_motor, time, motorTimerCallback, NULL);
+            chVTSet(&vt_motor, time, (vtfunc_t)motorTimerCallback, NULL);
             break;
         case SOAK_TIMER:
-            chVTSet(&vt_soak, time, soakTimerCallback, NULL);
+            chVTSet(&vt_soak, time, (vtfunc_t)soakTimerCallback, NULL);
             break;
         case WASH_TIMER:
-            chVTSet(&vt_wash, time, washTimerCallback, NULL);
+            chVTSet(&vt_wash, time, (vtfunc_t)washTimerCallback, NULL);
             break;
         case RINSE_TIMER:
-            chVTSet(&vt_rinse, time, rinseTimerCallback, NULL);
+            chVTSet(&vt_rinse, time, (vtfunc_t)rinseTimerCallback, NULL);
             break;
         case CENTRIFUGE_TIMER:
-            chVTSet(&vt_centrifuge, time, centrifugeTimerCallback, NULL);
+            chVTSet(&vt_centrifuge, time, (vtfunc_t)centrifugeTimerCallback, NULL);
             break;
         default:
     }
@@ -263,31 +259,31 @@ static void resumeTimer(timer_t vt) {
     switch(vt) {
         case MOTOR_TIMER:
             if(vt_motor_paused == true) {
-                chVTSet(&vt_motor, remainingTime_motor, motorTimerCallback, NULL);
+                chVTSet(&vt_motor, remainingTime_motor, (vtfunc_t)motorTimerCallback, NULL);
                 vt_motor_paused = false;
             }
             break;
         case SOAK_TIMER:
             if(vt_soak_paused == true){
-                chVTSet(&vt_soak, remainingTime_soak, soakTimerCallback, NULL);
+                chVTSet(&vt_soak, remainingTime_soak, (vtfunc_t)soakTimerCallback, NULL);
                 vt_soak_paused = false;
             }
             break;
         case WASH_TIMER:
             if(vt_wash_paused == true) {
-                chVTSet(&vt_wash, remainingTime_wash, washTimerCallback, NULL);
+                chVTSet(&vt_wash, remainingTime_wash, (vtfunc_t)washTimerCallback, NULL);
                 vt_wash_paused = false;
             }
             break;
         case RINSE_TIMER:
             if(vt_rinse_paused == true) {
-                chVTSet(&vt_rinse, remainingTime_rinse, rinseTimerCallback, NULL);
+                chVTSet(&vt_rinse, remainingTime_rinse, (vtfunc_t)rinseTimerCallback, NULL);
                 vt_rinse_paused = false;
             }
             break;
         case CENTRIFUGE_TIMER:
             if(vt_centrifuge_paused == true) {
-                chVTSet(&vt_centrifuge, remainingTime_centrifuge, centrifugeTimerCallback, NULL);
+                chVTSet(&vt_centrifuge, remainingTime_centrifuge, (vtfunc_t)centrifugeTimerCallback, NULL);
                 vt_centrifuge_paused = false;
             }
             break;
@@ -297,307 +293,287 @@ static void resumeTimer(timer_t vt) {
 
 static THD_FUNCTION(stateMachine, arg) {
     (void)arg;
-    event_t event;
+    msg_t event;
 
     while(1) {
-        event = queueRead();
-        switch(event){
-            case START_EV:
-                if(current_state == IDLE) {
-                    previous_state = IDLE;
-                    current_state = SOAK_WATER_IN;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0023);
-                }
-                break;
-            case HIGH_WATERMARK_EV:
-                if(current_state == SOAK_WATER_IN) {
-                    previous_state = SOAK_WATER_IN;
-                    current_state = SOAK_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0083);
-                    startTimer(SOAK_TIMER, TIME_MS2I(TIMEOUT_SOAK));
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == RINSE_WATER_IN) {
-                    previous_state = RINSE_WATER_IN;
-                    current_state = RINSE_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0089);
-                    startTimer(RINSE_TIMER, TIME_MS2I(4 * TIMEOUT_RINSE));
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                break;
-            case LOW_WATERMARK_EV:
-                if(current_state == WASH_WATER_OUT){
-                    previous_state = WASH_WATER_OUT;
-                    current_state = RINSE_WATER_IN;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0029);
-                }
-                else if(current_state == RINSE_WATER_OUT){
-                    previous_state = RINSE_WATER_OUT;
-                    current_state = CENTRIFUGE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0091);
-                    startTimer(CENTRIFUGE_TIMER, TIME_MS2I(TIMEOUT_CENTRIFUGE));
-                }
-                break;
-            case TIMEOUT_MOTOR_EV:
-                if(current_state == SOAK_TURN_CLKWISE) {
-                    previous_state = SOAK_TURN_CLKWISE;
-                    current_state = SOAK_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0103);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == SOAK_TURN_ANTI_CLKWISE) {
-                    previous_state = SOAK_TURN_ANTI_CLKWISE;
-                    current_state = SOAK_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0083);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == WASH_TURN_CLKWISE) {
-                    previous_state = WASH_TURN_CLKWISE;
-                    current_state = WASH_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0105);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == WASH_TURN_ANTI_CLKWISE) {
-                    previous_state = WASH_TURN_ANTI_CLKWISE;
-                    current_state = WASH_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0085);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == RINSE_TURN_CLKWISE) {
-                    previous_state = RINSE_TURN_CLKWISE;
-                    current_state = RINSE_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0109);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == RINSE_TURN_ANTI_CLKWISE) {
-                    previous_state = RINSE_TURN_ANTI_CLKWISE;
-                    current_state = RINSE_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0089);
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                break;
-            case TIMEOUT_SOAK_EV:
-                if(current_state == SOAK_TURN_CLKWISE) {
-                    previous_state = SOAK_TURN_CLKWISE;
-                    current_state = WASH_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0085);
-                    chVTReset(&vt_motor);
-                    startTimer(WASH_TIMER, TIME_MS2I(4 * TIMEOUT_WASH));
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                else if(current_state == SOAK_TURN_ANTI_CLKWISE) {
-                    previous_state = SOAK_TURN_ANTI_CLKWISE;
-                    current_state = WASH_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0085);
-                    chVTReset(&vt_motor);
-                    startTimer(WASH_TIMER, TIME_MS2I(4 * TIMEOUT_WASH));
-                    startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
-                }
-                break;
-            case TIMEOUT_WASH_EV:
-                if(current_state == WASH_TURN_CLKWISE) {
-                    previous_state = WASH_TURN_CLKWISE;
-                    current_state = WASH_WATER_OUT;
-                    chVTReset(&vt_motor);
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0045);
-                }
-                else if(current_state == WASH_TURN_ANTI_CLKWISE) {
-                    previous_state = WASH_TURN_ANTI_CLKWISE;
-                    current_state = WASH_WATER_OUT;
-                    chVTReset(&vt_motor);
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0045);
-                }
-                break;
-            case TIMEOUT_RINSE_EV:
-                if(current_state == RINSE_TURN_CLKWISE) {
-                    previous_state = RINSE_TURN_CLKWISE;
-                    current_state = RINSE_WATER_OUT;
-                    chVTReset(&vt_motor);
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0049);
-                }
-                else if(current_state == RINSE_TURN_ANTI_CLKWISE) {
-                    previous_state = RINSE_TURN_ANTI_CLKWISE;
-                    current_state = RINSE_WATER_OUT;
-                    chVTReset(&vt_motor);
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0049);
-                }
-                break;
-            case TIMEOUT_CENTRIFUGE_EV:
-                if(current_state == CENTRIFUGE) {
-                    previous_state = IDLE;
-                    current_state = IDLE;
-                    chVTReset(&vt_motor);
-                    chVTReset(&vt_soak);
-                    chVTReset(&vt_wash);
-                    chVTReset(&vt_rinse);
-                    chVTReset(&vt_centrifuge);
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                break;
-            case LID_OPEN_EV:
-                if(current_state == IDLE){
-                    palClearPad(IOPORT3, 13);
-                    previous_state = IDLE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if(current_state == SOAK_WATER_IN) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = SOAK_WATER_IN;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if(current_state == SOAK_TURN_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = SOAK_TURN_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(SOAK_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == SOAK_TURN_ANTI_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = SOAK_TURN_ANTI_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(SOAK_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == WASH_TURN_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = WASH_TURN_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(WASH_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == WASH_TURN_ANTI_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = WASH_TURN_ANTI_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(WASH_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == WASH_WATER_OUT) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = WASH_WATER_OUT;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if(current_state == RINSE_WATER_IN) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = RINSE_WATER_IN;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if(current_state == RINSE_TURN_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = RINSE_TURN_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(RINSE_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == RINSE_TURN_ANTI_CLKWISE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = RINSE_TURN_ANTI_CLKWISE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(RINSE_TIMER);
-                    pauseTimer(MOTOR_TIMER);
-                }
-                else if(current_state == RINSE_WATER_OUT) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = RINSE_WATER_OUT;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if(current_state == CENTRIFUGE) {
-                    palClearPad(IOPORT3, 13);
-                    previous_state = CENTRIFUGE;
-                    current_state = OPEN_LID;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                    pauseTimer(CENTRIFUGE_TIMER);
-                }
-                break;
-            case LID_CLOSE_EV:
-                if (previous_state == IDLE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = IDLE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
-                }
-                else if (previous_state == SOAK_WATER_IN && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = SOAK_WATER_IN;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0023);
-                }
-                else if(previous_state == SOAK_TURN_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = SOAK_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0083);
-                    resumeTimer(SOAK_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == SOAK_TURN_ANTI_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = SOAK_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0103);
-                    resumeTimer(SOAK_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == WASH_WATER_OUT && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = WASH_WATER_OUT;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0045);
-                }
-                else if(previous_state == WASH_TURN_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = WASH_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0085);
-                    resumeTimer(WASH_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == WASH_TURN_ANTI_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = WASH_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0105);
-                    resumeTimer(WASH_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == RINSE_WATER_IN && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = RINSE_WATER_IN;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0029);
-                }
-                else if(previous_state == RINSE_WATER_OUT && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = RINSE_WATER_OUT;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0049);
-                }
-                else if(previous_state == RINSE_TURN_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = RINSE_TURN_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0089);
-                    resumeTimer(RINSE_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == RINSE_TURN_ANTI_CLKWISE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = RINSE_TURN_ANTI_CLKWISE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0109);
-                    resumeTimer(RINSE_TIMER);
-                    resumeTimer(MOTOR_TIMER);
-                }
-                else if(previous_state == CENTRIFUGE && current_state == OPEN_LID) {
-                    palSetPad(IOPORT3, 13);
-                    current_state = CENTRIFUGE;
-                    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0091);
-                    resumeTimer(CENTRIFUGE_TIMER);
-                }
-                break;
-            default:
+        if (qsize > 0) {
+            event = queueRead();
+            switch(event){
+                case START_EV:
+                    if(current_state == IDLE) {
+                        previous_state = IDLE;
+                        current_state = SOAK_WATER_IN;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_WATERIN_MASK);
+                    }
+                    break;
+                case HIGH_WATERMARK_EV:
+                    if(current_state == SOAK_WATER_IN) {
+                        previous_state = SOAK_WATER_IN;
+                        current_state = SOAK_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_TURNCW_MASK);
+                        startTimer(SOAK_TIMER, TIME_MS2I(TIMEOUT_SOAK));
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == RINSE_WATER_IN) {
+                        previous_state = RINSE_WATER_IN;
+                        current_state = RINSE_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_TURNCW_MASK);
+                        startTimer(RINSE_TIMER, TIME_MS2I(4 * TIMEOUT_RINSE));
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    break;
+                case LOW_WATERMARK_EV:
+                    if(current_state == WASH_WATER_OUT){
+                        previous_state = WASH_WATER_OUT;
+                        current_state = RINSE_WATER_IN;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_WATERIN_MASK);
+                    }
+                    else if(current_state == RINSE_WATER_OUT){
+                        previous_state = RINSE_WATER_OUT;
+                        current_state = CENTRIFUGE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, CENTRIFUGE_MASK);
+                        startTimer(CENTRIFUGE_TIMER, TIME_MS2I(TIMEOUT_CENTRIFUGE));
+                    }
+                    break;
+                case TIMEOUT_MOTOR_EV:
+                    if(current_state == SOAK_TURN_CLKWISE) {
+                        previous_state = SOAK_TURN_CLKWISE;
+                        current_state = SOAK_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_TURNACW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == SOAK_TURN_ANTI_CLKWISE) {
+                        previous_state = SOAK_TURN_ANTI_CLKWISE;
+                        current_state = SOAK_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_TURNCW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == WASH_TURN_CLKWISE) {
+                        previous_state = WASH_TURN_CLKWISE;
+                        current_state = WASH_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNACW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == WASH_TURN_ANTI_CLKWISE) {
+                        previous_state = WASH_TURN_ANTI_CLKWISE;
+                        current_state = WASH_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNCW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == RINSE_TURN_CLKWISE) {
+                        previous_state = RINSE_TURN_CLKWISE;
+                        current_state = RINSE_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_TURNACW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == RINSE_TURN_ANTI_CLKWISE) {
+                        previous_state = RINSE_TURN_ANTI_CLKWISE;
+                        current_state = RINSE_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_TURNCW_MASK);
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    break;
+                case TIMEOUT_SOAK_EV:
+                    if(current_state == SOAK_TURN_CLKWISE) {
+                        previous_state = SOAK_TURN_CLKWISE;
+                        current_state = WASH_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNCW_MASK);
+                        chVTReset(&vt_motor);
+                        startTimer(WASH_TIMER, TIME_MS2I(4 * TIMEOUT_WASH));
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    else if(current_state == SOAK_TURN_ANTI_CLKWISE) {
+                        previous_state = SOAK_TURN_ANTI_CLKWISE;
+                        current_state = WASH_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNCW_MASK);
+                        chVTReset(&vt_motor);
+                        startTimer(WASH_TIMER, TIME_MS2I(4 * TIMEOUT_WASH));
+                        startTimer(MOTOR_TIMER, TIME_MS2I(TIMEOUT_MOTOR_CYCLE));
+                    }
+                    break;
+                case TIMEOUT_WASH_EV:
+                    if(current_state == WASH_TURN_CLKWISE) {
+                        previous_state = WASH_TURN_CLKWISE;
+                        current_state = WASH_WATER_OUT;
+                        chVTReset(&vt_motor);
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_WATEROUT_MASK);
+                    }
+                    else if(current_state == WASH_TURN_ANTI_CLKWISE) {
+                        previous_state = WASH_TURN_ANTI_CLKWISE;
+                        current_state = WASH_WATER_OUT;
+                        chVTReset(&vt_motor);
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_WATEROUT_MASK);
+                    }
+                    break;
+                case TIMEOUT_RINSE_EV:
+                    if(current_state == RINSE_TURN_CLKWISE) {
+                        previous_state = RINSE_TURN_CLKWISE;
+                        current_state = RINSE_WATER_OUT;
+                        chVTReset(&vt_motor);
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_WATEROUT_MASK);
+                    }
+                    else if(current_state == RINSE_TURN_ANTI_CLKWISE) {
+                        previous_state = RINSE_TURN_ANTI_CLKWISE;
+                        current_state = RINSE_WATER_OUT;
+                        chVTReset(&vt_motor);
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_WATEROUT_MASK);
+                    }
+                    break;
+                case TIMEOUT_CENTRIFUGE_EV:
+                    if(current_state == CENTRIFUGE) {
+                        previous_state = IDLE;
+                        current_state = IDLE;
+                        chVTReset(&vt_motor);
+                        chVTReset(&vt_soak);
+                        chVTReset(&vt_wash);
+                        chVTReset(&vt_rinse);
+                        chVTReset(&vt_centrifuge);
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, IDLE_MASK);
+                    }
+                    break;
+                case LID_OPEN_EV:
+                    if(current_state == IDLE && is_lid_open == true){
+                        previous_state = IDLE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, IDLE_MASK);
+                    }
+                    else if(current_state == SOAK_WATER_IN && is_lid_open == true) {
+                        previous_state = SOAK_WATER_IN;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                    }
+                    else if(current_state == SOAK_TURN_CLKWISE && is_lid_open == true) {
+                        previous_state = SOAK_TURN_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(SOAK_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == SOAK_TURN_ANTI_CLKWISE && is_lid_open == true) {
+                        previous_state = SOAK_TURN_ANTI_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(SOAK_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == WASH_TURN_CLKWISE && is_lid_open == true) {
+                        previous_state = WASH_TURN_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(WASH_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == WASH_TURN_ANTI_CLKWISE && is_lid_open == true) {
+                        previous_state = WASH_TURN_ANTI_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(WASH_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == WASH_WATER_OUT && is_lid_open == true) {
+                        previous_state = WASH_WATER_OUT;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                    }
+                    else if(current_state == RINSE_WATER_IN && is_lid_open == true) {
+                        previous_state = RINSE_WATER_IN;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                    }
+                    else if(current_state == RINSE_TURN_CLKWISE && is_lid_open == true) {
+                        previous_state = RINSE_TURN_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(RINSE_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == RINSE_TURN_ANTI_CLKWISE && is_lid_open == true) {
+                        previous_state = RINSE_TURN_ANTI_CLKWISE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(RINSE_TIMER);
+                        pauseTimer(MOTOR_TIMER);
+                    }
+                    else if(current_state == RINSE_WATER_OUT && is_lid_open == true) {
+                        previous_state = RINSE_WATER_OUT;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                    }
+                    else if(current_state == CENTRIFUGE && is_lid_open == true) {
+                        previous_state = CENTRIFUGE;
+                        current_state = OPEN_LID;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, OPEN_LID_MASK);
+                        pauseTimer(CENTRIFUGE_TIMER);
+                    }
+                    break;
+                case LID_CLOSE_EV:
+                    if (previous_state == IDLE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = IDLE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, IDLE_MASK);
+                    }
+                    else if (previous_state == SOAK_WATER_IN && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = SOAK_WATER_IN;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_WATERIN_MASK);
+                    }
+                    else if(previous_state == SOAK_TURN_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {
+                
+                        current_state = SOAK_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_TURNCW_MASK);
+                        resumeTimer(SOAK_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == SOAK_TURN_ANTI_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = SOAK_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, SOAK_TURNACW_MASK);
+                        resumeTimer(SOAK_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == WASH_WATER_OUT && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = WASH_WATER_OUT;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_WATEROUT_MASK);
+                    }
+                    else if(previous_state == WASH_TURN_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {           
+                        current_state = WASH_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNCW_MASK);
+                        resumeTimer(WASH_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == WASH_TURN_ANTI_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = WASH_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, WASH_TURNACW_MASK);
+                        resumeTimer(WASH_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == RINSE_WATER_IN && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = RINSE_WATER_IN;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_WATERIN_MASK);
+                    }
+                    else if(previous_state == RINSE_WATER_OUT && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = RINSE_WATER_OUT;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_WATEROUT_MASK);
+                    }
+                    else if(previous_state == RINSE_TURN_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = RINSE_TURN_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_TURNCW_MASK);
+                        resumeTimer(RINSE_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == RINSE_TURN_ANTI_CLKWISE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = RINSE_TURN_ANTI_CLKWISE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, RINSE_TURNACW_MASK);
+                        resumeTimer(RINSE_TIMER);
+                        resumeTimer(MOTOR_TIMER);
+                    }
+                    else if(previous_state == CENTRIFUGE && current_state == OPEN_LID && is_lid_open == false) {
+                        current_state = CENTRIFUGE;
+                        palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, CENTRIFUGE_MASK);
+                        resumeTimer(CENTRIFUGE_TIMER);
+                    }
+                    break;
+                default:
+            }
         }
+        chThdSleepMilliseconds(20);
     }
 }
 static THD_WORKING_AREA(wa_stateMachine, 2048);
@@ -614,7 +590,7 @@ int main(void) {
     /* pinos de entrada */
     palSetGroupMode(IOPORT2, GPIO_INPUT_MASK, 0, PAL_MODE_INPUT_PULLUP);
     /* desliga todos os leds */
-    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, 0x0001);
+    palWriteGroup(IOPORT1, GPIO_OUTPUT_MASK, 0, IDLE_MASK);
     /* habilita interrupçoes nos botoes de entrada */
     palEnablePadEvent(IOPORT2, BTN_START, PAL_EVENT_MODE_FALLING_EDGE);
     palEnablePadEvent(IOPORT2, BTN_HIGH_WATERMARK, PAL_EVENT_MODE_FALLING_EDGE);
@@ -629,8 +605,8 @@ int main(void) {
     ptr_stateMachine = chThdCreateStatic(wa_stateMachine, sizeof(wa_stateMachine), NORMALPRIO + 1, stateMachine, NULL);
     
     while(1) {
-
-        chThdSleepMilliseconds(500);
+        current_state == OPEN_LID ? (palClearPad(IOPORT3, 13)) : (palSetPad(IOPORT3, 13));
+        chThdSleepMilliseconds(10);
     }
     return 0;
 }
